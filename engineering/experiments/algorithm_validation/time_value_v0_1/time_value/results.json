@@ -1,0 +1,2917 @@
+{
+  "contract_version": "service-time-value-0.1",
+  "python": "3.12.14",
+  "data_mode": "synthetic_fixture",
+  "run_date": "2026-11-01",
+  "source_parameters": "179/01_工程项目/data/synthetic/s01.json: repair 6h, backup 1h, capacity 5m3/h, demand 4m3/h. Inventory 100m3 and delivered quantities are NEW fixture assumptions, not measured outputs.",
+  "s01_source_sha256": "12022d6fd60f15a1b60c35943b2db87eff5e95060b5599588a85125529f9942b",
+  "source_sha256": {
+    "src/algorithm_validation/run_time_value.py": "fb2b6efb5349d78416610fa14094c0e73f94400c93b2d41e8adbfbcf35eb9c59",
+    "src/algorithm_validation/service_time_value.py": "805b6c7099638db044c9c73891c8ddef4e6830092f7292fa905a5d6356cf87ad"
+  },
+  "fixtures": {
+    "repair_only": {
+      "request": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "early_backup": {
+      "baseline": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      },
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "late_backup": {
+      "baseline": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      },
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 7,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 7,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "partial_capacity": {
+      "baseline": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 2,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      },
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 2,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 2,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "repeated_outage": {
+      "baseline": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 2,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 2,
+            "end_h": 3,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 3,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      },
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 2,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 2,
+            "end_h": 3,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 3,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "resource_conflict": {
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          },
+          "syn-truck-second": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              },
+              {
+                "source_id": "syn-truck-second",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "unknown_interval": {
+      "request": {
+        "plan_id": "fixture-repair-only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 3,
+            "network_m3h": {
+              "syn-hospital-001": null
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 3,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      }
+    },
+    "negative_gain_late_vs_early": {
+      "baseline": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          }
+        ]
+      },
+      "request": {
+        "plan_id": "fixture-backup",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:s01-time-value:20261101",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "syn-fault",
+          "isolation_id": "fixture-given-isolation",
+          "demand_version": "fixture-demand-v1"
+        },
+        "services": {
+          "syn-hospital-001": {
+            "demand_m3h": 4,
+            "required_ratio": 1
+          }
+        },
+        "sources": {
+          "syn-water-truck": {
+            "capacity_m3h": 5,
+            "volume_m3": 100,
+            "independent_of_network": true,
+            "resources": {
+              "water_truck": 1
+            },
+            "available_from_h": 0,
+            "available_to_h": 8,
+            "evidence_ref": "fixture:source-capacity-and-stock"
+          }
+        },
+        "resource_capacities": {
+          "water_truck": 1
+        },
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 6,
+            "network_m3h": {
+              "syn-hospital-001": 0
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 7,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": []
+          },
+          {
+            "start_h": 7,
+            "end_h": 8,
+            "network_m3h": {
+              "syn-hospital-001": 4
+            },
+            "evidence_ref": "fixture:network-quantity-assumption",
+            "allocations": [
+              {
+                "source_id": "syn-water-truck",
+                "service_id": "syn-hospital-001",
+                "flow_m3h": 4,
+                "connection_ready": true,
+                "evidence_ref": "fixture:declared-delivery"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "results": {
+    "repair_only": {
+      "contract_version": "service-time-value-0.1",
+      "data_mode": "synthetic",
+      "model_status": "candidate",
+      "plan_id": "fixture-repair-only",
+      "criterion": "quantity_only_independent_delivery",
+      "request_fingerprint": "1d7e95d2e9b6a193fae8e7fad6b6728d769a2c244a5ec52964159990d0480ad4",
+      "qualified_water_service": "unsupported",
+      "limitations": [
+        "Declared quantity only; no pressure, quality or delivery-route verification.",
+        "Explicit allocations are checked, not optimized.",
+        "All allocated volume consumes inventory, including oversupply."
+      ],
+      "issues": [],
+      "per_service": {
+        "syn-hospital-001": {
+          "timeline": [
+            {
+              "start_h": 0.0,
+              "end_h": 6.0,
+              "ratio_lower": 0.0,
+              "ratio_upper": 0.0,
+              "state": "quantity_shortfall"
+            },
+            {
+              "start_h": 6.0,
+              "end_h": 8.0,
+              "ratio_lower": 1.0,
+              "ratio_upper": 1.0,
+              "state": "meets_quantity"
+            }
+          ],
+          "metrics": {
+            "equivalent_shortfall_hours": {
+              "status": "succeeded",
+              "value": 6.0,
+              "lower": 6.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            },
+            "unserved_volume_m3": {
+              "status": "succeeded",
+              "value": 24.0,
+              "lower": 24.0,
+              "upper": 24.0,
+              "unit": "m3"
+            },
+            "requirement_unmet_hours": {
+              "status": "succeeded",
+              "value": 6.0,
+              "lower": 6.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            },
+            "complete_outage_hours": {
+              "status": "succeeded",
+              "value": 6.0,
+              "lower": 6.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            }
+          }
+        }
+      },
+      "metrics": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": 6.0,
+          "lower": 6.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": 24.0,
+          "lower": 24.0,
+          "upper": 24.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": 6.0,
+          "lower": 6.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": 6.0,
+          "lower": 6.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        }
+      },
+      "allocated_volume_m3": {
+        "syn-water-truck": 0.0
+      },
+      "constraint_status": "pass",
+      "status": "succeeded"
+    },
+    "early_backup": {
+      "status": "succeeded",
+      "contract_version": "service-time-value-0.1",
+      "comparison_basis": "edc2bc65428d3c266c4c6314d0ee3655663e549796a625f3cfad87170c17fed5",
+      "baseline_fingerprint": "1d7e95d2e9b6a193fae8e7fad6b6728d769a2c244a5ec52964159990d0480ad4",
+      "candidate_fingerprint": "a333daa10bf43685b642a907681c98bc9b0d5601d73993dab46287ad258e9826",
+      "baseline": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-repair-only",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "1d7e95d2e9b6a193fae8e7fad6b6728d769a2c244a5ec52964159990d0480ad4",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 24.0,
+                "lower": 24.0,
+                "upper": 24.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 24.0,
+            "lower": 24.0,
+            "upper": 24.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 0.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "candidate": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "a333daa10bf43685b642a907681c98bc9b0d5601d73993dab46287ad258e9826",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 4.0,
+                "lower": 4.0,
+                "upper": 4.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 4.0,
+            "lower": 4.0,
+            "upper": 4.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 20.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "gains": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": 5.0,
+          "lower": 5.0,
+          "upper": 5.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": 20.0,
+          "lower": 20.0,
+          "upper": 20.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": 5.0,
+          "lower": 5.0,
+          "upper": 5.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": 5.0,
+          "lower": 5.0,
+          "upper": 5.0,
+          "unit": "service*h"
+        }
+      }
+    },
+    "late_backup": {
+      "status": "succeeded",
+      "contract_version": "service-time-value-0.1",
+      "comparison_basis": "edc2bc65428d3c266c4c6314d0ee3655663e549796a625f3cfad87170c17fed5",
+      "baseline_fingerprint": "1d7e95d2e9b6a193fae8e7fad6b6728d769a2c244a5ec52964159990d0480ad4",
+      "candidate_fingerprint": "bdc2c22b07789927a7bf082a7de0412994d5d1073cc8e6a0af7b41cc8dcd2794",
+      "baseline": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-repair-only",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "1d7e95d2e9b6a193fae8e7fad6b6728d769a2c244a5ec52964159990d0480ad4",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 24.0,
+                "lower": 24.0,
+                "upper": 24.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 24.0,
+            "lower": 24.0,
+            "upper": 24.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 0.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "candidate": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "bdc2c22b07789927a7bf082a7de0412994d5d1073cc8e6a0af7b41cc8dcd2794",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 7.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 7.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 24.0,
+                "lower": 24.0,
+                "upper": 24.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 24.0,
+            "lower": 24.0,
+            "upper": 24.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 4.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "gains": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": "service*h"
+        }
+      }
+    },
+    "partial_capacity": {
+      "status": "succeeded",
+      "contract_version": "service-time-value-0.1",
+      "comparison_basis": "29d7829be64e1eadf11bed93a299dceb5595e6a29fb57d68461a3e19eb405032",
+      "baseline_fingerprint": "6a58b5f764101a3b01a9b5e074dcc7b9da32467d036ac4c6664468d6113f1f14",
+      "candidate_fingerprint": "e02b886dc81c8e3d93c3fc49efd1ef7ab7cdecb4fcd9e7a89708e89a279284cb",
+      "baseline": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-repair-only",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "6a58b5f764101a3b01a9b5e074dcc7b9da32467d036ac4c6664468d6113f1f14",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 24.0,
+                "lower": 24.0,
+                "upper": 24.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 24.0,
+            "lower": 24.0,
+            "upper": 24.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 0.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "candidate": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "e02b886dc81c8e3d93c3fc49efd1ef7ab7cdecb4fcd9e7a89708e89a279284cb",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.5,
+                "ratio_upper": 0.5,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 3.5,
+                "lower": 3.5,
+                "upper": 3.5,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 14.0,
+                "lower": 14.0,
+                "upper": 14.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 3.5,
+            "lower": 3.5,
+            "upper": 3.5,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 14.0,
+            "lower": 14.0,
+            "upper": 14.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 10.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "gains": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": 2.5,
+          "lower": 2.5,
+          "upper": 2.5,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": 10.0,
+          "lower": 10.0,
+          "upper": 10.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": 0.0,
+          "lower": 0.0,
+          "upper": 0.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": 5.0,
+          "lower": 5.0,
+          "upper": 5.0,
+          "unit": "service*h"
+        }
+      }
+    },
+    "repeated_outage": {
+      "status": "succeeded",
+      "contract_version": "service-time-value-0.1",
+      "comparison_basis": "6aaa75d44621e885b1e4fad2bc2718b2aa18ba24512393863453d5d1246ea725",
+      "baseline_fingerprint": "66195b0ee0e40edce4d3c24e80127815e2db3b824420842be20bd9ea7ee1d284",
+      "candidate_fingerprint": "112f6c0e60116fe5c0d146647cdea0ec68fa686ac4133621e5d89863b0b7a4cf",
+      "baseline": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-repair-only",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "66195b0ee0e40edce4d3c24e80127815e2db3b824420842be20bd9ea7ee1d284",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 2.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 2.0,
+                "end_h": 3.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 3.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 5.0,
+                "lower": 5.0,
+                "upper": 5.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 20.0,
+                "lower": 20.0,
+                "upper": 20.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 5.0,
+                "lower": 5.0,
+                "upper": 5.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 5.0,
+                "lower": 5.0,
+                "upper": 5.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 5.0,
+            "lower": 5.0,
+            "upper": 5.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 20.0,
+            "lower": 20.0,
+            "upper": 20.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 5.0,
+            "lower": 5.0,
+            "upper": 5.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 5.0,
+            "lower": 5.0,
+            "upper": 5.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 0.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "candidate": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "112f6c0e60116fe5c0d146647cdea0ec68fa686ac4133621e5d89863b0b7a4cf",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 2.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 2.0,
+                "end_h": 3.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 3.0,
+                "end_h": 6.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 4.0,
+                "lower": 4.0,
+                "upper": 4.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 4.0,
+            "lower": 4.0,
+            "upper": 4.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 16.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "gains": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": 4.0,
+          "lower": 4.0,
+          "upper": 4.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": 16.0,
+          "lower": 16.0,
+          "upper": 16.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": 4.0,
+          "lower": 4.0,
+          "upper": 4.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": 4.0,
+          "lower": 4.0,
+          "upper": 4.0,
+          "unit": "service*h"
+        }
+      }
+    },
+    "resource_conflict": {
+      "contract_version": "service-time-value-0.1",
+      "data_mode": "synthetic",
+      "model_status": "candidate",
+      "plan_id": "fixture-backup",
+      "criterion": "quantity_only_independent_delivery",
+      "request_fingerprint": "bf4a7f35cce167a73e922ea0b874871c9c32c8d9d8de0bd0750140cfcbca7c4d",
+      "qualified_water_service": "unsupported",
+      "limitations": [
+        "Declared quantity only; no pressure, quality or delivery-route verification.",
+        "Explicit allocations are checked, not optimized.",
+        "All allocated volume consumes inventory, including oversupply."
+      ],
+      "issues": [],
+      "per_service": {},
+      "status": "infeasible",
+      "constraint_status": "fail",
+      "violations": [
+        "resource_conflict:1:water_truck"
+      ],
+      "metrics": {},
+      "allocated_volume_m3": {
+        "syn-water-truck": 20.0,
+        "syn-truck-second": 20.0
+      }
+    },
+    "unknown_interval": {
+      "contract_version": "service-time-value-0.1",
+      "data_mode": "synthetic",
+      "model_status": "candidate",
+      "plan_id": "fixture-repair-only",
+      "criterion": "quantity_only_independent_delivery",
+      "request_fingerprint": "4143a8260c26540f7ac1eb0b11753697e42e6501a75fea394e071accaa837ff8",
+      "qualified_water_service": "unsupported",
+      "limitations": [
+        "Declared quantity only; no pressure, quality or delivery-route verification.",
+        "Explicit allocations are checked, not optimized.",
+        "All allocated volume consumes inventory, including oversupply."
+      ],
+      "issues": [
+        "unknown_delivery:1:syn-hospital-001"
+      ],
+      "per_service": {
+        "syn-hospital-001": {
+          "timeline": [
+            {
+              "start_h": 0.0,
+              "end_h": 1.0,
+              "ratio_lower": 0.0,
+              "ratio_upper": 0.0,
+              "state": "quantity_shortfall"
+            },
+            {
+              "start_h": 1.0,
+              "end_h": 3.0,
+              "ratio_lower": 0.0,
+              "ratio_upper": 1.0,
+              "state": "insufficient_data"
+            },
+            {
+              "start_h": 3.0,
+              "end_h": 6.0,
+              "ratio_lower": 0.0,
+              "ratio_upper": 0.0,
+              "state": "quantity_shortfall"
+            },
+            {
+              "start_h": 6.0,
+              "end_h": 8.0,
+              "ratio_lower": 1.0,
+              "ratio_upper": 1.0,
+              "state": "meets_quantity"
+            }
+          ],
+          "metrics": {
+            "equivalent_shortfall_hours": {
+              "status": "insufficient_data",
+              "value": null,
+              "lower": 4.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            },
+            "unserved_volume_m3": {
+              "status": "insufficient_data",
+              "value": null,
+              "lower": 16.0,
+              "upper": 24.0,
+              "unit": "m3"
+            },
+            "requirement_unmet_hours": {
+              "status": "insufficient_data",
+              "value": null,
+              "lower": 4.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            },
+            "complete_outage_hours": {
+              "status": "insufficient_data",
+              "value": null,
+              "lower": 4.0,
+              "upper": 6.0,
+              "unit": "service*h"
+            }
+          }
+        }
+      },
+      "metrics": {
+        "equivalent_shortfall_hours": {
+          "status": "insufficient_data",
+          "value": null,
+          "lower": 4.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "insufficient_data",
+          "value": null,
+          "lower": 16.0,
+          "upper": 24.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "insufficient_data",
+          "value": null,
+          "lower": 4.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "insufficient_data",
+          "value": null,
+          "lower": 4.0,
+          "upper": 6.0,
+          "unit": "service*h"
+        }
+      },
+      "allocated_volume_m3": {
+        "syn-water-truck": 0.0
+      },
+      "constraint_status": "pass",
+      "status": "insufficient_data"
+    },
+    "negative_gain_late_vs_early": {
+      "status": "succeeded",
+      "contract_version": "service-time-value-0.1",
+      "comparison_basis": "edc2bc65428d3c266c4c6314d0ee3655663e549796a625f3cfad87170c17fed5",
+      "baseline_fingerprint": "a333daa10bf43685b642a907681c98bc9b0d5601d73993dab46287ad258e9826",
+      "candidate_fingerprint": "bdc2c22b07789927a7bf082a7de0412994d5d1073cc8e6a0af7b41cc8dcd2794",
+      "baseline": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "a333daa10bf43685b642a907681c98bc9b0d5601d73993dab46287ad258e9826",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 4.0,
+                "lower": 4.0,
+                "upper": 4.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 4.0,
+            "lower": 4.0,
+            "upper": 4.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 20.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "candidate": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "fixture-backup",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "bdc2c22b07789927a7bf082a7de0412994d5d1073cc8e6a0af7b41cc8dcd2794",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "syn-hospital-001": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 7.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 7.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 24.0,
+                "lower": 24.0,
+                "upper": 24.0,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 24.0,
+            "lower": 24.0,
+            "upper": 24.0,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {
+          "syn-water-truck": 4.0
+        },
+        "constraint_status": "pass",
+        "status": "succeeded"
+      },
+      "gains": {
+        "equivalent_shortfall_hours": {
+          "status": "succeeded",
+          "value": -5.0,
+          "lower": -5.0,
+          "upper": -5.0,
+          "unit": "service*h"
+        },
+        "unserved_volume_m3": {
+          "status": "succeeded",
+          "value": -20.0,
+          "lower": -20.0,
+          "upper": -20.0,
+          "unit": "m3"
+        },
+        "requirement_unmet_hours": {
+          "status": "succeeded",
+          "value": -5.0,
+          "lower": -5.0,
+          "upper": -5.0,
+          "unit": "service*h"
+        },
+        "complete_outage_hours": {
+          "status": "succeeded",
+          "value": -5.0,
+          "lower": -5.0,
+          "upper": -5.0,
+          "unit": "service*h"
+        }
+      }
+    }
+  },
+  "hydraulic_input_sha256": "d9f83e84d0b3bf69c106fa9d94db5db66671d816fc28fb170ec560909389cbf2",
+  "hydraulic_piecewise_steady_assumption": {
+    "hydraulic_repair_only": {
+      "request": {
+        "plan_id": "hydraulic_repair_only",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:hydraulic-five-nodes",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "fixture:P1-closed",
+          "isolation_id": "fixture:P4-schedule",
+          "demand_version": "fixture:H-7.2"
+        },
+        "services": {
+          "fixture-hydraulic-H": {
+            "demand_m3h": 7.2,
+            "required_ratio": 1
+          }
+        },
+        "sources": {},
+        "resource_capacities": {},
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "fixture-hydraulic-H": 0
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "fixture-hydraulic-H": 0
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "fixture-hydraulic-H": 7.2
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          }
+        ]
+      },
+      "result": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "hydraulic_repair_only",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "2631fd6e0865d6fdec101b22632ffb32a366165e5b25eabff4d91a253402877c",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "fixture-hydraulic-H": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 43.2,
+                "lower": 43.2,
+                "upper": 43.2,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 43.2,
+            "lower": 43.2,
+            "upper": 43.2,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {},
+        "constraint_status": "pass",
+        "status": "succeeded"
+      }
+    },
+    "hydraulic_backup_at_1h": {
+      "request": {
+        "plan_id": "hydraulic_backup_at_1h",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:hydraulic-five-nodes",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "fixture:P1-closed",
+          "isolation_id": "fixture:P4-schedule",
+          "demand_version": "fixture:H-7.2"
+        },
+        "services": {
+          "fixture-hydraulic-H": {
+            "demand_m3h": 7.2,
+            "required_ratio": 1
+          }
+        },
+        "sources": {},
+        "resource_capacities": {},
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "fixture-hydraulic-H": 0
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "fixture-hydraulic-H": 0.3848719021157319
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "fixture-hydraulic-H": 7.2
+            },
+            "evidence_ref": "fixture:four-steady-state-hydraulics",
+            "allocations": []
+          }
+        ]
+      },
+      "result": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "hydraulic_backup_at_1h",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "645683e1b1235e6d2306bbc92913fb0443554a770b42f70ca1f5c3096fcd5d10",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "fixture-hydraulic-H": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 0.05345443084940721,
+                "ratio_upper": 0.05345443084940721,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 5.732727845752964,
+                "lower": 5.732727845752964,
+                "upper": 5.732727845752964,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 41.27564048942135,
+                "lower": 41.27564048942135,
+                "upper": 41.27564048942135,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 6.0,
+                "lower": 6.0,
+                "upper": 6.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 5.732727845752964,
+            "lower": 5.732727845752964,
+            "upper": 5.732727845752964,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 41.27564048942135,
+            "lower": 41.27564048942135,
+            "upper": 41.27564048942135,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 6.0,
+            "lower": 6.0,
+            "upper": 6.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {},
+        "constraint_status": "pass",
+        "status": "succeeded"
+      }
+    },
+    "topology_full_supply_assumption": {
+      "request": {
+        "plan_id": "topology_full_supply_assumption",
+        "data_mode": "synthetic",
+        "criterion": "quantity_only_independent_delivery",
+        "horizon_hours": 8,
+        "context": {
+          "snapshot_id": "fixture:hydraulic-five-nodes",
+          "as_of": "2026-11-01T00:00:00+08:00",
+          "fault_id": "fixture:P1-closed",
+          "isolation_id": "fixture:P4-schedule",
+          "demand_version": "fixture:H-7.2"
+        },
+        "services": {
+          "fixture-hydraulic-H": {
+            "demand_m3h": 7.2,
+            "required_ratio": 1
+          }
+        },
+        "sources": {},
+        "resource_capacities": {},
+        "segments": [
+          {
+            "start_h": 0,
+            "end_h": 1,
+            "network_m3h": {
+              "fixture-hydraulic-H": 0
+            },
+            "evidence_ref": "fixture:intentionally-optimistic-control",
+            "allocations": []
+          },
+          {
+            "start_h": 1,
+            "end_h": 6,
+            "network_m3h": {
+              "fixture-hydraulic-H": 7.2
+            },
+            "evidence_ref": "fixture:intentionally-optimistic-control",
+            "allocations": []
+          },
+          {
+            "start_h": 6,
+            "end_h": 8,
+            "network_m3h": {
+              "fixture-hydraulic-H": 7.2
+            },
+            "evidence_ref": "fixture:intentionally-optimistic-control",
+            "allocations": []
+          }
+        ]
+      },
+      "result": {
+        "contract_version": "service-time-value-0.1",
+        "data_mode": "synthetic",
+        "model_status": "candidate",
+        "plan_id": "topology_full_supply_assumption",
+        "criterion": "quantity_only_independent_delivery",
+        "request_fingerprint": "bbd5e56b0e177d7ccd865f0dff36d82697567263f4e07eade895458d975ddef4",
+        "qualified_water_service": "unsupported",
+        "limitations": [
+          "Declared quantity only; no pressure, quality or delivery-route verification.",
+          "Explicit allocations are checked, not optimized.",
+          "All allocated volume consumes inventory, including oversupply."
+        ],
+        "issues": [],
+        "per_service": {
+          "fixture-hydraulic-H": {
+            "timeline": [
+              {
+                "start_h": 0.0,
+                "end_h": 1.0,
+                "ratio_lower": 0.0,
+                "ratio_upper": 0.0,
+                "state": "quantity_shortfall"
+              },
+              {
+                "start_h": 1.0,
+                "end_h": 6.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              },
+              {
+                "start_h": 6.0,
+                "end_h": 8.0,
+                "ratio_lower": 1.0,
+                "ratio_upper": 1.0,
+                "state": "meets_quantity"
+              }
+            ],
+            "metrics": {
+              "equivalent_shortfall_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "unserved_volume_m3": {
+                "status": "succeeded",
+                "value": 7.2,
+                "lower": 7.2,
+                "upper": 7.2,
+                "unit": "m3"
+              },
+              "requirement_unmet_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              },
+              "complete_outage_hours": {
+                "status": "succeeded",
+                "value": 1.0,
+                "lower": 1.0,
+                "upper": 1.0,
+                "unit": "service*h"
+              }
+            }
+          }
+        },
+        "metrics": {
+          "equivalent_shortfall_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "unserved_volume_m3": {
+            "status": "succeeded",
+            "value": 7.2,
+            "lower": 7.2,
+            "upper": 7.2,
+            "unit": "m3"
+          },
+          "requirement_unmet_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          },
+          "complete_outage_hours": {
+            "status": "succeeded",
+            "value": 1.0,
+            "lower": 1.0,
+            "upper": 1.0,
+            "unit": "service*h"
+          }
+        },
+        "allocated_volume_m3": {},
+        "constraint_status": "pass",
+        "status": "succeeded"
+      }
+    }
+  }
+}

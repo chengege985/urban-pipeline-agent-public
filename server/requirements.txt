@@ -1,0 +1,7 @@
+# 比赛端依赖；与工程 .venv-agent 隔离。
+# 本地可直接复用已安装 FastAPI/httpx 的 .venv-platform，生产实例应单独建环境。
+fastapi>=0.115,<1
+uvicorn>=0.30,<1
+httpx>=0.27,<1
+pydantic>=2.10,<3
+pytest>=8,<10

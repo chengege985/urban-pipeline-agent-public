@@ -1,0 +1,6 @@
+Baseline/M2 reproducibility probe on 7b0fe82, temporary synthetic fixture with nodes[0].name=123:
+DETAIL_STATUS 500
+DETAIL_BODY_PREFIX Internal Server Error
+LIST_STATUS 200
+LIST_BODY_PREFIX {"items":[{"case_id":"syn-gas-case-K-001","network_id":"syn-gas-network-html54-0.1.0","scenario_id":"syn-gas-scenario-K-001","plan_id":"syn-gas-isolation-unit-16","data_mode":"synthetic","model_status":"candidate","validation_status":"not_b
+Observed defect: response validation happened after the detail route returned, while list_cases only validated the summary DTO.

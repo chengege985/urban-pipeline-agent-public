@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "dataset_id": "syn-gas-monitoring-replay-01",
+  "version": "0.1.0",
+  "data_mode": "synthetic",
+  "sources": {
+    "assets": {
+      "source_id": "syn-gas-monitoring-replay-assets",
+      "version": "0.1.0",
+      "sha256": "60a97acf57879a533ed2f2fdcff039afe66adf7fe39a05a8fa5d7aa63e6a2647"
+    },
+    "monitoring": {
+      "source_id": "syn-gas-monitoring-replay-observations",
+      "version": "0.1.0",
+      "sha256": "afa5eb302648cf76dd6e587f7ca245d5fe28bb1787aaaf143de70ff300662535"
+    }
+  }
+}

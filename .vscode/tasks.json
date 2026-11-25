@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "启动 WaterPipNet 燃气平台",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/start_gas_demo.sh"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "presentation": {"reveal": "always", "panel": "dedicated"},
+      "problemMatcher": []
+    },
+    {
+      "label": "查看燃气演示状态",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/gas_demo.sh", "status"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "查看燃气演示临时登录",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/gas_demo.sh", "credentials"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "presentation": {"reveal": "always", "panel": "dedicated", "clear": true},
+      "problemMatcher": []
+    },
+    {
+      "label": "停止 WaterPipNet 燃气平台",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/gas_demo.sh", "stop"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "重启 WaterPipNet 燃气平台",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/gas_demo.sh", "restart"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ]
+}

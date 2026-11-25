@@ -1,0 +1,42 @@
+{
+  "name": "waterpulse-ai",
+  "private": true,
+  "version": "0.3.0-rc.2",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:gas-demo": "tsc -b && vite build --mode gas-demo",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --pretty false",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:gas:contract": "vitest run src/tests/gasApi.test.ts src/tests/gasResponseContract.test.ts",
+    "test:gas:browser": "npm run build && node scripts/gas-cockpit-unify.browser.mjs",
+    "contracts:check": "node scripts/generate-platform-types.mjs --check",
+    "boundaries:check": "python3 ../scripts/check_module_boundaries.py",
+    "contracts:test": "node scripts/test-platform-types.mjs",
+    "dev:competition": "vite --mode competition --host 127.0.0.1",
+    "dev:project": "vite --mode project --host 127.0.0.1",
+    "build:competition": "tsc -b && vite build --mode competition --outDir dist/competition",
+    "build:project": "tsc -b && vite build --mode project --outDir dist/project",
+    "build:editions": "npm run build:competition && npm run build:project",
+    "preview:competition": "vite preview --outDir dist/competition --host 127.0.0.1",
+    "preview:project": "vite preview --outDir dist/project --host 127.0.0.1",
+    "test:editions:browser": "node scripts/product-editions.browser.mjs"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/noto-sans-sc": "^5.3.1",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "playwright": "^1.64.1",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.2.7"
+  }
+}

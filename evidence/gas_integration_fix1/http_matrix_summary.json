@@ -1,0 +1,51 @@
+{
+  "acl_no_synthetic": {
+    "status": 403,
+    "detail": "当前主体没有合成燃气候选数据权限",
+    "has_path_leak": false
+  },
+  "acl_synthetic": {
+    "status": 200,
+    "detail": null,
+    "has_path_leak": false
+  },
+  "bad_fixture": {
+    "status": 503,
+    "detail": "燃气合成候选暂不可用",
+    "has_path_leak": false
+  },
+  "default_no_auth": {
+    "status": 401,
+    "detail": "未完成服务端身份认证",
+    "has_path_leak": false
+  },
+  "invalid_token": {
+    "status": 401,
+    "detail": "未认证或令牌无效",
+    "has_path_leak": false
+  },
+  "local_get": {
+    "status": 200,
+    "detail": null,
+    "has_path_leak": false
+  },
+  "local_nonloopback": {
+    "status": 401,
+    "detail": "未完成服务端身份认证",
+    "has_path_leak": false
+  },
+  "local_write": {
+    "status": 401,
+    "detail": "未完成服务端身份认证",
+    "has_path_leak": false
+  },
+  "missing_case": {
+    "status": 404,
+    "detail": "燃气合成案例不存在",
+    "has_path_leak": false
+  },
+  "production_missing_auth": {
+    "error": "RuntimeError",
+    "message": "受控运行模式缺少服务端认证配置"
+  }
+}

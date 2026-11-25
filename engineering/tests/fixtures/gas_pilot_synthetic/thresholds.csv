@@ -1,0 +1,4 @@
+source_record_id,threshold_id,sensor_id,version,unit,lower,upper,cadence_seconds,sustained_samples,missing_samples,operator_id,approval_ref,approved_at,effective_from,effective_until
+sample-rule-a1,syn-gas-pilot-pressure-rule-a1,syn-gas-pilot-pressure-a,v1,kPa,4,6,60,3,2,synthetic-operator,synthetic-rule-only-a1,2026-11-17T00:00:00Z,2026-11-18T01:00:00Z,2026-11-18T01:08:00Z
+sample-rule-a2,syn-gas-pilot-pressure-rule-a2,syn-gas-pilot-pressure-a,v2,kPa,4,7.5,60,3,2,synthetic-operator,synthetic-rule-only-a2,2026-11-17T00:00:00Z,2026-11-18T01:08:00Z,2026-11-18T01:30:00Z
+sample-rule-b1,syn-gas-pilot-flow-rule-b1,syn-gas-pilot-flow-b,v1,Nm3/h,12,30,60,2,2,synthetic-operator,synthetic-rule-only-b1,2026-11-17T00:00:00Z,2026-11-18T01:00:00Z,2026-11-18T01:30:00Z

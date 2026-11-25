@@ -1,0 +1,9 @@
+controlled_missing_auth_start	RC=1	stderr=Traceback (most recent call last):   File "<string>", line 1, in <module>   File "/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/src/platform/app.py", line 50, in create_app     validate_security_configuration()   File "/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/src/platform/authz.py", line 68, in validate_security_configuration     raise RuntimeError("受控运行模式缺少服务端认证配置") RuntimeError: 受控运行模式缺少服务端认证配置 
+health	HTTP=200	curl_rc=0	body={"status":"ok","version":"0.1.1","worker_alive":false,"llm_mode":"mock","agent_enabled":false,"access_mode":"token"}	err=
+no_token	HTTP=401	curl_rc=0	body={"detail":"未认证或令牌无效"}	err=
+wrong_token	HTTP=401	curl_rc=0	body={"detail":"未认证或令牌无效"}	err=
+valid_token	HTTP=200	curl_rc=0	body={"schema_version":"gas-case-view-0.1.0","case_id":"syn-gas-case-K-001","network_id":"syn-gas-network-html54-0.1.0","scenario_id":"syn-gas-scenario-K-001","plan_id":"syn-gas-isolation-unit-16","data_mode":"synthetic","sta	err=
+unknown_case	HTTP=404	curl_rc=0	body={"detail":"燃气合成案例不存在"}	err=
+acl_no_synthetic	HTTP=403	curl_rc=0	body={"detail":"当前主体没有合成燃气候选数据权限"}	err=
+acl_synthetic	HTTP=200	curl_rc=0	body={"schema_version":"gas-case-view-0.1.0","case_id":"syn-gas-case-K-001","network_id":"syn-gas-network-html54-0.1.0","scenario_id":"syn-gas-scenario-K-001","plan_id":"syn-gas-isolation-unit-16","data_mode":"synthetic","sta	err=
+bad_fixture	HTTP=503	curl_rc=0	body={"detail":"燃气合成候选暂不可用"}	err=

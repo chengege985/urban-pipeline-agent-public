@@ -1,0 +1,7 @@
+Server: uvicorn on 127.0.0.1:8798
+Command: uvicorn m2_http_server:app --host 127.0.0.1 --port 8798 --loop asyncio --http h11
+HEALTH=200
+NO_TOKEN_GAS=401
+VALID_TOKEN_GAS=200
+VALID_BODY=data_mode=synthetic,status=partial,model_status=candidate,counts.nodes=54,counts.edges=73,counts.pipes=73
+Server stopped after probe.

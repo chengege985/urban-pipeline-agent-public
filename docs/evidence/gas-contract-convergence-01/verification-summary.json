@@ -1,0 +1,71 @@
+{
+  "task": "QODER-GAS-CONTRACT-CONVERGENCE-01",
+  "branch": "feature/gas-contract-convergence-01",
+  "base_commit": "be04c41",
+  "verified_at": "2026-11-06",
+  "commands": [
+    {
+      "command": "npm run typecheck",
+      "result": "PASS",
+      "detail": "tsc -b --pretty false, no diagnostics"
+    },
+    {
+      "command": "npm run contracts:check",
+      "result": "PASS",
+      "detail": "openapi 85 schemas, static sha256=9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591, generated sha256=6f1e29bd63e4aec5941bdedd9b6aafe2514121aa548c6ef72fbf1ff5b5def759, no drift"
+    },
+    {
+      "command": "npm run contracts:test",
+      "result": "PASS",
+      "detail": "platform type contract: 7 assertions passed"
+    },
+    {
+      "command": "npm run test:gas:contract",
+      "result": "PASS",
+      "detail": "2 files / 14 tests (gasApi 8, gasResponseContract 6)"
+    },
+    {
+      "command": "RUN_BROWSER=1 npx vitest run --hookTimeout=120000 --testTimeout=15000",
+      "result": "PASS",
+      "detail": "18 files / 215 tests passed"
+    },
+    {
+      "command": "npm run boundaries:check",
+      "result": "PASS",
+      "detail": "438 files, 1211 edges, 0 violations, 0 legacy cycles"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS",
+      "detail": "105 modules; index-BV-3yaHy.js 449.24 kB (gzip 135.37); index-YQbdXMMQ.css 81.25 kB (gzip 22.47); rebuild reproduced identical asset hashes"
+    },
+    {
+      "command": "python -m pytest server/tests -q",
+      "result": "PASS",
+      "detail": "69 passed"
+    },
+    {
+      "command": "PYTHONPATH=engineering python -m pytest engineering/tests/test_gas_application.py -q",
+      "result": "PASS",
+      "detail": "10 passed"
+    },
+    {
+      "command": "node scripts/gas-contract-convergence.browser.mjs",
+      "result": "PASS",
+      "detail": "26/26 checks against rebuilt static bundle in real Chromium"
+    }
+  ],
+  "hashes": {
+    "openapi_static": "9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591",
+    "openapi_runtime": "9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591",
+    "generated_types": "6f1e29bd63e4aec5941bdedd9b6aafe2514121aa548c6ef72fbf1ff5b5def759",
+    "fixture": "9f85a1bab26ba2aae794431542ca1e73ea10d5734de2c03bd5af99bb6601462f",
+    "dist_js": "7a3fcb1ac88d9bb080f0f5fc54f1f54c3e054b0189a4c0ce006baf6b50eadc2d",
+    "dist_css": "3233691356950613125c289a011cc55eb5a848b4513e6569294616d0275a9765"
+  },
+  "not_verified": [
+    "real network HTTP against a running FastAPI instance",
+    "authentication/authorization integration against the Codex security fix (uncommitted, unreviewed)",
+    "browser session against a live authenticated backend"
+  ]
+}

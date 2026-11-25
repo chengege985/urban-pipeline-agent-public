@@ -1,0 +1,13 @@
+{
+  "fixture_version": "m1a-unified-1.0.0",
+  "snapshot_id": "snap-4b31408c5a1ee971b535df60",
+  "snapshot_digest": "4b31408c5a1ee971b535df60211e9bdeacff6bdaf79bdcbc9fe2eb02849036c8",
+  "snapshot_file_sha256": "5d965dc46d97b1dba3322b9596d81e72e308fc47f5e13180b2ec6beed74641dd",
+  "inputs_sha256": "f2b98b37247f161ccd2f1ecbb4af98cee8717bf55dcd3fdc0962b48d374b4a41",
+  "pipe_count": 6,
+  "assessment_count": 6,
+  "coordinate_system": "schematic",
+  "scoring_model_family": "legacy_demo",
+  "scoring_model_version": "0.1.1",
+  "validation_status": "not_business_validated"
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "gas-cuv-scenario-0.1.0",
+  "data_mode": "synthetic",
+  "case_id": "syn-gas-case-K-001",
+  "scenario_id": "syn-gas-scenario-K-001",
+  "scenario_at": "2026-11-18T01:12:00Z",
+  "plans": [
+    {
+      "plan_id": "syn-gas-cuv-plan-staged-release",
+      "label": "分段图恢复",
+      "description": "先采用给定单元隔离。第 2 小时采用另一组合切边和节点阻断，保留故障两端的图断连。第 5 小时按假定修复与放行计算全部图通路。",
+      "steps": [
+        {
+          "elapsed_hours": 0.5,
+          "kind": "isolate",
+          "disabled_edge_ids": [
+            "syn-gas-edge-K-001",
+            "syn-gas-edge-K-002",
+            "syn-gas-edge-K-003",
+            "syn-gas-edge-K-004",
+            "syn-gas-edge-K-005",
+            "syn-gas-edge-K-015",
+            "syn-gas-edge-K-017"
+          ],
+          "closed_valve_ids": [
+            "syn-gas-valve-N11",
+            "syn-gas-valve-N13"
+          ]
+        },
+        {
+          "elapsed_hours": 2,
+          "kind": "staged_release",
+          "disabled_edge_ids": [
+            "syn-gas-edge-K-001",
+            "syn-gas-edge-K-003"
+          ],
+          "closed_valve_ids": ["syn-gas-valve-N11"]
+        },
+        {
+          "elapsed_hours": 5,
+          "kind": "assumed_clearance",
+          "disabled_edge_ids": [],
+          "closed_valve_ids": []
+        }
+      ]
+    },
+    {
+      "plan_id": "syn-gas-cuv-plan-hold-isolation",
+      "label": "保持单元隔离",
+      "description": "保持给定单元隔离的图状态。第 4 小时按假定修复与放行计算全部图通路。",
+      "steps": [
+        {
+          "elapsed_hours": 0.5,
+          "kind": "isolate",
+          "disabled_edge_ids": [
+            "syn-gas-edge-K-001",
+            "syn-gas-edge-K-002",
+            "syn-gas-edge-K-003",
+            "syn-gas-edge-K-004",
+            "syn-gas-edge-K-005",
+            "syn-gas-edge-K-015",
+            "syn-gas-edge-K-017"
+          ],
+          "closed_valve_ids": [
+            "syn-gas-valve-N11",
+            "syn-gas-valve-N13"
+          ]
+        },
+        {
+          "elapsed_hours": 4,
+          "kind": "assumed_clearance",
+          "disabled_edge_ids": [],
+          "closed_valve_ids": []
+        }
+      ]
+    }
+  ]
+}

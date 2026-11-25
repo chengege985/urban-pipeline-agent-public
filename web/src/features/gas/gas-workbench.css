@@ -1,0 +1,400 @@
+/* Gemini v0.2 handover palette. Scoped to the existing Gas cockpit only. */
+.gas-workbench {
+  --gas-surface-0: #07131e; --gas-surface-1: #0d1e2e; --gas-surface-2: #13293d; --gas-surface-3: #1a354d;
+  --gas-ink-1: #eaf1f7; --gas-ink-2: #9db3c7; --gas-ink-3: #738ba2;
+  --gas-brand: #4d94ff; --gas-brand-soft: rgba(77,148,255,.16); --gas-brand-strong: #7bb0ff;
+  --gas-sea: #52b7c8; --gas-sea-soft: rgba(82,183,200,.14);
+  --gas-success: #46b980; --gas-success-soft: rgba(70,185,128,.15);
+  --gas-warn: #e0a145; --gas-warn-soft: rgba(224,161,69,.16);
+  --gas-danger: #ea6860; --gas-danger-soft: rgba(234,104,96,.16);
+  --gas-border: rgba(148,179,206,.16); --gas-border-strong: rgba(148,179,206,.3);
+  --gas-shadow: 0 2px 8px rgba(2,8,16,.18); --gas-shadow-lg: 0 14px 36px rgba(2,8,16,.45);
+  --gas-map-land: #0f2335; --gas-map-line: #2c4d69; --gas-map-river: #25587f;
+  --gas-radius: 8px; --gas-radius-lg: 12px;
+  color-scheme: dark;
+}
+.gas-workbench[data-theme="light"] {
+  --gas-surface-0: #f5f7fa; --gas-surface-1: #fff; --gas-surface-2: #eef2f6; --gas-surface-3: #e3e8ef;
+  --gas-ink-1: #1a1f26; --gas-ink-2: #5b6573; --gas-ink-3: #6b7584;
+  --gas-brand: #1e5eb8; --gas-brand-soft: #e8f0fb; --gas-brand-strong: #174c96;
+  --gas-sea: #1b7c8c; --gas-sea-soft: #e5f4f6; --gas-success: #2e8b57; --gas-success-soft: #e6f4ec;
+  --gas-warn: #986009; --gas-warn-soft: #fbf1e1; --gas-danger: #c2372f; --gas-danger-soft: #fbe9e7;
+  --gas-border: #e1e6ec; --gas-border-strong: #cfd7e2;
+  --gas-shadow: 0 2px 8px rgba(20,40,65,.05); --gas-shadow-lg: 0 14px 36px rgba(20,40,65,.15);
+  --gas-map-land: #fff; --gas-map-line: #b9c6d6; --gas-map-river: #a2c7e8; color-scheme: light;
+}
+/* Keep the shared app route/provider, replacing only its redundant gas navigation. */
+.gas-cockpit-page.gas-workbench {
+  --gas-base: var(--gas-surface-0); --gas-surface: var(--gas-surface-1); --gas-ink: var(--gas-ink-1);
+  --gas-text: var(--gas-ink-1); --gas-muted: var(--gas-ink-2); --gas-line: var(--gas-border);
+  --gas-accent: var(--gas-brand); --gas-cyan: var(--gas-sea); --gas-orange: var(--gas-warn); --gas-red: var(--gas-danger);
+  height: calc(100dvh - var(--gas-topbar-height, 48px)); min-height: 0; padding: 0 18px 8px; gap: 12px; color: var(--gas-ink-1);
+  background: var(--gas-surface-0); font: 13px/1.5 "WaterPulse Sans","Microsoft YaHei UI","PingFang SC",system-ui,sans-serif;
+  overflow: hidden; isolation: isolate;
+}
+.gas-workbench *, .gas-workbench *::before, .gas-workbench *::after { box-sizing: border-box; }
+.gas-workbench .gas-app-bar {
+  min-height: 66px; display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--gas-border); flex-shrink: 0;
+}
+.gas-workbench .gas-app-brand { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+.gas-workbench .gas-app-brand h1 { margin: 0; font-size: 19px; font-weight: 650; line-height: 1.4; letter-spacing: .03em; }
+.gas-workbench .gas-app-brand span:not(.gas-brand-mark) { color: var(--gas-ink-2); font-size: 11px; }
+.gas-workbench .gas-brand-mark { width: 36px; height: 36px; border: 1px solid var(--gas-border-strong); background: var(--gas-brand-soft); color: var(--gas-brand-strong); border-radius: 9px; box-shadow: none; font-size: 20px; }
+.gas-workbench .gas-mode-switch { display: flex; align-items: center; gap: 4px; margin-left: 18px; }
+.gas-workbench .gas-app-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-left: auto; }
+.gas-cockpit-unified.gas-workbench button, .gas-workbench .gas-view-settings > summary {
+  color: var(--gas-ink-2); background: var(--gas-surface-2); border: 1px solid var(--gas-border);
+  border-radius: 6px; padding: 6px 10px; font: inherit; cursor: pointer; box-shadow: none;
+  transition: background-color .14s ease, border-color .14s ease, color .14s ease;
+}
+.gas-cockpit-unified.gas-workbench button:hover { background: var(--gas-surface-3); color: var(--gas-ink-1); border-color: var(--gas-border-strong); }
+.gas-cockpit-unified.gas-workbench button:disabled { opacity: .5; cursor: not-allowed; }
+.gas-cockpit-unified.gas-workbench button[aria-pressed="true"], .gas-workbench button.is-active {
+  color: var(--gas-brand-strong); border-color: var(--gas-brand); background: var(--gas-brand-soft);
+}
+.gas-workbench :focus-visible { outline: 2px solid var(--gas-brand); outline-offset: 3px; }
+.gas-cockpit-unified.gas-workbench .gas-provenance-badge {
+  color: var(--gas-warn); background: var(--gas-warn-soft); padding: 5px 9px; font-size: 12px; white-space: nowrap; margin-left: auto;
+}
+.gas-workbench .gas-assistant-entry span { display: inline-block; margin-left: 7px; font-size: 11px; color: var(--gas-ink-2); }
+.gas-workbench [data-agent-tone="ready"] { --agent-tone: var(--gas-success); --agent-bg: var(--gas-success-soft); }
+.gas-workbench [data-agent-tone="fallback"] { --agent-tone: var(--gas-warn); --agent-bg: var(--gas-warn-soft); }
+.gas-workbench [data-agent-tone="error"] { --agent-tone: var(--gas-danger); --agent-bg: var(--gas-danger-soft); }
+.gas-workbench [data-agent-tone="pending"] { --agent-tone: var(--gas-ink-2); --agent-bg: var(--gas-surface-2); }
+.gas-workbench .gas-assistant-entry span::before { content: ""; display: inline-block; width: 6px; height: 6px; margin: 0 5px 1px 0; border-radius: 50%; background: var(--agent-tone); }
+.gas-workbench .gas-view-settings { position: relative; }
+.gas-workbench .gas-view-settings > summary { list-style: none; }
+.gas-workbench .gas-settings-content { position: absolute; z-index: 80; top: calc(100% + 10px); right: 0; width: 355px; max-height: 75dvh; overflow-y: auto; padding: 16px; background: var(--gas-surface-1); border: 1px solid var(--gas-border-strong); border-radius: var(--gas-radius-lg); box-shadow: var(--gas-shadow-lg); }
+.gas-workbench .gas-settings-content h2 { color: var(--gas-ink-2); font-size: 13px; margin: 8px 0; }
+.gas-workbench .gas-layout-options, .gas-workbench .gas-settings-actions { display: flex; flex-wrap: wrap; gap: 5px; }
+.gas-workbench .gas-settings-actions { border-top: 1px solid var(--gas-border); padding-top: 12px; margin-top: 12px; }
+.gas-workbench .gas-window-options { display: grid; gap: 4px; }
+.gas-workbench .gas-window-options button { display: flex; align-items: center; justify-content: space-between; gap: 8px; text-align: left; }
+.gas-workbench .gas-window-options small { color: var(--gas-ink-3); font-size: 11px; flex-shrink: 0; }
+.gas-cockpit-unified.gas-workbench .gas-record-summary { position: relative; margin: 0; padding: 0 0 18px; border: 0; background: transparent; box-shadow: none; flex-shrink: 0; }
+.gas-cockpit-unified.gas-workbench .gas-record-summary dl { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 12px; margin: 0; }
+.gas-workbench .gas-record-summary dl > div { background: var(--gas-surface-1); border: 1px solid var(--gas-border); border-radius: var(--gas-radius); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+.gas-workbench .gas-record-summary dt { color: var(--gas-ink-2); font-size: 12px; }
+.gas-cockpit-unified.gas-workbench .gas-record-summary dd { margin: 0; color: var(--gas-ink-1); font-size: 28px; font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.gas-workbench .gas-count-explanation { position: absolute; top: calc(100% - 15px); right: 0; z-index: 20; color: var(--gas-ink-2); font-size: 11px; max-width: min(560px,90vw); }
+.gas-workbench .gas-count-explanation summary { text-align: right; cursor: pointer; }
+.gas-workbench .gas-count-explanation p { background: var(--gas-surface-1); padding: 12px; border: 1px solid var(--gas-border); box-shadow: var(--gas-shadow); font-size: 12px; }
+.gas-cockpit-unified.gas-workbench .gas-unified-workspace { --gas-left: 280px; --gas-right: 322px; grid-template-columns: var(--gas-left) minmax(0,1fr) var(--gas-right); grid-template-rows: minmax(0,1fr) 176px; gap: 12px; grid-template-areas: "scenario topology selected" "tasks timeline selected"; }
+.gas-cockpit-unified.gas-workbench .gas-layout-analysis { --gas-left: 300px; --gas-right: 360px; }
+.gas-cockpit-unified.gas-workbench .gas-layout-compact { --gas-left: 230px; --gas-right: 280px; grid-template-rows: minmax(0,1fr) 134px; }
+.gas-cockpit-unified.gas-workbench .gas-window { border: 1px solid var(--gas-border); border-radius: var(--gas-radius); background: var(--gas-surface-1); box-shadow: var(--gas-shadow); overflow: hidden; }
+.gas-cockpit-unified.gas-workbench .gas-window-head { min-height: 42px; align-items: center; padding: 7px 12px; background: transparent; border-bottom: 1px solid var(--gas-border); flex-shrink: 0; gap: 7px; }
+.gas-cockpit-unified.gas-workbench .gas-window-head h2 { margin: 0; color: var(--gas-ink-1); font-size: 14px; line-height: 1.5; white-space: nowrap; }
+.gas-cockpit-unified.gas-workbench .gas-window-close { padding: 0; background: transparent; border-color: transparent; margin-left: auto; flex-shrink: 0; width: 22px; height: 22px; }
+.gas-cockpit-unified.gas-workbench .gas-window-body { padding: 12px; font-size: 13px; }
+.gas-cockpit-unified.gas-workbench .gas-window-topology > .gas-window-body { padding: 8px; }
+.gas-cockpit-unified.gas-workbench .gas-map-mode { display: flex; gap: 4px; margin-left: auto; align-items: center; }
+.gas-cockpit-unified.gas-workbench .gas-map-mode button { padding: 3px 8px; font-size: 12px; }
+.gas-workbench .gas-fields dt, .gas-workbench small, .gas-workbench .gas-window-note { color: var(--gas-ink-2); }
+.gas-cockpit-unified.gas-workbench .gas-fields { font-size: 12px; }
+.gas-workbench .gas-fields dd { color: var(--gas-ink-1); overflow-wrap: anywhere; }
+.gas-cockpit-unified.gas-workbench .gas-fields > div { padding: 5px 0; border-bottom-color: var(--gas-border); }
+.gas-cockpit-unified.gas-workbench input, .gas-cockpit-unified.gas-workbench select, .gas-cockpit-unified.gas-workbench textarea { background: var(--gas-surface-0); border: 1px solid var(--gas-border-strong); border-radius: 6px; color: var(--gas-ink-1); font: inherit; min-width: 0; }
+.gas-workbench input[type="checkbox"] { accent-color: var(--gas-brand); }
+.gas-cockpit-unified.gas-workbench .gas-window-note { font-size: 12px; line-height: 1.6; }
+.gas-cockpit-unified.gas-workbench .gas-event-list button { padding: 12px; background: var(--gas-surface-2); }
+.gas-cockpit-unified.gas-workbench .gas-event-list button[aria-pressed="true"] { background: var(--gas-brand-soft); border-color: var(--gas-brand); }
+.gas-workbench .gas-event-list strong { color: var(--gas-ink-1); }
+.gas-cockpit-unified.gas-workbench .gas-event-list span, .gas-workbench .gas-event-list small { color: var(--gas-ink-2); font-size: 12px; }
+.gas-cockpit-unified.gas-workbench .gas-event-list .gas-severity-pill { color: var(--gas-warn); background: var(--gas-warn-soft); border: 0; }
+.gas-cockpit-unified.gas-workbench :is(.gas-priority-cue,.gas-district-summary-card,.gas-risk-readiness,.gas-official-ranking-slot,.gas-priority-evidence-slot,.gas-district-summary-slot,.gas-agent-turn,.gas-agent-result-card,.gas-cuv-boundaries li,.gas-agent-structured-grid > section,.gas-agent-locate-box) { background: var(--gas-surface-2); border-color: var(--gas-border); color: var(--gas-ink-1); border-radius: var(--gas-radius); }
+.gas-workbench :is(.gas-risk-panel,.gas-assistant-panel) h4, .gas-workbench .gas-district-summary-card summary { color: var(--gas-brand-strong); }
+.gas-cockpit-unified.gas-workbench .gas-inline-empty { background: var(--gas-surface-2); color: var(--gas-ink-2); border-color: var(--gas-border); }
+.gas-workbench :is(.gas-cuv-pill,.gas-status-warn,.gas-mode-pill) { color: var(--gas-warn); background: var(--gas-warn-soft); border-color: var(--gas-border); }
+.gas-cockpit-unified.gas-workbench .gas-task-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+.gas-cockpit-unified.gas-workbench .gas-task-list button { padding: 5px 7px; font-size: 12px; }
+.gas-cockpit-unified.gas-workbench .gas-task-list button span { display: none; }
+.gas-cockpit-unified.gas-workbench .gas-agent-quick-entry { margin-bottom: 7px; }
+.gas-cockpit-unified.gas-workbench .gas-agent-quick-entry input { width: 100%; font-size: 12px; }
+.gas-workbench .gas-timeline-track { margin-top: 12px; }
+.gas-cockpit-unified.gas-workbench .gas-timeline-event { background: var(--gas-surface-2); border-color: var(--gas-border); color: var(--gas-ink-1); padding: 7px 10px; }
+.gas-workbench .gas-timeline-event::before { background: var(--gas-ink-3); border-color: var(--gas-surface-1); }
+.gas-cockpit-unified.gas-workbench .gas-timeline-event.is-active { background: var(--gas-brand-soft); border-color: var(--gas-brand); }
+.gas-cockpit-unified.gas-workbench .gas-timeline-track::before { background: var(--gas-border-strong); }
+.gas-cockpit-unified.gas-workbench .gas-timeline-controls { gap: 8px; font-size: 12px; }
+.gas-workbench .gas-cockpit-footer { color: var(--gas-ink-2); font-size: 11px; flex-shrink: 0; }
+.gas-cockpit-unified.gas-workbench .gas-cockpit-dialog { color: var(--gas-ink-1); background: var(--gas-surface-1); border: 1px solid var(--gas-border-strong); border-radius: var(--gas-radius-lg); box-shadow: var(--gas-shadow-lg); padding: 16px; }
+.gas-workbench .gas-cockpit-dialog::backdrop { background: rgba(2,8,16,.5); backdrop-filter: none; }
+.gas-cockpit-unified.gas-workbench .gas-dialog-bar { color: var(--gas-ink-1); border-color: var(--gas-border); padding-bottom: 12px; }
+.gas-workbench .gas-dialog-bar > strong { font-size: 16px; }
+.gas-cockpit-unified.gas-workbench .gas-assistant-drawer { margin: 0 0 0 auto; height: 100dvh; max-height: 100dvh; width: min(560px,96vw); max-width: 96vw; border-radius: 0; padding: 20px; }
+.gas-workbench .gas-assistant-drawer .gas-dialog-bar { position: sticky; top: -20px; z-index: 2; background: var(--gas-surface-1); padding-top: 10px; }
+.gas-workbench .gas-agent-health-card { padding: 12px; border-radius: var(--gas-radius); background: var(--agent-bg); border: 1px solid var(--gas-border); margin-bottom: 14px; }
+.gas-workbench .gas-agent-health-card h3 { color: var(--agent-tone); font-size: 15px; margin: 0; }
+.gas-workbench .gas-agent-health-card p { margin: 5px 0; }
+.gas-workbench .gas-agent-health-card span { font-size: 12px; color: var(--gas-ink-2); }
+.gas-cockpit-unified.gas-workbench .gas-agent-input-form textarea { padding: 12px; margin-top: 6px; min-height: 80px; }
+.gas-workbench .gas-agent-form-actions button[type="submit"] { color: var(--gas-surface-1); background: var(--gas-brand); }
+.gas-workbench .gas-agent-chips button { font-size: 12px; }
+.gas-workbench .gas-assistant-panel pre { background: var(--gas-surface-0); color: var(--gas-ink-1); padding: 10px; }
+.gas-workbench :is(.gas-asset-detail,.gas-event-detail,.gas-panel) { color: var(--gas-ink-1); background: transparent; border-color: var(--gas-border); }
+.gas-cockpit-unified.gas-workbench .gas-directory-table-wrap { border-color: var(--gas-border); }
+.gas-workbench table { color: var(--gas-ink-1); background: var(--gas-surface-1); }
+.gas-workbench th { color: var(--gas-ink-2); background: var(--gas-surface-2); }
+.gas-workbench td, .gas-workbench th { border-color: var(--gas-border); }
+.gas-cockpit-unified.gas-workbench :is(.gas-map-canvas,.gas-gis-canvas) { background: var(--gas-surface-0); border: 1px solid var(--gas-border); box-shadow: none; }
+.gas-cockpit-unified.gas-workbench :is(.gas-map-toolbar,.gas-map-bottombar) { color: var(--gas-ink-2); background: transparent; gap: 8px; }
+.gas-workbench .gas-map-toolbar-title { color: var(--gas-ink-2); font-size: 12px; }
+.gas-workbench .gas-map-gesture-hint { background: var(--gas-surface-1); color: var(--gas-ink-2); }
+.gas-cockpit-unified.gas-workbench .gas-topology-edge { stroke: var(--gas-brand); opacity: .6; }
+.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-disabled { stroke: var(--gas-warn); opacity: 1; }
+.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-selected { stroke: var(--gas-brand-strong); stroke-width: 4; opacity: 1; filter: none; }
+.gas-cockpit-unified.gas-workbench .gas-topology-selected-halo { stroke: var(--gas-brand-soft); filter: none; animation: none; }
+.gas-cockpit-unified.gas-workbench .gas-topology-node :is(circle,rect) { fill: var(--gas-surface-3); stroke: var(--gas-ink-2); filter: none; animation: none; }
+.gas-cockpit-unified.gas-workbench .gas-node-source rect { fill: var(--gas-sea); stroke: var(--gas-ink-1); }
+.gas-cockpit-unified.gas-workbench .gas-node-valve rect { fill: var(--gas-warn-soft); stroke: var(--gas-warn); }
+.gas-cockpit-unified.gas-workbench .gas-node-regulator circle { fill: var(--gas-brand-soft); stroke: var(--gas-brand); }
+.gas-cockpit-unified.gas-workbench .gas-topology-node.is-unreachable :is(circle,rect) { fill: var(--gas-danger-soft); stroke: var(--gas-danger); }
+.gas-cockpit-unified.gas-workbench .gas-topology-node.is-selected :is(circle,rect), .gas-workbench .gas-topology-node:focus-visible :is(circle,rect) { stroke: var(--gas-brand-strong); stroke-width: 3.5; filter: none; }
+.gas-workbench .gas-topology-node text { fill: var(--gas-ink-1); }
+.gas-workbench .gas-gis-chongqing-boundary { fill: var(--gas-map-land); stroke: var(--gas-map-line); }
+.gas-workbench .gas-gis-river { stroke: var(--gas-map-river); }
+.gas-cockpit-unified.gas-workbench .gas-gis-district-node circle { fill: var(--gas-surface-1); stroke: var(--gas-brand); }
+.gas-cockpit-unified.gas-workbench .gas-gis-district-node text { fill: var(--gas-ink-1); stroke: var(--gas-surface-0); }
+.gas-workbench .gas-gis-district-node.is-selected circle { fill: var(--gas-brand); }
+.gas-cockpit-unified.gas-workbench .gas-district-panel { top: auto; bottom: 30px; color: var(--gas-ink-1); background: var(--gas-surface-1); border-color: var(--gas-border-strong); box-shadow: var(--gas-shadow); font-size: 12px; }
+.gas-workbench .gas-district-panel-head strong, .gas-workbench .gas-cuv-boundaries li strong { color: var(--gas-ink-1); }
+.gas-workbench .gas-district-panel-head span { color: var(--gas-brand-strong); }
+.gas-cockpit-unified.gas-workbench .gas-gis-unavailable-bar { color: var(--gas-warn); background: var(--gas-surface-1); border-color: var(--gas-border); border-left-color: var(--gas-warn); max-width: min(560px,calc(100% - 16px)); font-size: 12px; }
+.gas-workbench .gas-gis-unavailable-bar strong { color: var(--gas-warn); }
+.gas-workbench .gas-gis-unavailable-bar span { display: none; }
+.gas-workbench .gas-gis-unavailable-bar:hover span, .gas-workbench .gas-gis-unavailable-bar:focus-within span { display: inline; }
+.gas-cockpit-unified.gas-workbench .gas-gis-locate-banner { color: var(--gas-ink-1); background: var(--gas-surface-1); border-color: var(--gas-border-strong); }
+.gas-workbench .gas-gis-locate-banner p { color: var(--gas-ink-2); }
+.gas-workbench .gas-cuv-boundaries li code { color: var(--gas-warn); }
+/* Compact workstations retain all controls; only secondary copy is collapsed. */
+@media (max-width:1450px) and (min-width:961px) {
+  .gas-cockpit-page.gas-workbench { padding: 0 12px 6px; gap: 8px; }
+  .gas-workbench .gas-app-bar { gap: 8px; min-height: 58px; }
+  .gas-workbench .gas-app-brand h1 { font-size: 16px; }
+  .gas-workbench .gas-app-brand span:not(.gas-brand-mark) { display: none; }
+  .gas-workbench .gas-brand-mark { width: 28px; height: 28px; }
+  .gas-workbench .gas-mode-switch { margin-left: 0; gap: 2px; }
+  .gas-workbench .gas-app-actions { gap: 5px; }
+  .gas-workbench .gas-app-bar button, .gas-workbench .gas-view-settings > summary { padding: 5px 7px; font-size: 12px; }
+  .gas-workbench .gas-record-summary dl { gap: 8px; }
+  .gas-workbench .gas-record-summary dl > div { padding: 9px; }
+  .gas-workbench .gas-record-summary dt { font-size: 11px; }
+  .gas-cockpit-unified.gas-workbench .gas-record-summary dd { font-size: 24px; }
+  .gas-cockpit-unified.gas-workbench .gas-unified-workspace { --gas-left: 220px; --gas-right: 270px; gap: 8px; grid-template-rows: minmax(0,1fr) 152px; }
+  .gas-cockpit-unified.gas-workbench .gas-layout-analysis { --gas-left: 238px; --gas-right: 294px; }
+  .gas-cockpit-unified.gas-workbench .gas-layout-compact { --gas-left: 196px; --gas-right: 244px; }
+  .gas-cockpit-unified.gas-workbench .gas-window-head { padding: 5px 8px; min-height: 36px; }
+  .gas-cockpit-unified.gas-workbench .gas-window-body { padding: 8px; }
+  .gas-workbench .gas-window-head h2 { font-size: 13px; }
+  .gas-workbench .gas-gis-toolbar .gas-map-toolbar-title { display: none; }
+  .gas-cockpit-unified.gas-workbench .gas-task-list button { font-size: 11px; padding: 3px; }
+}
+@media (max-width:1160px) and (min-width:961px) {
+  .gas-workbench .gas-app-bar { gap: 7px; }
+  .gas-workbench .gas-provenance-badge { order: 3; margin-left: 0; }
+  .gas-workbench .gas-app-actions { margin-left: auto; }
+  .gas-cockpit-unified.gas-workbench .gas-unified-workspace { --gas-left: 190px; --gas-right: 250px; }
+  .gas-cockpit-unified.gas-workbench .gas-layout-analysis { --gas-left: 200px; --gas-right: 270px; }
+  .gas-cockpit-unified.gas-workbench .gas-layout-compact { --gas-left: 178px; --gas-right: 230px; }
+  .gas-workbench .gas-record-summary dt { max-width: 64px; }
+}
+@media (max-width:960px) {
+  .gas-cockpit-page.gas-workbench { height: auto; min-height: 100dvh; overflow: visible; padding: 10px; }
+  .gas-workbench .gas-app-bar { gap: 10px; padding-top: 0; }
+  .gas-workbench .gas-app-brand h1 { font-size: 17px; }
+  .gas-workbench .gas-mode-switch { order: 3; margin: 0; width: 100%; }
+  .gas-workbench .gas-app-actions { margin-left: 0; }
+  .gas-workbench .gas-provenance-badge { margin-left: 0; }
+  .gas-workbench .gas-view-settings .gas-settings-content { position: fixed; top: 130px; left: 10px; right: 10px; width: auto; }
+  .gas-cockpit-unified.gas-workbench .gas-record-summary dl { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; }
+  .gas-workbench .gas-record-summary dl > div { padding: 8px; flex-direction: column; }
+  .gas-cockpit-unified.gas-workbench .gas-record-summary dd { font-size: 23px; }
+  .gas-cockpit-unified.gas-workbench .gas-unified-workspace { grid-template-columns: minmax(0,1fr); grid-template-rows: auto; grid-template-areas: "scenario" "topology" "selected" "timeline" "tasks"; gap: 12px; }
+  .gas-cockpit-unified.gas-workbench .gas-window-topology { min-height: 420px; height: 520px; }
+  .gas-cockpit-unified.gas-workbench .gas-window-timeline { min-height: 200px; }
+  .gas-workbench .gas-event-list { grid-template-columns: 1fr; }
+  .gas-workbench .gas-cockpit-footer { display: flex; flex-wrap: wrap; gap: 4px; }
+}
+@media (prefers-reduced-motion:reduce) { .gas-workbench *, .gas-workbench *::before, .gas-workbench *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-event-list > button small,
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-event-list > button > span:not(.gas-event-meta-top),
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-map-selection { color: var(--gas-ink-2); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-mode-message { color: var(--gas-warn); background: var(--gas-warn-soft); border-color: var(--gas-warn); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-scenario-conditions summary,
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-schematic-context summary { color: var(--gas-brand-strong); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-scenario-conditions,
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-schematic-context,
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-compact-associated { border-color: var(--gas-border); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge:not(.is-disabled):not(.is-selected) { stroke: var(--gas-brand); opacity: .72; }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge-halo { stroke: var(--gas-brand); opacity: .23; filter: none; }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-selected:not(.is-disabled) { stroke: var(--gas-brand-strong); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-disabled.is-selected { stroke: var(--gas-warn); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node:not(.is-unreachable):not(.is-selected):not(:focus-visible) :is(circle,rect) { fill: var(--gas-surface-3); stroke: var(--gas-ink-2); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node.gas-node-source:not(.is-unreachable):not(.is-selected) rect { fill: var(--gas-sea); stroke: var(--gas-ink-1); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node.gas-node-valve:not(.is-unreachable):not(.is-selected):not(:focus-visible) rect { fill: var(--gas-brand-soft); stroke: var(--gas-brand); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node text { fill: var(--gas-ink-1); stroke: var(--gas-surface-0); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node .gas-node-core { fill: var(--gas-brand); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-timeline-time { color: var(--gas-brand-strong); }
+.gas-workbench .gas-priority-cue summary { cursor: pointer; font-size: 12px; }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-priority-cue .gas-severity-pill { color: var(--gas-warn); background: var(--gas-warn-soft); border-color: var(--gas-border); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-empty-selection { text-align: left; padding: 14px 4px; color: var(--gas-ink-2); }
+.gas-workbench .gas-empty-selection h3 { color: var(--gas-ink-1); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-notice { color: var(--gas-ink-2); background: var(--gas-surface-2); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-read-error, .gas-workbench .gas-inline-route-error { color: var(--gas-danger); background: var(--gas-danger-soft); border-color: var(--gas-danger); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-window-topology > .gas-window-head .gas-window-close { margin-left: 0; }
+.gas-workbench .gas-priority-cue-head strong { font-weight: 500; }
+@media (max-width:1100px) and (min-width:961px) and (max-height:760px) {
+  .gas-cockpit-page.gas-workbench { height: auto; min-height: 100dvh; overflow: visible; }
+  .gas-cockpit-unified.gas-workbench .gas-unified-workspace { flex: none; height: 620px; }
+}
+
+/* Competition exposes a domain switch in the existing cockpit header. */
+.gas-workbench .gas-domain-switch { display: flex; gap: 4px; flex-shrink: 0; }
+.gas-workbench .gas-domain-switch button[aria-current="page"] { color: var(--gas-brand-strong); background: var(--gas-brand-soft); }
+[data-product-edition="competition"] .gas-workbench .gas-mode-switch { margin-left: 0; }
+
+.gas-workbench .gas-selection-breadcrumb { display: grid; gap: 3px; min-width: 0; overflow-wrap: anywhere; }
+.gas-workbench .gas-selection-breadcrumb span:first-child:not(:last-child) { color: var(--gas-ink-2); }
+.gas-workbench .gas-related-group { margin-top: 8px; }
+.gas-workbench .gas-related-group h4 { margin: 0 0 4px; color: var(--gas-ink-2); font-size: 12px; }
+.gas-workbench .gas-related-group .gas-related-list { margin-top: 4px; }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-associated {
+  stroke: var(--gas-brand-strong);
+  stroke-width: 2.8;
+  stroke-dasharray: 4 3;
+}
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-edge.is-disabled.is-associated { stroke: var(--gas-warn); }
+.gas-cockpit-page.gas-cockpit-unified.gas-workbench .gas-topology-node.is-associated :is(circle, rect) {
+  stroke: var(--gas-brand-strong);
+  stroke-width: 2.8;
+  stroke-dasharray: 3 2;
+}
+
+.gas-event-disposition {
+  margin-top: 0.875rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--gas-line, currentColor);
+}
+.gas-event-disposition input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.65rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--gas-line, currentColor);
+  border-radius: 0.375rem;
+}
+.gas-event-disposition [role="alert"] {
+  font-weight: 600;
+}
+
+.gas-monitoring-panel { margin-bottom: 16px; }
+.gas-monitoring-panel h3, .gas-monitoring-panel h4 { margin: 0; }
+.gas-monitoring-panel :is(p, dl) { margin: 6px 0; }
+.gas-monitoring-panel summary { cursor: pointer; }
+.gas-monitoring-package { margin: 10px 0; }
+.gas-monitoring-channels {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 8px;
+}
+.gas-monitoring-channel {
+  min-width: 0; padding: 10px; border: 1px solid var(--gas-border); border-radius: var(--gas-radius);
+  background: var(--gas-surface-2); overflow-wrap: anywhere;
+}
+.gas-monitoring-channel-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.gas-monitoring-channel-head button { margin-inline-start: auto; }
+.gas-monitoring-state {
+  padding: 2px 6px; border-radius: 4px; color: var(--gas-ink-2); background: var(--gas-surface-3);
+}
+.gas-monitoring-state[data-state="limit_exceeded"], [data-monitoring-event="limit_exceeded"] summary strong { color: var(--gas-danger); }
+.gas-monitoring-state[data-state="data_missing"], [data-monitoring-event="data_missing"] summary strong { color: var(--gas-warn); }
+.gas-monitoring-state[data-state="normal"], [data-monitoring-event="recovered"] summary strong { color: var(--gas-success); }
+.gas-monitoring-history { display: grid; gap: 5px; list-style: none; padding: 0; }
+.gas-monitoring-history > li { border-top: 1px solid var(--gas-border); padding-top: 5px; }
+.gas-monitoring-history summary time { color: var(--gas-ink-2); }
+.gas-monitoring-readings > ul { margin: 4px 0; padding-inline-start: 18px; }
+.gas-monitoring-source { overflow-wrap: anywhere; }
+
+.gas-cuv-replay { margin-bottom: 14px; }
+.gas-cuv-replay :is(h3,h4,h5,p) { margin: 0; }
+.gas-cuv-replay :is(code,time) { overflow-wrap: anywhere; }
+.gas-cuv-replay summary { cursor: pointer; }
+.gas-cuv-replay .gas-cuv-card { min-width: 0; display: grid; align-content: start; gap: 8px; }
+.gas-cuv-replay :is(.gas-cuv-overview,.gas-cuv-evidence) { display: grid; gap: 8px; margin-top: 10px; }
+.gas-cuv-replay .gas-cuv-plan-grid {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,340px),1fr)); gap: 8px; margin: 10px 0;
+}
+.gas-cuv-plan-grid > article, .gas-cuv-evidence > section {
+  border: 1px solid var(--gas-border); background: var(--gas-surface-2); border-radius: var(--gas-radius); padding: 10px;
+}
+.gas-cuv-replay :is(.gas-cuv-constraint-list,.gas-cuv-phase-list,.gas-cuv-evidence-list) {
+  margin: 0; padding: 0; list-style: none; display: grid; gap: 6px;
+}
+.gas-cuv-replay :is(.gas-cuv-phase-list,.gas-cuv-evidence-list) > li { padding-top: 5px; border-top: 1px solid var(--gas-border); }
+.gas-cuv-phase-list li > details > dl { margin-top: 6px; }
+.gas-cuv-replay .gas-cuv-links { display: flex; flex-wrap: wrap; gap: 4px; margin-block: 4px; }
+.gas-cuv-replay .gas-cuv-links button { white-space: normal; overflow-wrap: anywhere; text-align: left; }
+.gas-cuv-replay .gas-cuv-status { color: var(--gas-warn); }
+.gas-cuv-replay .gas-cuv-summary-line { color: var(--gas-ink-2); }
+.gas-cuv-replay .gas-monitoring-history { margin-block: 5px; }
+
+.gas-cuv-collaboration {
+  margin-block: 12px;
+  padding: 10px;
+  border: 1px solid var(--gas-border);
+  border-radius: var(--gas-radius);
+  background: var(--gas-surface-2);
+}
+.gas-cuv-collaboration > summary { font-weight: 600; color: var(--gas-ink-1); }
+.gas-cuv-collaboration:not([open]) > :not(summary) { display: none; }
+.gas-cuv-criteria-form fieldset {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 8px;
+  min-inline-size: 0;
+  margin: 6px 0;
+  border: 1px solid var(--gas-border);
+  border-radius: var(--gas-radius);
+}
+.gas-cuv-criteria-form label { display: grid; gap: 3px; }
+.gas-cuv-criteria-form :is(input,select) { min-width: 0; width: 100%; }
+.gas-cuv-review, .gas-cuv-ranked { padding: 8px; border-left: 2px solid var(--gas-border); }
+.gas-cuv-ranked li + li { margin-top: 5px; }
+
+.gas-pilot-replay { display: grid; gap: 12px; min-width: 0; }
+.gas-pilot-time { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.gas-pilot-table { width: 100%; border-collapse: collapse; overflow-wrap: anywhere; }
+.gas-pilot-table th, .gas-pilot-table td { text-align: left; vertical-align: top; padding: 6px; }
+.gas-pilot-table tbody tr + tr { border-top: 1px solid var(--gas-line, currentColor); }
+@media (max-width: 560px) { .gas-pilot-time { grid-template-columns: 1fr; } }
+
+.gas-pilot-figure { margin: 8px 0; min-width: 0; }
+.gas-pilot-figure canvas { display: block; width: 100%; height: auto; border-radius: 6px; margin-top: 6px; }
+.gas-pilot-citations { display: flex; flex-direction: column; gap: 5px; list-style: none; padding: 0; }
+.gas-pilot-citations li { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.gas-workbench { --gas-pilot-suspect: #bb9bf5; --gas-pilot-missing: rgb(165 133 227 / 25%); }
+.gas-workbench[data-theme="light"] { --gas-pilot-suspect: #7146a2; --gas-pilot-missing: rgb(115 79 165 / 15%); }
+.gas-pilot-trend canvas, .gas-pilot-figure canvas[aria-label^="历史观测"] { cursor: crosshair; }
+.gas-pilot-legend, .gas-pilot-threshold-strip {
+  display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center;
+  margin: 7px 0; padding: 0; list-style: none; color: var(--gas-ink-2);
+}
+.gas-pilot-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.gas-pilot-legend li::before { content: ""; width: 8px; height: 8px; background: var(--gas-brand-strong); border-radius: 50%; }
+.gas-pilot-legend li[data-mark="alarm"]::before { background: var(--gas-warn); }
+.gas-pilot-legend li[data-mark="quality"]::before { background: var(--gas-pilot-suspect); border-radius: 2px; }
+.gas-pilot-legend li[data-mark="recovery"]::before { background: var(--gas-success); width: 4px; height: 11px; border-radius: 1px; }
+.gas-pilot-threshold-strip strong { color: var(--gas-warn); }
+.gas-pilot-threshold-strip time { font-variant-numeric: tabular-nums; }
+.gas-pilot-diagnostics { margin: 8px 0; }
+.gas-pilot-diagnostics summary { cursor: pointer; }
+.gas-pilot-diagnostics details { margin: 8px 0 2px 8px; }
+.gas-pilot-issues li[data-severity="error"] strong { color: var(--gas-danger); }
+.gas-pilot-issues li[data-severity="warning"] strong { color: var(--gas-warn); }
+.gas-pilot-topology { margin-inline: 0; }
+.gas-pilot-topology > div { display: flex; align-items: center; gap: 10px; margin: 12px 0; }
+.gas-pilot-topology > div code { overflow-wrap: anywhere; }
+.gas-pilot-topology > div span { flex: 1 0 32px; border-top: 3px solid var(--gas-brand-strong); }

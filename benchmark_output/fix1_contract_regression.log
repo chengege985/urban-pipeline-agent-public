@@ -1,0 +1,8 @@
+/tmp/m2-fix1-openapi-kwgX/openapi.json
+dc52322e26cf583f7c777d125121ece99e42f7e2256ffeed6a57322429154b38  /tmp/m2-fix1-openapi-kwgX/openapi.json
+dc52322e26cf583f7c777d125121ece99e42f7e2256ffeed6a57322429154b38  engineering/04_实施方案/02_接口与数据/openapi/waterpipnet-platform.openapi.json
+generated /tmp/wpn_m2_backend_fix1/web/src/generated/platformOpenapi.ts
+sha256=dc52322e26cf583f7c777d125121ece99e42f7e2256ffeed6a57322429154b38
+schemas=85
+platform type contract: 7 assertions passed
+STATUS_OPENAPI=0 STATUS_COMPARE=0 STATUS_GENERATOR=0 STATUS_TYPES=0

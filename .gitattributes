@@ -1,0 +1,2 @@
+# Preserve exact imported bytes, including frozen kernel SHA identities.
+* -text

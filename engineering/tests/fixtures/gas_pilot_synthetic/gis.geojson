@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "source_record_id": "shape-a",
+        "geometry_id": "syn-gas-pilot-line-a",
+        "pipe_id": "syn-gas-pilot-pipe-a",
+        "crs": "EPSG:4326",
+        "scope_ref": "syn-gas-pilot-example-scope",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0,
+            0.002
+          ],
+          [
+            0.01,
+            0.003
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "source_record_id": "shape-b",
+        "geometry_id": "syn-gas-pilot-line-b",
+        "pipe_id": "syn-gas-pilot-pipe-b",
+        "crs": "EPSG:4326",
+        "scope_ref": "syn-gas-pilot-example-scope",
+        "valid_from": "2026-01-01",
+        "valid_until": "2026-12-31"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0.01,
+            0.002
+          ],
+          [
+            0.02,
+            0.003
+          ]
+        ]
+      }
+    }
+  ]
+}

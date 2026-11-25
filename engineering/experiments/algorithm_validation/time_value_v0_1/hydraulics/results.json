@@ -1,0 +1,480 @@
+{
+  "schema_version": "hydraulic-fixture-0.1.0",
+  "generated_at_utc": "2026-11-01T11:32:59.715957+00:00",
+  "scope": "synthetic steady-state benchmark, not a calibrated business model or API",
+  "versions": {
+    "python": "3.12.14",
+    "wntr": "1.4.0",
+    "networkx": "3.7",
+    "epanet": "2.2.0 (native code 20200)"
+  },
+  "input_hashes": {
+    "experiments\\algorithm_validation\\time_value_v0_1\\hydraulics\\normal_pda.inp": "57dfbfc45e0a569cc71ebdc84b24a080cfa4cbf069e3dbcaef584b6f74fcf9f0"
+  },
+  "fixture_provenance": {
+    "exported_from": "src/cuv_reference/run_example.py:build_network",
+    "legacy_local_input_hashes_at_export": {
+      "04_实施方案/对接样例_v0.2/nodes.csv": "a41d7b03b3578348cd00744e82d6344ee4972037c0923841a09f0c954fbe4735",
+      "04_实施方案/对接样例_v0.2/pipes.csv": "bbc29655a94e340c4a0fd4232337dcebe24405ba1cc844c117e9797ff13994ff"
+    },
+    "legacy_source_sha256_at_export": "5fe48b793eb62835ef2474301e110362cc388489ed630314974f8c331fdf4ea8",
+    "base_fixture": "normal_pda.inp",
+    "case_overrides": "normal: P1 open/P4 closed; fault: both closed; backup: P1 closed/P4 open; demand model from CASES",
+    "runtime_requires_legacy_source_or_csv": false
+  },
+  "source_code": {
+    "reference": "portable standard INP fixtures exported from cuv_reference",
+    "reference_sha256": "5fe48b793eb62835ef2474301e110362cc388489ed630314974f8c331fdf4ea8",
+    "benchmark_sha256": "6e3a9f402b29a7c897b1eee92601cdc5e52f43f8ac5da5dc3fb90e1dcbd273d1"
+  },
+  "assumptions": {
+    "source_heads_m": {
+      "S": 60,
+      "B": 42
+    },
+    "demand_m3h": {
+      "H": 7.2,
+      "R": 10.8
+    },
+    "minimum_pressure_m": 0,
+    "required_pressure_m": 20,
+    "pressure_exponent": 0.5,
+    "threshold_authority": "fixture_only",
+    "duration_s": 0,
+    "headloss": "Hazen-Williams",
+    "storage_pumps_quality": "none; no water quality acceptance claim",
+    "hydraulic_accuracy": 1e-05,
+    "trials": 200,
+    "headerror_m": 1e-07,
+    "flowchange_m3s": 1e-09,
+    "service_ratio_tolerance": 0.0001,
+    "pressure_tolerance_m": 1e-05
+  },
+  "units": {
+    "inp_and_native_toolkit_flow": "L/s",
+    "result_flow": "m3/s",
+    "result_display_flow": "m3/h",
+    "pressure": "m water head (not MPa)",
+    "native_conversion": "L/s divided by 1000; m3/s multiplied by 3600"
+  },
+  "cases": [
+    {
+      "case_id": "normal_pda",
+      "mode": "normal",
+      "demand_model": "PDD",
+      "data_class": "synthetic_fixture",
+      "model_class": "candidate",
+      "nodes": {
+        "J": {
+          "raw_pressure_head_m": 49.79079455124562,
+          "raw_head_m": 59.79079455124561,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "H": {
+          "raw_pressure_head_m": 44.22990109396359,
+          "raw_head_m": 59.22990109396359,
+          "raw_demand_m3s": 0.0020000225104366562,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "R": {
+          "raw_pressure_head_m": 47.62588255303138,
+          "raw_head_m": 59.62588255303138,
+          "raw_demand_m3s": 0.003000025665423762,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "S": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 59.99999999999999,
+          "raw_demand_m3s": -0.005000064183048867,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        },
+        "B": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 42.0,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        }
+      },
+      "link_flows_m3s": {
+        "P1": 0.005000064183048867,
+        "P2": 0.0020000385176253003,
+        "P3": 0.0030000256654237833,
+        "P4": 0.0
+      },
+      "solver": {
+        "native_version_code": 20200,
+        "time_s": 0,
+        "warning_code": 0,
+        "warnings": [],
+        "status": "converged",
+        "api": "ENopenH -> ENinitH(0) -> ENrunH -> ENcloseH"
+      },
+      "targets": {
+        "H": {
+          "required_m3h": 7.2,
+          "graph_reachable": true,
+          "raw_pressure_head_m": 44.22990109396359,
+          "raw_delivered_m3h": 7.200081037571962,
+          "raw_supply_ratio": 1.000011255218328,
+          "useful_supply_m3h": 7.2,
+          "useful_supply_ratio": 1.0,
+          "fixture_hydraulic_satisfied": true,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "hydraulic_fixture_satisfied",
+          "pda_relation_residual_m3s": 2.2510436656179855e-08
+        },
+        "R": {
+          "required_m3h": 10.8,
+          "graph_reachable": true,
+          "raw_pressure_head_m": 47.62588255303138,
+          "raw_delivered_m3h": 10.800092395525544,
+          "raw_supply_ratio": 1.000008555141254,
+          "useful_supply_m3h": 10.8,
+          "useful_supply_ratio": 1.0,
+          "fixture_hydraulic_satisfied": true,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "hydraulic_fixture_satisfied",
+          "pda_relation_residual_m3s": 2.5665423761950246e-08
+        }
+      },
+      "mass_balance": {
+        "junction_and_source_residuals_m3s": {
+          "J": -2.1597307275911248e-16,
+          "H": 1.600718864402939e-08,
+          "R": 2.1250362580715887e-17,
+          "S": 0.0,
+          "B": 0.0
+        },
+        "source_net_outflow_m3s": 0.005000064183048867,
+        "junction_demand_sum_m3s": 0.005000048175860418,
+        "global_residual_m3s": 1.6007188448873e-08,
+        "max_node_abs_residual_m3s": 1.600718864402939e-08,
+        "absolute_tolerance_m3s": 1e-06,
+        "within_tolerance": true
+      },
+      "numeric_validation_status": "passed"
+    },
+    {
+      "case_id": "backup_pda",
+      "mode": "backup",
+      "demand_model": "PDD",
+      "data_class": "synthetic_fixture",
+      "model_class": "candidate",
+      "nodes": {
+        "J": {
+          "raw_pressure_head_m": 4.862463679538418,
+          "raw_head_m": 14.862463679538418,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "H": {
+          "raw_pressure_head_m": 0.057147523548681134,
+          "raw_head_m": 15.05714752354868,
+          "raw_demand_m3s": 0.00010690886169881442,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "R": {
+          "raw_pressure_head_m": 2.835447791383892,
+          "raw_head_m": 14.835447791383894,
+          "raw_demand_m3s": 0.0011295802344777246,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "S": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 59.99999999999999,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        },
+        "B": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 42.0,
+          "raw_demand_m3s": -0.001236447161805951,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        }
+      },
+      "link_flows_m3s": {
+        "P1": 0.0,
+        "P2": -0.0011295383001071488,
+        "P3": 0.001129580234477719,
+        "P4": 0.001236447161805951
+      },
+      "solver": {
+        "native_version_code": 20200,
+        "time_s": 0,
+        "warning_code": 0,
+        "warnings": [],
+        "status": "converged",
+        "api": "ENopenH -> ENinitH(0) -> ENrunH -> ENcloseH"
+      },
+      "targets": {
+        "H": {
+          "required_m3h": 7.2,
+          "graph_reachable": true,
+          "raw_pressure_head_m": 0.057147523548681134,
+          "raw_delivered_m3h": 0.3848719021157319,
+          "raw_supply_ratio": 0.05345443084940721,
+          "useful_supply_m3h": 0.3848719021157319,
+          "useful_supply_ratio": 0.05345443084940721,
+          "fixture_hydraulic_satisfied": false,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "hydraulic_fixture_unsatisfied",
+          "pda_relation_residual_m3s": 1.3552527156068805e-20
+        },
+        "R": {
+          "required_m3h": 10.8,
+          "graph_reachable": true,
+          "raw_pressure_head_m": 2.835447791383892,
+          "raw_delivered_m3h": 4.066488844119808,
+          "raw_supply_ratio": 0.3765267448259082,
+          "useful_supply_m3h": 4.066488844119808,
+          "useful_supply_ratio": 0.3765267448259082,
+          "fixture_hydraulic_satisfied": false,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "hydraulic_fixture_unsatisfied",
+          "pda_relation_residual_m3s": 0.0
+        }
+      },
+      "mass_balance": {
+        "junction_and_source_residuals_m3s": {
+          "J": -4.1934370570168716e-08,
+          "H": -1.2305694657710475e-17,
+          "R": -5.637851296924623e-18,
+          "S": 0.0,
+          "B": 0.0
+        },
+        "source_net_outflow_m3s": 0.001236447161805951,
+        "junction_demand_sum_m3s": 0.001236489096176539,
+        "global_residual_m3s": -4.193437058816647e-08,
+        "max_node_abs_residual_m3s": 4.1934370570168716e-08,
+        "absolute_tolerance_m3s": 1e-06,
+        "within_tolerance": true
+      },
+      "numeric_validation_status": "passed"
+    },
+    {
+      "case_id": "disconnected_pda",
+      "mode": "fault",
+      "demand_model": "PDD",
+      "data_class": "synthetic_fixture",
+      "model_class": "candidate",
+      "nodes": {
+        "J": {
+          "raw_pressure_head_m": 2.0000000130817064,
+          "raw_head_m": 12.000000013081706,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": false,
+          "node_type": "Junction"
+        },
+        "H": {
+          "raw_pressure_head_m": -2.9999999862383984,
+          "raw_head_m": 12.0000000137616,
+          "raw_demand_m3s": -2.787106286427583e-09,
+          "graph_reachable": false,
+          "node_type": "Junction"
+        },
+        "R": {
+          "raw_pressure_head_m": 1.2584053052933086e-08,
+          "raw_head_m": 12.000000012584055,
+          "raw_demand_m3s": 7.525173668400548e-08,
+          "graph_reachable": false,
+          "node_type": "Junction"
+        },
+        "S": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 59.99999999999999,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        },
+        "B": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 42.0,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        }
+      },
+      "link_flows_m3s": {
+        "P1": 0.0,
+        "P2": -3.065816263638566e-08,
+        "P3": 7.525186992263839e-08,
+        "P4": 0.0
+      },
+      "solver": {
+        "native_version_code": 20200,
+        "time_s": 0,
+        "warning_code": 0,
+        "warnings": [],
+        "status": "converged",
+        "api": "ENopenH -> ENinitH(0) -> ENrunH -> ENcloseH"
+      },
+      "targets": {
+        "H": {
+          "required_m3h": 7.2,
+          "graph_reachable": false,
+          "raw_pressure_head_m": -2.9999999862383984,
+          "raw_delivered_m3h": -1.0033582631139298e-05,
+          "raw_supply_ratio": -1.3935531432137914e-06,
+          "useful_supply_m3h": 0.0,
+          "useful_supply_ratio": 0.0,
+          "fixture_hydraulic_satisfied": false,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "no_source_path",
+          "pda_relation_residual_m3s": null
+        },
+        "R": {
+          "required_m3h": 10.8,
+          "graph_reachable": false,
+          "raw_pressure_head_m": 1.2584053052933086e-08,
+          "raw_delivered_m3h": 0.0002709062520624197,
+          "raw_supply_ratio": 2.5083912228001827e-05,
+          "useful_supply_m3h": 0.0,
+          "useful_supply_ratio": 0.0,
+          "fixture_hydraulic_satisfied": false,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "no_source_path",
+          "pda_relation_residual_m3s": null
+        }
+      },
+      "mass_balance": {
+        "junction_and_source_residuals_m3s": {
+          "J": -4.4593707286252725e-08,
+          "H": -2.7871056349958078e-08,
+          "R": 1.332386329041647e-13,
+          "S": 0.0,
+          "B": 0.0
+        },
+        "source_net_outflow_m3s": -0.0,
+        "junction_demand_sum_m3s": 7.24646303975779e-08,
+        "global_residual_m3s": -7.24646303975779e-08,
+        "max_node_abs_residual_m3s": 4.4593707286252725e-08,
+        "absolute_tolerance_m3s": 1e-06,
+        "within_tolerance": true
+      },
+      "numeric_validation_status": "passed"
+    },
+    {
+      "case_id": "backup_dda",
+      "mode": "backup",
+      "demand_model": "DD",
+      "data_class": "synthetic_fixture",
+      "model_class": "candidate",
+      "nodes": {
+        "J": {
+          "raw_pressure_head_m": -327.4252343961205,
+          "raw_head_m": -317.42523439612046,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "H": {
+          "raw_pressure_head_m": -331.2370280109536,
+          "raw_head_m": -316.2370280109536,
+          "raw_demand_m3s": 0.002,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "R": {
+          "raw_pressure_head_m": -329.5901437814809,
+          "raw_head_m": -317.5901437814809,
+          "raw_demand_m3s": 0.003,
+          "graph_reachable": true,
+          "node_type": "Junction"
+        },
+        "S": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 59.99999999999999,
+          "raw_demand_m3s": 0.0,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        },
+        "B": {
+          "raw_pressure_head_m": 0.0,
+          "raw_head_m": 42.0,
+          "raw_demand_m3s": -0.00499964935858482,
+          "graph_reachable": true,
+          "node_type": "Reservoir"
+        }
+      },
+      "link_flows_m3s": {
+        "P1": 0.0,
+        "P2": -0.002999649358584787,
+        "P3": 0.003000000000000743,
+        "P4": 0.00499964935858482
+      },
+      "solver": {
+        "native_version_code": 20200,
+        "time_s": 0,
+        "warning_code": 6,
+        "warnings": [
+          "WARNING: Negative pressures at 0:00:00 hrs."
+        ],
+        "status": "returned_with_warning",
+        "api": "ENopenH -> ENinitH(0) -> ENrunH -> ENcloseH"
+      },
+      "targets": {
+        "H": {
+          "required_m3h": 7.2,
+          "graph_reachable": true,
+          "raw_pressure_head_m": -331.2370280109536,
+          "raw_delivered_m3h": 7.2,
+          "raw_supply_ratio": 1.0,
+          "useful_supply_m3h": null,
+          "useful_supply_ratio": null,
+          "fixture_hydraulic_satisfied": null,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "unsupported_for_service_verdict",
+          "pda_relation_residual_m3s": null
+        },
+        "R": {
+          "required_m3h": 10.8,
+          "graph_reachable": true,
+          "raw_pressure_head_m": -329.5901437814809,
+          "raw_delivered_m3h": 10.8,
+          "raw_supply_ratio": 1.0,
+          "useful_supply_m3h": null,
+          "useful_supply_ratio": null,
+          "fixture_hydraulic_satisfied": null,
+          "business_service_satisfied": null,
+          "business_status": "insufficient_data_quality_and_business_thresholds",
+          "status": "unsupported_for_service_verdict",
+          "pda_relation_residual_m3s": null
+        }
+      },
+      "mass_balance": {
+        "junction_and_source_residuals_m3s": {
+          "J": -3.506414159560288e-07,
+          "H": 3.2959746043559335e-17,
+          "R": 7.428953285870676e-16,
+          "S": 0.0,
+          "B": 0.0
+        },
+        "source_net_outflow_m3s": 0.00499964935858482,
+        "junction_demand_sum_m3s": 0.005,
+        "global_residual_m3s": -3.506414151801737e-07,
+        "max_node_abs_residual_m3s": 3.506414159560288e-07,
+        "absolute_tolerance_m3s": 1e-06,
+        "within_tolerance": true
+      },
+      "numeric_validation_status": "passed"
+    }
+  ]
+}

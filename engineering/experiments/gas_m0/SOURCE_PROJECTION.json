@@ -1,0 +1,134 @@
+{
+  "status": "candidate_development_fix_pending_independent_review",
+  "source_commit": "7f6917accbbf4a1d0496db813cadbdcbeaaab337",
+  "server_repo": "/workdata/WaterPipNet/01_工程项目/experiments/gas_m0_fix_20261104/workspace/experiments/gas_m0_20261104",
+  "base_github_commit": "b057cdfd04467381f594ea1523684445b7494b0f",
+  "files": {
+    ".gitattributes": {
+      "isolated_source_path": ".gitattributes",
+      "sha256": "c1324d0c93dc67bb959b9359dae417427a29144423eae8c85a3f1f88c1447bac"
+    },
+    "README.md": {
+      "isolated_source_path": "docs/COLLABORATION.md",
+      "sha256": "208f2034bc5559fc03d5bb3cd1e156957b333f1cc5ac308781213264488cc8e5"
+    },
+    ".gitignore": {
+      "isolated_source_path": "docs/collaboration.gitignore",
+      "sha256": "8450d67d4940cc3a58bd410257401106a65a41471c5017390f85af7c8d35b204"
+    },
+    "src/waterpipnet_gas/__init__.py": {
+      "isolated_source_path": "src/waterpipnet_gas/__init__.py",
+      "sha256": "caa608b0560ea0912646ebf692176ede02029c270c2a4c903f97ffea7e422852"
+    },
+    "src/waterpipnet_gas/network.py": {
+      "isolated_source_path": "src/waterpipnet_gas/network.py",
+      "sha256": "d88124c156d517213f7a1eac1e43401bea9982395abfcce818f64ac05b4356da"
+    },
+    "src/waterpipnet_gas/scoring_candidate.py": {
+      "isolated_source_path": "src/waterpipnet_gas/scoring_candidate.py",
+      "sha256": "6a29069e54aac5e39ae969298c8c99d50e5399b181f43e2b0c0024895c9f573b"
+    },
+    "tools/build_gas_field_matrix.py": {
+      "isolated_source_path": "tools/build_gas_field_matrix.py",
+      "sha256": "ba290c73a84ababc554e101ce3284fb064d8ae2be63109f71399cdbe03b02fcb"
+    },
+    "tools/extract_gas_network.mjs": {
+      "isolated_source_path": "tools/extract_gas_network.mjs",
+      "sha256": "0ace124ca72d798065217184e013d1fd42aa17bc30df64fabf1e77e6f41de22e"
+    },
+    "tools/run_tests.py": {
+      "isolated_source_path": "tools/run_tests.py",
+      "sha256": "708e82410bd9a66d109b48a3ae90ce1043e646898b43e063c4c895992da9f207"
+    },
+    "tests/test_field_matrix.py": {
+      "isolated_source_path": "tests/test_field_matrix.py",
+      "sha256": "2987083ed9ada0bdf59ed81bfdfa9740983af5aadbdd4efe02f3cb2f7fc6c4ff"
+    },
+    "tests/test_field_matrix_fixes.py": {
+      "isolated_source_path": "tests/test_field_matrix_fixes.py",
+      "sha256": "eb483b445bea7e1864d7e5516cf9ce71fe3433515300309d22ccffa35e936515"
+    },
+    "tests/test_network.py": {
+      "isolated_source_path": "tests/test_network.py",
+      "sha256": "b168658dd71743b78dd11cfec57d8d0b4fb3b7c147f6cf7b800e8ccda1966cd2"
+    },
+    "tests/test_network_enum_types.py": {
+      "isolated_source_path": "tests/test_network_enum_types.py",
+      "sha256": "9cd1610e838af1af3f5ffc9d42d27c9d0fc2a8b8a6a9b979a17108fa8400e38b"
+    },
+    "tests/test_scoring_boundaries.py": {
+      "isolated_source_path": "tests/test_scoring_boundaries.py",
+      "sha256": "5034bf8480d04493da8107cb76767a5b83b3be7a0654a6e1b17ee47d3da623c9"
+    },
+    "tests/test_scoring_candidate.py": {
+      "isolated_source_path": "tests/test_scoring_candidate.py",
+      "sha256": "ce3631a6bfbfdeb25486c4c36deaf82f283168f0607ae75348e7d88030818594"
+    },
+    "data/gas54_network.json": {
+      "isolated_source_path": "data/gas54_network.json",
+      "sha256": "991d8f74b6d8e4799ae8e7778e137954e3b6a6b1ae619ea885138358eff9e306"
+    },
+    "data/gas54_case.json": {
+      "isolated_source_path": "data/gas54_case.json",
+      "sha256": "60a7f94ea4d972c95e416ac9e20920e59802a02a0ac539861ca109f4beeccc46"
+    },
+    "data/gas54_result.json": {
+      "isolated_source_path": "data/gas54_result.json",
+      "sha256": "7c1fd252012f13dc042cb8590b823eeb242dca2fc20298b33d9f2283394cf7fc"
+    },
+    "data/gas_indicator_contract.json": {
+      "isolated_source_path": "data/gas_indicator_contract.json",
+      "sha256": "c0337963825d695fff5ea7450e961cf9003b440cb4c5ff97688ba47cf424edd8"
+    },
+    "data/formula_conflicts.json": {
+      "isolated_source_path": "data/formula_conflicts.json",
+      "sha256": "37e2adb075da835ef653b0a83df287efbd77bde2e2c5e2e948e7dc40beb1f86e"
+    },
+    "data/gas_minimum_inputs.json": {
+      "isolated_source_path": "data/gas_minimum_inputs.json",
+      "sha256": "8e4280969e33403acf5cc3f59adc2e30832ec0137f9c3066a742de7a6da23153"
+    },
+    "docs/gas_scoring_contract.md": {
+      "isolated_source_path": "docs/gas_scoring_contract.md",
+      "sha256": "e47b5a3a29774da575a57cdb9423f0f03bbaf6aa6c7adb8ba82fd1fe23cb7af8"
+    },
+    "docs/gas_network_contract.md": {
+      "isolated_source_path": "docs/gas_network_contract.md",
+      "sha256": "0783c3c576ca7a9961a95d35815def3ec03f0f8e8f678919f394d16d5437e4b0"
+    },
+    "docs/gas_adapter_design.md": {
+      "isolated_source_path": "docs/gas_adapter_design.md",
+      "sha256": "64cd5ea3627766e6eb685ac9d5bddc2155b4ba003883ef8899be57338c58629d"
+    },
+    "docs/gas_safety_and_next_steps.md": {
+      "isolated_source_path": "docs/gas_safety_and_next_steps.md",
+      "sha256": "6400f3298f8eaae82747250648a2a19922998685e6500cb789f1c33ba3177c2b"
+    },
+    "docs/gas_data_requirements.md": {
+      "isolated_source_path": "docs/gas_data_requirements.md",
+      "sha256": "bf031423a31f58fcb7afc576f36fdc62293ea7fe7b8b0bbccc7c95ee10697c0d"
+    },
+    "docs/GAS_M0_FIX_20261104.md": {
+      "isolated_source_path": "docs/GAS_M0_FIX_20261104.md",
+      "sha256": "86acb668ea56315ec9b38d49ee3f8d2886217c374c7548ed481f649d04bd54f2"
+    }
+  },
+  "not_copied": [
+    "Original HTML/Excel/DOCX",
+    "data/gas_catalog_438.json",
+    "data/gas_field_matrix.csv",
+    "Full audit evidence and original Git history",
+    "Runtime binaries, databases, deployment files, credentials"
+  ],
+  "tests": {
+    "executed_on_179": 123,
+    "original": 88,
+    "new": 35,
+    "passed": 123,
+    "failed": 0,
+    "skipped": 0
+  },
+  "full_tests_require_offline_source_assets": true,
+  "registered_with_platform": false,
+  "deployed": false
+}

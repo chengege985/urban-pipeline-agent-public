@@ -1,0 +1,4 @@
+source_record_id,asset_id,asset_type,name,district_id
+syn-intake-register-01,syn-gas-intake-pipe-01,pipe,合成示例管段,syn-intake-district-a
+syn-intake-register-02,syn-gas-intake-regulator-01,regulator,合成示例调压节点,syn-intake-district-a
+syn-intake-register-03,syn-gas-intake-valve-01,valve,合成示例阀门,syn-intake-district-b

@@ -1,0 +1,4 @@
+scripts/check_module_boundaries.py --root ...: BLOCKED_BY_ENV
+Reason: 179 has no node executable; parse_typescript_dependencies.mjs cannot run.
+No boundary violation was reported before the dependency failure.
+Frozen-path diff check: no changes under src/agents, src/pipe_health, src/decision, src/simulation, src/unified/report, web UI, or deploy.

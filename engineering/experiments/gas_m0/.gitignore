@@ -1,0 +1,8 @@
+# Source projection: private originals, full catalogue and audit evidence stay offline.
+__pycache__/
+*.pyc
+.pytest_cache/
+evidence/
+private_sources/
+data/gas_catalog_438.json
+data/gas_field_matrix.csv

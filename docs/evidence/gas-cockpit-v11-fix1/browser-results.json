@@ -1,0 +1,210 @@
+{
+  "base": "http://127.0.0.1:4193",
+  "generatedAt": "2026-11-10T03:24:52.123Z",
+  "results": [
+    {
+      "name": "54-node synthetic cockpit renders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "11 cockpit windows are present",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "synthetic boundary is visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "initial command layout is selected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "initial overview mode is selected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "central topology meets desktop prominence",
+      "ok": true,
+      "detail": "{\"topologyWidthRatio\":0.6357584635416667,\"topologyHeightRatio\":0.5658566159753449,\"geometry\":{\"viewport\":{\"width\":1920,\"height\":1080},\"workspace\":{\"width\":1836,\"height\":1855.59375,\"x\":42,\"y\":371.84375,\"right\":1878,\"bottom\":2227.4375},\"topology\":{\"width\":1220.65625,\"height\":1050,\"x\":42,\"y\":371.84375,\"right\":1262.65625,\"bottom\":1421.84375},\"canvas\":{\"width\":1196.65625,\"height\":886.609375,\"x\":54,\"y\":498.234375,\"right\":1250.65625,\"bottom\":1384.84375},\"svg\":{\"width\":1194.65625,\"height\":884.609375,\"x\":55,\"y\":499.234375,\"right\":1249.65625,\"bottom\":1383.84375}}}"
+    },
+    {
+      "name": "risk analysis mode changes focus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "emergency mode changes focus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "analysis layout preset changes grid",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "compact emergency layout preset changes grid",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline stage selection updates active event",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline keeps the supplied 1h stage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "node selection opens linked detail",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "valve selection keeps linked detail",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "edge selection updates linked detail",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "topology wheel zoom changes view transform",
+      "ok": true,
+      "detail": "translate(0 0) scale(1) -> translate(0 0) scale(1.08)"
+    },
+    {
+      "name": "topology blank-space drag changes pan transform",
+      "ok": true,
+      "detail": "translate(0 0) scale(1.08) -> translate(60 50) scale(1.08)"
+    },
+    {
+      "name": "topology fit-to-view resets transform",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline playback enters pause state",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline pause returns to play state",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline reset returns to first event",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "window drag changes its workspace offset",
+      "ok": true,
+      "detail": "transform: translate(0px, 0px); -> transform: translate(30px, 26px);"
+    },
+    {
+      "name": "window hide removes topology window",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "window restore brings topology back",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "10 timeline playback rounds keep DOM stable",
+      "ok": true,
+      "detail": "{\"domBefore\":916,\"domAfter\":921,\"heapBefore\":8072103,\"heapAfter\":6004201}"
+    },
+    {
+      "name": "prefers-reduced-motion disables playback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "only expected synthetic GETs are made",
+      "ok": true,
+      "detail": "[{\"method\":\"GET\",\"path\":\"/api/v1/gas/cases/syn-gas-case-K-001\"},{\"method\":\"GET\",\"path\":\"/api/v1/gas/cases/syn-gas-case-K-001\"}]"
+    },
+    {
+      "name": "no write or Agent request is made",
+      "ok": true,
+      "detail": "[{\"method\":\"GET\",\"path\":\"/api/v1/gas/cases/syn-gas-case-K-001\"},{\"method\":\"GET\",\"path\":\"/api/v1/gas/cases/syn-gas-case-K-001\"}]"
+    },
+    {
+      "name": "no page errors in browser probe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors in browser probe",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "geometry": {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "workspace": {
+      "width": 1836,
+      "height": 1855.59375,
+      "x": 42,
+      "y": 371.84375,
+      "right": 1878,
+      "bottom": 2227.4375
+    },
+    "topology": {
+      "width": 1220.65625,
+      "height": 1050,
+      "x": 42,
+      "y": 371.84375,
+      "right": 1262.65625,
+      "bottom": 1421.84375
+    },
+    "canvas": {
+      "width": 1196.65625,
+      "height": 886.609375,
+      "x": 54,
+      "y": 498.234375,
+      "right": 1250.65625,
+      "bottom": 1384.84375
+    },
+    "svg": {
+      "width": 1194.65625,
+      "height": 884.609375,
+      "x": 55,
+      "y": 499.234375,
+      "right": 1249.65625,
+      "bottom": 1383.84375
+    }
+  },
+  "apiRequests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/gas/cases/syn-gas-case-K-001"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/gas/cases/syn-gas-case-K-001"
+    }
+  ],
+  "fixture": {
+    "nodes": 54,
+    "edges": 73,
+    "services": 46
+  }
+}

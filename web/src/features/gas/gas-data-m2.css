@@ -1,0 +1,15 @@
+.gas-m2-panel { display: grid; gap: 1rem; padding: 0.75rem; }
+.gas-m2-picker, .gas-m2-heading { display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.gas-m2-picker label { flex: 1 1 18rem; }
+.gas-m2-panel label { display: grid; gap: 0.3rem; }
+.gas-m2-panel input, .gas-m2-panel select { min-width: 0; padding: 0.45rem 0.55rem; font: inherit; color: inherit; background: var(--gas-surface-0); border: 1px solid var(--gas-border); border-radius: 0.35rem; }
+.gas-m2-panel h3, .gas-m2-panel h4 { margin: 0.45rem 0; }
+.gas-m2-detail { display: grid; gap: 0.9rem; }
+.gas-m2-panel code { overflow-wrap: anywhere; font-size: 0.85em; }
+.gas-m2-panel ul { margin: 0.45rem 0; padding-inline-start: 1.2rem; }
+.gas-m2-panel li { margin-bottom: 0.3rem; }
+.gas-m2-issues li b { margin-inline-start: 0.35rem; }
+.gas-m2-provenance, .gas-m2-agent { padding: 0.75rem; border: 1px solid var(--gas-border); border-radius: 0.45rem; }
+.gas-m2-agent { display: grid; gap: 0.6rem; }
+.gas-m2-agent button { justify-self: start; }
+.gas-m2-answer p { white-space: pre-line; overflow-wrap: anywhere; }

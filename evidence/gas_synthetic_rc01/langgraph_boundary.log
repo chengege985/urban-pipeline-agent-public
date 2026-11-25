@@ -1,0 +1,74 @@
+....E.................E                                                  [100%]
+==================================== ERRORS ====================================
+_ ERROR at setup of test_graph_rejects_wrong_object_and_accepts_explicit_clarification _
+
+    @pytest.fixture(scope="module")
+    def snapshot():
+>       data = provided_sample().model_dump(mode="json")
+               ^^^^^^^^^^^^^^^^^
+
+engineering/tests/test_review_boundaries.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+engineering/src/adapters/scoring.py:63: in provided_sample
+    meta = json.loads(META.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+_______ ERROR at setup of test_real_provider_route_honors_clarification ________
+
+    @pytest.fixture(scope="module")
+    def snapshot():
+>       data = provided_sample().model_dump(mode="json")
+               ^^^^^^^^^^^^^^^^^
+
+engineering/tests/test_review_boundaries.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+engineering/src/adapters/scoring.py:63: in provided_sample
+    meta = json.loads(META.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-rc01/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=========================== short test summary info ============================
+ERROR engineering/tests/test_review_boundaries.py::test_graph_rejects_wrong_object_and_accepts_explicit_clarification
+ERROR engineering/tests/test_review_boundaries.py::test_real_provider_route_honors_clarification
+21 passed, 2 errors in 20.89s
+
+exit= 

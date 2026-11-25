@@ -1,0 +1,3798 @@
+{
+  "meta": {
+    "mode": "demo",
+    "appVersion": "0.3.0-rc.2",
+    "dataVersion": "synthetic-2026-10-30",
+    "modelVersion": "demo-score-0.1.0",
+    "disclaimer": "合成数据演示，不控制真实设施；DemoHealth 不是正式健康度、失效概率、RUL 或水力计算结果。"
+  },
+  "nodes": [
+    {
+      "id": "N-S1",
+      "label": "城北水厂",
+      "x": 70,
+      "y": 150,
+      "kind": "source"
+    },
+    {
+      "id": "N-S2",
+      "label": "备用水源",
+      "x": 70,
+      "y": 430,
+      "kind": "source"
+    },
+    {
+      "id": "N-J1",
+      "label": "滨河枢纽",
+      "x": 190,
+      "y": 150,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J2",
+      "label": "南环枢纽",
+      "x": 190,
+      "y": 430,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J3",
+      "label": "北线中继",
+      "x": 310,
+      "y": 150,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J4",
+      "label": "南线中继",
+      "x": 310,
+      "y": 430,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J5",
+      "label": "文体中心",
+      "x": 440,
+      "y": 150,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J6",
+      "label": "商业街",
+      "x": 440,
+      "y": 430,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J7",
+      "label": "医院片区",
+      "x": 570,
+      "y": 150,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J8",
+      "label": "老城片区",
+      "x": 570,
+      "y": 430,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J9",
+      "label": "公共服务支线",
+      "x": 700,
+      "y": 150,
+      "kind": "junction"
+    },
+    {
+      "id": "N-J10",
+      "label": "滨河居住区",
+      "x": 700,
+      "y": 430,
+      "kind": "junction"
+    },
+    {
+      "id": "N-H",
+      "label": "市第二医院",
+      "x": 850,
+      "y": 70,
+      "kind": "service",
+      "serviceId": "SV-HOSP"
+    },
+    {
+      "id": "N-SCHOOL",
+      "label": "滨河实验学校",
+      "x": 850,
+      "y": 190,
+      "kind": "service",
+      "serviceId": "SV-SCHOOL"
+    },
+    {
+      "id": "N-MALL",
+      "label": "滨河商业中心",
+      "x": 850,
+      "y": 330,
+      "kind": "service",
+      "serviceId": "SV-MALL"
+    },
+    {
+      "id": "N-RES1",
+      "label": "滨河一号院",
+      "x": 850,
+      "y": 470,
+      "kind": "service",
+      "serviceId": "SV-RES1"
+    },
+    {
+      "id": "N-RES2",
+      "label": "老城二号院",
+      "x": 850,
+      "y": 570,
+      "kind": "service",
+      "serviceId": "SV-RES2"
+    }
+  ],
+  "pipes": [
+    {
+      "id": "WP-001",
+      "name": "城北主出水干管",
+      "fromNodeId": "N-S1",
+      "toNodeId": "N-J1",
+      "material": "球墨铸铁",
+      "installYear": 1998,
+      "diameterMm": 600,
+      "depthM": 1.4,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 2,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-12",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 420,
+      "note": "城北水厂主出水通道，承担片区大部分供水。"
+    },
+    {
+      "id": "WP-002",
+      "name": "备用水源联络管",
+      "fromNodeId": "N-S2",
+      "toNodeId": "N-J2",
+      "material": "球墨铸铁",
+      "installYear": 2005,
+      "diameterMm": 500,
+      "depthM": 1.6,
+      "pressure": "常压",
+      "leakCount": 0,
+      "repairCount": 1,
+      "monitoring": "正常",
+      "lastInspection": "2026-08-21",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 400,
+      "note": "备用源切换时使用，平时保持低压待命。"
+    },
+    {
+      "id": "WP-003",
+      "name": "滨河环路联络管",
+      "fromNodeId": "N-J1",
+      "toNodeId": "N-J2",
+      "material": "铸铁",
+      "installYear": 1996,
+      "diameterMm": 400,
+      "depthM": 1.8,
+      "pressure": "常压",
+      "leakCount": 3,
+      "repairCount": 4,
+      "monitoring": "关注",
+      "lastInspection": "2026-07-18",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 300,
+      "note": "北环与南环之间的联络管，承担双源切换。"
+    },
+    {
+      "id": "WP-004",
+      "name": "北线主干管",
+      "fromNodeId": "N-J1",
+      "toNodeId": "N-J3",
+      "material": "铸铁",
+      "installYear": 1992,
+      "diameterMm": 500,
+      "depthM": 1.5,
+      "pressure": "常压",
+      "leakCount": 4,
+      "repairCount": 5,
+      "monitoring": "关注",
+      "lastInspection": "2026-06-30",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 420,
+      "note": "北线主通道，历史漏损记录偏高。"
+    },
+    {
+      "id": "WP-005",
+      "name": "南线主干管",
+      "fromNodeId": "N-J2",
+      "toNodeId": "N-J4",
+      "material": "球墨铸铁",
+      "installYear": 2001,
+      "diameterMm": 400,
+      "depthM": 1.7,
+      "pressure": "常压",
+      "leakCount": 2,
+      "repairCount": 3,
+      "monitoring": "正常",
+      "lastInspection": "2026-08-06",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 420,
+      "note": "南线主通道，与北线形成环状供水。"
+    },
+    {
+      "id": "WP-006",
+      "name": "北南环网联络管",
+      "fromNodeId": "N-J3",
+      "toNodeId": "N-J4",
+      "material": "铸铁",
+      "installYear": 1994,
+      "diameterMm": 350,
+      "depthM": 2,
+      "pressure": "常压",
+      "leakCount": 3,
+      "repairCount": 4,
+      "monitoring": "未知",
+      "lastInspection": "2026-05-11",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 300,
+      "note": "环网关键联络段，监测设备近期离线。"
+    },
+    {
+      "id": "WP-007",
+      "name": "文体中心支线",
+      "fromNodeId": "N-J3",
+      "toNodeId": "N-J5",
+      "material": "PE",
+      "installYear": 2008,
+      "diameterMm": 300,
+      "depthM": 1.2,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 1,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-02",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL"
+      ],
+      "lengthM": 420,
+      "note": "服务医院与学校片区。"
+    },
+    {
+      "id": "WP-008",
+      "name": "商业街支线",
+      "fromNodeId": "N-J4",
+      "toNodeId": "N-J6",
+      "material": "PE",
+      "installYear": 2010,
+      "diameterMm": 300,
+      "depthM": 1.3,
+      "pressure": "常压",
+      "leakCount": 0,
+      "repairCount": 0,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-18",
+      "serviceIds": [
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 420,
+      "note": "服务商业中心与滨河居住区。"
+    },
+    {
+      "id": "WP-009",
+      "name": "文体—商业联络管",
+      "fromNodeId": "N-J5",
+      "toNodeId": "N-J6",
+      "material": "球墨铸铁",
+      "installYear": 1999,
+      "diameterMm": 250,
+      "depthM": 1.6,
+      "pressure": "常压",
+      "leakCount": 2,
+      "repairCount": 2,
+      "monitoring": "正常",
+      "lastInspection": "2026-08-28",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 300,
+      "note": "片区中部联络管，提升环网冗余。"
+    },
+    {
+      "id": "WP-010",
+      "name": "医院片区北段",
+      "fromNodeId": "N-J5",
+      "toNodeId": "N-J7",
+      "material": "铸铁",
+      "installYear": 1986,
+      "diameterMm": 300,
+      "depthM": 2.1,
+      "pressure": "高压",
+      "leakCount": 5,
+      "repairCount": 7,
+      "monitoring": "异常",
+      "lastInspection": "2026-04-19",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL"
+      ],
+      "lengthM": 420,
+      "note": "年代较早、维修频次高，是本期重点巡检段。"
+    },
+    {
+      "id": "WP-011",
+      "name": "老城片区北段",
+      "fromNodeId": "N-J6",
+      "toNodeId": "N-J8",
+      "material": "球墨铸铁",
+      "installYear": 2003,
+      "diameterMm": 300,
+      "depthM": 1.9,
+      "pressure": "常压",
+      "leakCount": 2,
+      "repairCount": 3,
+      "monitoring": "关注",
+      "lastInspection": "2026-07-05",
+      "serviceIds": [
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 420,
+      "note": "老城片区主通道，沿线施工扰动较多。"
+    },
+    {
+      "id": "WP-012",
+      "name": "医院—老城联络管",
+      "fromNodeId": "N-J7",
+      "toNodeId": "N-J8",
+      "material": "铸铁",
+      "installYear": 1990,
+      "diameterMm": 250,
+      "depthM": 2.2,
+      "pressure": "未知",
+      "leakCount": 4,
+      "repairCount": 5,
+      "monitoring": "关注",
+      "lastInspection": "2026-06-07",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL"
+      ],
+      "lengthM": 300,
+      "note": "压力记录缺失，当前以保守方式评估。"
+    },
+    {
+      "id": "WP-013",
+      "name": "公共服务支线",
+      "fromNodeId": "N-J7",
+      "toNodeId": "N-J9",
+      "material": "PE",
+      "installYear": 2012,
+      "diameterMm": 250,
+      "depthM": 1.1,
+      "pressure": "常压",
+      "leakCount": 0,
+      "repairCount": 0,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-22",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL"
+      ],
+      "lengthM": 420,
+      "note": "医院与学校的主要接入通道。"
+    },
+    {
+      "id": "WP-014",
+      "name": "滨河居住区支线",
+      "fromNodeId": "N-J8",
+      "toNodeId": "N-J10",
+      "material": "PE",
+      "installYear": 2015,
+      "diameterMm": 250,
+      "depthM": 1.2,
+      "pressure": "低压",
+      "leakCount": 0,
+      "repairCount": 1,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-11",
+      "serviceIds": [
+        "SV-MALL",
+        "SV-RES1"
+      ],
+      "lengthM": 420,
+      "note": "滨河居住区主通道，运行压力偏低。"
+    },
+    {
+      "id": "WP-015",
+      "name": "公共服务—居住区联络管",
+      "fromNodeId": "N-J9",
+      "toNodeId": "N-J10",
+      "material": "球墨铸铁",
+      "installYear": 2000,
+      "diameterMm": 200,
+      "depthM": 1.8,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 2,
+      "monitoring": "正常",
+      "lastInspection": "2026-08-14",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 300,
+      "note": "东侧环网联络段。"
+    },
+    {
+      "id": "WP-016",
+      "name": "医院支线",
+      "fromNodeId": "N-J9",
+      "toNodeId": "N-H",
+      "material": "铸铁",
+      "installYear": 1982,
+      "diameterMm": 100,
+      "depthM": 2.4,
+      "pressure": "高压",
+      "leakCount": 6,
+      "repairCount": 8,
+      "monitoring": "异常",
+      "lastInspection": "2026-03-15",
+      "serviceIds": [
+        "SV-HOSP"
+      ],
+      "lengthM": 260,
+      "note": "医院唯一接入支线，单点风险高。"
+    },
+    {
+      "id": "WP-017",
+      "name": "学校支线",
+      "fromNodeId": "N-J9",
+      "toNodeId": "N-SCHOOL",
+      "material": "铸铁",
+      "installYear": 1988,
+      "diameterMm": 150,
+      "depthM": 2,
+      "pressure": "常压",
+      "leakCount": 4,
+      "repairCount": 6,
+      "monitoring": "关注",
+      "lastInspection": "2026-04-26",
+      "serviceIds": [
+        "SV-SCHOOL"
+      ],
+      "lengthM": 300,
+      "note": "学校唯一接入支线，需关注开学季用水高峰。"
+    },
+    {
+      "id": "WP-018",
+      "name": "商业中心支线",
+      "fromNodeId": "N-J10",
+      "toNodeId": "N-MALL",
+      "material": "PE",
+      "installYear": 2009,
+      "diameterMm": 200,
+      "depthM": 1.3,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 1,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-06",
+      "serviceIds": [
+        "SV-MALL"
+      ],
+      "lengthM": 280,
+      "note": "商业中心接入支线。"
+    },
+    {
+      "id": "WP-019",
+      "name": "滨河一号院支线",
+      "fromNodeId": "N-J10",
+      "toNodeId": "N-RES1",
+      "material": "铸铁",
+      "installYear": 1993,
+      "diameterMm": 150,
+      "depthM": 2.3,
+      "pressure": "常压",
+      "leakCount": 5,
+      "repairCount": 6,
+      "monitoring": "异常",
+      "lastInspection": "2026-03-28",
+      "serviceIds": [
+        "SV-RES1"
+      ],
+      "lengthM": 320,
+      "note": "居民区接入支线，漏损与维修记录偏高。"
+    },
+    {
+      "id": "WP-020",
+      "name": "老城二号院支线",
+      "fromNodeId": "N-J8",
+      "toNodeId": "N-RES2",
+      "material": "铸铁",
+      "installYear": 1985,
+      "diameterMm": 100,
+      "depthM": 2.6,
+      "pressure": "高压",
+      "leakCount": 7,
+      "repairCount": 9,
+      "monitoring": "异常",
+      "lastInspection": "2026-02-09",
+      "serviceIds": [
+        "SV-RES2"
+      ],
+      "lengthM": 350,
+      "note": "老城片区风险最高的居民支线。"
+    },
+    {
+      "id": "WP-021",
+      "name": "滨河斜联络管",
+      "fromNodeId": "N-J1",
+      "toNodeId": "N-J4",
+      "material": "球墨铸铁",
+      "installYear": 2006,
+      "diameterMm": 300,
+      "depthM": 2,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 2,
+      "monitoring": "正常",
+      "lastInspection": "2026-08-19",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 380,
+      "note": "西南侧斜向联络，增强环网冗余。"
+    },
+    {
+      "id": "WP-022",
+      "name": "北部斜联络管",
+      "fromNodeId": "N-J3",
+      "toNodeId": "N-J6",
+      "material": "铸铁",
+      "installYear": 1997,
+      "diameterMm": 250,
+      "depthM": 2.2,
+      "pressure": "常压",
+      "leakCount": 3,
+      "repairCount": 4,
+      "monitoring": "关注",
+      "lastInspection": "2026-05-23",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 380,
+      "note": "中部斜向联络，承担部分转输。"
+    },
+    {
+      "id": "WP-023",
+      "name": "东部斜联络管",
+      "fromNodeId": "N-J5",
+      "toNodeId": "N-J8",
+      "material": "球墨铸铁",
+      "installYear": 2004,
+      "diameterMm": 200,
+      "depthM": 1.7,
+      "pressure": "常压",
+      "leakCount": 1,
+      "repairCount": 2,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-01",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 380,
+      "note": "东部斜向联络，提升医院片区与老城片区的互济能力。"
+    },
+    {
+      "id": "WP-024",
+      "name": "东侧新建联络管",
+      "fromNodeId": "N-J7",
+      "toNodeId": "N-J10",
+      "material": "PE",
+      "installYear": 2018,
+      "diameterMm": 200,
+      "depthM": null,
+      "pressure": "常压",
+      "leakCount": 0,
+      "repairCount": 0,
+      "monitoring": "正常",
+      "lastInspection": "2026-09-25",
+      "serviceIds": [
+        "SV-HOSP",
+        "SV-SCHOOL",
+        "SV-MALL",
+        "SV-RES1",
+        "SV-RES2"
+      ],
+      "lengthM": 380,
+      "note": "新建联络管，埋深记录待补录。"
+    }
+  ],
+  "services": [
+    {
+      "id": "SV-HOSP",
+      "name": "市第二医院",
+      "type": "医院",
+      "nodeId": "N-H",
+      "description": "关键医疗设施，供水中断将影响诊疗与应急保障。",
+      "households": 0,
+      "facilities": 1,
+      "critical": true
+    },
+    {
+      "id": "SV-SCHOOL",
+      "name": "滨河实验学校",
+      "type": "学校",
+      "nodeId": "N-SCHOOL",
+      "description": "在校师生集中，日间用水与消防保障要求高。",
+      "households": 0,
+      "facilities": 1,
+      "critical": true
+    },
+    {
+      "id": "SV-MALL",
+      "name": "滨河商业中心",
+      "type": "商业",
+      "nodeId": "N-MALL",
+      "description": "商业综合体，停水会影响营业与公共服务。",
+      "households": 0,
+      "facilities": 1,
+      "critical": false
+    },
+    {
+      "id": "SV-RES1",
+      "name": "滨河一号院",
+      "type": "居民区",
+      "nodeId": "N-RES1",
+      "description": "滨河片区主要居住社区之一。",
+      "households": 1280,
+      "facilities": 0,
+      "critical": false
+    },
+    {
+      "id": "SV-RES2",
+      "name": "老城二号院",
+      "type": "居民区",
+      "nodeId": "N-RES2",
+      "description": "老旧小区，管网年代较早，巡检关注度较高。",
+      "households": 860,
+      "facilities": 0,
+      "critical": false
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC-HOSP",
+      "name": "医院支线爆管",
+      "summary": "医院唯一接入支线发生爆管，需要评估医疗服务的受影响范围。",
+      "failedPipeIds": [
+        "WP-016"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "defaultIsolationPlanId": "ISO-HOSP-MIN",
+      "severity": "高",
+      "note": "医院为关键设施；结果只表示拓扑通路影响。"
+    },
+    {
+      "id": "SC-SCHOOL",
+      "name": "学校支线故障",
+      "summary": "学校支线故障，评估在校师生与周边片区的服务影响。",
+      "failedPipeIds": [
+        "WP-017"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "defaultIsolationPlanId": "ISO-SCHOOL-MIN",
+      "severity": "高",
+      "note": "学校为关键设施；结果只表示拓扑通路影响。"
+    },
+    {
+      "id": "SC-MALL",
+      "name": "商业中心支线故障",
+      "summary": "商业中心支线故障，评估商业服务与周边居民的影响。",
+      "failedPipeIds": [
+        "WP-018"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "defaultIsolationPlanId": "ISO-MALL-MIN",
+      "severity": "中",
+      "note": "商业设施非关键，但可能影响营业与公共秩序。"
+    },
+    {
+      "id": "SC-RES",
+      "name": "居民区支线叠加故障",
+      "summary": "滨河一号院与老城二号院支线同时故障，评估居民用水影响。",
+      "failedPipeIds": [
+        "WP-019",
+        "WP-020"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "defaultIsolationPlanId": "ISO-RES-MIN",
+      "severity": "高",
+      "note": "两处居民区同时受影响；结果只表示拓扑通路影响。"
+    },
+    {
+      "id": "SC-DUAL",
+      "name": "主源中断与双源切换",
+      "summary": "城北主出水干管中断，备用水源切换后检查服务是否保持。",
+      "failedPipeIds": [
+        "WP-001"
+      ],
+      "activeSourceIds": [
+        "N-S2"
+      ],
+      "defaultIsolationPlanId": "ISO-DUAL-MIN",
+      "severity": "低",
+      "note": "演示环网冗余与备用源切换，不代表真实切换操作。"
+    }
+  ],
+  "valves": [
+    {
+      "id": "V-001A",
+      "label": "城北主出水阀",
+      "pipeId": "WP-001",
+      "nodeId": "N-S1",
+      "operable": true
+    },
+    {
+      "id": "V-002A",
+      "label": "备用水源联络阀",
+      "pipeId": "WP-002",
+      "nodeId": "N-S2",
+      "operable": true
+    },
+    {
+      "id": "V-013A",
+      "label": "公共服务支线上游阀",
+      "pipeId": "WP-013",
+      "nodeId": "N-J7",
+      "operable": true
+    },
+    {
+      "id": "V-014A",
+      "label": "滨河居住区上游阀",
+      "pipeId": "WP-014",
+      "nodeId": "N-J8",
+      "operable": true
+    },
+    {
+      "id": "V-015A",
+      "label": "东侧环网联络阀",
+      "pipeId": "WP-015",
+      "nodeId": "N-J9",
+      "operable": true
+    },
+    {
+      "id": "V-016A",
+      "label": "医院支线根部阀",
+      "pipeId": "WP-016",
+      "nodeId": "N-J9",
+      "operable": true
+    },
+    {
+      "id": "V-017A",
+      "label": "学校支线根部阀",
+      "pipeId": "WP-017",
+      "nodeId": "N-J9",
+      "operable": true
+    },
+    {
+      "id": "V-018A",
+      "label": "商业中心支线阀",
+      "pipeId": "WP-018",
+      "nodeId": "N-J10",
+      "operable": true
+    },
+    {
+      "id": "V-019A",
+      "label": "滨河一号院支线阀",
+      "pipeId": "WP-019",
+      "nodeId": "N-J10",
+      "operable": true
+    },
+    {
+      "id": "V-020A",
+      "label": "老城二号院支线阀",
+      "pipeId": "WP-020",
+      "nodeId": "N-J8",
+      "operable": true
+    },
+    {
+      "id": "V-024A",
+      "label": "东侧新建联络阀",
+      "pipeId": "WP-024",
+      "nodeId": "N-J7",
+      "operable": true
+    }
+  ],
+  "isolationPlans": [
+    {
+      "id": "ISO-HOSP-MIN",
+      "scenarioId": "SC-HOSP",
+      "name": "关闭医院支线根部阀",
+      "description": "仅关闭医院支线根部预设阀门，不扩大隔离范围；故障段仍按断开计算。",
+      "valveIds": [
+        "V-016A"
+      ],
+      "closedPipeIds": [],
+      "evidenceIds": [
+        "isolation:ISO-HOSP-MIN",
+        "valve:V-016A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-HOSP-EXT",
+      "scenarioId": "SC-HOSP",
+      "name": "扩大隔离公共服务支线",
+      "description": "同时关闭公共服务支线上游与东侧联络阀，模拟扩大隔离；会影响医院与学校。",
+      "valveIds": [
+        "V-013A",
+        "V-015A"
+      ],
+      "closedPipeIds": [
+        "WP-013",
+        "WP-015"
+      ],
+      "evidenceIds": [
+        "isolation:ISO-HOSP-EXT",
+        "valve:V-013A",
+        "valve:V-015A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-SCHOOL-MIN",
+      "scenarioId": "SC-SCHOOL",
+      "name": "关闭学校支线根部阀",
+      "description": "仅关闭学校支线根部预设阀门，不扩大隔离范围。",
+      "valveIds": [
+        "V-017A"
+      ],
+      "closedPipeIds": [],
+      "evidenceIds": [
+        "isolation:ISO-SCHOOL-MIN",
+        "valve:V-017A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-SCHOOL-EXT",
+      "scenarioId": "SC-SCHOOL",
+      "name": "扩大隔离公共服务支线",
+      "description": "同时关闭公共服务支线上游与东侧联络阀，学校与医院都会失去通路。",
+      "valveIds": [
+        "V-013A",
+        "V-015A"
+      ],
+      "closedPipeIds": [
+        "WP-013",
+        "WP-015"
+      ],
+      "evidenceIds": [
+        "isolation:ISO-SCHOOL-EXT",
+        "valve:V-013A",
+        "valve:V-015A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-MALL-MIN",
+      "scenarioId": "SC-MALL",
+      "name": "关闭商业中心支线阀",
+      "description": "仅关闭商业中心支线阀，不扩大隔离范围。",
+      "valveIds": [
+        "V-018A"
+      ],
+      "closedPipeIds": [],
+      "evidenceIds": [
+        "isolation:ISO-MALL-MIN",
+        "valve:V-018A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-MALL-EXT",
+      "scenarioId": "SC-MALL",
+      "name": "扩大隔离滨河居住区上游",
+      "description": "关闭滨河居住区上游阀、东侧联络阀与东侧新建联络阀，商业中心与滨河一号院会失去通路。",
+      "valveIds": [
+        "V-014A",
+        "V-015A",
+        "V-024A"
+      ],
+      "closedPipeIds": [
+        "WP-014",
+        "WP-015",
+        "WP-024"
+      ],
+      "evidenceIds": [
+        "isolation:ISO-MALL-EXT",
+        "valve:V-014A",
+        "valve:V-015A",
+        "valve:V-024A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-RES-MIN",
+      "scenarioId": "SC-RES",
+      "name": "关闭两处居民支线阀",
+      "description": "关闭滨河一号院与老城二号院支线阀，不扩大隔离范围。",
+      "valveIds": [
+        "V-019A",
+        "V-020A"
+      ],
+      "closedPipeIds": [],
+      "evidenceIds": [
+        "isolation:ISO-RES-MIN",
+        "valve:V-019A",
+        "valve:V-020A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-RES-EXT",
+      "scenarioId": "SC-RES",
+      "name": "扩大隔离滨河居住区上游",
+      "description": "关闭滨河居住区上游阀、东侧联络阀与东侧新建联络阀，商业中心也会失去通路。",
+      "valveIds": [
+        "V-014A",
+        "V-015A",
+        "V-024A"
+      ],
+      "closedPipeIds": [
+        "WP-014",
+        "WP-015",
+        "WP-024"
+      ],
+      "evidenceIds": [
+        "isolation:ISO-RES-EXT",
+        "valve:V-014A",
+        "valve:V-015A",
+        "valve:V-024A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-DUAL-MIN",
+      "scenarioId": "SC-DUAL",
+      "name": "备用源切换后关闭主源阀",
+      "description": "主源故障后保留备用源联络；仅关闭主源侧预设阀门。",
+      "valveIds": [
+        "V-001A"
+      ],
+      "closedPipeIds": [],
+      "evidenceIds": [
+        "isolation:ISO-DUAL-MIN",
+        "valve:V-001A"
+      ],
+      "version": "isolation-0.1.0"
+    },
+    {
+      "id": "ISO-DUAL-EXT",
+      "scenarioId": "SC-DUAL",
+      "name": "同时关闭备用源联络阀",
+      "description": "模拟备用源联络也被关闭的极端情景；当前没有可用水源，所有服务均受影响。",
+      "valveIds": [
+        "V-002A"
+      ],
+      "closedPipeIds": [
+        "WP-002"
+      ],
+      "evidenceIds": [
+        "isolation:ISO-DUAL-EXT",
+        "valve:V-002A"
+      ],
+      "version": "isolation-0.1.0"
+    }
+  ],
+  "plans": [
+    {
+      "id": "PLAN-REPAIR",
+      "name": "立即抢修",
+      "description": "在发现故障后尽快组织抢修，恢复管段通路。",
+      "type": "抢修",
+      "costYuan": 18000,
+      "durationHours": 6,
+      "riskReduction": 22,
+      "restoresAffected": true,
+      "resourceRequirements": {
+        "repair_team": 1,
+        "water_truck": 1
+      },
+      "requiredDependencies": [
+        "shutdown_window"
+      ],
+      "constraints": "需停水窗口与现场确认；费用为合成演示值。",
+      "evidenceIds": [
+        "plan:PLAN-REPAIR"
+      ]
+    },
+    {
+      "id": "PLAN-REPLACE",
+      "name": "计划更换",
+      "description": "纳入年度改造计划，整体更换问题管段。",
+      "type": "更换",
+      "costYuan": 76000,
+      "durationHours": 24,
+      "riskReduction": 30,
+      "restoresAffected": true,
+      "resourceRequirements": {
+        "repair_team": 1,
+        "water_truck": 1
+      },
+      "requiredDependencies": [
+        "shutdown_window",
+        "construction_permit"
+      ],
+      "constraints": "需预算、施工排期与许可；费用为合成演示值。",
+      "evidenceIds": [
+        "plan:PLAN-REPLACE"
+      ]
+    },
+    {
+      "id": "PLAN-MONITOR",
+      "name": "加密监测",
+      "description": "先补充监测与巡检数据，不改变管体状态。",
+      "type": "监测",
+      "costYuan": 6000,
+      "durationHours": 2,
+      "riskReduction": 8,
+      "restoresAffected": false,
+      "resourceRequirements": {
+        "monitoring_kit": 1
+      },
+      "requiredDependencies": [],
+      "constraints": "不改变管体状态，只补充数据与巡检频次。",
+      "evidenceIds": [
+        "plan:PLAN-MONITOR"
+      ]
+    }
+  ],
+  "timeline": {
+    "version": "synthetic-timeline-2026-11-01",
+    "asOf": "2026-11-01T08:00:00+08:00",
+    "events": [
+      {
+        "id": "tl-SC-HOSP-repair",
+        "scenarioId": "SC-HOSP",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "按抢修方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-016"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 6,
+        "evidenceIds": [
+          "synthetic:timeline:SC-HOSP:PLAN-REPAIR",
+          "scenario:SC-HOSP",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:repair-restores-at-6h"
+        ]
+      },
+      {
+        "id": "tl-SC-HOSP-replace",
+        "scenarioId": "SC-HOSP",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "按计划更换方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-016"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-HOSP:PLAN-REPLACE",
+          "scenario:SC-HOSP",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:replace-restores-at-24h"
+        ]
+      },
+      {
+        "id": "tl-SC-SCHOOL-repair",
+        "scenarioId": "SC-SCHOOL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "按抢修方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-017"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 6,
+        "evidenceIds": [
+          "synthetic:timeline:SC-SCHOOL:PLAN-REPAIR",
+          "scenario:SC-SCHOOL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:repair-restores-at-6h"
+        ]
+      },
+      {
+        "id": "tl-SC-SCHOOL-replace",
+        "scenarioId": "SC-SCHOOL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "按计划更换方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-017"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-SCHOOL:PLAN-REPLACE",
+          "scenario:SC-SCHOOL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:replace-restores-at-24h"
+        ]
+      },
+      {
+        "id": "tl-SC-MALL-repair",
+        "scenarioId": "SC-MALL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "按抢修方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-018"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 6,
+        "evidenceIds": [
+          "synthetic:timeline:SC-MALL:PLAN-REPAIR",
+          "scenario:SC-MALL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:repair-restores-at-6h"
+        ]
+      },
+      {
+        "id": "tl-SC-MALL-replace",
+        "scenarioId": "SC-MALL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "按计划更换方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-018"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-MALL:PLAN-REPLACE",
+          "scenario:SC-MALL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:replace-restores-at-24h"
+        ]
+      },
+      {
+        "id": "tl-SC-RES-repair",
+        "scenarioId": "SC-RES",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "按抢修方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-019",
+          "WP-020"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 6,
+        "evidenceIds": [
+          "synthetic:timeline:SC-RES:PLAN-REPAIR",
+          "scenario:SC-RES",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:repair-restores-at-6h"
+        ]
+      },
+      {
+        "id": "tl-SC-RES-replace",
+        "scenarioId": "SC-RES",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "按计划更换方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-019",
+          "WP-020"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-RES:PLAN-REPLACE",
+          "scenario:SC-RES",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:replace-restores-at-24h"
+        ]
+      },
+      {
+        "id": "tl-SC-DUAL-repair",
+        "scenarioId": "SC-DUAL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "按抢修方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-001"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 6,
+        "evidenceIds": [
+          "synthetic:timeline:SC-DUAL:PLAN-REPAIR",
+          "scenario:SC-DUAL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:repair-restores-at-6h"
+        ]
+      },
+      {
+        "id": "tl-SC-DUAL-replace",
+        "scenarioId": "SC-DUAL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "按计划更换方案声明恢复故障管段",
+        "edgeIds": [
+          "WP-001"
+        ],
+        "valveIds": [],
+        "effectiveOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-DUAL:PLAN-REPLACE",
+          "scenario:SC-DUAL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:replace-restores-at-24h"
+        ]
+      }
+    ],
+    "tasks": [
+      {
+        "scenarioId": "SC-HOSP",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "抢修任务",
+        "finishOffsetHours": null,
+        "evidenceIds": [
+          "synthetic:timeline:SC-HOSP:PLAN-REPAIR",
+          "scenario:SC-HOSP",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-HOSP",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "更换任务",
+        "finishOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-HOSP:PLAN-REPLACE",
+          "scenario:SC-HOSP",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-HOSP",
+        "planId": "PLAN-MONITOR",
+        "actionId": "PLAN-MONITOR-action",
+        "label": "监测任务",
+        "finishOffsetHours": 2,
+        "evidenceIds": [
+          "synthetic:timeline:SC-HOSP:PLAN-MONITOR",
+          "scenario:SC-HOSP",
+          "plan:PLAN-MONITOR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-SCHOOL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "抢修任务",
+        "finishOffsetHours": null,
+        "evidenceIds": [
+          "synthetic:timeline:SC-SCHOOL:PLAN-REPAIR",
+          "scenario:SC-SCHOOL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-SCHOOL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "更换任务",
+        "finishOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-SCHOOL:PLAN-REPLACE",
+          "scenario:SC-SCHOOL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-SCHOOL",
+        "planId": "PLAN-MONITOR",
+        "actionId": "PLAN-MONITOR-action",
+        "label": "监测任务",
+        "finishOffsetHours": 2,
+        "evidenceIds": [
+          "synthetic:timeline:SC-SCHOOL:PLAN-MONITOR",
+          "scenario:SC-SCHOOL",
+          "plan:PLAN-MONITOR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-MALL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "抢修任务",
+        "finishOffsetHours": null,
+        "evidenceIds": [
+          "synthetic:timeline:SC-MALL:PLAN-REPAIR",
+          "scenario:SC-MALL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-MALL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "更换任务",
+        "finishOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-MALL:PLAN-REPLACE",
+          "scenario:SC-MALL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-MALL",
+        "planId": "PLAN-MONITOR",
+        "actionId": "PLAN-MONITOR-action",
+        "label": "监测任务",
+        "finishOffsetHours": 2,
+        "evidenceIds": [
+          "synthetic:timeline:SC-MALL:PLAN-MONITOR",
+          "scenario:SC-MALL",
+          "plan:PLAN-MONITOR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-RES",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "抢修任务",
+        "finishOffsetHours": null,
+        "evidenceIds": [
+          "synthetic:timeline:SC-RES:PLAN-REPAIR",
+          "scenario:SC-RES",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-RES",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "更换任务",
+        "finishOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-RES:PLAN-REPLACE",
+          "scenario:SC-RES",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-RES",
+        "planId": "PLAN-MONITOR",
+        "actionId": "PLAN-MONITOR-action",
+        "label": "监测任务",
+        "finishOffsetHours": 2,
+        "evidenceIds": [
+          "synthetic:timeline:SC-RES:PLAN-MONITOR",
+          "scenario:SC-RES",
+          "plan:PLAN-MONITOR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-DUAL",
+        "planId": "PLAN-REPAIR",
+        "actionId": "PLAN-REPAIR-action",
+        "label": "抢修任务",
+        "finishOffsetHours": null,
+        "evidenceIds": [
+          "synthetic:timeline:SC-DUAL:PLAN-REPAIR",
+          "scenario:SC-DUAL",
+          "plan:PLAN-REPAIR",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-DUAL",
+        "planId": "PLAN-REPLACE",
+        "actionId": "PLAN-REPLACE-action",
+        "label": "更换任务",
+        "finishOffsetHours": 24,
+        "evidenceIds": [
+          "synthetic:timeline:SC-DUAL:PLAN-REPLACE",
+          "scenario:SC-DUAL",
+          "plan:PLAN-REPLACE",
+          "synthetic:assumption:task-schedule"
+        ]
+      },
+      {
+        "scenarioId": "SC-DUAL",
+        "planId": "PLAN-MONITOR",
+        "actionId": "PLAN-MONITOR-action",
+        "label": "监测任务",
+        "finishOffsetHours": 2,
+        "evidenceIds": [
+          "synthetic:timeline:SC-DUAL:PLAN-MONITOR",
+          "scenario:SC-DUAL",
+          "plan:PLAN-MONITOR",
+          "synthetic:assumption:task-schedule"
+        ]
+      }
+    ]
+  },
+  "assessments": {
+    "WP-001": {
+      "pipeId": "WP-001",
+      "status": "succeeded",
+      "score": 77.5,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.4444444444444444,
+          "detail": "1998 年投运 → 28 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "600 mm → 1 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.4 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.05555555555555555,
+          "detail": "2 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-002": {
+      "pipeId": "WP-002",
+      "status": "succeeded",
+      "score": 78.8,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.1764705882352941,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.47058823529411764,
+          "detail": "2005 年投运 → 21 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "500 mm → 1 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.11764705882352941,
+          "detail": "1.6 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.1764705882352941,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次漏损 → 1 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.058823529411764705,
+          "detail": "1 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-003": {
+      "pipeId": "WP-003",
+      "status": "succeeded",
+      "score": 48.7,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.21951219512195116,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.2926829268292683,
+          "detail": "1996 年投运 → 30 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "400 mm → 1 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.048780487804878044,
+          "detail": "1.8 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.07317073170731705,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.21951219512195116,
+          "detail": "3 次漏损 → 4 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 3,
+          "weightedRisk": 0.025,
+          "contribution": 0.048780487804878044,
+          "detail": "4 次维修 → 3 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.09756097560975609,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-004": {
+      "pipeId": "WP-004",
+      "status": "succeeded",
+      "score": 43.8,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.19999999999999998,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.2666666666666667,
+          "detail": "1992 年投运 → 34 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "500 mm → 1 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.044444444444444446,
+          "detail": "1.5 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.06666666666666667,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.26666666666666666,
+          "detail": "4 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 4,
+          "weightedRisk": 0.037500000000000006,
+          "contribution": 0.06666666666666668,
+          "detail": "5 次维修 → 4 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.08888888888888889,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-005": {
+      "pipeId": "WP-005",
+      "status": "succeeded",
+      "score": 70,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.12499999999999997,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.3333333333333333,
+          "detail": "2001 年投运 → 25 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "400 mm → 1 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.08333333333333333,
+          "detail": "1.7 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.12499999999999997,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 3,
+          "weightedRisk": 0.075,
+          "contribution": 0.24999999999999994,
+          "detail": "2 次漏损 → 3 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 3,
+          "weightedRisk": 0.025,
+          "contribution": 0.08333333333333333,
+          "detail": "3 次维修 → 3 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-006": {
+      "pipeId": "WP-006",
+      "status": "succeeded",
+      "score": 45.8,
+      "grade": "重点检查",
+      "confidence": 90,
+      "validWeight": 0.9,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.23076923076923073,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.3076923076923077,
+          "detail": "1994 年投运 → 32 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.05128205128205128,
+          "detail": "350 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.05128205128205128,
+          "detail": "2 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.07692307692307691,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.23076923076923073,
+          "detail": "3 次漏损 → 4 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 3,
+          "weightedRisk": 0.025,
+          "contribution": 0.05128205128205128,
+          "detail": "4 次维修 → 3 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": null,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "当前记录缺失或不适用，未计入权重"
+        }
+      ],
+      "missing": [
+        "监测质量"
+      ],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 7 项有效，可信度 90%；当前主要贡献：管龄、管材。"
+    },
+    "WP-007": {
+      "pipeId": "WP-007",
+      "status": "succeeded",
+      "score": 80,
+      "grade": "基本健康",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.18749999999999997,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 2,
+          "weightedRisk": 0.05,
+          "contribution": 0.25,
+          "detail": "2008 年投运 → 18 年 → 2 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.125,
+          "detail": "300 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.2 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.18749999999999997,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.18749999999999997,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.0625,
+          "detail": "1 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-008": {
+      "pipeId": "WP-008",
+      "status": "succeeded",
+      "score": 85,
+      "grade": "基本健康",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.25,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 2,
+          "weightedRisk": 0.05,
+          "contribution": 0.33333333333333337,
+          "detail": "2010 年投运 → 16 年 → 2 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.16666666666666669,
+          "detail": "300 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.3 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.25,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次漏损 → 1 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次维修 → 1 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-009": {
+      "pipeId": "WP-009",
+      "status": "succeeded",
+      "score": 66.3,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.1111111111111111,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.2962962962962963,
+          "detail": "1999 年投运 → 27 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.14814814814814814,
+          "detail": "250 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.07407407407407407,
+          "detail": "1.6 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.1111111111111111,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 3,
+          "weightedRisk": 0.075,
+          "contribution": 0.2222222222222222,
+          "detail": "2 次漏损 → 3 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.037037037037037035,
+          "detail": "2 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-010": {
+      "pipeId": "WP-010",
+      "status": "succeeded",
+      "score": 22.5,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.14516129032258063,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 5,
+          "weightedRisk": 0.2,
+          "contribution": 0.25806451612903225,
+          "detail": "1986 年投运 → 40 年 → 5 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.03225806451612903,
+          "detail": "300 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.03225806451612903,
+          "detail": "2.1 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.14516129032258063,
+          "detail": "高压 → 4 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.1935483870967742,
+          "detail": "5 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 5,
+          "weightedRisk": 0.05,
+          "contribution": 0.06451612903225806,
+          "detail": "7 次维修 → 5 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 5,
+          "weightedRisk": 0.1,
+          "contribution": 0.12903225806451613,
+          "detail": "异常 → 5 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-011": {
+      "pipeId": "WP-011",
+      "status": "succeeded",
+      "score": 62.5,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.09999999999999999,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.26666666666666666,
+          "detail": "2003 年投运 → 23 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.06666666666666667,
+          "detail": "300 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.06666666666666667,
+          "detail": "1.9 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.09999999999999999,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 3,
+          "weightedRisk": 0.075,
+          "contribution": 0.19999999999999998,
+          "detail": "2 次漏损 → 3 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 3,
+          "weightedRisk": 0.025,
+          "contribution": 0.06666666666666667,
+          "detail": "3 次维修 → 3 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.13333333333333333,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-012": {
+      "pipeId": "WP-012",
+      "status": "succeeded",
+      "score": 32.4,
+      "grade": "重点检查",
+      "confidence": 85,
+      "validWeight": 0.85,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.19565217391304343,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.2608695652173913,
+          "detail": "1990 年投运 → 36 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.08695652173913043,
+          "detail": "250 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.043478260869565216,
+          "detail": "2.2 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": null,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "当前记录缺失或不适用，未计入权重"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.26086956521739124,
+          "detail": "4 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 4,
+          "weightedRisk": 0.037500000000000006,
+          "contribution": 0.06521739130434782,
+          "detail": "5 次维修 → 4 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.08695652173913043,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [
+        "运行压力"
+      ],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 7 项有效，可信度 85%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-013": {
+      "pipeId": "WP-013",
+      "status": "succeeded",
+      "score": 82.5,
+      "grade": "基本健康",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.21428571428571425,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 2,
+          "weightedRisk": 0.05,
+          "contribution": 0.2857142857142857,
+          "detail": "2012 年投运 → 14 年 → 2 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.2857142857142857,
+          "detail": "250 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.1 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.21428571428571425,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次漏损 → 1 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次维修 → 1 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管径。"
+    },
+    "WP-014": {
+      "pipeId": "WP-014",
+      "status": "succeeded",
+      "score": 85,
+      "grade": "基本健康",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.24999999999999994,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 2,
+          "weightedRisk": 0.05,
+          "contribution": 0.3333333333333333,
+          "detail": "2015 年投运 → 11 年 → 2 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.3333333333333333,
+          "detail": "250 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.2 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "低压 → 1 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次漏损 → 1 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.08333333333333333,
+          "detail": "1 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管径。"
+    },
+    "WP-015": {
+      "pipeId": "WP-015",
+      "status": "succeeded",
+      "score": 70,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.33333333333333337,
+          "detail": "2000 年投运 → 26 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.16666666666666669,
+          "detail": "200 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.08333333333333334,
+          "detail": "1.8 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.04166666666666667,
+          "detail": "2 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管径。"
+    },
+    "WP-016": {
+      "pipeId": "WP-016",
+      "status": "succeeded",
+      "score": 17.5,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.13636363636363633,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 5,
+          "weightedRisk": 0.2,
+          "contribution": 0.24242424242424243,
+          "detail": "1982 年投运 → 44 年 → 5 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 4,
+          "weightedRisk": 0.07500000000000001,
+          "contribution": 0.09090909090909091,
+          "detail": "100 mm → 4 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.030303030303030304,
+          "detail": "2.4 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.13636363636363633,
+          "detail": "高压 → 4 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.1818181818181818,
+          "detail": "6 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 5,
+          "weightedRisk": 0.05,
+          "contribution": 0.06060606060606061,
+          "detail": "8 次维修 → 5 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 5,
+          "weightedRisk": 0.1,
+          "contribution": 0.12121212121212122,
+          "detail": "异常 → 5 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-017": {
+      "pipeId": "WP-017",
+      "status": "succeeded",
+      "score": 36.2,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.17647058823529407,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.23529411764705882,
+          "detail": "1988 年投运 → 38 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 4,
+          "weightedRisk": 0.07500000000000001,
+          "contribution": 0.11764705882352941,
+          "detail": "150 mm → 4 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.0392156862745098,
+          "detail": "2 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.0588235294117647,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.2352941176470588,
+          "detail": "4 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 4,
+          "weightedRisk": 0.037500000000000006,
+          "contribution": 0.058823529411764705,
+          "detail": "6 次维修 → 4 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.0784313725490196,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-018": {
+      "pipeId": "WP-018",
+      "status": "succeeded",
+      "score": 77.5,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 2,
+          "weightedRisk": 0.05,
+          "contribution": 0.2222222222222222,
+          "detail": "2009 年投运 → 17 年 → 2 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.2222222222222222,
+          "detail": "200 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "1.3 m → 1 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.16666666666666663,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.05555555555555555,
+          "detail": "1 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管径。"
+    },
+    "WP-019": {
+      "pipeId": "WP-019",
+      "status": "succeeded",
+      "score": 31.3,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.1636363636363636,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 4,
+          "weightedRisk": 0.15000000000000002,
+          "contribution": 0.21818181818181823,
+          "detail": "1993 年投运 → 33 年 → 4 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 4,
+          "weightedRisk": 0.07500000000000001,
+          "contribution": 0.10909090909090911,
+          "detail": "150 mm → 4 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.03636363636363637,
+          "detail": "2.3 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.05454545454545454,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.21818181818181817,
+          "detail": "5 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 4,
+          "weightedRisk": 0.037500000000000006,
+          "contribution": 0.05454545454545456,
+          "detail": "6 次维修 → 4 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 5,
+          "weightedRisk": 0.1,
+          "contribution": 0.14545454545454548,
+          "detail": "异常 → 5 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-020": {
+      "pipeId": "WP-020",
+      "status": "succeeded",
+      "score": 15,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.13235294117647056,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 5,
+          "weightedRisk": 0.2,
+          "contribution": 0.23529411764705882,
+          "detail": "1985 年投运 → 41 年 → 5 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 4,
+          "weightedRisk": 0.07500000000000001,
+          "contribution": 0.08823529411764706,
+          "detail": "100 mm → 4 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.058823529411764705,
+          "detail": "2.6 m → 3 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.13235294117647056,
+          "detail": "高压 → 4 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 5,
+          "weightedRisk": 0.15,
+          "contribution": 0.1764705882352941,
+          "detail": "7 次漏损 → 5 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 5,
+          "weightedRisk": 0.05,
+          "contribution": 0.058823529411764705,
+          "detail": "9 次维修 → 5 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 5,
+          "weightedRisk": 0.1,
+          "contribution": 0.11764705882352941,
+          "detail": "异常 → 5 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、漏损历史。"
+    },
+    "WP-021": {
+      "pipeId": "WP-021",
+      "status": "succeeded",
+      "score": 72.5,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.13636363636363635,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.36363636363636365,
+          "detail": "2006 年投运 → 20 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.09090909090909091,
+          "detail": "300 mm → 2 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.09090909090909091,
+          "detail": "2 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.13636363636363635,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.13636363636363635,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.045454545454545456,
+          "detail": "2 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管材。"
+    },
+    "WP-022": {
+      "pipeId": "WP-022",
+      "status": "succeeded",
+      "score": 48.7,
+      "grade": "重点检查",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.21951219512195116,
+          "detail": "铸铁 → 4 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.19512195121951217,
+          "detail": "1997 年投运 → 29 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.09756097560975609,
+          "detail": "250 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.048780487804878044,
+          "detail": "2.2 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.07317073170731705,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 4,
+          "weightedRisk": 0.11249999999999999,
+          "contribution": 0.21951219512195116,
+          "detail": "3 次漏损 → 4 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 3,
+          "weightedRisk": 0.025,
+          "contribution": 0.048780487804878044,
+          "detail": "4 次维修 → 3 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.09756097560975609,
+          "detail": "关注 → 3 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管材、漏损历史。"
+    },
+    "WP-023": {
+      "pipeId": "WP-023",
+      "status": "succeeded",
+      "score": 70,
+      "grade": "关注",
+      "confidence": 100,
+      "validWeight": 1,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "球墨铸铁 → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 3,
+          "weightedRisk": 0.1,
+          "contribution": 0.33333333333333337,
+          "detail": "2004 年投运 → 22 年 → 3 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.16666666666666669,
+          "detail": "200 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": 2,
+          "weightedRisk": 0.025,
+          "contribution": 0.08333333333333334,
+          "detail": "1.7 m → 2 分"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.125,
+          "detail": "1 次漏损 → 2 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 2,
+          "weightedRisk": 0.0125,
+          "contribution": 0.04166666666666667,
+          "detail": "2 次维修 → 2 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 8 项有效，可信度 100%；当前主要贡献：管龄、管径。"
+    },
+    "WP-024": {
+      "pipeId": "WP-024",
+      "status": "succeeded",
+      "score": 86.1,
+      "grade": "基本健康",
+      "confidence": 90,
+      "validWeight": 0.9,
+      "factors": [
+        {
+          "key": "material",
+          "label": "管材",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.3,
+          "detail": "PE → 2 分"
+        },
+        {
+          "key": "age",
+          "label": "管龄",
+          "weight": 0.2,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "2018 年投运 → 8 年 → 1 分"
+        },
+        {
+          "key": "diameter",
+          "label": "管径",
+          "weight": 0.1,
+          "score": 3,
+          "weightedRisk": 0.05,
+          "contribution": 0.4,
+          "detail": "200 mm → 3 分"
+        },
+        {
+          "key": "depth",
+          "label": "埋深",
+          "weight": 0.1,
+          "score": null,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "当前记录缺失或不适用，未计入权重"
+        },
+        {
+          "key": "pressure",
+          "label": "运行压力",
+          "weight": 0.15,
+          "score": 2,
+          "weightedRisk": 0.0375,
+          "contribution": 0.3,
+          "detail": "常压 → 2 分"
+        },
+        {
+          "key": "leaks",
+          "label": "漏损历史",
+          "weight": 0.15,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次漏损 → 1 分"
+        },
+        {
+          "key": "repairs",
+          "label": "维修频次",
+          "weight": 0.05,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "0 次维修 → 1 分"
+        },
+        {
+          "key": "monitoring",
+          "label": "监测质量",
+          "weight": 0.1,
+          "score": 1,
+          "weightedRisk": 0,
+          "contribution": 0,
+          "detail": "正常 → 1 分"
+        }
+      ],
+      "missing": [
+        "埋深"
+      ],
+      "version": "demo-score-0.1.0",
+      "summary": "8 项指标中 7 项有效，可信度 90%；当前主要贡献：管径、管材。"
+    }
+  },
+  "impacts": {
+    "SC-HOSP": {
+      "scenarioId": "SC-HOSP",
+      "isolationPlanId": "ISO-HOSP-MIN",
+      "status": "succeeded",
+      "failedPipeIds": [
+        "WP-016"
+      ],
+      "closedPipeIds": [],
+      "valveIds": [
+        "V-016A"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "unreachableNodeIds": [
+        "N-H"
+      ],
+      "affectedServices": [
+        {
+          "serviceId": "SV-HOSP",
+          "name": "市第二医院",
+          "type": "医院",
+          "critical": true,
+          "reason": "接入节点 N-H 与当前水源不连通",
+          "households": 0,
+          "facilities": 1
+        }
+      ],
+      "affectedCriticalServiceIds": [
+        "SV-HOSP"
+      ],
+      "affectedHouseholds": 0,
+      "affectedFacilities": 1,
+      "evidenceIds": [
+        "scenario:SC-HOSP",
+        "pipe:WP-016",
+        "isolation:ISO-HOSP-MIN",
+        "valve:V-016A",
+        "service:SV-HOSP"
+      ],
+      "limitations": [
+        "仅表示合成管网中的拓扑通路影响，不代表压力、流量或实际缺供量。",
+        "情景为演示假设，不包含失效概率、物理级联或真实阀门操作。",
+        "服务对象与管段均为合成数据，不对应任何真实设施。",
+        "给定隔离方案只改变合成图中的管段开闭状态，不表示已实际操作阀门。",
+        "不可达节点：N-H"
+      ]
+    },
+    "SC-SCHOOL": {
+      "scenarioId": "SC-SCHOOL",
+      "isolationPlanId": "ISO-SCHOOL-MIN",
+      "status": "succeeded",
+      "failedPipeIds": [
+        "WP-017"
+      ],
+      "closedPipeIds": [],
+      "valveIds": [
+        "V-017A"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "unreachableNodeIds": [
+        "N-SCHOOL"
+      ],
+      "affectedServices": [
+        {
+          "serviceId": "SV-SCHOOL",
+          "name": "滨河实验学校",
+          "type": "学校",
+          "critical": true,
+          "reason": "接入节点 N-SCHOOL 与当前水源不连通",
+          "households": 0,
+          "facilities": 1
+        }
+      ],
+      "affectedCriticalServiceIds": [
+        "SV-SCHOOL"
+      ],
+      "affectedHouseholds": 0,
+      "affectedFacilities": 1,
+      "evidenceIds": [
+        "scenario:SC-SCHOOL",
+        "pipe:WP-017",
+        "isolation:ISO-SCHOOL-MIN",
+        "valve:V-017A",
+        "service:SV-SCHOOL"
+      ],
+      "limitations": [
+        "仅表示合成管网中的拓扑通路影响，不代表压力、流量或实际缺供量。",
+        "情景为演示假设，不包含失效概率、物理级联或真实阀门操作。",
+        "服务对象与管段均为合成数据，不对应任何真实设施。",
+        "给定隔离方案只改变合成图中的管段开闭状态，不表示已实际操作阀门。",
+        "不可达节点：N-SCHOOL"
+      ]
+    },
+    "SC-MALL": {
+      "scenarioId": "SC-MALL",
+      "isolationPlanId": "ISO-MALL-MIN",
+      "status": "succeeded",
+      "failedPipeIds": [
+        "WP-018"
+      ],
+      "closedPipeIds": [],
+      "valveIds": [
+        "V-018A"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "unreachableNodeIds": [
+        "N-MALL"
+      ],
+      "affectedServices": [
+        {
+          "serviceId": "SV-MALL",
+          "name": "滨河商业中心",
+          "type": "商业",
+          "critical": false,
+          "reason": "接入节点 N-MALL 与当前水源不连通",
+          "households": 0,
+          "facilities": 1
+        }
+      ],
+      "affectedCriticalServiceIds": [],
+      "affectedHouseholds": 0,
+      "affectedFacilities": 1,
+      "evidenceIds": [
+        "scenario:SC-MALL",
+        "pipe:WP-018",
+        "isolation:ISO-MALL-MIN",
+        "valve:V-018A",
+        "service:SV-MALL"
+      ],
+      "limitations": [
+        "仅表示合成管网中的拓扑通路影响，不代表压力、流量或实际缺供量。",
+        "情景为演示假设，不包含失效概率、物理级联或真实阀门操作。",
+        "服务对象与管段均为合成数据，不对应任何真实设施。",
+        "给定隔离方案只改变合成图中的管段开闭状态，不表示已实际操作阀门。",
+        "不可达节点：N-MALL"
+      ]
+    },
+    "SC-RES": {
+      "scenarioId": "SC-RES",
+      "isolationPlanId": "ISO-RES-MIN",
+      "status": "succeeded",
+      "failedPipeIds": [
+        "WP-019",
+        "WP-020"
+      ],
+      "closedPipeIds": [],
+      "valveIds": [
+        "V-019A",
+        "V-020A"
+      ],
+      "activeSourceIds": [
+        "N-S1"
+      ],
+      "unreachableNodeIds": [
+        "N-RES1",
+        "N-RES2"
+      ],
+      "affectedServices": [
+        {
+          "serviceId": "SV-RES1",
+          "name": "滨河一号院",
+          "type": "居民区",
+          "critical": false,
+          "reason": "接入节点 N-RES1 与当前水源不连通",
+          "households": 1280,
+          "facilities": 0
+        },
+        {
+          "serviceId": "SV-RES2",
+          "name": "老城二号院",
+          "type": "居民区",
+          "critical": false,
+          "reason": "接入节点 N-RES2 与当前水源不连通",
+          "households": 860,
+          "facilities": 0
+        }
+      ],
+      "affectedCriticalServiceIds": [],
+      "affectedHouseholds": 2140,
+      "affectedFacilities": 0,
+      "evidenceIds": [
+        "scenario:SC-RES",
+        "pipe:WP-019",
+        "pipe:WP-020",
+        "isolation:ISO-RES-MIN",
+        "valve:V-019A",
+        "valve:V-020A",
+        "service:SV-RES1",
+        "service:SV-RES2"
+      ],
+      "limitations": [
+        "仅表示合成管网中的拓扑通路影响，不代表压力、流量或实际缺供量。",
+        "情景为演示假设，不包含失效概率、物理级联或真实阀门操作。",
+        "服务对象与管段均为合成数据，不对应任何真实设施。",
+        "给定隔离方案只改变合成图中的管段开闭状态，不表示已实际操作阀门。",
+        "不可达节点：N-RES1",
+        "不可达节点：N-RES2"
+      ]
+    },
+    "SC-DUAL": {
+      "scenarioId": "SC-DUAL",
+      "isolationPlanId": "ISO-DUAL-MIN",
+      "status": "succeeded",
+      "failedPipeIds": [
+        "WP-001"
+      ],
+      "closedPipeIds": [],
+      "valveIds": [
+        "V-001A"
+      ],
+      "activeSourceIds": [
+        "N-S2"
+      ],
+      "unreachableNodeIds": [
+        "N-S1"
+      ],
+      "affectedServices": [],
+      "affectedCriticalServiceIds": [],
+      "affectedHouseholds": 0,
+      "affectedFacilities": 0,
+      "evidenceIds": [
+        "scenario:SC-DUAL",
+        "pipe:WP-001",
+        "isolation:ISO-DUAL-MIN",
+        "valve:V-001A"
+      ],
+      "limitations": [
+        "仅表示合成管网中的拓扑通路影响，不代表压力、流量或实际缺供量。",
+        "情景为演示假设，不包含失效概率、物理级联或真实阀门操作。",
+        "服务对象与管段均为合成数据，不对应任何真实设施。",
+        "给定隔离方案只改变合成图中的管段开闭状态，不表示已实际操作阀门。",
+        "不可达节点：N-S1"
+      ]
+    }
+  }
+}

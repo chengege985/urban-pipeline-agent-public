@@ -1,0 +1,333 @@
+/* Project workbench tokens use the existing two themes. */
+.gas-cockpit-page.gas-sprint-cockpit[data-theme="dark"] {
+  --gas-surface-0: #07131b;
+  --gas-surface-1: #0d1c26;
+  --gas-surface-2: #132733;
+  --gas-surface-3: #1b3742;
+  --gas-brand: #44baa8;
+  --gas-brand-strong: #8ae2d4;
+  --gas-brand-soft: #163a3e;
+  --gas-sea: #65dbcd;
+  --gas-map-land: #101f28;
+  --gas-border: #263b44;
+  --gas-border-strong: #3b5560;
+}
+.gas-cockpit-page.gas-sprint-cockpit[data-theme="light"] {
+  --gas-brand: #177c6f;
+  --gas-brand-strong: #126259;
+  --gas-brand-soft: #d9efea;
+}
+.gas-cockpit-page.gas-sprint-cockpit {
+  padding-inline: clamp(12px, 1.5vw, 28px);
+  gap: 13px;
+}
+.gas-sprint-cockpit .gas-app-bar {
+  min-height: 64px;
+  gap: 12px;
+}
+.gas-sprint-cockpit .gas-app-brand h1 {
+  letter-spacing: .02em;
+  font-size: 20px;
+}
+.gas-sprint-metrics {
+  flex: none;
+}
+.gas-sprint-metrics dl {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.gas-sprint-metrics dl > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 65px;
+  padding: 10px clamp(9px, 1.1vw, 21px);
+  background: var(--gas-surface-1);
+  border: 1px solid var(--gas-border);
+  border-radius: var(--gas-radius);
+}
+.gas-sprint-metrics dl > div:first-child {
+  box-shadow: inset 0 2px 0 var(--gas-brand);
+}
+.gas-sprint-metrics dt {
+  color: var(--gas-ink-2);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.gas-sprint-metrics dd {
+  margin: 0;
+  color: var(--gas-ink-1);
+  font-size: clamp(20px, 1.65vw, 31px);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.gas-sprint-metrics .gas-sprint-health dd {
+  font-size: clamp(10px, .82vw, 14px);
+  font-weight: 500;
+  color: var(--gas-warn);
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-unified-workspace {
+  --gas-left: clamp(208px, 17vw, 280px);
+  --gas-right: clamp(270px, 23vw, 365px);
+  /* Keep the timeline and task dock readable at 1280×720 and 1600×900. */
+  grid-template-rows: minmax(0, 1fr) 180px;
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-layout-analysis {
+  --gas-right: clamp(280px, 25vw, 395px);
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-layout-compact {
+  --gas-left: clamp(194px, 15vw, 226px);
+  --gas-right: clamp(255px, 20vw, 324px);
+  grid-template-rows: minmax(0, 1fr) 168px;
+}
+.gas-sprint-cockpit .gas-window-topology .gas-window-body {
+  background: var(--gas-surface-0);
+}
+.gas-sprint-cockpit .gas-map-canvas {
+  min-height: 220px;
+}
+.gas-sprint-cockpit .gas-gis-canvas { border-radius: 6px; }
+.gas-sprint-cockpit .gas-gis-canvas > svg {
+  background-image: linear-gradient(var(--gas-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gas-border) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+.gas-sprint-cockpit .gas-gis-canvas .gas-map-background {
+  fill: var(--gas-surface-0);
+  fill-opacity: .76;
+}
+.gas-sprint-cockpit .gas-gis-unavailable-bar .gas-gis-state-copy {
+  display: block;
+  margin-top: 3px;
+  color: var(--gas-ink-2);
+}
+.gas-sprint-cockpit .gas-gis-unavailable-bar button {
+  margin-top: 7px;
+}
+.gas-sprint-records {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  gap: 9px;
+}
+.gas-sprint-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+.gas-sprint-cockpit .gas-sprint-tabs button {
+  padding: 6px 2px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.gas-sprint-search input {
+  width: 100%;
+  padding: 7px 9px;
+}
+.gas-sprint-result-count {
+  margin: 0;
+  color: var(--gas-ink-2);
+  font-size: 11px;
+}
+.gas-sprint-result-count strong {
+  color: var(--gas-ink-1);
+  font-variant-numeric: tabular-nums;
+}
+.gas-sprint-record-list {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  overflow-y: auto;
+  list-style: none;
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  margin: 0;
+  padding: 0 3px 1px 0;
+  scrollbar-width: thin;
+}
+.gas-sprint-record-list li { min-width: 0; }
+.gas-sprint-cockpit .gas-sprint-record-list button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  padding: 9px;
+  gap: 5px;
+}
+.gas-sprint-record-list button > span:first-child {
+  min-width: 0;
+  overflow: hidden;
+}
+.gas-sprint-record-list strong,
+.gas-sprint-record-list small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gas-sprint-record-list strong { color: var(--gas-ink-1); }
+.gas-sprint-record-list small {
+  font: 10px/1.6 ui-monospace, monospace;
+  color: var(--gas-ink-2);
+}
+.gas-sprint-record-state {
+  color: var(--gas-brand-strong);
+  flex: none;
+  max-width: 42%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 10px;
+}
+.gas-sprint-empty,
+.gas-sprint-selection-empty p,
+.gas-sprint-context {
+  color: var(--gas-ink-2);
+}
+.gas-sprint-selection-empty {
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  text-align: center;
+  padding: 30px 12px;
+}
+.gas-sprint-selection-empty p { margin: 0; max-width: 20em; }
+.gas-sprint-empty-icon {
+  inline-size: 42px;
+  block-size: 42px;
+  border: 1px solid var(--gas-border-strong);
+  background: var(--gas-brand-soft);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+.gas-sprint-empty-icon i {
+  inline-size: 16px;
+  block-size: 16px;
+  border: 2px solid var(--gas-brand-strong);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--gas-surface-1);
+}
+.gas-sprint-quality,
+.gas-sprint-assistant {
+  border-top: 1px solid var(--gas-border);
+  padding-top: 14px;
+}
+.gas-sprint-cockpit :is(.gas-sprint-quality, .gas-sprint-assistant, .gas-sprint-related) h4 {
+  margin: 0 0 6px;
+}
+.gas-sprint-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 7px;
+}
+.gas-sprint-detail-head h3 {
+  margin: 3px 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+.gas-sprint-detail-head > button { flex-shrink: 0; }
+.gas-sprint-kind, .gas-sprint-detail-meta > span {
+  color: var(--gas-brand-strong);
+  font-size: 11px;
+}
+.gas-sprint-detail-head code,
+.gas-sprint-context code {
+  font: 11px/1.5 ui-monospace, monospace;
+  overflow-wrap: anywhere;
+  color: var(--gas-ink-2);
+}
+.gas-sprint-detail-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+  gap: 5px;
+}
+.gas-sprint-cockpit .gas-sprint-detail-meta button {
+  padding: 4px 7px;
+  font-size: 11px;
+}
+.gas-sprint-related {
+  margin: 13px 0;
+}
+.gas-sprint-related ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.gas-sprint-related li button,
+.gas-sprint-connection > button {
+  text-align: left;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.gas-sprint-connection {
+  display: grid;
+  gap: 4px;
+  color: var(--gas-ink-2);
+  font-size: 11px;
+  padding: 5px 0;
+}
+.gas-sprint-cockpit .gas-window-selected > .gas-window-body {
+  overflow-x: hidden;
+}
+.gas-sprint-inspector,
+.gas-sprint-record-detail,
+.gas-sprint-assistant .gas-m2-answer {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+.gas-sprint-assistant {
+  grid-template-columns: minmax(0, 1fr);
+}
+.gas-sprint-assistant input {
+  width: 100%;
+}
+.gas-sprint-cockpit .gas-sprint-record-detail code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.gas-sprint-context { margin: 0 0 3px; }
+.gas-sprint-context code { margin-left: 6px; }
+.gas-sprint-assistant input { padding: 6px 8px; }
+.gas-sprint-assistant button[type="submit"] { justify-self: start; }
+.gas-sprint-assistant .gas-m2-answer p { white-space: pre-wrap; }
+@media (max-width: 1180px) {
+  .gas-cockpit-page.gas-sprint-cockpit { gap: 8px; }
+  .gas-sprint-cockpit .gas-app-bar { gap: 7px; }
+  .gas-sprint-metrics dl > div { min-height: 56px; }
+  .gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-unified-workspace {
+    --gas-right: 265px;
+    --gas-left: 204px;
+  }
+}
+@media (max-width: 960px) {
+  .gas-cockpit-page.gas-sprint-cockpit { height: auto; overflow: visible; }
+  .gas-sprint-metrics dl { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .gas-sprint-metrics dl > div { min-height: 50px; }
+  .gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-unified-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 360px auto auto auto;
+    grid-template-areas: "scenario" "topology" "selected" "timeline" "tasks";
+  }
+  .gas-sprint-record-list { max-height: 165px; }
+  .gas-sprint-cockpit .gas-gis-toolbar,
+  .gas-sprint-cockpit .gas-gis-toolbar .gas-gis-controls { flex-wrap: wrap; }
+  .gas-sprint-cockpit .gas-gis-canvas { min-height: 190px; }
+}
+@media (max-width: 460px) {
+  .gas-sprint-metrics dl > div { display: block; padding: 7px; }
+  .gas-sprint-metrics dd { font-size: 19px; }
+  .gas-sprint-metrics .gas-sprint-health dd { font-size: 12px; margin-top: 6px; }
+  .gas-sprint-cockpit .gas-gis-controls { max-width: 100%; }
+  .gas-sprint-cockpit .gas-view-settings .gas-settings-content { position: fixed; inset: 130px 10px auto; width: auto; }
+}

@@ -1,0 +1,3 @@
+原始记录,测点编号,关联管段,监测类型,计量单位,设备状态
+sensor-evidence-a,syn-gas-pilot-pressure-a,syn-gas-pilot-pipe-a,pressure,kPa,active
+sensor-evidence-b,syn-gas-pilot-flow-b,syn-gas-pilot-pipe-b,flow,Nm3/h,active

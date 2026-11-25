@@ -1,0 +1,1600 @@
+{
+  "contract_version": "gas-g15-contract-candidate/0.1.0",
+  "business_approved": false,
+  "data_scope": "synthetic_arithmetic_only",
+  "registration_status": "not_registered_with_platform",
+  "source_files": [
+    {
+      "file": "管线健康度评价-计算方案-20260803.docx",
+      "sha256": "2f56b58bab75f5435f069e9c498fb31a6d372673173782864d24b3e178ce9b8d"
+    },
+    {
+      "file": "（修改）管线健康度评价-计算方案(1).docx",
+      "sha256": "abeeb32c24854c510fb0dcabf1677c50956c29c2c95d7c304fd2983f849da104"
+    },
+    {
+      "file": "健康度智评指标数据备注需补充0924.xlsx",
+      "sha256": "4e1df01c0b9d703678518d371a9dbe75d590b994174e8fb9b4d4d5b3110a9b4a"
+    },
+    {
+      "file": "数据目录及数据项20261015160600.xlsx",
+      "sha256": "c4d1e7f70da7be4e2b895b3e8cee9342fed4f5b0219d38060a6617f78a348c9b"
+    }
+  ],
+  "value_semantics": "P/C/R/H candidate scores; P is not failure probability; E is effective weight coverage, not predictive confidence.",
+  "required_indicators": [
+    "G01",
+    "G02",
+    "G04"
+  ],
+  "full_weight_sum": 1.0,
+  "required_weight_sum_at_q1": 0.24,
+  "common_formulas": {
+    "e_i": "a_i*w_i*q_i",
+    "E_M": "sum(w_i*q_i for valid mandatory indicators; all mandatory evidence required)",
+    "P_base": "sum(w_i*q_i*S_i,i in M)/E_M",
+    "P": "sum(a_i*w_i*q_i*S_i)/E",
+    "E": "sum(a_i*w_i*q_i)",
+    "P_low": "E*P",
+    "P_high": "E*P+(1-E)*100",
+    "R": "sqrt(P*C)",
+    "G_final_without_redline": "max(G_score(R),G_matrix[level(P),level(C)])"
+  },
+  "E_labels": [
+    {
+      "range": "[0,0.35)",
+      "label": "粗评"
+    },
+    {
+      "range": "[0.35,0.60)",
+      "label": "初评"
+    },
+    {
+      "range": "[0.60,0.80)",
+      "label": "较可靠"
+    },
+    {
+      "range": "[0.80,1]",
+      "label": "精评"
+    }
+  ],
+  "interval_note": "源文给出的理论包络，不是统计置信区间；充分度增加并不保证每次新证据后的区间作为集合必然包含于旧区间。",
+  "risk_matrix": [
+    [
+      1,
+      1,
+      2,
+      2,
+      3
+    ],
+    [
+      1,
+      2,
+      2,
+      3,
+      4
+    ],
+    [
+      2,
+      2,
+      3,
+      4,
+      4
+    ],
+    [
+      2,
+      3,
+      4,
+      4,
+      5
+    ],
+    [
+      3,
+      4,
+      4,
+      5,
+      5
+    ]
+  ],
+  "level_boundary_policy": "candidate [0,20),[20,40),[40,60),[60,80),[80,100]; source P/C shorthand endpoints require confirmation",
+  "H_definition_status": "unresolved; expose separate arithmetic candidates only; no selected official H",
+  "redline_policy": {
+    "events": [
+      "active_leak_alarm",
+      "critical_valve_failure",
+      "illegal_excavation_approaching",
+      "sustained_combustible_gas_exceedance"
+    ],
+    "confirmed_region": "high",
+    "exact_five_level_grade": "pending_business_confirmation_4_or_5",
+    "operational_instructions": false
+  },
+  "indicators": [
+    {
+      "code": "G01",
+      "chinese_name": "服役年限",
+      "indicator_workbook_name": "服役年限/设计寿命比",
+      "business_meaning": "用实际服役年数相对于材质设计寿命的比例描述老化，不能仅凭年份长短跨材质比较。",
+      "raw_fields_source": "投用日期；回退建设日期；管材",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段唯一键",
+          "proposed_target": "pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "投用日期/回退建设日期",
+          "proposed_target": "commissioned_at/construction_at",
+          "unit": "date"
+        },
+        {
+          "source_field_or_gap": "评价日期",
+          "proposed_target": "as_of",
+          "unit": "timezone-aware datetime"
+        },
+        {
+          "source_field_or_gap": "管材",
+          "proposed_target": "material_code",
+          "unit": "category"
+        },
+        {
+          "source_field_or_gap": "版本化材质设计寿命",
+          "proposed_target": "design_life_years",
+          "unit": "year"
+        }
+      ],
+      "formula_source_unit": "年/设计寿命比",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "年限/设计寿命：<40%、40-60%、60-80%、80-100%、>=100%",
+        "derived_rule_from_workbook": "服役年限=（评价日期-优先取的投用日期或建设日期）/365.2425；寿命使用比=服役年限/材质设计寿命。",
+        "implementation_status": "candidate_ratio_only",
+        "unresolved": "原文未给全材质设计寿命表；必须绑定版本。区间40/60/80%端点在候选中采用左闭右开，等待业务确认。"
+      },
+      "initial_weight": 0.12,
+      "mandatory": true,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "材质设计寿命来自版本化配置表；投用日期缺失且仅用建设日期时q=0.8；两日期均缺失则必填项不通过。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 190,
+          "resource_name": "重燃集团压力管道定期检验信息",
+          "resource_id": "R500000TAB2024040300895810",
+          "resource_status": "已发布",
+          "source_field": "投用日期",
+          "source_key": "tyrq",
+          "source_cells": "Q190:R190",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 207,
+          "resource_name": "管网信息",
+          "resource_id": "R500000TAB2024040300893861",
+          "resource_status": "已发布",
+          "source_field": "投运时间",
+          "source_key": "date_create",
+          "source_cells": "Q207:R207",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "检验信息投用日期/管网投运时间是候选来源；设计寿命配置另缺，名称跨资源ID不能自动拼接。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "已有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "必填未形成有效标准化证据时P_base/P均null并insufficient_data，不按其他有效项补算。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R002",
+        "M04 T015R002",
+        "M06 燃气!A2:I2"
+      ]
+    },
+    {
+      "code": "G02",
+      "chinese_name": "材质",
+      "indicator_workbook_name": "材质",
+      "business_meaning": "用有来源的材质与防腐/检测状态分类描述材料风险；不是只看一个管材名称便可确定全部风险。",
+      "raw_fields_source": "管材",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段唯一键",
+          "proposed_target": "pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "管材原值与标准编码",
+          "proposed_target": "material_raw/material_code",
+          "unit": "category"
+        },
+        {
+          "source_field_or_gap": "关联防腐/焊口/检测状态",
+          "proposed_target": "material_condition_evidence",
+          "unit": "category with evidence"
+        }
+      ],
+      "formula_source_unit": "类别",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "PE/优质钢、受控钢、一般钢、老旧钢/铸铁、淘汰或未知材质",
+        "derived_rule_from_workbook": "按管材字典映射五级风险分；原始文本类型保留原值和标准化编码。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "公式表把未知材质列90分，与必填无有效输入不出完整P冲突；表6、材质示例表对铸铁所在档也不完全一致。不自动映射未知。"
+      },
+      "initial_weight": 0.08,
+      "mandatory": true,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "未知、混填或无法映射时不可默认低风险。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 188,
+          "resource_name": "重燃集团压力管道定期检验信息",
+          "resource_id": "R500000TAB2024040300895810",
+          "resource_status": "已发布",
+          "source_field": "管道材质",
+          "source_key": "gdcz",
+          "source_cells": "Q188:R188",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 205,
+          "resource_name": "管网信息",
+          "resource_id": "R500000TAB2024040300893861",
+          "resource_status": "已发布",
+          "source_field": "材质",
+          "source_key": "material",
+          "source_cells": "Q205:R205",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "检验材质和管网材质是候选来源；原始材质字典与检测状态待提供。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通+市政院",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "已有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "必填未形成有效标准化证据时P_base/P均null并insufficient_data，不按其他有效项补算。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R003",
+        "M04 T015R003",
+        "M06 燃气!A3:I3"
+      ]
+    },
+    {
+      "code": "G03",
+      "chinese_name": "阴极保护/防腐",
+      "indicator_workbook_name": "阴极保护/防腐",
+      "business_meaning": "描述阴极保护和防腐控制是否有效；需要有效检测而非仅有设备点位。",
+      "raw_fields_source": "标准字段无直接值；管段主键/空间位置用于挂接",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段/检测点关联",
+          "proposed_target": "pipe_id/test_point_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "阴保电位",
+          "proposed_target": "potential_mv",
+          "unit": "mV"
+        },
+        {
+          "source_field_or_gap": "检测时间",
+          "proposed_target": "observed_at",
+          "unit": "timezone-aware datetime"
+        },
+        {
+          "source_field_or_gap": "达标状态与判定版本",
+          "proposed_target": "compliance_status/threshold_version",
+          "unit": "category/version"
+        }
+      ],
+      "formula_source_unit": "mV/状态",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "电位达标、轻微偏移、间歇异常、连续异常、失效/无有效数据",
+        "derived_rule_from_workbook": "按最近有效检测点的阴保电位、检测日期、达标状态形成风险分。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "无mV阈值、参考电极、适用管材及持续时间；“无有效数据”列最高档与缺失排除冲突。不适用PE后的权重/E基线尚未定义。"
+      },
+      "initial_weight": 0.06,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "需新增阴保检测表：管段唯一键、检测时间、阴保电位（mV）、状态。 "
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "438字段目录未见可直接计算的阴保电位检测时序；0924表列IRS/紫光为线索。",
+      "source_system_hint": "irs",
+      "provider_hint": "紫光",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "目前已经接入了一部分，数据很不好",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R004",
+        "M04 T015R004",
+        "M06 燃气!A4:I4"
+      ]
+    },
+    {
+      "code": "G04",
+      "chinese_name": "压力等级",
+      "indicator_workbook_name": "压力等级",
+      "business_meaning": "描述设计/运行压力等级带来的负荷与风险类别；原方案含波动描述，须与G06去重。",
+      "raw_fields_source": "设计压力、管线等级",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段唯一键",
+          "proposed_target": "pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "设计压力",
+          "proposed_target": "design_pressure_mpa",
+          "unit": "MPa"
+        },
+        {
+          "source_field_or_gap": "管线等级",
+          "proposed_target": "pressure_class",
+          "unit": "category"
+        },
+        {
+          "source_field_or_gap": "运行稳定/波动证据",
+          "proposed_target": "pressure_regime_evidence",
+          "unit": "explicit window"
+        }
+      ],
+      "formula_source_unit": "类别/MPa",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "低压稳定、中压稳定、次高压、压力频繁波动、高压重点管段",
+        "derived_rule_from_workbook": "设计压力解析为MPa，管线等级按高/中/低压字典映射；两者不重复加权，取更严格分级。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺MPa到高/中/低/次高类别界限；等级、设计压力、运行波动如何合成未定，需避免与G06重复。"
+      },
+      "initial_weight": 0.04,
+      "mandatory": true,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "设计压力为空时可用管线等级回退，记录q=0.8。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 186,
+          "resource_name": "重燃集团压力管道定期检验信息",
+          "resource_id": "R500000TAB2024040300895810",
+          "resource_status": "已发布",
+          "source_field": "设计压力",
+          "source_key": "sjyl",
+          "source_cells": "Q186:R186",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 206,
+          "resource_name": "管网信息",
+          "resource_id": "R500000TAB2024040300893861",
+          "resource_status": "已发布",
+          "source_field": "压力",
+          "source_key": "pressure",
+          "source_cells": "Q206:R206",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "检验设计压力带MPa说明；管网pressure字段单位待确认。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通+市政院",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "归集数据中部分含有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "必填未形成有效标准化证据时P_base/P均null并insufficient_data，不按其他有效项补算。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R005",
+        "M04 T015R005",
+        "M06 燃气!A5:I5"
+      ]
+    },
+    {
+      "code": "G05",
+      "chinese_name": "燃气浓度/泄漏报警",
+      "indicator_workbook_name": "燃气浓度/泄漏报警",
+      "business_meaning": "描述给定30日窗口内已确认浓度/泄漏报警的次数、严重度与活动状态。",
+      "raw_fields_source": "标准字段无直接值；管段主键、空间几何用于挂接",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "设备—管段映射",
+          "proposed_target": "sensor_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "采样时刻",
+          "proposed_target": "observed_at",
+          "unit": "timezone-aware datetime"
+        },
+        {
+          "source_field_or_gap": "燃气浓度",
+          "proposed_target": "gas_concentration_ppm",
+          "unit": "ppm; source concentration basis required"
+        },
+        {
+          "source_field_or_gap": "报警等级与确认状态",
+          "proposed_target": "alarm_level/confirmed",
+          "unit": "category/bool"
+        },
+        {
+          "source_field_or_gap": "报警发生与解除时间",
+          "proposed_target": "alarm_started_at/cleared_at",
+          "unit": "timezone-aware datetime"
+        }
+      ],
+      "formula_source_unit": "次/30日",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "无告警、单次瞬时、重复预警、多次超限、活动泄漏告警",
+        "derived_rule_from_workbook": "30日内确认报警次数、最高报警级别、最近一次时间的组合分。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺浓度报警阈值、等级字典、瞬时/重复/多次定义及组合函数；ppm与%LEL/%体积分数不能无依据换算。"
+      },
+      "initial_weight": 0.12,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "需传感器表：设备编号、管段唯一键或坐标、采集时间、燃气浓度（ppm）、告警等级。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 251,
+          "resource_name": "燃气泄露风险点",
+          "resource_id": "R500000TAB2024072601423916",
+          "resource_status": "已发布",
+          "source_field": "现设备唯一编码",
+          "source_key": "XSBWYBM",
+          "source_cells": "Q251:R251",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 268,
+          "resource_name": "燃气泄露风险点",
+          "resource_id": "R500000TAB2024072601423916",
+          "resource_status": "已发布",
+          "source_field": "设备状态",
+          "source_key": "SBZT",
+          "source_cells": "Q268:R268",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 295,
+          "resource_name": "管道燃气风险点位",
+          "resource_id": "R500000TAB2025030602269138",
+          "resource_status": "已发布",
+          "source_field": "风险点当前值",
+          "source_key": "RiskPointCurrentValue",
+          "source_cells": "Q295:R295",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 296,
+          "resource_name": "管道燃气风险点位",
+          "resource_id": "R500000TAB2025030602269138",
+          "resource_status": "已发布",
+          "source_field": "风险点阈值",
+          "source_key": "RiskPointThreshold",
+          "source_cells": "Q296:R296",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "设备台账不是浓度序列；风险点当前值和阈值未给单位/采样时点，不能直接认定为G05。",
+      "source_system_hint": "irs",
+      "provider_hint": "紫光",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "感知设备有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [
+        "active_leak_alarm",
+        "sustained_combustible_gas_exceedance"
+      ],
+      "redline_note": "已确认红线独立显示高风险区域和人工复核；精确五级提升及触发阈值待确认，不由平均分稀释。",
+      "source_refs": [
+        "M03 T009R006",
+        "M04 T015R006",
+        "M06 燃气!A6:I6"
+      ]
+    },
+    {
+      "code": "G06",
+      "chinese_name": "压力流量异常",
+      "indicator_workbook_name": "压力流量异常",
+      "business_meaning": "描述压力及流量相对于指定基线的异常偏差；设计压力是否可作运行基线待确认。",
+      "raw_fields_source": "设计压力；管段主键",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "设备—管段映射",
+          "proposed_target": "sensor_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "采样时刻",
+          "proposed_target": "observed_at",
+          "unit": "timezone-aware datetime"
+        },
+        {
+          "source_field_or_gap": "实测压力及基准",
+          "proposed_target": "pressure_mpa/reference_pressure_mpa",
+          "unit": "MPa; absolute/gauge basis must match"
+        },
+        {
+          "source_field_or_gap": "实测流量及同窗基线",
+          "proposed_target": "flow/reference_flow",
+          "unit": "same sourced gas-flow unit and reference condition"
+        },
+        {
+          "source_field_or_gap": "统计窗",
+          "proposed_target": "window_start/window_end",
+          "unit": "timezone-aware datetime"
+        }
+      ],
+      "formula_source_unit": "%偏差",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "偏差<5%、5-10%、10-20%、20-30%、>30%或突降",
+        "derived_rule_from_workbook": "压力偏差率=绝对值（实测压力-设计压力）/设计压力；流量采用同时间窗基线偏差。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "5/10/20/30%端点、压力/流量合并方式、突降时长/幅度未明确；设计压力用作运行基准的业务适用性待确认，基准0不可相除。"
+      },
+      "initial_weight": 0.08,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "实测压力、流量、基线均非矢量标准字段，须由生产调度监控系统/物联网接口提供。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 186,
+          "resource_name": "重燃集团压力管道定期检验信息",
+          "resource_id": "R500000TAB2024040300895810",
+          "resource_status": "已发布",
+          "source_field": "设计压力",
+          "source_key": "sjyl",
+          "source_cells": "Q186:R186",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 206,
+          "resource_name": "管网信息",
+          "resource_id": "R500000TAB2024040300893861",
+          "resource_status": "已发布",
+          "source_field": "压力",
+          "source_key": "pressure",
+          "source_cells": "Q206:R206",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "只找到静态设计压力候选，未找到可直接计算的管段压力/流量时序与同窗基线。",
+      "source_system_hint": "irs",
+      "provider_hint": "紫光",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "压力和流量感知设备有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R007",
+        "M04 T015R007",
+        "M06 燃气!A7:I7"
+      ]
+    },
+    {
+      "code": "G07",
+      "chinese_name": "阀门井环境",
+      "indicator_workbook_name": "阀门井环境",
+      "business_meaning": "描述阀门井的积水、湿度和气体异常，而非阀门点位是否存在。",
+      "raw_fields_source": "管线点编号、特征、附属物、井深；管线起终点编号",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "井/阀门/管段关联",
+          "proposed_target": "chamber_id/valve_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "监测时间",
+          "proposed_target": "observed_at",
+          "unit": "timezone-aware datetime"
+        },
+        {
+          "source_field_or_gap": "积水/湿度/气体观测",
+          "proposed_target": "water_state/humidity/gas_concentration",
+          "unit": "category/%/ppm with sensor-specific unit"
+        },
+        {
+          "source_field_or_gap": "井深/特征/附属物",
+          "proposed_target": "chamber_depth_m/chamber_type",
+          "unit": "m/category"
+        }
+      ],
+      "formula_source_unit": "ppm/类别",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "正常、偶发积水、持续潮湿、气体异常、可燃气体超限",
+        "derived_rule_from_workbook": "筛选阀门井/检修井等附属物，挂接井室积水、湿度、气体监测的最高风险值。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺湿度、积水持续时间和气体超限阈值；需设备量程与有效性，管点属性不能产生环境分。"
+      },
+      "initial_weight": 0.05,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "环境监测值为扩展字段；仅有管点属性只能确定挂接对象。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "未见足够井室环境观测字段；指标表仅注明阀门点位有、环境属性无。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通+市政院",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "阀门点位有，环境属性无",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [
+        "sustained_combustible_gas_exceedance"
+      ],
+      "redline_note": "已确认红线独立显示高风险区域和人工复核；精确五级提升及触发阈值待确认，不由平均分稀释。",
+      "source_refs": [
+        "M03 T009R008",
+        "M04 T015R008",
+        "M06 燃气!A8:I8"
+      ]
+    },
+    {
+      "code": "G08",
+      "chinese_name": "风险隐患点密度",
+      "indicator_workbook_name": "风险隐患点密度",
+      "business_meaning": "描述与管段关联的有效未闭环隐患暴露密度，并单列重大隐患。",
+      "raw_fields_source": "管段矢量几何；来源要素主键",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "隐患ID和管段关联",
+          "proposed_target": "hazard_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "隐患级别/销号状态",
+          "proposed_target": "hazard_grade/closed",
+          "unit": "category/bool"
+        },
+        {
+          "source_field_or_gap": "发现与销号日期",
+          "proposed_target": "discovered_at/closed_at",
+          "unit": "datetime"
+        },
+        {
+          "source_field_or_gap": "管段长度",
+          "proposed_target": "length_km",
+          "unit": "km"
+        },
+        {
+          "source_field_or_gap": "空间缓冲与统计窗版本",
+          "proposed_target": "association_rule/window",
+          "unit": "version/datetime"
+        }
+      ],
+      "formula_source_unit": "处/公里",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "未发现、<=0.5、0.5-1、1-2、>2处/公里或重大未销号",
+        "derived_rule_from_workbook": "统计窗内有效隐患数/管段长度（km）；仅统计距管段不超过缓冲阈值的点位。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "需窗口、空间缓冲、同一隐患去重、未发现的排查覆盖证据；0.5/1/2端点和重大未销号覆盖顺序需确认。"
+      },
+      "initial_weight": 0.1,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "隐患点位、隐患等级、销号状态、发现日期为扩展字段。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 68,
+          "resource_name": "凯源燃气公司燃气管道整改隐患信息",
+          "resource_id": "R500000TAB2024040500901681",
+          "resource_status": "已发布",
+          "source_field": "隐患等级",
+          "source_key": "YHDJ",
+          "source_cells": "Q68:R68",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 74,
+          "resource_name": "凯源燃气公司燃气管道整改隐患信息",
+          "resource_id": "R500000TAB2024040500901681",
+          "resource_status": "已发布",
+          "source_field": "排查发现时间",
+          "source_key": "PCFXSJ",
+          "source_cells": "Q74:R74",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 76,
+          "resource_name": "凯源燃气公司燃气管道整改隐患信息",
+          "resource_id": "R500000TAB2024040500901681",
+          "resource_status": "已发布",
+          "source_field": "是否完成整改",
+          "source_key": "SFWCZG",
+          "source_cells": "Q76:R76",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 292,
+          "resource_name": "管道燃气风险点位",
+          "resource_id": "R500000TAB2025030602269138",
+          "resource_status": "已发布",
+          "source_field": "风险点等级",
+          "source_key": "RiskPointLevel",
+          "source_cells": "Q292:R292",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 310,
+          "resource_name": "管道燃气风险点位",
+          "resource_id": "R500000TAB2025030602269138",
+          "resource_status": "已发布",
+          "source_field": "风险点ID",
+          "source_key": "RiskPointID",
+          "source_cells": "Q310:R310",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "隐患等级/发现/整改字段可作候选；有效隐患、管段关联、长度、时间窗口与去重仍需落实。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "已有数据",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R009",
+        "M04 T015R009",
+        "M06 燃气!A9:I9"
+      ]
+    },
+    {
+      "code": "G09",
+      "chinese_name": "历史泄漏事件",
+      "indicator_workbook_name": "历史泄漏事件",
+      "business_meaning": "描述经确认的历史泄漏发生率及近期严重事件；报警或抢险不能自动等同确认泄漏。",
+      "raw_fields_source": "管段主键、管段几何长度",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "确认泄漏事件ID/管段",
+          "proposed_target": "leak_event_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "事件类型与确认状态",
+          "proposed_target": "event_type/confirmed",
+          "unit": "category/bool"
+        },
+        {
+          "source_field_or_gap": "发生时点/严重性",
+          "proposed_target": "occurred_at/severity",
+          "unit": "datetime/category"
+        },
+        {
+          "source_field_or_gap": "管段长度与有效观察时长",
+          "proposed_target": "length_km/observation_years",
+          "unit": "km/year"
+        }
+      ],
+      "formula_source_unit": "次/(公里·年)",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "5年无、轻微1次、一般1-2次、重复泄漏、近1年重大泄漏",
+        "derived_rule_from_workbook": "确认泄漏数/（管段长度（km）×统计年数），并以最近事件时间作加重。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "单位写次/(公里·年)，档位却用5年无/次数/严重性；尚无完整数值映射、最近事件加重公式或暴露窗缺口处理。"
+      },
+      "initial_weight": 0.08,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "事件类型、确认状态、发生时间、位置为扩展字段。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 312,
+          "resource_name": "重燃集团抢险数据信息",
+          "resource_id": "R500000TAB2024040500901821",
+          "resource_status": "已发布",
+          "source_field": "接警时间",
+          "source_key": "JJSJ",
+          "source_cells": "Q312:R312",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 317,
+          "resource_name": "重燃集团抢险数据信息",
+          "resource_id": "R500000TAB2024040500901821",
+          "resource_status": "已发布",
+          "source_field": "警情分类",
+          "source_key": "JQFL",
+          "source_cells": "Q317:R317",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 320,
+          "resource_name": "重燃集团抢险数据信息",
+          "resource_id": "R500000TAB2024040500901821",
+          "resource_status": "已发布",
+          "source_field": "抢险结束时间",
+          "source_key": "QXJSSJ",
+          "source_cells": "Q320:R320",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 321,
+          "resource_name": "重燃集团抢险数据信息",
+          "resource_id": "R500000TAB2024040500901821",
+          "resource_status": "已发布",
+          "source_field": "抢险处置结果",
+          "source_key": "QXCZJG",
+          "source_cells": "Q321:R321",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "抢险接警/分类/结束/处置只作事件线索，不等于已确认泄漏或复气；需原记录确认与管段绑定。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "紫光",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "已有",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R010",
+        "M04 T015R010",
+        "M06 燃气!A10:I10"
+      ]
+    },
+    {
+      "code": "G10",
+      "chinese_name": "第三方施工/占压",
+      "indicator_workbook_name": "第三方施工/占压",
+      "business_meaning": "描述第三方施工的距离、频次、备案与占压条件，不能靠敷设方式替代施工状态。",
+      "raw_fields_source": "管段矢量几何、X坐标、Y坐标、坐标系、敷设方式",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "施工或占压事件ID/管段",
+          "proposed_target": "construction_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "起止时点",
+          "proposed_target": "started_at/ended_at",
+          "unit": "datetime"
+        },
+        {
+          "source_field_or_gap": "距离与频次",
+          "proposed_target": "distance_m/count_30d",
+          "unit": "m/count"
+        },
+        {
+          "source_field_or_gap": "备案/开挖/占压状态",
+          "proposed_target": "registered/excavation/encroachment",
+          "unit": "category/bool"
+        },
+        {
+          "source_field_or_gap": "坐标系与几何",
+          "proposed_target": "crs/geometry",
+          "unit": "declared CRS"
+        }
+      ],
+      "formula_source_unit": "次/30日/类别",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "无施工、远距离施工、邻近备案施工、频繁交叉施工、非法开挖/占压",
+        "derived_rule_from_workbook": "按施工点至管段距离、施工频次、是否备案/占压状态分级。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺远/近距离界限、频繁次数、备案优先级；非法开挖逼近的确认和红线规则需单独定义。"
+      },
+      "initial_weight": 0.07,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "施工许可、占压识别及开挖事件为扩展字段；敷设方式仅作暴露条件。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "未见可直接绑定管段的施工许可/占压原始记录；指标表有第三方施工线索但占压无。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "紫光+正大",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "第三方施工数据有；占压无，需补充",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [
+        "illegal_excavation_approaching"
+      ],
+      "redline_note": "已确认红线独立显示高风险区域和人工复核；精确五级提升及触发阈值待确认，不由平均分稀释。",
+      "source_refs": [
+        "M03 T009R011",
+        "M04 T015R011",
+        "M06 燃气!A11:I11"
+      ]
+    },
+    {
+      "code": "G11",
+      "chinese_name": "土壤腐蚀性",
+      "indicator_workbook_name": "土壤腐蚀性",
+      "business_meaning": "描述土壤对外腐蚀的环境作用；不同采样位置和时点必须与管段关联。",
+      "raw_fields_source": "X坐标、Y坐标、坐标系、敷设方式",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "样点ID/管段关联",
+          "proposed_target": "sample_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "采样时点",
+          "proposed_target": "sampled_at",
+          "unit": "datetime"
+        },
+        {
+          "source_field_or_gap": "酸碱度",
+          "proposed_target": "soil_ph",
+          "unit": "pH"
+        },
+        {
+          "source_field_or_gap": "土壤电阻率",
+          "proposed_target": "resistivity_ohm_m",
+          "unit": "ohm*m"
+        },
+        {
+          "source_field_or_gap": "空间匹配方式",
+          "proposed_target": "association_rule",
+          "unit": "version"
+        }
+      ],
+      "formula_source_unit": "pH/Ω·m",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "弱腐蚀、较弱、中等、较强、强腐蚀；结合pH和电阻率",
+        "derived_rule_from_workbook": "管段缓冲区内地勘pH/电阻率按长度加权或最近有效点匹配。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺pH/电阻率分档及联合判据；长度加权和最近点只能择一版本化，不能按需要临时选更好结果。"
+      },
+      "initial_weight": 0.05,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "pH、电阻率、采样日期为扩展字段。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "目录未见pH/电阻率实测数据；勘察目录也只是字段定义，不是腐蚀测量。",
+      "source_system_hint": null,
+      "provider_hint": null,
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "无",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R012",
+        "M04 T015R012",
+        "M06 燃气!A12:I12"
+      ]
+    },
+    {
+      "code": "G12",
+      "chinese_name": "沉降/地质灾害",
+      "indicator_workbook_name": "沉降/地质灾害",
+      "business_meaning": "描述沉降趋势和地质灾害暴露；既有地灾点位不等于已发生管段变形。",
+      "raw_fields_source": "管段矢量几何、X坐标、Y坐标、坐标系",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "监测点/地灾点/管段",
+          "proposed_target": "point_id/pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "监测时间窗",
+          "proposed_target": "window",
+          "unit": "datetime interval"
+        },
+        {
+          "source_field_or_gap": "沉降速率",
+          "proposed_target": "settlement_mm_year",
+          "unit": "mm/year"
+        },
+        {
+          "source_field_or_gap": "地灾类型/等级/距离",
+          "proposed_target": "hazard_type/hazard_grade/distance_m",
+          "unit": "category/m"
+        },
+        {
+          "source_field_or_gap": "缓冲范围和P95样本",
+          "proposed_target": "buffer_m/sample_ids",
+          "unit": "m/identifiers"
+        }
+      ],
+      "formula_source_unit": "mm/年",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "稳定、轻微、趋势性变形、持续变形、超阈值/地灾点",
+        "derived_rule_from_workbook": "沉降速率取管段缓冲区P95；地灾点按距离和等级取最大风险。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺稳定/趋势性/持续变形数值、P95采样要求、地灾距离阈值和组合规则。"
+      },
+      "initial_weight": 0.04,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "沉降监测、地灾点位和等级为扩展字段。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "目录未见可直接用的管段沉降时序与地灾关联。",
+      "source_system_hint": null,
+      "provider_hint": null,
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "无",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R013",
+        "M04 T015R013",
+        "M06 燃气!A13:I13"
+      ]
+    },
+    {
+      "code": "G13",
+      "chinese_name": "覆土及交通振动",
+      "indicator_workbook_name": "覆土及交通振动",
+      "business_meaning": "描述覆土不足和交通/振动扰动；两端埋深不证明整段最小覆土。",
+      "raw_fields_source": "管线起点埋深、管线终点埋深、敷设方式、管段几何",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段唯一键",
+          "proposed_target": "pipe_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "起终埋深及中间点",
+          "proposed_target": "start_depth_m/end_depth_m/intermediate_depths",
+          "unit": "m"
+        },
+        {
+          "source_field_or_gap": "道路等级/重车覆盖",
+          "proposed_target": "road_class/heavy_traffic_overlap_m",
+          "unit": "category/m"
+        },
+        {
+          "source_field_or_gap": "交通振动观测与时点",
+          "proposed_target": "vibration/observed_at",
+          "unit": "source-declared vibration unit/datetime"
+        }
+      ],
+      "formula_source_unit": "m/振动等级",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "覆土合规低扰动至覆土不足、重载交通和持续振动",
+        "derived_rule_from_workbook": "最小覆土=起点埋深与终点埋深的较小值；与道路等级、重载路段覆盖长度叠加。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺覆土合规标准、交通振动分档和叠加公式；起终点最小值不能声称整段实测最小覆土。"
+      },
+      "initial_weight": 0.03,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "交通等级/振动为扩展字段；埋深仅表达起终点，长管段宜补采中间点。管径为0"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 168,
+          "resource_name": "重燃管网信息",
+          "resource_id": "R500000TAB2024061401261816",
+          "resource_status": "已发布",
+          "source_field": "形状",
+          "source_key": "Shape",
+          "source_cells": "Q168:R168",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 170,
+          "resource_name": "重燃管网信息",
+          "resource_id": "R500000TAB2024061401261816",
+          "resource_status": "已发布",
+          "source_field": "X1坐标",
+          "source_key": "X1_coordinate",
+          "source_cells": "Q170:R170",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 171,
+          "resource_name": "重燃管网信息",
+          "resource_id": "R500000TAB2024061401261816",
+          "resource_status": "已发布",
+          "source_field": "Y1坐标",
+          "source_key": "Y1_coordinate",
+          "source_cells": "Q171:R171",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 172,
+          "resource_name": "重燃管网信息",
+          "resource_id": "R500000TAB2024061401261816",
+          "resource_status": "已发布",
+          "source_field": "X2坐标",
+          "source_key": "X2_coordinate",
+          "source_cells": "Q172:R172",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 173,
+          "resource_name": "重燃管网信息",
+          "resource_id": "R500000TAB2024061401261816",
+          "resource_status": "已发布",
+          "source_field": "Y2坐标",
+          "source_key": "Y2_coordinates",
+          "source_cells": "Q173:R173",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "目录空间字段仅可作关联线索，缺直接覆土/交通振动值和坐标单位。",
+      "source_system_hint": "数字管线",
+      "provider_hint": "政通+市政院",
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "覆土有，基础属性归集\n震动无、管径无，需补充",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R014",
+        "M04 T015R014",
+        "M06 燃气!A14:I14"
+      ]
+    },
+    {
+      "code": "G14",
+      "chinese_name": "巡检维护",
+      "indicator_workbook_name": "巡检维护",
+      "business_meaning": "描述单管段巡检计划按期完成及缺陷闭环，不用全市月完成率替代单管段记录。",
+      "raw_fields_source": "管段主键",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "管段与计划/工单",
+          "proposed_target": "pipe_id/inspection_plan_id/work_order_id",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "计划截止/实际完成时间",
+          "proposed_target": "due_at/completed_at",
+          "unit": "datetime"
+        },
+        {
+          "source_field_or_gap": "缺陷闭环时间",
+          "proposed_target": "defect_closed_at",
+          "unit": "datetime"
+        },
+        {
+          "source_field_or_gap": "统计窗与计划数/按期完成数",
+          "proposed_target": "window/planned_count/on_time_count",
+          "unit": "datetime/count"
+        }
+      ],
+      "formula_source_unit": "%",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "按期完成率>=100%、95-100%、90-95%、80-90%、<80%",
+        "derived_rule_from_workbook": "按计划巡检完成率、逾期天数、缺陷闭环时长计算。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "指标表另列逾期天数和闭环时长，但计算方案只给完成率五档；组合与统计分母未定，城市汇总不可下推单管段。"
+      },
+      "initial_weight": 0.05,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "巡检计划、工单、完成时间、闭环状态为扩展字段。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 18,
+          "resource_name": "中心城区市政燃气管道月巡检完成率",
+          "resource_id": "R500000TAB2024070101331004",
+          "resource_status": "已发布",
+          "source_field": "中心城区市政燃气管道月巡检完成率",
+          "source_key": "zxcqszgsyxjwcl",
+          "source_cells": "Q18:R18",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 428,
+          "resource_name": "城市体征_燃气管道巡护（检）完成率_指标值",
+          "resource_id": "R500000TAB2025060902781574",
+          "resource_status": "已注销",
+          "source_field": "指标值",
+          "source_key": "ZBZ",
+          "source_cells": "Q428:R428",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 435,
+          "resource_name": "城市体征_燃气管道巡护（检）完成率_指标值",
+          "resource_id": "R500000TAB2025060902781574",
+          "resource_status": "已注销",
+          "source_field": "指标加工时间",
+          "source_key": "ZBJGSJ",
+          "source_cells": "Q435:R435",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 436,
+          "resource_name": "城市体征_燃气管道巡护（检）完成率_指标值",
+          "resource_id": "R500000TAB2025060902781574",
+          "resource_status": "已注销",
+          "source_field": "明细开始时间",
+          "source_key": "MXKSSJ",
+          "source_cells": "Q436:R436",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        },
+        {
+          "source_file": "数据目录及数据项20261015160600.xlsx",
+          "sheet": "数据编目",
+          "row": 437,
+          "resource_name": "城市体征_燃气管道巡护（检）完成率_指标值",
+          "resource_id": "R500000TAB2025060902781574",
+          "resource_status": "已注销",
+          "source_field": "明细结束时间",
+          "source_key": "MXJSSJ",
+          "source_cells": "Q437:R437",
+          "actual_records_received": "not_verified",
+          "mapping_status": "candidate_lineage_only"
+        }
+      ],
+      "data_resource_limit": "城市月巡检完成率非单管段；...2781574资源已注销，不能作为当前有效直接数据源。",
+      "source_system_hint": null,
+      "provider_hint": null,
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "无",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [],
+      "redline_note": "无该指标独有的明确红线；不得自行把高指标分等同已确认事件。",
+      "source_refs": [
+        "M03 T009R015",
+        "M04 T015R015",
+        "M06 燃气!A15:I15"
+      ]
+    },
+    {
+      "code": "G15",
+      "chinese_name": "隔离关断能力",
+      "indicator_workbook_name": "隔离关断能力",
+      "business_meaning": "描述对应管段的上下游隔离、阀门可用性及关断时效；拓扑邻接不是实际可操作方案。",
+      "raw_fields_source": "管线点编号、特征、附属物、管线起终点编号",
+      "raw_input_fields": [
+        {
+          "source_field_or_gap": "阀门与管段上下游映射",
+          "proposed_target": "valve_id/pipe_id/controlled_edge_ids",
+          "unit": "identifier"
+        },
+        {
+          "source_field_or_gap": "阀门可用/开闭状态及有效时点",
+          "proposed_target": "availability/position/valid_at",
+          "unit": "category/datetime"
+        },
+        {
+          "source_field_or_gap": "远控能力",
+          "proposed_target": "remote_control",
+          "unit": "bool"
+        },
+        {
+          "source_field_or_gap": "关断演练或预计时长及依据",
+          "proposed_target": "closure_duration_min/duration_basis",
+          "unit": "minute/evidence"
+        }
+      ],
+      "formula_source_unit": "分钟/类别",
+      "normalization": {
+        "score_unit": "score_0_100",
+        "representatives": [
+          10,
+          30,
+          50,
+          70,
+          90
+        ],
+        "source_threshold_text": "远控快速关断、现场快速、一般、能力不足、关键阀不可用",
+        "derived_rule_from_workbook": "由上下游阀门位置、阀门可用状态、远控能力、预计关断时间计算。",
+        "implementation_status": "unsupported_raw_to_score_pending_rule",
+        "unresolved": "缺各档分钟界限、阀门失败/未知状态及拓扑到分值映射；不能从演示关阀工时生成真实处置指令。"
+      },
+      "initial_weight": 0.03,
+      "mandatory": false,
+      "source_coefficient_status": "demonstration_trial_not_business_approved",
+      "quality_requirements": [
+        "唯一管段ID、来源记录/映射依据、单位及有效评价时间窗必须可追溯；关联不明时不使用。",
+        "观测先检设备量程、有效性、时效及工况；异常未确认不作有效证据。",
+        "修复值保留原值、方法、版本和验证记录；不能把真实风险过程平滑掉。",
+        "阀门状态、远控标识、关断演练时间为扩展字段；需拓扑分析。"
+      ],
+      "quality_policy_ref": "M04 T009/T013; source-recommended q=1/.8/.6/.4, not measured statistical accuracy",
+      "data_resources": [],
+      "data_resource_limit": "目录未见足够阀门可用、远控与演练关断时间；原型的0.15失败率及5/8h均不作业务输入。",
+      "source_system_hint": null,
+      "provider_hint": null,
+      "provider_hint_status": "source_workbook_hint_not_delivery_commitment",
+      "workbook_collection_note": "无",
+      "actual_records_status": "not_verified_received",
+      "missing_handling": "缺失可选项a=0，从分子和分母排除；P保留partial、缺项清单、E与理论区间，不补0/50。",
+      "redline_event_codes": [
+        "critical_valve_failure"
+      ],
+      "redline_note": "已确认红线独立显示高风险区域和人工复核；精确五级提升及触发阈值待确认，不由平均分稀释。",
+      "source_refs": [
+        "M03 T009R016",
+        "M04 T015R016",
+        "M06 燃气!A16:I16"
+      ]
+    }
+  ]
+}

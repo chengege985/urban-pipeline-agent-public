@@ -1,0 +1,2 @@
+source_record_id,event_id,recorded_at,observation_ids,pipe_ids,status,evidence_ref
+event-source-row-a,syn-gas-pilot-event-a,2026-11-18T01:04:00Z,"[""syn-gas-pilot-obs-p3""]","[""syn-gas-pilot-pipe-a""]",resolved,synthetic-ticket-001

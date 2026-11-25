@@ -1,0 +1,15 @@
+M2 source/auth/ACL focused:
+tests/test_m2_backend_hardening.py tests/test_data_provenance.py tests/test_gas_auth_default.py
+23 passed, 1 warning
+
+M2 related backend/report regression:
+tests/test_report_integrity.py tests/test_report_identity.py tests/test_m2_backend_hardening.py tests/test_data_provenance.py tests/test_m1fix2_identity.py tests/test_m1fix2_platform.py tests/test_unified_contracts.py tests/test_m1fix_contracts.py
+322 passed, 1 warning in 63.36s
+
+Gas/Dataset/OpenAPI regression (separate process):
+tests/test_gas_application.py tests/test_gas_auth_default.py tests/test_m1a_dataset_timeline.py tests/test_module_openapi.py tests/test_unified_contracts.py
+44 passed, 1 warning
+
+Gas adapter final isolated run:
+tests/test_gas_application.py
+10 passed in 0.99s

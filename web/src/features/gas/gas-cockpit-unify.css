@@ -1,0 +1,331 @@
+/* Original Gas Control Room: one deep-sea cockpit, not an engineering-page theme. */
+.gas-app-shell { background: #04101a; }
+.gas-app-shell[data-gas-demo="true"] { --gas-topbar-height: 0px; }
+.gas-app-shell .topbar { background: #071a28; border-bottom-color: #244b5c; }
+.gas-app-shell .topbar-inner { width: calc(100% - 24px); max-width: none; height: 48px; min-height: 48px; }
+.gas-app-shell .brand strong, .gas-app-shell .nav-item { color: #d9eff4; }
+.gas-app-shell .brand-copy small { color: #9cbcc8; }
+.gas-app-shell .nav-item.active { background: #123d52; color: #83e1e2; }
+.gas-cockpit-page.gas-cockpit-unified {
+  --gas-base: #071723; --gas-surface: #0a2639; --gas-ink: #e6f4f7; --gas-muted: #9cbcc8; --gas-line: #305365; --gas-accent: #76e0e3;
+  display: flex; flex-direction: column; height: calc(100dvh - var(--gas-topbar-height, 49px)); min-height: 0; padding: 6px 12px; gap: 5px;
+  font-family: 'WaterPulse Sans', 'Microsoft YaHei', sans-serif; font-size: 13px; line-height: 1.45; overflow: hidden;
+}
+.gas-cockpit-unified .gas-cockpit-header { margin: 0; gap: 12px; flex: none; }
+.gas-cockpit-unified .gas-brand-mark { width: 34px; height: 34px; font-size: 1.15rem; border-radius: 10px; }
+.gas-cockpit-unified .gas-cockpit-header h1 { font-size: 20px; line-height: 1.2; margin: 1px 0; }
+.gas-cockpit-unified .gas-cockpit-header p:last-child { font-size: 11px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-cockpit-header-meta { flex-wrap: wrap; justify-content: flex-end; gap: 6px; font-size: 11px; }
+.gas-cockpit-unified button { font-family: inherit; }
+.gas-cockpit-unified .gas-cockpit-header-meta button, .gas-cockpit-unified .gas-inspector button, .gas-cockpit-unified .gas-capability-empty button, .gas-cockpit-unified .gas-assistant-panel button, .gas-dialog-bar button, .gas-hidden-slot button { padding: 5px 9px; border: 1px solid #416577; border-radius: 5px; color: #d9eff4; background: #102f43; cursor: pointer; font: inherit; }
+.gas-cockpit-unified button:disabled { opacity: .6; cursor: not-allowed; }
+.gas-cockpit-unified button:focus-visible, .gas-cockpit-unified select:focus-visible, .gas-cockpit-unified input:focus-visible, .gas-cockpit-unified summary:focus-visible, .gas-cockpit-unified h2:focus-visible { outline: 3px solid #76e0e3; outline-offset: 2px; }
+.gas-cockpit-unified .gas-cockpit-notice { flex: none; margin: 0; min-height: 24px; padding: 3px 9px; font-size: 12px; flex-wrap: wrap; color: #e2ccb2; }
+.gas-cockpit-unified .gas-cockpit-notice > span:last-child { margin-left: auto; color: #9cbcc8; }
+.gas-cockpit-unified .gas-record-summary { flex: none; padding: 3px 0; margin: 0; }
+.gas-cockpit-unified .gas-record-summary dl { gap: 10px; }
+.gas-cockpit-unified .gas-record-summary dt { font-size: 11px; line-height: 14px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-record-summary dd { margin: 1px 0 0; font-size: 20px; line-height: 22px; }
+.gas-cockpit-unified .gas-record-summary p { max-width: none; margin: 2px 0 0; font-size: 11px; line-height: 14px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-cockpit-toolbar { position: relative; flex: none; gap: 5px 10px; padding: 5px 8px; margin: 0; }
+.gas-cockpit-unified .gas-cockpit-toolbar button { font-size: 12px; padding: 4px 8px; }
+.gas-cockpit-unified .gas-toolbar-label, .gas-cockpit-unified .gas-map-mode > span { font-size: 12px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-window-manager { margin-left: auto; font-size: 12px; }
+.gas-cockpit-unified .gas-window-manager summary { cursor: pointer; padding: 4px 6px; color: #9edce2; }
+.gas-cockpit-unified .gas-window-manager > div { position: absolute; right: 8px; top: calc(100% + 3px); z-index: 20; padding: 8px; width: 290px; display: grid; gap: 4px; background: #0a2639; border: 1px solid #416577; border-radius: 6px; box-shadow: 0 12px 32px #0008; }
+.gas-cockpit-unified .gas-window-manager > div button { display: flex; justify-content: space-between; align-items: center; gap: 8px; text-align: left; color: #e6f4f7; }
+.gas-cockpit-unified .gas-window-manager > div button em { font-style: normal; font-size: 11px; color: #9cbcc8; }
+.gas-cockpit-unified .gas-window-manager > div button em.is-hidden { color: #f0a15e; }
+.gas-cockpit-unified .gas-unified-workspace {
+  --gas-left: 238px; --gas-right: 326px; flex: 1; min-height: 0; height: auto; grid-auto-rows: auto; resize: none;
+  display: grid; grid-template-columns: var(--gas-left) minmax(0, 1fr) var(--gas-right); grid-template-rows: minmax(0, 1fr) 132px;
+  grid-template-areas: "scenario topology selected" "tasks timeline selected"; gap: 8px;
+}
+.gas-cockpit-unified .gas-unified-workspace.gas-layout-analysis { --gas-left: 268px; --gas-right: 356px; }
+.gas-cockpit-unified .gas-unified-workspace.gas-layout-compact { --gas-left: 212px; --gas-right: 290px; }
+.gas-cockpit-unified .gas-window { min-height: 0; max-width: 100%; overflow: hidden; }
+.gas-cockpit-unified .gas-window-topology { min-height: 0; }
+.gas-cockpit-unified .gas-window-head { padding: 5px 9px; min-height: 30px; align-items: center; touch-action: none; }
+.gas-cockpit-unified .gas-window-head h2 { font-size: 14px; margin: 0; }
+.gas-cockpit-unified .gas-window-body { min-height: 0; padding: 7px 8px; font-size: 13px; }
+.gas-cockpit-unified .gas-window-topology > .gas-window-body { display: flex; overflow: hidden; padding: 6px 8px; }
+.gas-cockpit-unified .gas-topology-shell { width: 100%; min-height: 0; display: flex; flex-direction: column; }
+.gas-cockpit-unified .gas-map-toolbar { font-size: 12px; flex: none; gap: 6px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-map-toolbar-title { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 7px; color: var(--gas-ink); }
+.gas-cockpit-unified .gas-mode-pill { padding: 1px 7px; border: 1px solid #305365; border-radius: 99px; font-size: 11px; color: #9cbcc8; background: rgba(255,255,255,.04); }
+.gas-cockpit-unified .gas-mode-pill.is-risk { border-color: rgba(240,161,94,.5); color: #f4be87; background: rgba(240,161,94,.12); }
+.gas-cockpit-unified .gas-mode-pill.is-emergency { border-color: rgba(118,224,227,.55); color: #9df6ff; background: rgba(118,224,227,.12); }
+.gas-cockpit-unified .gas-map-legend { font-size: 11px; margin: 4px 0; flex: none; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-legend-note { color: var(--gas-muted); }
+.gas-cockpit-unified .gas-map-canvas { flex: 1; min-height: 0; }
+.gas-cockpit-unified .gas-map-canvas svg { height: 100%; min-height: 0; width: 100%; flex: 1; }
+.gas-cockpit-unified .gas-map-state { position: absolute; inset: 0; display: grid; align-content: center; padding: 20px; color: #b7d7e0; }
+.gas-cockpit-unified .gas-map-bottombar { flex: none; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; margin-top: 4px; }
+.gas-cockpit-unified .gas-layer-toggles { margin-top: 0; font-size: 12px; color: var(--gas-muted); gap: 6px 10px; }
+.gas-cockpit-unified .gas-map-selection { margin: 0; color: #b7d7e0; font-size: 11px; }
+.gas-cockpit-unified .gas-map-gesture-hint { font-size: 11px; color: rgba(190,224,232,.84); }
+.gas-cockpit-unified .gas-event-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 2px; }
+.gas-cockpit-unified .gas-event-filters label { display: grid; gap: 2px; font-size: 11px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-event-filters select { width: 100%; min-width: 0; padding: 4px 5px; background: #071723; border: 1px solid #416577; border-radius: 4px; color: #e6f4f7; font: inherit; font-size: 12px; }
+.gas-cockpit-unified .gas-event-list { padding: 5px 0; gap: 5px; }
+.gas-cockpit-unified .gas-event-list > button { padding: 7px 8px; gap: 2px; }
+.gas-cockpit-unified .gas-event-meta-top { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.gas-cockpit-unified .gas-event-count { font-size: 11px; color: #76e0e3; font-weight: 600; }
+.gas-cockpit-unified .gas-event-list > button b { font-size: 13px; overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-event-list > button small, .gas-cockpit-unified .gas-event-list > button > span:not(.gas-event-meta-top) { font-size: 11px; color: #b7d7e0; overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-mode-message { padding: 6px 8px; margin: 0 0 6px; border-left: 2px solid #f0a15e; background: #f0a15e12; font-size: 12px; color: #edd7bc; }
+.gas-cockpit-unified .gas-mode-message p { margin: 3px 0; }
+.gas-cockpit-unified .gas-catalogue-entry { width: 100%; padding: 6px 8px; color: #9edce2; border: 1px solid #416577; border-radius: 5px; background: #102f43; cursor: pointer; font: inherit; font-size: 12px; }
+.gas-cockpit-unified .gas-window-note { font-size: 12px; line-height: 1.45; margin: 6px 0; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-window-selected .gas-detail-body { padding: 6px 0; }
+.gas-cockpit-unified .gas-window-selected .gas-fields > div { grid-template-columns: 98px minmax(0,1fr); gap: 8px; }
+.gas-cockpit-unified .gas-window-selected .gas-fields dt { white-space: nowrap; }
+.gas-cockpit-unified .gas-fields { gap: 7px; }
+.gas-cockpit-unified .gas-fields dt { font-size: 12px; color: var(--gas-muted); overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-fields dd { font-size: 12px; overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-inspector-actions { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 5px; font-size: 12px; margin-bottom: 6px; overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-locate-topology { width: 100%; margin-bottom: 4px; }
+.gas-cockpit-unified .gas-inspector h3 { font-size: 14px; }
+.gas-cockpit-unified .gas-compact-associated { border-top: 1px solid #305365; margin-top: 8px; padding: 7px 0 4px; }
+.gas-cockpit-unified .gas-compact-associated .gas-related-list { grid-template-columns: 1fr; gap: 3px; margin-top: 5px; }
+.gas-cockpit-unified .gas-compact-associated .gas-related-list button { font-size: 11px; padding: 4px 6px; }
+.gas-cockpit-unified .gas-related-list button { font-size: 12px; padding: 6px 8px; }
+.gas-cockpit-unified .gas-notice { background: #102f43; border-radius: 4px; color: #c7e2e9; padding: 8px 10px; font-size: 12px; margin-bottom: 10px; }
+.gas-cockpit-unified .gas-empty-selection span { color: var(--gas-muted); }
+.gas-cockpit-unified .gas-window-timeline > .gas-window-body { padding: 4px 8px; overflow: auto; }
+.gas-cockpit-unified .gas-timeline-controls { font-size: 12px; flex-wrap: wrap; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-timeline-controls small { margin-left: auto; font-size: 11px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-timeline-track { margin-top: 4px; gap: 6px; }
+.gas-cockpit-unified .gas-timeline-event { min-height: 38px; gap: 0 6px; padding: 3px 8px; grid-template-columns: 48px minmax(0,1fr); align-items: center; }
+.gas-cockpit-unified .gas-timeline-event small { grid-column: 2; font-size: 11px; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-timeline-event strong, .gas-cockpit-unified .gas-timeline-time { font-size: 12px; }
+.gas-cockpit-unified .gas-window-tasks > .gas-window-body { padding: 4px 7px; overflow-y: auto; }
+.gas-cockpit-unified .gas-task-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3px; }
+.gas-cockpit-unified .gas-task-list button { min-width: 0; justify-content: center; padding: 3px 5px; font-size: 11px; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; align-items: center; }
+.gas-cockpit-unified .gas-task-list button span { display: none; }
+.gas-cockpit-unified .gas-cockpit-footer { flex: none; margin: 0; font-size: 11px; color: #90b4c1; }
+.gas-cockpit-unified .gas-hidden-slot { min-height: 0; display: grid; place-items: center; border: 1px dashed #416577; }
+.gas-cockpit-dialog { position: fixed; width: min(1200px,94vw); max-width: 94vw; max-height: 86dvh; padding: 10px; border: 1px solid #416577; border-radius: 9px; background: #071a28; color: #e6f4f7; box-shadow: 0 24px 80px #0009; }
+.gas-cockpit-dialog::backdrop { background: #020b14bb; }
+.gas-dialog-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 8px; font: 14px 'WaterPulse Sans',sans-serif; }
+.gas-cockpit-dialog > .gas-window { max-height: 72dvh; min-height: 180px; }
+.gas-cockpit-unified .gas-directory-modal-grid { grid-template-columns: minmax(0,1.5fr) minmax(280px,1fr); max-height: 74dvh; overflow: auto; }
+.gas-directory-modal-grid .gas-directory-detail { padding: 10px; border: 1px solid #305365; border-radius: 7px; min-width: 0; overflow-wrap: anywhere; }
+.gas-cockpit-unified .gas-directory-controls { padding: 12px 10px; }
+.gas-cockpit-unified .gas-directory-table-wrap { max-height: 340px; }
+.gas-cockpit-unified .gas-directory-table-wrap table { min-width: 600px; }
+.gas-cockpit-unified .gas-capability-empty { color: #b7d7e0; font-size: 13px; padding: 8px; }
+.gas-cockpit-unified .gas-capability-empty h3 { font-size: 16px; color: #e6f4f7; }
+.gas-cockpit-unified .gas-capability-empty strong { color: #e5c294; }
+.gas-cockpit-unified .gas-risk-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 12px; }
+.gas-cockpit-unified .gas-risk-table th, .gas-cockpit-unified .gas-risk-table td { border-bottom: 1px solid #305365; padding: 8px 4px; text-align: left; }
+.gas-cockpit-unified .gas-assistant-panel pre { padding: 10px; background: #04101a; color: #b7d7e0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 11px; }
+.gas-cockpit-unified .gas-assistant-panel h3 { font-size: 15px; }
+.gas-cockpit-unified .gas-evidence-panel code { word-break: break-all; }
+.gas-cockpit-unified .gas-inline-route-error { flex: none; color: #ffe1e0; padding: 5px 10px; background: #502d38; }
+
+.gas-cockpit-unified .gas-scenario-conditions, .gas-cockpit-unified .gas-schematic-context { margin: 5px 0; padding: 5px 0; border-block: 1px solid #305365; font-size: 12px; }
+.gas-cockpit-unified .gas-scenario-conditions summary, .gas-cockpit-unified .gas-schematic-context summary { cursor: pointer; color: #a7d5df; margin-bottom: 4px; }
+.gas-cockpit-unified .gas-scenario-conditions .gas-fields { grid-template-columns: 1fr 1fr; gap: 4px 8px; margin-bottom: 4px; }
+.gas-cockpit-unified .gas-scenario-conditions .gas-fields > div { grid-template-columns: 1fr; gap: 1px; }
+
+/* Mode visual cues without altering factual data */
+.gas-cockpit-unified.gas-mode-risk .gas-window-selected { border-color: rgba(240,161,94,.45); box-shadow: inset 0 2px 0 rgba(240,161,94,.75); }
+.gas-cockpit-unified.gas-mode-emergency .gas-window-scenario { border-color: rgba(118,224,227,.5); box-shadow: inset 0 2px 0 rgba(118,224,227,.8); }
+
+/* Identity is one validated blue plus shape/labels; orange/red remain graph-state signals, never asset severity or risk. */
+.gas-cockpit-unified .gas-topology-edge:not(.is-disabled):not(.is-selected) { stroke: #397fc2; opacity: 1; }
+.gas-cockpit-unified .gas-topology-edge-halo { stroke: #9df6ff; stroke-width: 8.5; stroke-linecap: round; opacity: .36; filter: url(#gas-glow); pointer-events: none; }
+.gas-cockpit-unified .gas-topology-edge.is-selected:not(.is-disabled) { stroke: #b8f9ff; stroke-width: 3.6; opacity: 1; filter: none; }
+.gas-cockpit-unified .gas-topology-edge.is-disabled.is-selected { stroke: #ffb366; stroke-width: 3.6; stroke-dasharray: 7 5; opacity: 1; filter: none; }
+.gas-cockpit-unified .gas-topology-node:not(.is-unreachable):not(.is-selected):not(:focus-visible) circle,
+.gas-cockpit-unified .gas-topology-node:not(.is-unreachable):not(.is-selected):not(:focus-visible) rect { fill: #102f43; stroke: #397fc2; stroke-width: 2; }
+.gas-cockpit-unified .gas-topology-node.gas-node-source:not(.is-unreachable):not(.is-selected) rect { fill: #12566e; stroke: #76e0e3; stroke-width: 2.3; }
+.gas-cockpit-unified .gas-topology-node .gas-node-core { fill: #9edce2; stroke: none; }
+.gas-cockpit-unified .gas-topology-node text { fill: #eef9fb; font-size: 11.5px; font-weight: 600; paint-order: stroke; stroke: #071723; stroke-width: 4px; stroke-linejoin: round; pointer-events: none; }
+.gas-cockpit-unified .gas-swatch-dot.source, .gas-cockpit-unified .gas-swatch-diamond { background: #397fc2; }
+.gas-cockpit-unified .gas-swatch-line:not(.gas-swatch-fault) { background: #397fc2; }
+.gas-cockpit-unified .gas-swatch-dot.source { border-radius: 2px; }
+
+/* Standard laptop viewports (e.g. 1280x720, 1280x800, 1366x768) keep full cockpit in first screen and >=55% central geometry */
+@media (min-width:961px) and (max-width:1440px) {
+  .gas-cockpit-unified .gas-unified-workspace { --gas-left: 204px; --gas-right: 266px; }
+  .gas-cockpit-unified .gas-unified-workspace.gas-layout-analysis { --gas-left: 218px; --gas-right: 284px; }
+  .gas-cockpit-unified .gas-unified-workspace.gas-layout-compact { --gas-left: 192px; --gas-right: 248px; }
+}
+@media (min-width:961px) and (max-width:1160px) {
+  .gas-cockpit-unified .gas-unified-workspace { --gas-left: 190px; --gas-right: 244px; gap: 6px; }
+  .gas-cockpit-unified .gas-unified-workspace.gas-layout-analysis { --gas-left: 202px; --gas-right: 258px; }
+  .gas-cockpit-unified .gas-unified-workspace.gas-layout-compact { --gas-left: 182px; --gas-right: 232px; }
+  .gas-cockpit-unified .gas-window-selected .gas-fields > div { grid-template-columns: 82px minmax(0,1fr); gap: 6px; }
+}
+@media (min-width:961px) and (max-height:800px) {
+  .gas-app-shell .topbar-inner { height: 44px; min-height: 44px; }
+  .gas-cockpit-page.gas-cockpit-unified { height: calc(100dvh - var(--gas-topbar-height, 45px)); padding: 4px 10px; gap: 3px; }
+  .gas-cockpit-unified .gas-brand-mark { width: 30px; height: 30px; font-size: 1rem; }
+  .gas-cockpit-unified .gas-cockpit-header h1 { display: inline; font-size: 17px; }
+  .gas-cockpit-unified .gas-cockpit-header p:last-child { display: inline; margin-left: 8px; }
+  .gas-cockpit-unified .gas-cockpit-notice { min-height: 21px; padding: 2px 8px; font-size: 11px; }
+  .gas-cockpit-unified .gas-record-summary { padding: 2px 0; }
+  .gas-cockpit-unified .gas-record-summary dd { font-size: 17px; line-height: 19px; }
+  .gas-cockpit-unified .gas-cockpit-toolbar { padding: 3px 8px; gap: 4px 8px; }
+  .gas-cockpit-unified .gas-cockpit-toolbar button { padding: 3px 6px; font-size: 11.5px; }
+  .gas-cockpit-unified .gas-unified-workspace { grid-template-rows: minmax(0, 1fr) 108px; gap: 6px; }
+  .gas-cockpit-unified .gas-window-head { min-height: 26px; padding: 3px 8px; }
+  .gas-cockpit-unified .gas-window-topology > .gas-window-body { padding: 3px 6px; }
+  .gas-cockpit-unified .gas-map-legend { margin: 2px 0; }
+  .gas-cockpit-unified .gas-map-bottombar { margin-top: 2px; }
+  .gas-cockpit-unified .gas-window-timeline > .gas-window-body { padding: 3px 6px; }
+  .gas-cockpit-unified .gas-timeline-track { margin-top: 2px; }
+  .gas-cockpit-unified .gas-timeline-event { min-height: 28px; padding: 2px 6px; grid-template-columns: 36px minmax(0,1fr); }
+  .gas-cockpit-unified .gas-timeline-event::before { top: -5px; width: 6px; height: 6px; }
+  .gas-cockpit-unified .gas-window-tasks > .gas-window-body { padding: 2px 6px; }
+  .gas-cockpit-unified .gas-task-list { gap: 2px; }
+  .gas-cockpit-unified .gas-task-list button { padding: 2px 4px; font-size: 11px; }
+}
+@media (min-width:961px) and (max-height:679px) {
+  .gas-cockpit-page.gas-cockpit-unified { height: auto; min-height: calc(100dvh - var(--gas-topbar-height, 45px)); overflow: visible; }
+  .gas-cockpit-unified .gas-unified-workspace { height: 620px; flex: none; }
+}
+@media (max-width:960px) { .gas-app-shell .topbar-inner { height: auto; min-height: 52px; } .gas-cockpit-page.gas-cockpit-unified { height: auto; min-height: calc(100dvh - var(--gas-topbar-height, 53px)); overflow: visible; } .gas-cockpit-unified .gas-unified-workspace { grid-template-columns: 1fr; grid-template-rows: auto; grid-template-areas: "topology" "scenario" "selected" "timeline" "tasks"; flex: none; } .gas-cockpit-unified .gas-window-topology { height: clamp(300px, 46dvh, 440px); } .gas-cockpit-unified .gas-window-scenario, .gas-cockpit-unified .gas-window-selected { max-height: 650px; } .gas-cockpit-unified .gas-window-timeline { min-height: 170px; } .gas-cockpit-unified .gas-directory-modal-grid { grid-template-columns: 1fr; } .gas-cockpit-unified .gas-cockpit-header-meta { justify-content: flex-start; } }
+@media (max-width:760px) { .gas-cockpit-unified .gas-record-summary dl { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 6px; } .gas-cockpit-unified .gas-record-summary dd { font-size: 20px; } .gas-cockpit-unified .gas-record-summary p { font-size: 11px; } .gas-cockpit-unified .gas-window-topology { height: 400px; } .gas-cockpit-unified .gas-cockpit-header h1 { font-size: 20px; } .gas-cockpit-unified .gas-timeline-track { grid-template-columns: 1fr; } .gas-cockpit-unified .gas-window-timeline { min-height: 260px; } .gas-cockpit-unified .gas-cockpit-footer { display: grid; gap: 4px; } .gas-cockpit-dialog { width: 96vw; max-width: 96vw; padding: 7px; } .gas-cockpit-unified .gas-directory-controls form { width: 100%; } }
+@media (prefers-reduced-motion:reduce) { .gas-cockpit-unified *, .gas-app-shell * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+@media (forced-colors:active) { .gas-cockpit-unified .is-selected { outline: 2px solid Highlight; } }
+
+/* V1.1 Chongqing GIS, Event Priority, Risk Readiness, CUV & Gas Agent Cockpit Styles */
+.gas-cockpit-unified .gas-gis-toolbar { flex-wrap: nowrap; gap: 4px 6px; overflow-x: auto; scrollbar-width: none; }
+.gas-cockpit-unified .gas-gis-toolbar::-webkit-scrollbar { display: none; }
+.gas-cockpit-unified .gas-gis-toolbar .gas-map-toolbar-title { flex: none; white-space: nowrap; }
+.gas-cockpit-unified .gas-gis-controls { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px; margin-left: auto; flex: none; }
+.gas-cockpit-unified .gas-gis-district-select select {
+  max-width: 148px; padding: 2px 6px; font: inherit; font-size: 11.5px; color: #e6f4f7;
+  background: #071723; border: 1px solid #416577; border-radius: 4px;
+}
+.gas-cockpit-unified .gas-gis-canvas { position: relative; background: radial-gradient(circle at 38% 55%, rgba(16, 63, 94, 0.55), #06141f); border: 1px solid #244b5c; border-radius: 6px; overflow: hidden; }
+.gas-cockpit-unified .gas-gis-unavailable-bar {
+  position: absolute; top: 8px; left: 8px; right: auto; z-index: 6; max-width: calc(100% - 302px);
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+  gap: 4px 8px; padding: 4px 8px; border: 1px solid rgba(240, 161, 94, 0.4); border-left: 3px solid #f0a15e;
+  border-radius: 5px; background: rgba(14, 24, 34, 0.92); color: #edd7bc; font-size: 11px; line-height: 1.35;
+}
+.gas-cockpit-unified .gas-gis-unavailable-bar strong { color: #f6c289; }
+.gas-cockpit-unified .gas-gis-unavailable-bar button { padding: 2px 7px; font-size: 11px; color: #e6f4f7; background: #102f43; border: 1px solid #416577; border-radius: 4px; cursor: pointer; }
+.gas-cockpit-unified .gas-amap-host { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 220px; }
+.gas-cockpit-unified .gas-gis-chongqing-boundary { fill: rgba(18, 69, 98, 0.36); stroke: #55a9c4; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.gas-cockpit-unified .gas-gis-river { fill: none; stroke: rgba(118, 224, 227, 0.42); stroke-width: 2.2; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.gas-cockpit-unified .gas-gis-river.is-tributary { stroke-dasharray: 5 4; stroke-width: 1.6; }
+.gas-cockpit-unified .gas-gis-district-node { cursor: pointer; }
+.gas-cockpit-unified .gas-gis-district-node circle { fill: #10384f; stroke: #67c4d6; stroke-width: 1.6; transition: r .15s ease, fill .15s ease; }
+.gas-cockpit-unified .gas-gis-district-node.is-cluster circle { fill: #154e6b; stroke: #76e0e3; stroke-width: 2; }
+.gas-cockpit-unified .gas-gis-district-node.is-selected circle { fill: #f0a15e; stroke: #fff4e0; stroke-width: 2.4; }
+.gas-cockpit-unified .gas-gis-district-node text { fill: #d7eef4; font-size: 10.5px; font-weight: 600; paint-order: stroke; stroke: #06141f; stroke-width: 3.5px; pointer-events: none; }
+.gas-cockpit-unified .gas-gis-district-node.is-selected text { fill: #ffd59e; font-size: 12px; }
+.gas-cockpit-unified .gas-gis-auth-marker circle, .gas-cockpit-unified .gas-gis-auth-marker rect { fill: #76e0e3; stroke: #04101a; stroke-width: 1.5; }
+.gas-cockpit-unified .gas-gis-auth-marker text { fill: #b8f9ff; font-size: 11px; paint-order: stroke; stroke: #04101a; stroke-width: 3px; }
+.gas-cockpit-unified .gas-district-panel {
+  position: absolute; top: 8px; right: 8px; z-index: 6; width: min(260px, 35%); max-height: calc(100% - 42px); overflow: auto;
+  padding: 7px 9px; background: rgba(7, 26, 40, 0.92); border: 1px solid #3c6579; border-radius: 7px; box-shadow: 0 8px 24px rgba(0,0,0,0.45); font-size: 11.5px;
+}
+.gas-cockpit-unified .gas-district-panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; margin-bottom: 5px; }
+.gas-cockpit-unified .gas-district-panel-head strong { color: #e6f4f7; font-size: 12px; }
+.gas-cockpit-unified .gas-district-panel-head span { color: #76e0e3; font-size: 10.5px; white-space: nowrap; }
+.gas-cockpit-unified .gas-zone-pills { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px; }
+.gas-cockpit-unified .gas-zone-pills button { padding: 2px 6px; font-size: 10.5px; border: 1px solid #34596b; border-radius: 4px; background: #0b2435; color: #c7e2e9; cursor: pointer; }
+.gas-cockpit-unified .gas-zone-pills button[aria-pressed="true"] { background: #14435c; border-color: #76e0e3; color: #9df6ff; }
+.gas-cockpit-unified .gas-district-panel .gas-fields { gap: 4px; margin-bottom: 4px; }
+.gas-cockpit-unified .gas-district-panel .gas-fields > div { grid-template-columns: 84px minmax(0, 1fr); gap: 5px; }
+.gas-cockpit-unified .gas-map-toolbar button { white-space: nowrap; }
+.gas-cockpit-unified .gas-gis-locate-banner {
+  position: absolute; left: 8px; bottom: 26px; z-index: 6; max-width: min(380px, 58%); padding: 6px 9px;
+  background: rgba(7, 26, 40, 0.94); border: 1px solid #416577; border-left: 3px solid #76e0e3; border-radius: 6px; font-size: 11px;
+}
+.gas-cockpit-unified .gas-gis-locate-banner p { margin: 2px 0 4px; color: #c7e2e9; }
+.gas-cockpit-unified .gas-gis-locate-actions button { padding: 3px 8px; font-size: 11px; color: #e6f4f7; background: #124058; border: 1px solid #59a8bc; border-radius: 4px; cursor: pointer; }
+
+/* Event priority & district cards */
+.gas-cockpit-unified .gas-priority-cue { margin-bottom: 5px; padding: 5px 7px; border: 1px solid #356075; border-radius: 5px; background: #0c2b3f; font-size: 11.5px; }
+.gas-cockpit-unified .gas-priority-cue-head { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.gas-cockpit-unified .gas-severity-pill { white-space: nowrap; flex-shrink: 0; padding: 1px 6px; border-radius: 99px; font-size: 10.5px; background: rgba(240, 161, 94, 0.16); color: #f6c289; border: 1px solid rgba(240, 161, 94, 0.45); }
+.gas-cockpit-unified .gas-priority-cue p { margin: 2px 0 4px; color: var(--gas-muted); font-size: 11px; }
+.gas-cockpit-unified .gas-priority-jump, .gas-cockpit-unified .gas-inline-action {
+  width: 100%; padding: 3px 7px; font-size: 11px; text-align: left; color: #9df6ff; background: #10384e; border: 1px solid #416577; border-radius: 4px; cursor: pointer;
+}
+.gas-cockpit-unified .gas-district-summary-card { margin: 4px 0; padding: 4px 6px; border: 1px solid #2b5062; border-radius: 4px; background: rgba(7, 23, 35, 0.55); font-size: 11.5px; }
+.gas-cockpit-unified .gas-district-summary-card summary { cursor: pointer; color: #9edce2; }
+.gas-cockpit-unified .gas-district-summary-card .gas-fields { margin: 4px 0; gap: 3px; }
+.gas-cockpit-unified .gas-district-summary-card .gas-fields > div { grid-template-columns: 72px minmax(0, 1fr); gap: 4px; }
+
+/* CUV + Risk Readiness + Agent */
+.gas-cockpit-unified .gas-cuv-pill { white-space: nowrap; padding: 1px 6px; border: 1px solid #386275; border-radius: 99px; font-size: 10.5px; color: #f4be87; background: rgba(240, 161, 94, 0.1); }
+.gas-cockpit-unified .gas-cuv-boundaries { list-style: none; padding: 0; margin: 6px 0; display: grid; gap: 5px; }
+.gas-cockpit-unified .gas-cuv-boundaries li { padding: 5px 7px; border: 1px solid #305365; border-radius: 5px; background: #081e2d; font-size: 11.5px; }
+.gas-cockpit-unified .gas-cuv-boundaries li strong { color: #e6f4f7; margin-right: 6px; }
+.gas-cockpit-unified .gas-cuv-boundaries li code { color: #f6c289; font-size: 10.5px; }
+.gas-cockpit-unified .gas-cuv-boundaries li span { display: block; color: var(--gas-muted); margin-top: 2px; font-size: 11px; }
+.gas-cockpit-unified .gas-risk-panel h4, .gas-cockpit-unified .gas-assistant-panel h4 { margin: 10px 0 4px; font-size: 12.5px; color: #9edce2; }
+.gas-cockpit-unified .gas-risk-readiness, .gas-cockpit-unified .gas-official-ranking-slot, .gas-cockpit-unified .gas-priority-evidence-slot, .gas-cockpit-unified .gas-district-summary-slot {
+  margin: 8px 0; padding: 8px; border: 1px solid #305365; border-radius: 6px; background: #071b29;
+}
+.gas-cockpit-unified .gas-priority-event-list { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 4px; }
+.gas-cockpit-unified .gas-priority-event-list button { width: 100%; display: grid; gap: 2px; text-align: left; }
+.gas-cockpit-unified .gas-priority-event-list small { color: var(--gas-muted); font-size: 11px; }
+.gas-cockpit-unified .gas-locate-actions { display: grid; grid-template-columns: 1fr auto; gap: 5px; margin-bottom: 4px; }
+.gas-cockpit-unified .gas-locate-actions .gas-locate-topology { margin-bottom: 0; }
+.gas-cockpit-unified .gas-layer-group-title { display: block; margin-top: 6px; font-size: 12px; color: #9edce2; }
+
+/* Agent quick entry & expandable panel */
+.gas-cockpit-unified .gas-task-dock { display: grid; gap: 3px; }
+.gas-cockpit-unified .gas-agent-quick-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px; }
+.gas-cockpit-unified .gas-agent-quick-entry input {
+  min-width: 0; padding: 2px 6px; font: inherit; font-size: 11px; color: #e6f4f7;
+  background: #071723; border: 1px solid #416577; border-radius: 4px;
+}
+.gas-cockpit-unified .gas-agent-quick-entry button { padding: 2px 7px; font-size: 11px; color: #9df6ff; background: #10384e; border: 1px solid #416577; border-radius: 4px; cursor: pointer; }
+.gas-cockpit-unified .gas-agent-header-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px; }
+.gas-cockpit-unified .gas-agent-status-pill { padding: 2px 8px; border-radius: 99px; font-size: 11px; border: 1px solid #f0a15e; color: #f6c289; background: rgba(240, 161, 94, 0.12); }
+.gas-cockpit-unified .gas-agent-input-form textarea {
+  width: 100%; min-width: 0; padding: 6px 8px; margin-bottom: 6px; font: inherit; font-size: 12px; color: #e6f4f7;
+  background: #04101a; border: 1px solid #416577; border-radius: 5px; resize: vertical;
+}
+.gas-cockpit-unified .gas-agent-form-actions, .gas-cockpit-unified .gas-agent-chips, .gas-cockpit-unified .gas-agent-asset-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 6px; }
+.gas-cockpit-unified .gas-agent-chips button, .gas-cockpit-unified .gas-agent-asset-pills button { font-size: 11px; padding: 3px 7px; }
+.gas-cockpit-unified .gas-agent-structured-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin: 6px 0; }
+.gas-cockpit-unified .gas-agent-structured-grid > section, .gas-cockpit-unified .gas-agent-locate-box {
+  padding: 7px; border: 1px solid #305365; border-radius: 6px; background: #071b29; font-size: 11.5px;
+}
+.gas-cockpit-unified .gas-agent-tools-list, .gas-cockpit-unified .gas-agent-evidence-list { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 4px; }
+.gas-cockpit-unified .gas-agent-tools-list li span { display: block; color: var(--gas-muted); font-size: 11px; }
+
+@media (max-width:1440px) and (min-width:761px) {
+  .gas-cockpit-unified .gas-gis-toolbar .gas-mode-pill { display: none; }
+  .gas-cockpit-unified .gas-gis-district-select select { max-width: 126px; font-size: 11px; }
+  .gas-cockpit-unified .gas-gis-toolbar .gas-map-toolbar-actions button { padding: 2px 5px; font-size: 11px; }
+}
+@media (min-width:961px) and (max-height:800px) {
+  .gas-cockpit-unified .gas-district-panel { width: min(215px, 34%); max-height: calc(100% - 28px); padding: 5px 7px; font-size: 10.5px; }
+  .gas-cockpit-unified .gas-gis-unavailable-bar { max-width: calc(100% - 234px); padding: 3px 7px; font-size: 10.5px; }
+}
+@media (max-width:760px) {
+  .gas-cockpit-unified .gas-window-topology:has(.gas-gis-shell) { height: auto; min-height: 440px; }
+  .gas-cockpit-unified .gas-gis-toolbar { flex-wrap: wrap; overflow: visible; }
+  .gas-cockpit-unified .gas-gis-controls { flex-wrap: wrap; margin-left: 0; max-width: 100%; }
+  .gas-cockpit-unified .gas-gis-toolbar .gas-map-toolbar-actions { display: flex; flex-wrap: wrap; gap: 4px; }
+  .gas-cockpit-unified .gas-gis-canvas { display: flex; flex-direction: column; overflow: visible; padding: 4px; flex: none; }
+  .gas-cockpit-unified .gas-gis-canvas svg { width: 100%; height: 225px; flex: none; }
+  .gas-cockpit-unified .gas-gis-unavailable-bar { position: static; max-width: 100%; margin: 0 0 6px; order: -1; }
+  .gas-cockpit-unified .gas-district-panel { position: static; width: 100%; max-height: none; margin-top: 6px; }
+  .gas-cockpit-unified .gas-gis-locate-banner { position: static; max-width: 100%; margin-top: 6px; }
+  .gas-cockpit-unified .gas-map-gesture-hint { position: static; margin-top: 4px; text-align: right; }
+}
+
+/* Bounded in-memory Agent conversation; no permanent chat store. */
+.gas-cockpit-unified .gas-agent-history { margin: 10px 0; }
+.gas-cockpit-unified .gas-agent-history summary { cursor: pointer; color: var(--gas-muted); }
+.gas-cockpit-unified .gas-agent-turn,
+.gas-cockpit-unified .gas-agent-result-card {
+  margin: 8px 0; padding: 10px 12px; border: 1px solid #294c60;
+  border-radius: 6px; background: rgba(14, 39, 55, .7); overflow-wrap: anywhere;
+}
+.gas-cockpit-unified .gas-agent-turn p { margin: 4px 0; }
+.gas-cockpit-unified .gas-agent-turn button { margin: 3px 4px 0 0; }
+.gas-cockpit-unified .gas-agent-result-card pre { white-space: pre-wrap; overflow-wrap: anywhere; }

@@ -1,0 +1,60 @@
+{"question": "供水评分复现包是什么", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "复现包包含哪些文件", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "评分模型版本是什么", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "Hs 如何计算", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "评分包的等级划分标准", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "500 条样例在哪里", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "如何运行评分程序", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "评分包的输入表有哪些", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "评分包输出哪些文件", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "复现包许可是什么", "expected_evidence_ids": ["doc:KD01:"], "annotation": "draft_pending_human_review"}
+{"question": "重大程序的数据需求", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "评分程序依赖哪些输入", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "动态数据窗口是什么", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "静态数据字段有哪些", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "重大程序有哪些数据问题", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "缺失值怎么处理", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "程序模块结构是什么", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "重大程序的数据缺口", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "评分程序限制是什么", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "数据补充清单有哪些", "expected_evidence_ids": ["doc:KD02:"], "annotation": "draft_pending_human_review"}
+{"question": "三方接口字段定义", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "接口请求格式是什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "评分接口返回什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "仿真接口参数有哪些", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "方案比较接口是什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "错误码如何定义", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "接口鉴权方式是什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "数据版本字段是什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "接口幂等键是什么", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "接口调用限制有哪些", "expected_evidence_ids": ["doc:KD03:"], "annotation": "draft_pending_human_review"}
+{"question": "V5 三方职责", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "数字政通负责什么", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "重庆大学负责什么", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "重通院负责什么", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "V5 的交付边界", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "V5 中三方如何合作", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "CUV 在 V5 中的位置", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "项目里程碑有哪些", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "合作分工如何安排", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "V5 的风险约束是什么", "expected_evidence_ids": ["doc:KD04:"], "annotation": "draft_pending_human_review"}
+{"question": "明镜平台与 CUV 架构", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "部门架构是什么", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "技术手册导读", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "意图识别体系是什么", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "CUV 架构组成", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "数据中台是什么", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "模型服务如何部署", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "知识库建设方案", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "权限体系如何设计", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "运维流程是什么", "expected_evidence_ids": ["doc:KD05:"], "annotation": "draft_pending_human_review"}
+{"question": "今天天气怎么样", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "如何申请护照", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "晚饭吃什么", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "世界杯冠军是谁", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "地铁票价多少", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "手机电池怎么保养", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "股票K线图", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "护照办理流程", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "明天会下雨吗", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}
+{"question": "附近有什么餐厅", "expected_evidence_ids": [], "annotation": "draft_pending_human_review"}

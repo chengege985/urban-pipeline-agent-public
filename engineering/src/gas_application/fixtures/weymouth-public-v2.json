@@ -1,0 +1,612 @@
+{
+  "suite_id": "syn-gas-public-weymouth-v1",
+  "suite_version": "2.0.0",
+  "references": [
+    {
+      "id": "menon-2005",
+      "title": "Menon, Gas Pipeline Hydraulics (CRC Press, 2005)",
+      "url": "https://www.routledge.com/Gas-Pipeline-Hydraulics/Menon/p/book/9780429124105"
+    },
+    {
+      "id": "pipeflow-verification",
+      "title": "Pipe Flow Expert Compressible Results Verification",
+      "url": "https://www.pipeflow.co.uk/public/documents/PipeFlowExpertCompressibleResultsVerification.pdf"
+    },
+    {
+      "id": "menon-course",
+      "title": "Menon, Gas Pipeline Hydraulics, course P06-001",
+      "url": "https://www.cedengineering.ca/userfiles/P06-001%20-%20Gas%20Pipeline%20Hydraulics.pdf"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "menon-ex13-flow",
+      "label": "Menon 第 2 章例 13 · 正向流量",
+      "source_input": {
+        "boundary": "fixed_outlet_pressure",
+        "inlet_pressure": {
+          "value": 1200,
+          "unit": "psia"
+        },
+        "outlet_pressure": {
+          "value": 750,
+          "unit": "psia"
+        },
+        "internal_diameter": {
+          "value": 12.25,
+          "unit": "in"
+        },
+        "length": {
+          "value": 15,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.59,
+        "compressibility": 0.94,
+        "base_pressure": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "gas_temperature": {
+          "value": 535,
+          "unit": "degR"
+        },
+        "efficiency": 0.95
+      },
+      "input_source": {
+        "source_id": "menon-2005",
+        "locator": "第 2 章 p.62 例 13",
+        "notes": "水平等径，平均气温 75 °F 按 535 °R、基准 60 °F 按 520 °R 代入。黏度 8×10⁻⁶ lb/(ft·s)，绝对粗糙度 700 μin。"
+      },
+      "expected": {
+        "metric": "flow_mmscfd",
+        "kind": "published_result",
+        "origin": "literature_result",
+        "value": 163.26,
+        "tolerance": 0.005,
+        "source_id": "pipeflow-verification",
+        "locator": "p.7 Case 03 · Published data, Weymouth",
+        "tolerance_basis": "文献结果两位小数，半个末位为 0.005 MMSCFD。"
+      }
+    },
+    {
+      "case_id": "pipeflow-case03-flow",
+      "label": "Pipe Flow Expert Case 03 · 正向流量",
+      "source_input": {
+        "boundary": "fixed_outlet_pressure",
+        "inlet_pressure": {
+          "value": 1200,
+          "unit": "psia"
+        },
+        "outlet_pressure": {
+          "value": 750,
+          "unit": "psia"
+        },
+        "internal_diameter": {
+          "value": 12.25,
+          "unit": "in"
+        },
+        "length": {
+          "value": 15,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.59,
+        "compressibility": 0.94,
+        "base_pressure": {
+          "value": 14.696,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 60,
+          "unit": "degF"
+        },
+        "gas_temperature": {
+          "value": 75,
+          "unit": "degF"
+        },
+        "efficiency": 0.95
+      },
+      "input_source": {
+        "source_id": "pipeflow-verification",
+        "locator": "p.7 Case 03",
+        "notes": "水平等径，软件基准 60 °F、14.696 psia，气温 75 °F。参考密度 0.044 lb/ft³，黏度 0.0119 cP，绝对粗糙度 700 μin。"
+      },
+      "expected": {
+        "metric": "flow_mmscfd",
+        "kind": "published_result",
+        "origin": "third_party_software",
+        "value": 163.18,
+        "tolerance": 0.08,
+        "source_id": "pipeflow-verification",
+        "locator": "p.7 Case 03 · Pipe Flow Expert, Weymouth",
+        "tolerance_basis": "两个公开实现的报告值差 163.26 − 163.18 = 0.08 MMSCFD，作为该跨实现核对上限。"
+      }
+    },
+    {
+      "case_id": "pipeflow-case13-flow",
+      "label": "Pipe Flow Expert Case 13 · 软件内径正算",
+      "source_input": {
+        "boundary": "fixed_outlet_pressure",
+        "inlet_pressure": {
+          "value": 1400,
+          "unit": "psig"
+        },
+        "outlet_pressure": {
+          "value": 800,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.696,
+          "unit": "psia"
+        },
+        "length": {
+          "value": 100,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.9,
+        "base_pressure": {
+          "value": 14.696,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 60,
+          "unit": "degF"
+        },
+        "gas_temperature": {
+          "value": 60,
+          "unit": "degF"
+        },
+        "efficiency": 0.95,
+        "internal_diameter": {
+          "value": 13.305,
+          "unit": "in"
+        }
+      },
+      "input_source": {
+        "source_id": "pipeflow-verification",
+        "locator": "p.19 Case 13",
+        "notes": "水平等径，软件采用 60 °F、14.696 psia。参考密度 0.0458 lb/ft³，黏度 0.0119 cP，绝对粗糙度 0.000700 in。"
+      },
+      "expected": {
+        "metric": "flow_mmscfd",
+        "kind": "published_result",
+        "origin": "third_party_software",
+        "value": 100.012,
+        "tolerance": 0.03,
+        "source_id": "pipeflow-verification",
+        "locator": "p.19 Case 13 · Pipe Flow Expert Flow Rate, Weymouth",
+        "tolerance_basis": "沿用 ENGINE-03 登记的 0.03 MMSCFD 跨实现核对容差。"
+      }
+    },
+    {
+      "case_id": "menon-course-ex11-outlet",
+      "label": "Menon 讲义例 11 · 出口压力反算",
+      "source_input": {
+        "boundary": "fixed_standard_flow",
+        "inlet_pressure": {
+          "value": 1000,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "flow": {
+          "value": 150,
+          "unit": "million_ft3/day",
+          "basis": "standard"
+        },
+        "internal_diameter": {
+          "value": 17.5,
+          "unit": "in"
+        },
+        "length": {
+          "value": 20,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.85,
+        "base_pressure": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "gas_temperature": {
+          "value": 530,
+          "unit": "degR"
+        },
+        "efficiency": 0.95
+      },
+      "input_source": {
+        "source_id": "menon-course",
+        "locator": "pp.38–39 Example 11",
+        "notes": "原始外径 18 in，壁厚 0.250 in，平均气温 70 °F，基准 60 °F。按讲义的整数 Rankine 值和 14.7 psi 表压参考转换，忽略高程。"
+      },
+      "expected": {
+        "metric": "outlet_psia",
+        "kind": "published_result",
+        "origin": "literature_result",
+        "value": 946.24,
+        "tolerance": 0.005,
+        "source_id": "menon-course",
+        "locator": "pp.38–39 Example 11 · Weymouth",
+        "tolerance_basis": "文献结果两位小数，半个末位为 0.005 psia。"
+      }
+    },
+    {
+      "case_id": "case13-diameter-a",
+      "label": "Case 13 · 取径 A 出口反算",
+      "source_input": {
+        "boundary": "fixed_standard_flow",
+        "inlet_pressure": {
+          "value": 1400,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "flow": {
+          "value": 100,
+          "unit": "million_ft3/day",
+          "basis": "standard"
+        },
+        "length": {
+          "value": 100,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.9,
+        "base_pressure": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "gas_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "efficiency": 0.95,
+        "internal_diameter": {
+          "value": 13.3,
+          "unit": "in"
+        }
+      },
+      "input_source": {
+        "source_id": "menon-2005",
+        "locator": "第 3 章 pp.97–99 例 3",
+        "notes": "水平等径，原书 60 °F 按 520 °R 代入。相对比重 0.60，黏度 8×10⁻⁶ lb/(ft·s)，绝对粗糙度 700 μin。内径采用原书圆整值。"
+      },
+      "expected": {
+        "metric": "outlet_psia",
+        "kind": "published_boundary",
+        "origin": "boundary_target",
+        "value": 814.7,
+        "tolerance": 2,
+        "source_id": "menon-2005",
+        "locator": "第 3 章 pp.97–99 例 3 · 800 psig + 14.7 psi",
+        "tolerance_basis": "沿用 ENGINE-03 的 2 psia 取径圆整反校容差。目标出口属于设计输入。"
+      }
+    },
+    {
+      "case_id": "case13-diameter-b",
+      "label": "Case 13 · 取径 B 出口反算",
+      "source_input": {
+        "boundary": "fixed_standard_flow",
+        "inlet_pressure": {
+          "value": 1400,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "flow": {
+          "value": 100,
+          "unit": "million_ft3/day",
+          "basis": "standard"
+        },
+        "length": {
+          "value": 100,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.9,
+        "base_pressure": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "gas_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "efficiency": 0.95,
+        "internal_diameter": {
+          "value": 13.305,
+          "unit": "in"
+        }
+      },
+      "input_source": {
+        "source_id": "menon-2005",
+        "locator": "第 3 章 pp.97–99 例 3",
+        "notes": "水平等径，原书 60 °F 按 520 °R 代入。相对比重 0.60，黏度 8×10⁻⁶ lb/(ft·s)，绝对粗糙度 700 μin。内径采用第三方试径值，统一使用原书的标况与边界作敏感性比较。"
+      },
+      "expected": {
+        "metric": "outlet_psia",
+        "kind": "published_boundary",
+        "origin": "boundary_target",
+        "value": 814.7,
+        "tolerance": 2,
+        "source_id": "menon-2005",
+        "locator": "第 3 章 pp.97–99 例 3 · 800 psig + 14.7 psi",
+        "tolerance_basis": "沿用 ENGINE-03 的 2 psia 取径圆整反校容差。目标出口属于设计输入。"
+      }
+    },
+    {
+      "case_id": "case13-min-diameter-menon",
+      "label": "Case 13 · 原书最小内径反求",
+      "source_input": {
+        "boundary": "fixed_pressures_and_flow",
+        "inlet_pressure": {
+          "value": 1400,
+          "unit": "psig"
+        },
+        "outlet_pressure": {
+          "value": 800,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "flow": {
+          "value": 100,
+          "unit": "million_ft3/day",
+          "basis": "standard"
+        },
+        "length": {
+          "value": 100,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.9,
+        "base_pressure": {
+          "value": 14.7,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "gas_temperature": {
+          "value": 520,
+          "unit": "degR"
+        },
+        "efficiency": 0.95
+      },
+      "input_source": {
+        "source_id": "menon-2005",
+        "locator": "第 3 章 pp.97–99 例 3",
+        "notes": "水平等径，原书 60 °F 按 520 °R 代入。相对比重 0.60，黏度 8×10⁻⁶ lb/(ft·s)，绝对粗糙度 700 μin。"
+      },
+      "expected": {
+        "metric": "internal_diameter_in",
+        "kind": "published_result",
+        "origin": "literature_result",
+        "value": 13.3,
+        "tolerance": 0.005,
+        "source_id": "pipeflow-verification",
+        "locator": "p.19 Case 13 · Published data, Weymouth",
+        "tolerance_basis": "原书 13.30 in 按两位小数报告，半个末位为 0.005 in。"
+      }
+    },
+    {
+      "case_id": "case13-min-diameter-pipeflow",
+      "label": "Case 13 · 第三方标况最小内径反求",
+      "source_input": {
+        "boundary": "fixed_pressures_and_flow",
+        "inlet_pressure": {
+          "value": 1400,
+          "unit": "psig"
+        },
+        "outlet_pressure": {
+          "value": 800,
+          "unit": "psig"
+        },
+        "atmosphere": {
+          "value": 14.696,
+          "unit": "psia"
+        },
+        "flow": {
+          "value": 100,
+          "unit": "million_ft3/day",
+          "basis": "standard"
+        },
+        "length": {
+          "value": 100,
+          "unit": "mi"
+        },
+        "gas_specific_gravity": 0.6,
+        "compressibility": 0.9,
+        "base_pressure": {
+          "value": 14.696,
+          "unit": "psia"
+        },
+        "base_temperature": {
+          "value": 60,
+          "unit": "degF"
+        },
+        "gas_temperature": {
+          "value": 60,
+          "unit": "degF"
+        },
+        "efficiency": 0.95
+      },
+      "input_source": {
+        "source_id": "pipeflow-verification",
+        "locator": "p.19 Case 13",
+        "notes": "水平等径，软件采用 60 °F、14.696 psia。参考密度 0.0458 lb/ft³，黏度 0.0119 cP，绝对粗糙度 0.000700 in。"
+      },
+      "expected": {
+        "metric": "internal_diameter_in",
+        "kind": "published_result",
+        "origin": "third_party_software",
+        "value": 13.305,
+        "tolerance": 0.003,
+        "source_id": "pipeflow-verification",
+        "locator": "p.19 Case 13 · Pipe Flow Expert diameter, Weymouth",
+        "tolerance_basis": "试径流量高出目标 0.012 MMSCFD。计入 0.03 MMSCFD 跨实现容差，按 D∝Q^(1/2.667) 折算并计三位小数圆整，上限取 0.003 in。"
+      }
+    }
+  ],
+  "comparison_case_ids": [
+    "case13-diameter-a",
+    "case13-diameter-b"
+  ],
+  "network_case": {
+    "case_id": "menon-case12-series-parallel",
+    "label": "Case 12 · 串并联 General Flow",
+    "input": {
+      "inlet_pressure": {
+        "value": 1200,
+        "unit": "psig"
+      },
+      "atmosphere": {
+        "value": 14.73,
+        "unit": "psia"
+      },
+      "terminal_flow": {
+        "value": 100,
+        "unit": "million_ft3/day",
+        "basis": "standard"
+      },
+      "gas_specific_gravity": 0.6,
+      "compressibility": 0.92,
+      "base_pressure": {
+        "value": 14.73,
+        "unit": "psia"
+      },
+      "base_temperature": {
+        "value": 520,
+        "unit": "degR"
+      },
+      "gas_temperature": {
+        "value": 540,
+        "unit": "degR"
+      },
+      "upstream": {
+        "internal_diameter": {
+          "value": 15.5,
+          "unit": "in"
+        },
+        "length": {
+          "value": 12,
+          "unit": "mi"
+        },
+        "darcy_friction_factor": 0.015
+      },
+      "parallel": [
+        {
+          "internal_diameter": {
+            "value": 13.5,
+            "unit": "in"
+          },
+          "length": {
+            "value": 24,
+            "unit": "mi"
+          },
+          "darcy_friction_factor": 0.015
+        },
+        {
+          "internal_diameter": {
+            "value": 12.25,
+            "unit": "in"
+          },
+          "length": {
+            "value": 16,
+            "unit": "mi"
+          },
+          "darcy_friction_factor": 0.015
+        }
+      ],
+      "downstream": {
+        "internal_diameter": {
+          "value": 15.5,
+          "unit": "in"
+        },
+        "length": {
+          "value": 20,
+          "unit": "mi"
+        },
+        "darcy_friction_factor": 0.015
+      }
+    },
+    "input_source": {
+      "source_id": "menon-2005",
+      "locator": "第 3 章 pp.116–118 例 7",
+      "notes": "水平管路，原书 80 °F 按 540 °R、基准 60 °F 按 520 °R。BCE、BDE 分别按其总长等径成段，B/E 为分流与合流节点。"
+    },
+    "comparison_source": {
+      "source_id": "pipeflow-verification",
+      "locator": "p.18 Case 12",
+      "notes": "第三方用 0.004 in 粗糙度求摩阻，气体黏度 0.0119 cP，基准 60 °F/101.325 kPa。采用固定 Darcy 摩阻的复算以书中结果为校验基准。"
+    },
+    "reference_checks": [
+      {
+        "id": "split_pressure",
+        "label": "B 节点",
+        "unit": "psig",
+        "literature": 1166.6,
+        "third_party": 1167.6,
+        "tolerance": 0.05
+      },
+      {
+        "id": "recombine_pressure",
+        "label": "E 节点",
+        "unit": "psig",
+        "literature": 1130.9,
+        "third_party": 1131.5,
+        "tolerance": 0.05
+      },
+      {
+        "id": "outlet_pressure",
+        "label": "F 节点",
+        "unit": "psig",
+        "literature": 1071.12,
+        "third_party": 1073.6,
+        "tolerance": 0.05
+      },
+      {
+        "id": "branch_one",
+        "label": "BCE 支路",
+        "unit": "MMSCFD",
+        "literature": 51,
+        "third_party": 51.2,
+        "tolerance": 0.05
+      },
+      {
+        "id": "branch_two",
+        "label": "BDE 支路",
+        "unit": "MMSCFD",
+        "literature": 49,
+        "third_party": 48.8,
+        "tolerance": 0.05
+      }
+    ],
+    "tolerance_basis": "流量容差对应原书支路流量一位小数的半个末位。压力容差覆盖原书 B/E 压力一位小数的圆整，及使用圆整分流值逐段复算时的传递差。"
+  }
+}

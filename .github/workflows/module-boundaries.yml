@@ -1,0 +1,55 @@
+name: Module boundaries and contracts
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  boundaries:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      WATER_LLM_MODE: mock
+      AGENT_ENABLED: "0"
+      AGENT_ALLOW_NON_SYNTHETIC: "0"
+      WATER_AGENT_TEST_POSTGRES_DSN: ""
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci --prefix web
+      - run: python -m pip install -r engineering/configs/agent_requirements.lock.txt
+      - name: Dependency rules and negative tests
+        run: |
+          python scripts/check_module_boundaries.py
+          python -m unittest discover -s scripts -p 'test_module_boundaries.py' -v
+          python -m unittest discover -s scripts -p 'test_offline_git_bundle.py' -v
+      - name: New contracts and unchanged Report identities
+        working-directory: engineering
+        run: >-
+          python -m pytest -q -p no:cacheprovider
+          tests/test_module_tool_contracts.py tests/test_module_openapi.py
+          tests/test_report_identity.py tests/test_unified_contracts.py
+          tests/test_m1fix2_platform.py tests/test_m1fix2_identity.py
+          tests/test_unified_case_consistency.py tests/test_report_integrity.py
+          tests/test_report_leaf_integrity.py
+      - name: Generated types, UI regressions and build
+        working-directory: web
+        run: |
+          npm run contracts:check
+          npm run contracts:test
+          npm run typecheck
+          npm test -- --maxWorkers=2 --minWorkers=1
+          npm run build
+# Actual Chromium + isolated FastAPI acceptance stays on 179.
+# CI does not grant approval, unfreeze files, merge branches or deploy.

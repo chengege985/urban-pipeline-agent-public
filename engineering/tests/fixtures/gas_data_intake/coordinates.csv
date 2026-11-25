@@ -1,0 +1,3 @@
+source_record_id,asset_id,crs,longitude,latitude
+syn-intake-location-01,syn-gas-intake-pipe-01,wgs84,0,0
+syn-intake-location-02,syn-gas-intake-regulator-01,gcj02,0.125,0.625

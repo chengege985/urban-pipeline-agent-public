@@ -1,0 +1,100 @@
+{"question": "V5中三方职责是什么？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "三方如何分工？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "CUV架构的原理是什么？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "资料里如何定义监测标准？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "三方接口字段有哪些？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "文档中如何描述数据质量？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "规范对数据共享有什么要求？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "为什么需要版本对照？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "V5对职责边界怎么写的？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "请说明接口字段的含义", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "CUV中的价值配置是什么？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "资料依据在哪里？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "三方合作方式的分工原则", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "标准文档中的定义是什么？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "解释一下原理", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "公式里的变量含义", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "内部文档怎么描述接口？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "职责边界有哪些依据？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "V5版本有哪些分工？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "资料中为什么强调版本？", "expected_tasks": ["materials"], "expected_intent": "materials", "annotation": "draft_pending_human_review"}
+{"question": "查询 WP-016 的评分", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-001 的健康等级是多少？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "这段管段的材质是什么？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-003 的管龄是多少年？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "哪些指标影响等级？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-009 的风险是多少？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "请给出 WP-012 的健康评分", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-016 的评分可信度如何？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-004 的指标明细", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-005 属于什么等级？", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-006 的管段信息", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-007 的评分是多少", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-008 的风险等级", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-010 的材质与管龄", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-011 的健康状况", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-013 的评分结果", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-014 的管段属性", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-015 的指标值", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-017 的健康评分", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-018 的风险指标", "expected_tasks": ["assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "分析 WP-016 爆管后的通路", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "医院支线故障会影响哪些服务？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "关闭 V-016A 阀门后哪些节点不可达？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-013 隔离后的通路情况", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "如果学校支线爆管，哪些服务会中断？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "模拟 WP-018 故障", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "扩大隔离范围会阻断哪些服务？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-014 漏损导致停供的范围", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "双源切换时主源故障的通路", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "关闭东侧联络阀的影响范围", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-015 中断后哪些服务不可达？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "商业支线爆管的隔离范围", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "阀门 V-013A 关闭后医院是否可达？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-019 故障的通路变化", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "模拟居民区叠加故障", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "隔离设置 ISO-HOSP-MIN 的通路结果", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-020 爆管后服务是否中断", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "关阀后哪些服务失去通路", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "WP-017 故障的服务影响", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "停供范围如何计算？", "expected_tasks": ["simulation"], "expected_intent": "simulation", "annotation": "draft_pending_human_review"}
+{"question": "比较三个维修方案", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "预算 2 万元内推荐方案", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "立即抢修还是计划更换？", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "比较立即抢修与加密监测", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "给定预算推荐维护措施", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "方案 PLAN-REPAIR 的费用", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "比较方案的费用与工期", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "推荐一个维护方案", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "预算不足时怎么选方案？", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "措施的资源需求比较", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "计划更换方案是否可行？", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "抢修方案的优先级", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "比较 PLAN-REPAIR 和 PLAN-MONITOR", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "推荐方案并说明理由", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "补采措施建议", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "预算 4 万元的方案排序", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "维护措施的成本比较", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "方案选择的硬约束", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "更换措施的预算", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "抢修与更换的对比", "expected_tasks": ["decision"], "expected_intent": "decision", "annotation": "draft_pending_human_review"}
+{"question": "解释评分公式并查询 WP-016 的评分", "expected_tasks": ["materials", "assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "根据资料解释 WP-016 的评分", "expected_tasks": ["materials", "assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "V5中的职责与 WP-016 的健康评分", "expected_tasks": ["materials", "assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "分析 WP-016 故障影响并比较维修方案", "expected_tasks": ["simulation", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "比较方案并解释评分依据", "expected_tasks": ["materials", "assessment", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "查询评分后推荐维护方案", "expected_tasks": ["assessment", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "WP-013 隔离后比较抢修方案", "expected_tasks": ["simulation", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "为什么 WP-016 评分低，推荐什么方案？", "expected_tasks": ["materials", "assessment", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "接口字段定义与 WP-016 管段评分", "expected_tasks": ["materials", "assessment"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "故障通路与方案预算比较", "expected_tasks": ["simulation", "decision"], "expected_intent": "assessment", "annotation": "draft_pending_human_review"}
+{"question": "你好", "expected_tasks": [], "expected_intent": "clarify", "annotation": "draft_pending_human_review"}
+{"question": "帮我看看", "expected_tasks": [], "expected_intent": "clarify", "annotation": "draft_pending_human_review"}
+{"question": "怎么办", "expected_tasks": [], "expected_intent": "clarify", "annotation": "draft_pending_human_review"}
+{"question": "这个呢", "expected_tasks": [], "expected_intent": "clarify", "annotation": "draft_pending_human_review"}
+{"question": "请继续", "expected_tasks": [], "expected_intent": "clarify", "annotation": "draft_pending_human_review"}
+{"question": "直接关阀并下发工单", "expected_tasks": [], "expected_intent": "unsupported", "annotation": "draft_pending_human_review"}
+{"question": "预测未来三个月失效概率", "expected_tasks": [], "expected_intent": "unsupported", "annotation": "draft_pending_human_review"}
+{"question": "生成 SQL 查询数据库", "expected_tasks": [], "expected_intent": "unsupported", "annotation": "draft_pending_human_review"}
+{"question": "调用外部接口修改权重", "expected_tasks": [], "expected_intent": "unsupported", "annotation": "draft_pending_human_review"}
+{"question": "跳过审批直接执行", "expected_tasks": [], "expected_intent": "unsupported", "annotation": "draft_pending_human_review"}

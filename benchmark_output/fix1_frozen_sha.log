@@ -1,0 +1,430 @@
+{
+  "count": 47,
+  "all_unchanged_from_base": true,
+  "all_manifest_match": true,
+  "entries": [
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/__init__.py",
+      "expected": "7a33f613ba21e1665787b31314b39914f5752b1cd07d832d4ee9ade4fcf52be6",
+      "base": "7a33f613ba21e1665787b31314b39914f5752b1cd07d832d4ee9ade4fcf52be6",
+      "current": "7a33f613ba21e1665787b31314b39914f5752b1cd07d832d4ee9ade4fcf52be6",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/context.py",
+      "expected": "30d44a5254490119d49fad523a2aa47bbf3a511d36291082710fc0b117e298b4",
+      "base": "30d44a5254490119d49fad523a2aa47bbf3a511d36291082710fc0b117e298b4",
+      "current": "30d44a5254490119d49fad523a2aa47bbf3a511d36291082710fc0b117e298b4",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/evaluation.py",
+      "expected": "bf04d02cfe33df423e8d6529ba0a6c13d2456e53408fcf5e5411a867d8baf153",
+      "base": "bf04d02cfe33df423e8d6529ba0a6c13d2456e53408fcf5e5411a867d8baf153",
+      "current": "bf04d02cfe33df423e8d6529ba0a6c13d2456e53408fcf5e5411a867d8baf153",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/evidence.py",
+      "expected": "92a3f4e85d990a2f6077dc44e69b91e2742e3b31c67af67918b0ee75cca54a06",
+      "base": "92a3f4e85d990a2f6077dc44e69b91e2742e3b31c67af67918b0ee75cca54a06",
+      "current": "92a3f4e85d990a2f6077dc44e69b91e2742e3b31c67af67918b0ee75cca54a06",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/gateway.py",
+      "expected": "8501b13cf2890fcb51b3f43d7181832c3db797bb7f179b3a27ddb53a20dcb0fd",
+      "base": "8501b13cf2890fcb51b3f43d7181832c3db797bb7f179b3a27ddb53a20dcb0fd",
+      "current": "8501b13cf2890fcb51b3f43d7181832c3db797bb7f179b3a27ddb53a20dcb0fd",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/graph.py",
+      "expected": "695d915fef5981a898a201647983994ae4f97942d396becf2bdf9496ed0448a7",
+      "base": "695d915fef5981a898a201647983994ae4f97942d396becf2bdf9496ed0448a7",
+      "current": "695d915fef5981a898a201647983994ae4f97942d396becf2bdf9496ed0448a7",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/http_guard.py",
+      "expected": "bb4bc1c3dbc8f640ba27d3724d4a675e42bd0279d8ed4e1b1f40181d90f3e732",
+      "base": "bb4bc1c3dbc8f640ba27d3724d4a675e42bd0279d8ed4e1b1f40181d90f3e732",
+      "current": "bb4bc1c3dbc8f640ba27d3724d4a675e42bd0279d8ed4e1b1f40181d90f3e732",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/materials.py",
+      "expected": "a93fcf201426f2a27298ec9610976764e72f51f47640963161204454e498aaf9",
+      "base": "a93fcf201426f2a27298ec9610976764e72f51f47640963161204454e498aaf9",
+      "current": "a93fcf201426f2a27298ec9610976764e72f51f47640963161204454e498aaf9",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/outbound.py",
+      "expected": "f85d32a7ae01f90b8b144f993a0bc015f3c1e87c72ae3170045900cc434c63ab",
+      "base": "f85d32a7ae01f90b8b144f993a0bc015f3c1e87c72ae3170045900cc434c63ab",
+      "current": "f85d32a7ae01f90b8b144f993a0bc015f3c1e87c72ae3170045900cc434c63ab",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/router.py",
+      "expected": "accf77f3426c25deaa351b64a1b8115af586352130be3ce03ee7edc72d702349",
+      "base": "accf77f3426c25deaa351b64a1b8115af586352130be3ce03ee7edc72d702349",
+      "current": "accf77f3426c25deaa351b64a1b8115af586352130be3ce03ee7edc72d702349",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/state.py",
+      "expected": "dd0e2a36f7dd32635296d118991cef2a836e4987d1a584ca562306aaf9f9c949",
+      "base": "dd0e2a36f7dd32635296d118991cef2a836e4987d1a584ca562306aaf9f9c949",
+      "current": "dd0e2a36f7dd32635296d118991cef2a836e4987d1a584ca562306aaf9f9c949",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/workflow.py",
+      "expected": "115338d56445c7bd5c06611211130010524ba0711bdde122ad8ad5215c847a0b",
+      "base": "115338d56445c7bd5c06611211130010524ba0711bdde122ad8ad5215c847a0b",
+      "current": "115338d56445c7bd5c06611211130010524ba0711bdde122ad8ad5215c847a0b",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/providers/__init__.py",
+      "expected": "e46a45df4ebba888bc0ff3fd63a1a65e803bae68ae78e1304952bd0be313266b",
+      "base": "e46a45df4ebba888bc0ff3fd63a1a65e803bae68ae78e1304952bd0be313266b",
+      "current": "e46a45df4ebba888bc0ff3fd63a1a65e803bae68ae78e1304952bd0be313266b",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/providers/llm.py",
+      "expected": "ace7eeea71744e8cd7d172540238c2846e1182aa4dd125dc45d457aa63fcbb20",
+      "base": "ace7eeea71744e8cd7d172540238c2846e1182aa4dd125dc45d457aa63fcbb20",
+      "current": "ace7eeea71744e8cd7d172540238c2846e1182aa4dd125dc45d457aa63fcbb20",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/rag/__init__.py",
+      "expected": "28900f2eda7916aa61f76be5e7ba8d97440bd7d564397783e0f6640a113429f3",
+      "base": "28900f2eda7916aa61f76be5e7ba8d97440bd7d564397783e0f6640a113429f3",
+      "current": "28900f2eda7916aa61f76be5e7ba8d97440bd7d564397783e0f6640a113429f3",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/rag/chunking.py",
+      "expected": "963eeb1c915b94249fbaa7c66450240e17e6a16e7250a84c6c1b147932fc06fc",
+      "base": "963eeb1c915b94249fbaa7c66450240e17e6a16e7250a84c6c1b147932fc06fc",
+      "current": "963eeb1c915b94249fbaa7c66450240e17e6a16e7250a84c6c1b147932fc06fc",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/rag/manifest.py",
+      "expected": "bd6ba2fcbb8aa9bc8956be71a45379750b398bc6de5c6b537bc823cb2513f48a",
+      "base": "bd6ba2fcbb8aa9bc8956be71a45379750b398bc6de5c6b537bc823cb2513f48a",
+      "current": "bd6ba2fcbb8aa9bc8956be71a45379750b398bc6de5c6b537bc823cb2513f48a",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/rag/retriever.py",
+      "expected": "c2375c0a2fa4afee22585d0a8993b886307eef121a466b60027ddb97a5cdcbcb",
+      "base": "c2375c0a2fa4afee22585d0a8993b886307eef121a466b60027ddb97a5cdcbcb",
+      "current": "c2375c0a2fa4afee22585d0a8993b886307eef121a466b60027ddb97a5cdcbcb",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/tools/__init__.py",
+      "expected": "a8c7424c06832ff6e21ce403ae2848ad421ac9a4cecb720207aa9a1e74fd16fc",
+      "base": "a8c7424c06832ff6e21ce403ae2848ad421ac9a4cecb720207aa9a1e74fd16fc",
+      "current": "a8c7424c06832ff6e21ce403ae2848ad421ac9a4cecb720207aa9a1e74fd16fc",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "agent20",
+      "path": "engineering/src/agents/tools/domain.py",
+      "expected": "d837bbe365f0ed710bde0bf6a5ff522429ac17eba1e1c36da3401a4ff9cfc59d",
+      "base": "d837bbe365f0ed710bde0bf6a5ff522429ac17eba1e1c36da3401a4ff9cfc59d",
+      "current": "d837bbe365f0ed710bde0bf6a5ff522429ac17eba1e1c36da3401a4ff9cfc59d",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/README.md",
+      "expected": "80a779eec4ba3e9c5116a403d4b2842da56f8a81b42490abfd09c1cfd972c4ee",
+      "base": "80a779eec4ba3e9c5116a403d4b2842da56f8a81b42490abfd09c1cfd972c4ee",
+      "current": "80a779eec4ba3e9c5116a403d4b2842da56f8a81b42490abfd09c1cfd972c4ee",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/__init__.py",
+      "expected": "69d778ac7f1c5eb7a3a042bcbab1091d9412ad1b375989f5aa437e11228699fb",
+      "base": "69d778ac7f1c5eb7a3a042bcbab1091d9412ad1b375989f5aa437e11228699fb",
+      "current": "69d778ac7f1c5eb7a3a042bcbab1091d9412ad1b375989f5aa437e11228699fb",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/config.py",
+      "expected": "cc4011cfc2e2a8fb6988fc5f60c3cb195bf7f51481d89ed84f1852ff6df0be63",
+      "base": "cc4011cfc2e2a8fb6988fc5f60c3cb195bf7f51481d89ed84f1852ff6df0be63",
+      "current": "cc4011cfc2e2a8fb6988fc5f60c3cb195bf7f51481d89ed84f1852ff6df0be63",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/hydraulic_baseline.py",
+      "expected": "6e3a9f402b29a7c897b1eee92601cdc5e52f43f8ac5da5dc3fb90e1dcbd273d1",
+      "base": "6e3a9f402b29a7c897b1eee92601cdc5e52f43f8ac5da5dc3fb90e1dcbd273d1",
+      "current": "6e3a9f402b29a7c897b1eee92601cdc5e52f43f8ac5da5dc3fb90e1dcbd273d1",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/run_time_value.py",
+      "expected": "fb2b6efb5349d78416610fa14094c0e73f94400c93b2d41e8adbfbcf35eb9c59",
+      "base": "fb2b6efb5349d78416610fa14094c0e73f94400c93b2d41e8adbfbcf35eb9c59",
+      "current": "fb2b6efb5349d78416610fa14094c0e73f94400c93b2d41e8adbfbcf35eb9c59",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/algorithm_validation/service_time_value.py",
+      "expected": "805b6c7099638db044c9c73891c8ddef4e6830092f7292fa905a5d6356cf87ad",
+      "base": "805b6c7099638db044c9c73891c8ddef4e6830092f7292fa905a5d6356cf87ad",
+      "current": "805b6c7099638db044c9c73891c8ddef4e6830092f7292fa905a5d6356cf87ad",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/decision/__init__.py",
+      "expected": "7e60ea10f9eebc0b984f8e1502ad6612a2a313620f0025b2e4e1ffb65ea79a95",
+      "base": "7e60ea10f9eebc0b984f8e1502ad6612a2a313620f0025b2e4e1ffb65ea79a95",
+      "current": "7e60ea10f9eebc0b984f8e1502ad6612a2a313620f0025b2e4e1ffb65ea79a95",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/decision/contracts.py",
+      "expected": "dd3810dfcbb2ffa01b32e10db8dbf98bc2f1bca2517668b1ffa904f31bf9aeb5",
+      "base": "dd3810dfcbb2ffa01b32e10db8dbf98bc2f1bca2517668b1ffa904f31bf9aeb5",
+      "current": "dd3810dfcbb2ffa01b32e10db8dbf98bc2f1bca2517668b1ffa904f31bf9aeb5",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/decision/plans.py",
+      "expected": "b266eb083339ead324a0cfae03b2ba1fb276048f3fa1ba689a8a7e6ae1553f67",
+      "base": "b266eb083339ead324a0cfae03b2ba1fb276048f3fa1ba689a8a7e6ae1553f67",
+      "current": "b266eb083339ead324a0cfae03b2ba1fb276048f3fa1ba689a8a7e6ae1553f67",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/decision/recovery.py",
+      "expected": "2c1658404c45ad1f6c49baa06e2ac162c18d40ffb5986cc73c1fbc53a322a8f1",
+      "base": "2c1658404c45ad1f6c49baa06e2ac162c18d40ffb5986cc73c1fbc53a322a8f1",
+      "current": "2c1658404c45ad1f6c49baa06e2ac162c18d40ffb5986cc73c1fbc53a322a8f1",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/decision/timeline.py",
+      "expected": "91636a7d8541a43b6c34c7d212ac65b811d259d2e76960edd1842ed96be4a730",
+      "base": "91636a7d8541a43b6c34c7d212ac65b811d259d2e76960edd1842ed96be4a730",
+      "current": "91636a7d8541a43b6c34c7d212ac65b811d259d2e76960edd1842ed96be4a730",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/README.md",
+      "expected": "8da25105ce63179eea21d41a2c2faa96f351af90a3ebf89c7222c3612aa6106c",
+      "base": "8da25105ce63179eea21d41a2c2faa96f351af90a3ebf89c7222c3612aa6106c",
+      "current": "8da25105ce63179eea21d41a2c2faa96f351af90a3ebf89c7222c3612aa6106c",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/__init__.py",
+      "expected": "5cfb54cc9f1903c3cbdfd687cfd64b833d86d987ca701a0f764292d67718c385",
+      "base": "5cfb54cc9f1903c3cbdfd687cfd64b833d86d987ca701a0f764292d67718c385",
+      "current": "5cfb54cc9f1903c3cbdfd687cfd64b833d86d987ca701a0f764292d67718c385",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/__main__.py",
+      "expected": "1ed419b8d3004a1d5be957cbf361193035d802a0bc519941321aba776d4f033f",
+      "base": "1ed419b8d3004a1d5be957cbf361193035d802a0bc519941321aba776d4f033f",
+      "current": "1ed419b8d3004a1d5be957cbf361193035d802a0bc519941321aba776d4f033f",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/aggregate.py",
+      "expected": "86bec5dd2c187546d325a6eff4a17ccd9ce191a688064a529f7d67423aeb6c27",
+      "base": "86bec5dd2c187546d325a6eff4a17ccd9ce191a688064a529f7d67423aeb6c27",
+      "current": "86bec5dd2c187546d325a6eff4a17ccd9ce191a688064a529f7d67423aeb6c27",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/compare.py",
+      "expected": "f9b6c3d5f07eb643e884f5bae733f84b76eab7cbfd19ba38fcd50f4a8913021a",
+      "base": "f9b6c3d5f07eb643e884f5bae733f84b76eab7cbfd19ba38fcd50f4a8913021a",
+      "current": "f9b6c3d5f07eb643e884f5bae733f84b76eab7cbfd19ba38fcd50f4a8913021a",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/config.py",
+      "expected": "b3afd4fb0b7dfb646e320a476eb276ca023d4224480e9b900cdbec2880c2fa8c",
+      "base": "b3afd4fb0b7dfb646e320a476eb276ca023d4224480e9b900cdbec2880c2fa8c",
+      "current": "b3afd4fb0b7dfb646e320a476eb276ca023d4224480e9b900cdbec2880c2fa8c",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/data_io.py",
+      "expected": "62e51b1fcabe2a755b872aa97ad59b2e214657cfaf4a55c2630dc8da5d349924",
+      "base": "62e51b1fcabe2a755b872aa97ad59b2e214657cfaf4a55c2630dc8da5d349924",
+      "current": "62e51b1fcabe2a755b872aa97ad59b2e214657cfaf4a55c2630dc8da5d349924",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/indicators.py",
+      "expected": "ae5c69fcfa7f5aa73765365e0a82abdf2da79e5ea958f1d8c7e53d7706c8ec2a",
+      "base": "ae5c69fcfa7f5aa73765365e0a82abdf2da79e5ea958f1d8c7e53d7706c8ec2a",
+      "current": "ae5c69fcfa7f5aa73765365e0a82abdf2da79e5ea958f1d8c7e53d7706c8ec2a",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/pipe_health/pipeline.py",
+      "expected": "35893d994f335a4bc334e6eadaf6ee8a67c741e563bd2b7da75e5b5d2e0e4993",
+      "base": "35893d994f335a4bc334e6eadaf6ee8a67c741e563bd2b7da75e5b5d2e0e4993",
+      "current": "35893d994f335a4bc334e6eadaf6ee8a67c741e563bd2b7da75e5b5d2e0e4993",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/simulation/__init__.py",
+      "expected": "0c5256d49299746df3241af83feacdc8b326c5b2964c3dc0419187492305915f",
+      "base": "0c5256d49299746df3241af83feacdc8b326c5b2964c3dc0419187492305915f",
+      "current": "0c5256d49299746df3241af83feacdc8b326c5b2964c3dc0419187492305915f",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "algorithm22",
+      "path": "engineering/src/simulation/topology.py",
+      "expected": "6f60d70a31b6ace5d03f4d707835517de8113b4ba073ca2280f0dba36544b641",
+      "base": "6f60d70a31b6ace5d03f4d707835517de8113b4ba073ca2280f0dba36544b641",
+      "current": "6f60d70a31b6ace5d03f4d707835517de8113b4ba073ca2280f0dba36544b641",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "report5",
+      "path": "engineering/src/unified/__init__.py",
+      "expected": "f95c3912a61a469865b73ef959f70082b138e3ce3b703a0a76c0956b3184df7e",
+      "base": "f95c3912a61a469865b73ef959f70082b138e3ce3b703a0a76c0956b3184df7e",
+      "current": "f95c3912a61a469865b73ef959f70082b138e3ce3b703a0a76c0956b3184df7e",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "report5",
+      "path": "engineering/src/unified/case_consistency.py",
+      "expected": "fbedba8962c6f031e619fb990884179c524fb0c1716f8a2303282ab005d22704",
+      "base": "fbedba8962c6f031e619fb990884179c524fb0c1716f8a2303282ab005d22704",
+      "current": "fbedba8962c6f031e619fb990884179c524fb0c1716f8a2303282ab005d22704",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "report5",
+      "path": "engineering/src/unified/contracts.py",
+      "expected": "3efe11dd361b7e5d182bfeeeca2546e2fb0ad76ede8c29dbf7fa97c64a6b88d8",
+      "base": "3efe11dd361b7e5d182bfeeeca2546e2fb0ad76ede8c29dbf7fa97c64a6b88d8",
+      "current": "3efe11dd361b7e5d182bfeeeca2546e2fb0ad76ede8c29dbf7fa97c64a6b88d8",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "report5",
+      "path": "engineering/src/unified/report.py",
+      "expected": "1fc5bd35fe12884a91ddfc0755b5156357e7e67dfbe120235f44ef8c1dabba0e",
+      "base": "1fc5bd35fe12884a91ddfc0755b5156357e7e67dfbe120235f44ef8c1dabba0e",
+      "current": "1fc5bd35fe12884a91ddfc0755b5156357e7e67dfbe120235f44ef8c1dabba0e",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    },
+    {
+      "group": "report5",
+      "path": "engineering/src/unified/report_integrity.py",
+      "expected": "eda816d73b22ebe14a93014bee40feabf668b14baa70f42e3d0f75f63f6a0a24",
+      "base": "eda816d73b22ebe14a93014bee40feabf668b14baa70f42e3d0f75f63f6a0a24",
+      "current": "eda816d73b22ebe14a93014bee40feabf668b14baa70f42e3d0f75f63f6a0a24",
+      "unchanged_from_base": true,
+      "matches_manifest": true
+    }
+  ]
+}

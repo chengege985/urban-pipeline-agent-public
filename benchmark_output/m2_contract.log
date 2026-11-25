@@ -1,0 +1,6 @@
+Current M2 OpenAPI SHA-256: dc52322e26cf583f7c777d125121ece99e42f7e2256ffeed6a57322429154b38
+node generate-platform-types.mjs --check: passed; schemas=85
+node test-platform-types.mjs: platform type contract: 7 assertions passed
+OpenAPI parse: 3.1.0, 28 paths, 85 schemas, 205 refs, missing refs=0.
+Generated TypeScript exports=85; missing/extra=0.
+Node ran in a temporary Windows contract directory because 179 has no node/npm.

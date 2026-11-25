@@ -1,0 +1,11 @@
+{
+  "remote.autoForwardPorts": true,
+  "remote.autoForwardPortsSource": "output",
+  "remote.portsAttributes": {
+    "24673": {"label": "WaterPipNet 燃气预览", "onAutoForward": "openBrowser", "requireLocalPort": true},
+    "24681": {"onAutoForward": "ignore"},
+    "24695": {"onAutoForward": "ignore"},
+    "30006": {"onAutoForward": "ignore"}
+  },
+  "remote.otherPortsAttributes": {"onAutoForward": "ignore"}
+}

@@ -1,0 +1,142 @@
+{
+  "base": "http://127.0.0.1:4183",
+  "generatedAt": "2026-11-06T08:20:39.508Z",
+  "results": [
+    {
+      "name": "valid 54-node fixture renders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "valid request uses the gas case endpoint",
+      "ok": true,
+      "detail": "http://127.0.0.1:4183/api/v1/gas/cases/syn-gas-case-K-001"
+    },
+    {
+      "name": "valid request ID is labelled frontend",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no server trace label",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "valid page has no page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "valid page has no console error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 200 missing services is contract_error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract error names field path",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract error does not render page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract error reports HTTP 200 boundary",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract error does not show DemoHealth",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contract error does not white-screen or throw",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 401 is unavailable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 401 has no page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 403 is unavailable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 403 has no page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 404 is unavailable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 404 has no page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 503 is unavailable",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "HTTP 503 has no page error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "network abort is unavailable/network",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "network abort does not white-screen",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "retry recovers after 503",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "retry performs a second request",
+      "ok": true,
+      "detail": "2"
+    },
+    {
+      "name": "demo mode does not fall back to water data",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "unmount does not surface late gas result",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "fixture": {
+    "nodes": 54,
+    "edges": 73,
+    "services": 46
+  }
+}

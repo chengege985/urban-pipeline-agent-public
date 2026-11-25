@@ -1,0 +1,33 @@
+Traceback (most recent call last):
+  File "/tmp/wpn_m2_backend_fix1/scripts/check_module_boundaries.py", line 609, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/tmp/wpn_m2_backend_fix1/scripts/check_module_boundaries.py", line 599, in main
+    files=tracked_snapshot(root); graph=collect_graph(root,files,args.node)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/wpn_m2_backend_fix1/scripts/check_module_boundaries.py", line 255, in collect_graph
+    raise RuntimeError("TypeScript AST parsing failed: " + proc.stderr[-2000:])
+RuntimeError: TypeScript AST parsing failed: node:internal/modules/cjs/loader:1365
+  const err = new Error(message);
+              ^
+
+Error: Cannot find module 'typescript'
+Require stack:
+- /tmp/wpn_m2_backend_fix1/web/package.json
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at file:///tmp/wpn_m2_backend_fix1/scripts/parse_typescript_dependencies.mjs:8:12
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/tmp/wpn_m2_backend_fix1/web/package.json' ]
+}
+
+Node.js v22.18.0
+
+CHECK_STATUS=1

@@ -1,0 +1,26 @@
+> waterpulse-ai@0.3.0-rc.2 test
+> vitest run
+ RUN  v3.2.7 /workdata/WaterPipNet/01_工程项目/experiments/gas_cockpit_v11_fix1_20261110/repo-standalone/web
+ ✓ src/tests/plans.test.ts (4 tests) 6ms
+ ✓ src/tests/platformProvider.test.ts (22 tests) 1001ms
+   ✓ PlatformProvider：报告与 Agent 边界 > ApiProvider 与 DemoProvider 行为保持不变  942ms
+ ✓ src/tests/timelineContext.test.ts (19 tests) 104ms
+ ✓ src/tests/reviewFixes.test.ts (10 tests) 56ms
+ ↓ src/tests/interaction.browser.test.ts (12 tests | 12 skipped)
+ ✓ src/tests/c4c5.test.ts (13 tests) 23ms
+ ✓ src/tests/data.test.ts (4 tests) 11ms
+ ✓ src/tests/timelineBoundaries.test.ts (3 tests) 13ms
+ ✓ src/tests/scenario.test.ts (5 tests) 8ms
+ ✓ src/tests/platformReportApi.test.ts (29 tests) 24ms
+ ✓ src/tests/gasApi.test.ts (8 tests) 31ms
+ ✓ src/tests/provider.test.ts (3 tests) 10ms
+ ✓ src/tests/decision.test.ts (8 tests) 17ms
+ ✓ src/tests/demoHealth.test.ts (15 tests) 13ms
+ ✓ src/tests/gasResponseContract.test.ts (6 tests) 79ms
+ ✓ src/tests/timeline.test.ts (30 tests) 53ms
+ ✓ src/tests/assistant.test.ts (6 tests) 30ms
+ ✓ src/tests/moduleCompatibility.test.ts (18 tests) 8ms
+ Test Files  17 passed | 1 skipped (18)
+      Tests  203 passed | 12 skipped (215)
+   Start at  11:08:04
+   Duration  70.29s (transform 8.01s, setup 0ms, collect 27.88s, tests 1.49s, environment 5ms, prepare 680.06s)

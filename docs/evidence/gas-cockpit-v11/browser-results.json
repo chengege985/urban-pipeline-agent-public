@@ -1,0 +1,107 @@
+{
+  "base": "http://127.0.0.1:4183",
+  "generatedAt": "2026-11-09T14:20:26.618Z",
+  "results": [
+    {
+      "name": "54-node synthetic cockpit renders",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "11 cockpit windows are present",
+      "ok": true,
+      "detail": "11"
+    },
+    {
+      "name": "synthetic boundary is visible",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "initial command layout is selected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "initial overview mode is selected",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "risk analysis mode changes focus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "emergency mode changes focus",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "analysis layout preset changes grid",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "compact emergency layout preset changes grid",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline stage selection updates active event",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "timeline keeps the supplied 1h stage",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "node selection opens linked detail",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "edge selection updates linked detail",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "window drag changes its workspace offset",
+      "ok": true,
+      "detail": "transform: translate(0px, 0px); -> transform: translate(30px, 26px);"
+    },
+    {
+      "name": "window hide removes topology window",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "window restore brings topology back",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "prefers-reduced-motion disables playback",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no page errors in browser probe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors in browser probe",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "errors": [],
+  "fixture": {
+    "nodes": 54,
+    "edges": 73,
+    "services": 46
+  }
+}

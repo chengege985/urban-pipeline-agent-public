@@ -1,0 +1,110 @@
+﻿交付级别,数据表,字段名称,工程用途,输入组,校核说明
+A,数据包清单,schema_version,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,数据包清单,dataset_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,数据包清单,version,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,数据包清单,data_mode,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,数据包清单,files,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,filename,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,source_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,version,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,sha256,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,columns,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,文件映射,sheet,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,受控授权登记,approval_ref,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,scope_ref,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,directory,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,dataset_id,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,version,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,manifest_sha256,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,valid_from,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,valid_until,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,uses,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,subjects,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,import_operators,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,region_ref,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,asset_ids,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,history_from,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,受控授权登记,history_to,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,nodes,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,nodes,node_id,图连通,topology,用稳定主外键和同一版本的明确连线核对拓扑。
+A,pipes,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,pipes,pipe_id,图连通,topology,用稳定主外键和同一版本的明确连线核对拓扑。
+A,pipes,from_node_id,图连通,topology,用稳定主外键和同一版本的明确连线核对拓扑。
+A,pipes,to_node_id,图连通,topology,用稳定主外键和同一版本的明确连线核对拓扑。
+A,pipes,material,物理计算,pipe_physics,保留材质代码与来源，用于经签核参数映射。
+A,pipes,diameter_mm,物理计算,pipe_physics,核对 mm 原值和内径口径。
+A,pipes,pressure_class,物理计算,pipe_physics,核对压力等级及适用范围；实际压力从合格观测或经校核模型取得。
+A,pipes,region_ref,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+B,gis,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+B,gis,geometry_id,图连通参考,topology,核验测绘与资产标识、坐标系及授权范围；几何参考用于核对明确连线。
+B,gis,pipe_id,图连通参考,topology,核验测绘与资产标识、坐标系及授权范围；几何参考用于核对明确连线。
+B,gis,crs,图连通参考,topology,核验测绘与资产标识、坐标系及授权范围；几何参考用于核对明确连线。
+B,gis,geometry,图连通参考,topology,核验测绘与资产标识、坐标系及授权范围；几何参考用于核对明确连线。
+B,gis,scope_ref,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+B,gis,valid_from,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+B,gis,valid_until,业务校核,approval_and_calibration,校核数据集、授权期限、主体、用途及来源。
+A,sensors,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,sensors,sensor_id,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,sensors,pipe_id,图连通关联与物理计算校核,topology|qualified_observations,按稳定资产 ID 关联测点。工程边界还需实际测点位置与设备关联。
+A,sensors,metric,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,sensors,unit,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,sensors,device_status,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+A,observations,observation_id,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,sensor_id,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,observed_at,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,value,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,unit,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+A,observations,quality,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+B,events,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+B,events,event_id,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,events,recorded_at,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,events,observation_ids,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,events,pipe_ids,图连通关联与业务校核,topology|restoration_acceptance,对齐同版本资产和事件证据；与 GAS-M0 的跨数据集映射需单独验证。
+B,events,status,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,events,evidence_ref,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,threshold_rules,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+B,threshold_rules,rule_id,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,version,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,metric_id,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,asset_id,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,sensor_id,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,unit,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,threshold_type,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,threshold_value,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,effective_from,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,effective_to,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,approval_status,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,approved_by,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,approved_at,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,evidence_reference,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,cadence_seconds,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,sustained_samples,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,threshold_rules,missing_samples,业务校核,approval_and_calibration,按生效版本核对历史预警。物理运行边界与服务压力判据另由运营方批准。
+B,truth_windows,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+B,truth_windows,truth_window_id,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,sensor_id,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,start,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,end,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,coverage_status,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,reviewed_by,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,reviewed_at,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_windows,evidence_reference,业务校核,qualified_observations,核对审阅覆盖、时段与独立证据；不足时定量业务评价保持未知。
+B,truth_events,source_record_id,业务校核,approval_and_calibration,关联原始记录和来源摘要，保留版本证据。
+B,truth_events,truth_event_id,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,truth_window_id,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,event_id,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,direction,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,started_at,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,recovered_at,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,truth_events,evidence_reference,业务校核,restoration_acceptance,用于历史业务核验。现场物理恢复判据与验收证据需另行签核。
+B,observations,quality_reason,物理计算校核,qualified_observations,用于时点对照及偏差评估，需核实质量覆盖、位置、设备校准和单位。
+C,CUV 后续,surveyed_length,物理计算,pipe_physics,提供测绘长度、单位、管段 ID、来源和有效期。
+C,CUV 后续,elevation_profile,物理计算,pipe_physics,以管段及有效测绘版本关联高程序列，明确单位和基准。
+C,CUV 后续,roughness_reference,物理计算,pipe_physics,提供适用的粗糙度来源、单位、参数版本及适用管段。
+C,CUV 后续,gas_property_reference,物理计算,gas_properties,提供气质状态及参考条件，明确适用时段。
+C,CUV 后续,boundary_history,物理计算,boundary_conditions|transient_state,核对气源、边界节点与原始时序，明确压力及流量口径。
+C,CUV 后续,demand_profile,物理计算,boundary_conditions|service_acceptance,按节点和时段提供负荷与单位，独立核验服务要求。
+C,CUV 后续,valve_state_history,图连通与物理计算,graph_states|device_characteristics|transient_state,按设备、连接关系与时点核对状态；补齐调压设施及特性。
+C,CUV 后续,engineering_constraints,物理计算与业务校核,transient_state|service_acceptance|restoration_acceptance,由运营方确认工况边界、服务判据和现场恢复口径，按相应作用范围登记。
+C,CUV 后续,calibration_case_reference,物理计算校核,approval_and_calibration,关联方法版本与输入摘要，区分校准、独立验证及签核报告。

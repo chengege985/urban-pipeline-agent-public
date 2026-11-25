@@ -1,0 +1,12 @@
+# Frontend live-browser attempt on RC01
+source_commit=4862808aca9107207eb1f263abfda949e79945de
+local_tree=D:\\重通院管网项目\\.tmp_gas_synthetic_rc01\\web
+command=npm run test:gas:browser
+result=UNVERIFIED
+reason=Chromium page.goto(http://127.0.0.1:4183/#/gas) returned ERR_NETWORK_ACCESS_DENIED in the managed Windows sandbox before page assertions.
+mocked_branch_evidence=26/26 checks, but page.route intercepts /api/v1/gas/** and is not live FastAPI evidence.
+plain_node_tests=npm test -- --run => 17 files passed, 1 skipped; 203 passed, 12 skipped.
+contracts_test=npm run contracts:test => 7 assertions passed.
+typecheck=PASS
+contracts_check=PASS; openapi_sha=9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591; schemas=85
+build=PASS

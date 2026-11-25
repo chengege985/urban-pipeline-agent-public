@@ -1,0 +1,64 @@
+{
+  "schema_version": "freeze/module-boundaries-v1",
+  "scope": "Pre-existing Agent kernel, water algorithms and Report: no relocation or edits in this refactor",
+  "references": {
+    "agent": "CODEX-REVIEW-LEDGER-CLOSE-01_独立验收结果_20261103.json",
+    "agent_reference_sha256": "5003e637cde411ae91ebc3ce3a1d7cfcf10d1862f5a652d548c7d28fced8842b",
+    "report": "CODEX-REVIEW-REPORT-INTEGRITY-P1-FIX_独立复审结果_20261104.json"
+  },
+  "groups": {
+    "agent20": {
+      "engineering/src/agents/__init__.py": "7a33f613ba21e1665787b31314b39914f5752b1cd07d832d4ee9ade4fcf52be6",
+      "engineering/src/agents/context.py": "30d44a5254490119d49fad523a2aa47bbf3a511d36291082710fc0b117e298b4",
+      "engineering/src/agents/evaluation.py": "bf04d02cfe33df423e8d6529ba0a6c13d2456e53408fcf5e5411a867d8baf153",
+      "engineering/src/agents/evidence.py": "92a3f4e85d990a2f6077dc44e69b91e2742e3b31c67af67918b0ee75cca54a06",
+      "engineering/src/agents/gateway.py": "8501b13cf2890fcb51b3f43d7181832c3db797bb7f179b3a27ddb53a20dcb0fd",
+      "engineering/src/agents/graph.py": "695d915fef5981a898a201647983994ae4f97942d396becf2bdf9496ed0448a7",
+      "engineering/src/agents/http_guard.py": "bb4bc1c3dbc8f640ba27d3724d4a675e42bd0279d8ed4e1b1f40181d90f3e732",
+      "engineering/src/agents/materials.py": "a93fcf201426f2a27298ec9610976764e72f51f47640963161204454e498aaf9",
+      "engineering/src/agents/outbound.py": "f85d32a7ae01f90b8b144f993a0bc015f3c1e87c72ae3170045900cc434c63ab",
+      "engineering/src/agents/router.py": "accf77f3426c25deaa351b64a1b8115af586352130be3ce03ee7edc72d702349",
+      "engineering/src/agents/state.py": "dd0e2a36f7dd32635296d118991cef2a836e4987d1a584ca562306aaf9f9c949",
+      "engineering/src/agents/workflow.py": "115338d56445c7bd5c06611211130010524ba0711bdde122ad8ad5215c847a0b",
+      "engineering/src/agents/providers/__init__.py": "e46a45df4ebba888bc0ff3fd63a1a65e803bae68ae78e1304952bd0be313266b",
+      "engineering/src/agents/providers/llm.py": "ace7eeea71744e8cd7d172540238c2846e1182aa4dd125dc45d457aa63fcbb20",
+      "engineering/src/agents/rag/__init__.py": "28900f2eda7916aa61f76be5e7ba8d97440bd7d564397783e0f6640a113429f3",
+      "engineering/src/agents/rag/chunking.py": "963eeb1c915b94249fbaa7c66450240e17e6a16e7250a84c6c1b147932fc06fc",
+      "engineering/src/agents/rag/manifest.py": "bd6ba2fcbb8aa9bc8956be71a45379750b398bc6de5c6b537bc823cb2513f48a",
+      "engineering/src/agents/rag/retriever.py": "c2375c0a2fa4afee22585d0a8993b886307eef121a466b60027ddb97a5cdcbcb",
+      "engineering/src/agents/tools/__init__.py": "a8c7424c06832ff6e21ce403ae2848ad421ac9a4cecb720207aa9a1e74fd16fc",
+      "engineering/src/agents/tools/domain.py": "d837bbe365f0ed710bde0bf6a5ff522429ac17eba1e1c36da3401a4ff9cfc59d"
+    },
+    "algorithm22": {
+      "engineering/src/algorithm_validation/README.md": "80a779eec4ba3e9c5116a403d4b2842da56f8a81b42490abfd09c1cfd972c4ee",
+      "engineering/src/algorithm_validation/__init__.py": "69d778ac7f1c5eb7a3a042bcbab1091d9412ad1b375989f5aa437e11228699fb",
+      "engineering/src/algorithm_validation/config.py": "cc4011cfc2e2a8fb6988fc5f60c3cb195bf7f51481d89ed84f1852ff6df0be63",
+      "engineering/src/algorithm_validation/hydraulic_baseline.py": "6e3a9f402b29a7c897b1eee92601cdc5e52f43f8ac5da5dc3fb90e1dcbd273d1",
+      "engineering/src/algorithm_validation/run_time_value.py": "fb2b6efb5349d78416610fa14094c0e73f94400c93b2d41e8adbfbcf35eb9c59",
+      "engineering/src/algorithm_validation/service_time_value.py": "805b6c7099638db044c9c73891c8ddef4e6830092f7292fa905a5d6356cf87ad",
+      "engineering/src/decision/__init__.py": "7e60ea10f9eebc0b984f8e1502ad6612a2a313620f0025b2e4e1ffb65ea79a95",
+      "engineering/src/decision/contracts.py": "dd3810dfcbb2ffa01b32e10db8dbf98bc2f1bca2517668b1ffa904f31bf9aeb5",
+      "engineering/src/decision/plans.py": "b266eb083339ead324a0cfae03b2ba1fb276048f3fa1ba689a8a7e6ae1553f67",
+      "engineering/src/decision/recovery.py": "2c1658404c45ad1f6c49baa06e2ac162c18d40ffb5986cc73c1fbc53a322a8f1",
+      "engineering/src/decision/timeline.py": "91636a7d8541a43b6c34c7d212ac65b811d259d2e76960edd1842ed96be4a730",
+      "engineering/src/pipe_health/README.md": "8da25105ce63179eea21d41a2c2faa96f351af90a3ebf89c7222c3612aa6106c",
+      "engineering/src/pipe_health/__init__.py": "5cfb54cc9f1903c3cbdfd687cfd64b833d86d987ca701a0f764292d67718c385",
+      "engineering/src/pipe_health/__main__.py": "1ed419b8d3004a1d5be957cbf361193035d802a0bc519941321aba776d4f033f",
+      "engineering/src/pipe_health/aggregate.py": "86bec5dd2c187546d325a6eff4a17ccd9ce191a688064a529f7d67423aeb6c27",
+      "engineering/src/pipe_health/compare.py": "f9b6c3d5f07eb643e884f5bae733f84b76eab7cbfd19ba38fcd50f4a8913021a",
+      "engineering/src/pipe_health/config.py": "b3afd4fb0b7dfb646e320a476eb276ca023d4224480e9b900cdbec2880c2fa8c",
+      "engineering/src/pipe_health/data_io.py": "62e51b1fcabe2a755b872aa97ad59b2e214657cfaf4a55c2630dc8da5d349924",
+      "engineering/src/pipe_health/indicators.py": "ae5c69fcfa7f5aa73765365e0a82abdf2da79e5ea958f1d8c7e53d7706c8ec2a",
+      "engineering/src/pipe_health/pipeline.py": "35893d994f335a4bc334e6eadaf6ee8a67c741e563bd2b7da75e5b5d2e0e4993",
+      "engineering/src/simulation/__init__.py": "0c5256d49299746df3241af83feacdc8b326c5b2964c3dc0419187492305915f",
+      "engineering/src/simulation/topology.py": "6f60d70a31b6ace5d03f4d707835517de8113b4ba073ca2280f0dba36544b641"
+    },
+    "report5": {
+      "engineering/src/unified/__init__.py": "f95c3912a61a469865b73ef959f70082b138e3ce3b703a0a76c0956b3184df7e",
+      "engineering/src/unified/case_consistency.py": "fbedba8962c6f031e619fb990884179c524fb0c1716f8a2303282ab005d22704",
+      "engineering/src/unified/contracts.py": "3efe11dd361b7e5d182bfeeeca2546e2fb0ad76ede8c29dbf7fa97c64a6b88d8",
+      "engineering/src/unified/report.py": "1fc5bd35fe12884a91ddfc0755b5156357e7e67dfbe120235f44ef8c1dabba0e",
+      "engineering/src/unified/report_integrity.py": "eda816d73b22ebe14a93014bee40feabf668b14baa70f42e3d0f75f63f6a0a24"
+    }
+  }
+}

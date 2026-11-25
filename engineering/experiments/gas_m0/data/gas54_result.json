@@ -1,0 +1,2658 @@
+{
+  "schema_version": "gas-result-candidate-0.1.0",
+  "algorithm_version": "gas-graph-candidate-0.1.0",
+  "status": "partial",
+  "data_mode": "synthetic",
+  "model_status": "candidate",
+  "validation_status": "not_business_validated",
+  "semantic": "graph_connectivity_only",
+  "identity": {
+    "network_id": "syn-gas-network-html54-0.1.0",
+    "case_id": "syn-gas-case-K-001",
+    "scenario_id": "syn-gas-scenario-K-001",
+    "plan_id": "syn-gas-isolation-unit-16"
+  },
+  "evidence": {
+    "network_content_sha256": "abc6d9d9953be599fe4ceebb92b7befabe9255ecd3a3de594907d6ab945b0829",
+    "case_content_sha256": "58b629657b34c2d38925ab9c4ad02fa91cbaf394b42fbf95132f76b99163484e",
+    "html_source_sha256": "21671fbdd368a4fb6e8757f18af91e5aa69a0221098b022c00009a4bf4a88832"
+  },
+  "validation": {
+    "status": "valid",
+    "algorithm_version": "gas-graph-candidate-0.1.0",
+    "counts": {
+      "nodes": 54,
+      "edges": 73,
+      "pipes": 73,
+      "valves": 31,
+      "sources": 2,
+      "consumers": 46,
+      "services": 46
+    },
+    "isolated_node_ids": [],
+    "warnings": []
+  },
+  "analysis_window_hours": 8,
+  "states": [
+    {
+      "event_id": "syn-gas-event-fault",
+      "time_hours": 0,
+      "kind": "given_fault",
+      "current_reachable_node_ids": [
+        "syn-gas-node-N01",
+        "syn-gas-node-N02",
+        "syn-gas-node-N03",
+        "syn-gas-node-N04",
+        "syn-gas-node-N05",
+        "syn-gas-node-N06",
+        "syn-gas-node-N07",
+        "syn-gas-node-N08",
+        "syn-gas-node-N11",
+        "syn-gas-node-N12",
+        "syn-gas-node-N13",
+        "syn-gas-node-N14",
+        "syn-gas-node-N15",
+        "syn-gas-node-N16",
+        "syn-gas-node-N17",
+        "syn-gas-node-N18",
+        "syn-gas-node-N20",
+        "syn-gas-node-N21",
+        "syn-gas-node-N22",
+        "syn-gas-node-N23",
+        "syn-gas-node-N24",
+        "syn-gas-node-N25",
+        "syn-gas-node-N26",
+        "syn-gas-node-N27",
+        "syn-gas-node-N28",
+        "syn-gas-node-N30",
+        "syn-gas-node-N31",
+        "syn-gas-node-N32",
+        "syn-gas-node-N33",
+        "syn-gas-node-N34",
+        "syn-gas-node-N35",
+        "syn-gas-node-N36",
+        "syn-gas-node-N37",
+        "syn-gas-node-N38",
+        "syn-gas-node-N40",
+        "syn-gas-node-N41",
+        "syn-gas-node-N42",
+        "syn-gas-node-N43",
+        "syn-gas-node-N44",
+        "syn-gas-node-N45",
+        "syn-gas-node-N46",
+        "syn-gas-node-N47",
+        "syn-gas-node-N48",
+        "syn-gas-node-N50",
+        "syn-gas-node-N51",
+        "syn-gas-node-N52",
+        "syn-gas-node-N53",
+        "syn-gas-node-N54",
+        "syn-gas-node-N55",
+        "syn-gas-node-N56",
+        "syn-gas-node-N57",
+        "syn-gas-node-N58"
+      ],
+      "current_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N10"
+      ],
+      "normal_unreachable_node_ids": [],
+      "newly_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N10"
+      ],
+      "services": [
+        {
+          "service_id": "syn-gas-service-household-N00",
+          "consumer_id": "syn-gas-consumer-household-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N00",
+          "consumer_id": "syn-gas-consumer-business-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N01",
+          "consumer_id": "syn-gas-consumer-household-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N01",
+          "consumer_id": "syn-gas-consumer-business-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N02",
+          "consumer_id": "syn-gas-consumer-household-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N02",
+          "consumer_id": "syn-gas-consumer-business-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N07",
+          "consumer_id": "syn-gas-consumer-household-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N07",
+          "consumer_id": "syn-gas-consumer-business-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N10",
+          "consumer_id": "syn-gas-consumer-household-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N10",
+          "consumer_id": "syn-gas-consumer-business-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N12",
+          "consumer_id": "syn-gas-consumer-household-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N12",
+          "consumer_id": "syn-gas-consumer-business-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N16",
+          "consumer_id": "syn-gas-consumer-household-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N16",
+          "consumer_id": "syn-gas-consumer-business-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N18",
+          "consumer_id": "syn-gas-consumer-household-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N18",
+          "consumer_id": "syn-gas-consumer-business-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N22",
+          "consumer_id": "syn-gas-consumer-household-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N22",
+          "consumer_id": "syn-gas-consumer-business-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N26",
+          "consumer_id": "syn-gas-consumer-household-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N26",
+          "consumer_id": "syn-gas-consumer-business-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N32",
+          "consumer_id": "syn-gas-consumer-household-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N32",
+          "consumer_id": "syn-gas-consumer-business-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N33",
+          "consumer_id": "syn-gas-consumer-household-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N33",
+          "consumer_id": "syn-gas-consumer-business-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N35",
+          "consumer_id": "syn-gas-consumer-household-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N35",
+          "consumer_id": "syn-gas-consumer-business-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N42",
+          "consumer_id": "syn-gas-consumer-household-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N42",
+          "consumer_id": "syn-gas-consumer-business-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N46",
+          "consumer_id": "syn-gas-consumer-household-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N46",
+          "consumer_id": "syn-gas-consumer-business-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N48",
+          "consumer_id": "syn-gas-consumer-household-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N48",
+          "consumer_id": "syn-gas-consumer-business-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N51",
+          "consumer_id": "syn-gas-consumer-household-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N51",
+          "consumer_id": "syn-gas-consumer-business-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N52",
+          "consumer_id": "syn-gas-consumer-household-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N52",
+          "consumer_id": "syn-gas-consumer-business-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N53",
+          "consumer_id": "syn-gas-consumer-household-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N53",
+          "consumer_id": "syn-gas-consumer-business-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N54",
+          "consumer_id": "syn-gas-consumer-household-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N54",
+          "consumer_id": "syn-gas-consumer-business-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N57",
+          "consumer_id": "syn-gas-consumer-household-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N57",
+          "consumer_id": "syn-gas-consumer-business-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-01",
+          "consumer_id": "syn-gas-consumer-FAC-01",
+          "node_ids": [
+            "syn-gas-node-N24"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-02",
+          "consumer_id": "syn-gas-consumer-FAC-02",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-03",
+          "consumer_id": "syn-gas-consumer-FAC-03",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-04",
+          "consumer_id": "syn-gas-consumer-FAC-04",
+          "node_ids": [
+            "syn-gas-node-N45"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        }
+      ],
+      "newly_affected_service_ids": [
+        "syn-gas-service-business-N00",
+        "syn-gas-service-business-N10",
+        "syn-gas-service-household-N00",
+        "syn-gas-service-household-N10"
+      ],
+      "potentially_interrupted_consumers": {
+        "household": 499,
+        "business": 41,
+        "facility": 0
+      },
+      "model_scope": "graph_connectivity_only",
+      "physical_supply_verified": false
+    },
+    {
+      "event_id": "syn-gas-event-isolation",
+      "time_hours": 0.5,
+      "kind": "given_isolation",
+      "current_reachable_node_ids": [
+        "syn-gas-node-N03",
+        "syn-gas-node-N04",
+        "syn-gas-node-N05",
+        "syn-gas-node-N06",
+        "syn-gas-node-N07",
+        "syn-gas-node-N08",
+        "syn-gas-node-N14",
+        "syn-gas-node-N15",
+        "syn-gas-node-N16",
+        "syn-gas-node-N17",
+        "syn-gas-node-N18",
+        "syn-gas-node-N20",
+        "syn-gas-node-N21",
+        "syn-gas-node-N22",
+        "syn-gas-node-N23",
+        "syn-gas-node-N24",
+        "syn-gas-node-N25",
+        "syn-gas-node-N26",
+        "syn-gas-node-N27",
+        "syn-gas-node-N28",
+        "syn-gas-node-N30",
+        "syn-gas-node-N31",
+        "syn-gas-node-N32",
+        "syn-gas-node-N33",
+        "syn-gas-node-N34",
+        "syn-gas-node-N35",
+        "syn-gas-node-N36",
+        "syn-gas-node-N37",
+        "syn-gas-node-N38",
+        "syn-gas-node-N40",
+        "syn-gas-node-N41",
+        "syn-gas-node-N42",
+        "syn-gas-node-N43",
+        "syn-gas-node-N44",
+        "syn-gas-node-N45",
+        "syn-gas-node-N46",
+        "syn-gas-node-N47",
+        "syn-gas-node-N48",
+        "syn-gas-node-N50",
+        "syn-gas-node-N51",
+        "syn-gas-node-N52",
+        "syn-gas-node-N53",
+        "syn-gas-node-N54",
+        "syn-gas-node-N55",
+        "syn-gas-node-N56",
+        "syn-gas-node-N57",
+        "syn-gas-node-N58"
+      ],
+      "current_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N01",
+        "syn-gas-node-N02",
+        "syn-gas-node-N10",
+        "syn-gas-node-N11",
+        "syn-gas-node-N12",
+        "syn-gas-node-N13"
+      ],
+      "normal_unreachable_node_ids": [],
+      "newly_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N01",
+        "syn-gas-node-N02",
+        "syn-gas-node-N10",
+        "syn-gas-node-N11",
+        "syn-gas-node-N12",
+        "syn-gas-node-N13"
+      ],
+      "services": [
+        {
+          "service_id": "syn-gas-service-household-N00",
+          "consumer_id": "syn-gas-consumer-household-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N00",
+          "consumer_id": "syn-gas-consumer-business-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N01",
+          "consumer_id": "syn-gas-consumer-household-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N01",
+          "consumer_id": "syn-gas-consumer-business-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N02",
+          "consumer_id": "syn-gas-consumer-household-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N02",
+          "consumer_id": "syn-gas-consumer-business-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N07",
+          "consumer_id": "syn-gas-consumer-household-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N07",
+          "consumer_id": "syn-gas-consumer-business-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N10",
+          "consumer_id": "syn-gas-consumer-household-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N10",
+          "consumer_id": "syn-gas-consumer-business-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N12",
+          "consumer_id": "syn-gas-consumer-household-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N12",
+          "consumer_id": "syn-gas-consumer-business-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N16",
+          "consumer_id": "syn-gas-consumer-household-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N16",
+          "consumer_id": "syn-gas-consumer-business-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N18",
+          "consumer_id": "syn-gas-consumer-household-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N18",
+          "consumer_id": "syn-gas-consumer-business-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N22",
+          "consumer_id": "syn-gas-consumer-household-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N22",
+          "consumer_id": "syn-gas-consumer-business-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N26",
+          "consumer_id": "syn-gas-consumer-household-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N26",
+          "consumer_id": "syn-gas-consumer-business-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N32",
+          "consumer_id": "syn-gas-consumer-household-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N32",
+          "consumer_id": "syn-gas-consumer-business-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N33",
+          "consumer_id": "syn-gas-consumer-household-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N33",
+          "consumer_id": "syn-gas-consumer-business-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N35",
+          "consumer_id": "syn-gas-consumer-household-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N35",
+          "consumer_id": "syn-gas-consumer-business-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N42",
+          "consumer_id": "syn-gas-consumer-household-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N42",
+          "consumer_id": "syn-gas-consumer-business-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N46",
+          "consumer_id": "syn-gas-consumer-household-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N46",
+          "consumer_id": "syn-gas-consumer-business-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N48",
+          "consumer_id": "syn-gas-consumer-household-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N48",
+          "consumer_id": "syn-gas-consumer-business-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N51",
+          "consumer_id": "syn-gas-consumer-household-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N51",
+          "consumer_id": "syn-gas-consumer-business-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N52",
+          "consumer_id": "syn-gas-consumer-household-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N52",
+          "consumer_id": "syn-gas-consumer-business-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N53",
+          "consumer_id": "syn-gas-consumer-household-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N53",
+          "consumer_id": "syn-gas-consumer-business-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N54",
+          "consumer_id": "syn-gas-consumer-household-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N54",
+          "consumer_id": "syn-gas-consumer-business-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N57",
+          "consumer_id": "syn-gas-consumer-household-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N57",
+          "consumer_id": "syn-gas-consumer-business-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-01",
+          "consumer_id": "syn-gas-consumer-FAC-01",
+          "node_ids": [
+            "syn-gas-node-N24"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-02",
+          "consumer_id": "syn-gas-consumer-FAC-02",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-03",
+          "consumer_id": "syn-gas-consumer-FAC-03",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-04",
+          "consumer_id": "syn-gas-consumer-FAC-04",
+          "node_ids": [
+            "syn-gas-node-N45"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        }
+      ],
+      "newly_affected_service_ids": [
+        "syn-gas-service-business-N00",
+        "syn-gas-service-business-N01",
+        "syn-gas-service-business-N02",
+        "syn-gas-service-business-N10",
+        "syn-gas-service-business-N12",
+        "syn-gas-service-household-N00",
+        "syn-gas-service-household-N01",
+        "syn-gas-service-household-N02",
+        "syn-gas-service-household-N10",
+        "syn-gas-service-household-N12"
+      ],
+      "potentially_interrupted_consumers": {
+        "household": 1330,
+        "business": 103,
+        "facility": 0
+      },
+      "model_scope": "graph_connectivity_only",
+      "physical_supply_verified": false
+    },
+    {
+      "event_id": "syn-gas-event-observation",
+      "time_hours": 1,
+      "kind": "synthetic_observation",
+      "current_reachable_node_ids": [
+        "syn-gas-node-N03",
+        "syn-gas-node-N04",
+        "syn-gas-node-N05",
+        "syn-gas-node-N06",
+        "syn-gas-node-N07",
+        "syn-gas-node-N08",
+        "syn-gas-node-N14",
+        "syn-gas-node-N15",
+        "syn-gas-node-N16",
+        "syn-gas-node-N17",
+        "syn-gas-node-N18",
+        "syn-gas-node-N20",
+        "syn-gas-node-N21",
+        "syn-gas-node-N22",
+        "syn-gas-node-N23",
+        "syn-gas-node-N24",
+        "syn-gas-node-N25",
+        "syn-gas-node-N26",
+        "syn-gas-node-N27",
+        "syn-gas-node-N28",
+        "syn-gas-node-N30",
+        "syn-gas-node-N31",
+        "syn-gas-node-N32",
+        "syn-gas-node-N33",
+        "syn-gas-node-N34",
+        "syn-gas-node-N35",
+        "syn-gas-node-N36",
+        "syn-gas-node-N37",
+        "syn-gas-node-N38",
+        "syn-gas-node-N40",
+        "syn-gas-node-N41",
+        "syn-gas-node-N42",
+        "syn-gas-node-N43",
+        "syn-gas-node-N44",
+        "syn-gas-node-N45",
+        "syn-gas-node-N46",
+        "syn-gas-node-N47",
+        "syn-gas-node-N48",
+        "syn-gas-node-N50",
+        "syn-gas-node-N51",
+        "syn-gas-node-N52",
+        "syn-gas-node-N53",
+        "syn-gas-node-N54",
+        "syn-gas-node-N55",
+        "syn-gas-node-N56",
+        "syn-gas-node-N57",
+        "syn-gas-node-N58"
+      ],
+      "current_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N01",
+        "syn-gas-node-N02",
+        "syn-gas-node-N10",
+        "syn-gas-node-N11",
+        "syn-gas-node-N12",
+        "syn-gas-node-N13"
+      ],
+      "normal_unreachable_node_ids": [],
+      "newly_unreachable_node_ids": [
+        "syn-gas-node-N00",
+        "syn-gas-node-N01",
+        "syn-gas-node-N02",
+        "syn-gas-node-N10",
+        "syn-gas-node-N11",
+        "syn-gas-node-N12",
+        "syn-gas-node-N13"
+      ],
+      "services": [
+        {
+          "service_id": "syn-gas-service-household-N00",
+          "consumer_id": "syn-gas-consumer-household-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N00",
+          "consumer_id": "syn-gas-consumer-business-N00",
+          "node_ids": [
+            "syn-gas-node-N00"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N01",
+          "consumer_id": "syn-gas-consumer-household-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N01",
+          "consumer_id": "syn-gas-consumer-business-N01",
+          "node_ids": [
+            "syn-gas-node-N01"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N02",
+          "consumer_id": "syn-gas-consumer-household-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N02",
+          "consumer_id": "syn-gas-consumer-business-N02",
+          "node_ids": [
+            "syn-gas-node-N02"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N07",
+          "consumer_id": "syn-gas-consumer-household-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N07",
+          "consumer_id": "syn-gas-consumer-business-N07",
+          "node_ids": [
+            "syn-gas-node-N07"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N10",
+          "consumer_id": "syn-gas-consumer-household-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N10",
+          "consumer_id": "syn-gas-consumer-business-N10",
+          "node_ids": [
+            "syn-gas-node-N10"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N12",
+          "consumer_id": "syn-gas-consumer-household-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-business-N12",
+          "consumer_id": "syn-gas-consumer-business-N12",
+          "node_ids": [
+            "syn-gas-node-N12"
+          ],
+          "supply_rule": "any",
+          "status": "newly_graph_unreachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": false
+        },
+        {
+          "service_id": "syn-gas-service-household-N16",
+          "consumer_id": "syn-gas-consumer-household-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N16",
+          "consumer_id": "syn-gas-consumer-business-N16",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N18",
+          "consumer_id": "syn-gas-consumer-household-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N18",
+          "consumer_id": "syn-gas-consumer-business-N18",
+          "node_ids": [
+            "syn-gas-node-N18"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N22",
+          "consumer_id": "syn-gas-consumer-household-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N22",
+          "consumer_id": "syn-gas-consumer-business-N22",
+          "node_ids": [
+            "syn-gas-node-N22"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N26",
+          "consumer_id": "syn-gas-consumer-household-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N26",
+          "consumer_id": "syn-gas-consumer-business-N26",
+          "node_ids": [
+            "syn-gas-node-N26"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N32",
+          "consumer_id": "syn-gas-consumer-household-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N32",
+          "consumer_id": "syn-gas-consumer-business-N32",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N33",
+          "consumer_id": "syn-gas-consumer-household-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N33",
+          "consumer_id": "syn-gas-consumer-business-N33",
+          "node_ids": [
+            "syn-gas-node-N33"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N35",
+          "consumer_id": "syn-gas-consumer-household-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N35",
+          "consumer_id": "syn-gas-consumer-business-N35",
+          "node_ids": [
+            "syn-gas-node-N35"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N42",
+          "consumer_id": "syn-gas-consumer-household-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N42",
+          "consumer_id": "syn-gas-consumer-business-N42",
+          "node_ids": [
+            "syn-gas-node-N42"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N46",
+          "consumer_id": "syn-gas-consumer-household-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N46",
+          "consumer_id": "syn-gas-consumer-business-N46",
+          "node_ids": [
+            "syn-gas-node-N46"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N48",
+          "consumer_id": "syn-gas-consumer-household-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N48",
+          "consumer_id": "syn-gas-consumer-business-N48",
+          "node_ids": [
+            "syn-gas-node-N48"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N51",
+          "consumer_id": "syn-gas-consumer-household-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N51",
+          "consumer_id": "syn-gas-consumer-business-N51",
+          "node_ids": [
+            "syn-gas-node-N51"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N52",
+          "consumer_id": "syn-gas-consumer-household-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N52",
+          "consumer_id": "syn-gas-consumer-business-N52",
+          "node_ids": [
+            "syn-gas-node-N52"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N53",
+          "consumer_id": "syn-gas-consumer-household-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N53",
+          "consumer_id": "syn-gas-consumer-business-N53",
+          "node_ids": [
+            "syn-gas-node-N53"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N54",
+          "consumer_id": "syn-gas-consumer-household-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N54",
+          "consumer_id": "syn-gas-consumer-business-N54",
+          "node_ids": [
+            "syn-gas-node-N54"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-household-N57",
+          "consumer_id": "syn-gas-consumer-household-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-business-N57",
+          "consumer_id": "syn-gas-consumer-business-N57",
+          "node_ids": [
+            "syn-gas-node-N57"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-01",
+          "consumer_id": "syn-gas-consumer-FAC-01",
+          "node_ids": [
+            "syn-gas-node-N24"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-02",
+          "consumer_id": "syn-gas-consumer-FAC-02",
+          "node_ids": [
+            "syn-gas-node-N32"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-03",
+          "consumer_id": "syn-gas-consumer-FAC-03",
+          "node_ids": [
+            "syn-gas-node-N16"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        },
+        {
+          "service_id": "syn-gas-service-FAC-04",
+          "consumer_id": "syn-gas-consumer-FAC-04",
+          "node_ids": [
+            "syn-gas-node-N45"
+          ],
+          "supply_rule": "any",
+          "status": "graph_reachable",
+          "physical_supply_status": "unknown",
+          "previously_graph_reachable": true,
+          "currently_graph_reachable": true
+        }
+      ],
+      "newly_affected_service_ids": [
+        "syn-gas-service-business-N00",
+        "syn-gas-service-business-N01",
+        "syn-gas-service-business-N02",
+        "syn-gas-service-business-N10",
+        "syn-gas-service-business-N12",
+        "syn-gas-service-household-N00",
+        "syn-gas-service-household-N01",
+        "syn-gas-service-household-N02",
+        "syn-gas-service-household-N10",
+        "syn-gas-service-household-N12"
+      ],
+      "potentially_interrupted_consumers": {
+        "household": 1330,
+        "business": 103,
+        "facility": 0
+      },
+      "model_scope": "graph_connectivity_only",
+      "physical_supply_verified": false
+    }
+  ],
+  "current": {
+    "event_id": "syn-gas-event-observation",
+    "time_hours": 1,
+    "kind": "synthetic_observation",
+    "current_reachable_node_ids": [
+      "syn-gas-node-N03",
+      "syn-gas-node-N04",
+      "syn-gas-node-N05",
+      "syn-gas-node-N06",
+      "syn-gas-node-N07",
+      "syn-gas-node-N08",
+      "syn-gas-node-N14",
+      "syn-gas-node-N15",
+      "syn-gas-node-N16",
+      "syn-gas-node-N17",
+      "syn-gas-node-N18",
+      "syn-gas-node-N20",
+      "syn-gas-node-N21",
+      "syn-gas-node-N22",
+      "syn-gas-node-N23",
+      "syn-gas-node-N24",
+      "syn-gas-node-N25",
+      "syn-gas-node-N26",
+      "syn-gas-node-N27",
+      "syn-gas-node-N28",
+      "syn-gas-node-N30",
+      "syn-gas-node-N31",
+      "syn-gas-node-N32",
+      "syn-gas-node-N33",
+      "syn-gas-node-N34",
+      "syn-gas-node-N35",
+      "syn-gas-node-N36",
+      "syn-gas-node-N37",
+      "syn-gas-node-N38",
+      "syn-gas-node-N40",
+      "syn-gas-node-N41",
+      "syn-gas-node-N42",
+      "syn-gas-node-N43",
+      "syn-gas-node-N44",
+      "syn-gas-node-N45",
+      "syn-gas-node-N46",
+      "syn-gas-node-N47",
+      "syn-gas-node-N48",
+      "syn-gas-node-N50",
+      "syn-gas-node-N51",
+      "syn-gas-node-N52",
+      "syn-gas-node-N53",
+      "syn-gas-node-N54",
+      "syn-gas-node-N55",
+      "syn-gas-node-N56",
+      "syn-gas-node-N57",
+      "syn-gas-node-N58"
+    ],
+    "current_unreachable_node_ids": [
+      "syn-gas-node-N00",
+      "syn-gas-node-N01",
+      "syn-gas-node-N02",
+      "syn-gas-node-N10",
+      "syn-gas-node-N11",
+      "syn-gas-node-N12",
+      "syn-gas-node-N13"
+    ],
+    "normal_unreachable_node_ids": [],
+    "newly_unreachable_node_ids": [
+      "syn-gas-node-N00",
+      "syn-gas-node-N01",
+      "syn-gas-node-N02",
+      "syn-gas-node-N10",
+      "syn-gas-node-N11",
+      "syn-gas-node-N12",
+      "syn-gas-node-N13"
+    ],
+    "services": [
+      {
+        "service_id": "syn-gas-service-household-N00",
+        "consumer_id": "syn-gas-consumer-household-N00",
+        "node_ids": [
+          "syn-gas-node-N00"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-business-N00",
+        "consumer_id": "syn-gas-consumer-business-N00",
+        "node_ids": [
+          "syn-gas-node-N00"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-household-N01",
+        "consumer_id": "syn-gas-consumer-household-N01",
+        "node_ids": [
+          "syn-gas-node-N01"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-business-N01",
+        "consumer_id": "syn-gas-consumer-business-N01",
+        "node_ids": [
+          "syn-gas-node-N01"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-household-N02",
+        "consumer_id": "syn-gas-consumer-household-N02",
+        "node_ids": [
+          "syn-gas-node-N02"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-business-N02",
+        "consumer_id": "syn-gas-consumer-business-N02",
+        "node_ids": [
+          "syn-gas-node-N02"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-household-N07",
+        "consumer_id": "syn-gas-consumer-household-N07",
+        "node_ids": [
+          "syn-gas-node-N07"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N07",
+        "consumer_id": "syn-gas-consumer-business-N07",
+        "node_ids": [
+          "syn-gas-node-N07"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N10",
+        "consumer_id": "syn-gas-consumer-household-N10",
+        "node_ids": [
+          "syn-gas-node-N10"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-business-N10",
+        "consumer_id": "syn-gas-consumer-business-N10",
+        "node_ids": [
+          "syn-gas-node-N10"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-household-N12",
+        "consumer_id": "syn-gas-consumer-household-N12",
+        "node_ids": [
+          "syn-gas-node-N12"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-business-N12",
+        "consumer_id": "syn-gas-consumer-business-N12",
+        "node_ids": [
+          "syn-gas-node-N12"
+        ],
+        "supply_rule": "any",
+        "status": "newly_graph_unreachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": false
+      },
+      {
+        "service_id": "syn-gas-service-household-N16",
+        "consumer_id": "syn-gas-consumer-household-N16",
+        "node_ids": [
+          "syn-gas-node-N16"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N16",
+        "consumer_id": "syn-gas-consumer-business-N16",
+        "node_ids": [
+          "syn-gas-node-N16"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N18",
+        "consumer_id": "syn-gas-consumer-household-N18",
+        "node_ids": [
+          "syn-gas-node-N18"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N18",
+        "consumer_id": "syn-gas-consumer-business-N18",
+        "node_ids": [
+          "syn-gas-node-N18"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N22",
+        "consumer_id": "syn-gas-consumer-household-N22",
+        "node_ids": [
+          "syn-gas-node-N22"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N22",
+        "consumer_id": "syn-gas-consumer-business-N22",
+        "node_ids": [
+          "syn-gas-node-N22"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N26",
+        "consumer_id": "syn-gas-consumer-household-N26",
+        "node_ids": [
+          "syn-gas-node-N26"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N26",
+        "consumer_id": "syn-gas-consumer-business-N26",
+        "node_ids": [
+          "syn-gas-node-N26"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N32",
+        "consumer_id": "syn-gas-consumer-household-N32",
+        "node_ids": [
+          "syn-gas-node-N32"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N32",
+        "consumer_id": "syn-gas-consumer-business-N32",
+        "node_ids": [
+          "syn-gas-node-N32"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N33",
+        "consumer_id": "syn-gas-consumer-household-N33",
+        "node_ids": [
+          "syn-gas-node-N33"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N33",
+        "consumer_id": "syn-gas-consumer-business-N33",
+        "node_ids": [
+          "syn-gas-node-N33"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N35",
+        "consumer_id": "syn-gas-consumer-household-N35",
+        "node_ids": [
+          "syn-gas-node-N35"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N35",
+        "consumer_id": "syn-gas-consumer-business-N35",
+        "node_ids": [
+          "syn-gas-node-N35"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N42",
+        "consumer_id": "syn-gas-consumer-household-N42",
+        "node_ids": [
+          "syn-gas-node-N42"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N42",
+        "consumer_id": "syn-gas-consumer-business-N42",
+        "node_ids": [
+          "syn-gas-node-N42"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N46",
+        "consumer_id": "syn-gas-consumer-household-N46",
+        "node_ids": [
+          "syn-gas-node-N46"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N46",
+        "consumer_id": "syn-gas-consumer-business-N46",
+        "node_ids": [
+          "syn-gas-node-N46"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N48",
+        "consumer_id": "syn-gas-consumer-household-N48",
+        "node_ids": [
+          "syn-gas-node-N48"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N48",
+        "consumer_id": "syn-gas-consumer-business-N48",
+        "node_ids": [
+          "syn-gas-node-N48"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N51",
+        "consumer_id": "syn-gas-consumer-household-N51",
+        "node_ids": [
+          "syn-gas-node-N51"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N51",
+        "consumer_id": "syn-gas-consumer-business-N51",
+        "node_ids": [
+          "syn-gas-node-N51"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N52",
+        "consumer_id": "syn-gas-consumer-household-N52",
+        "node_ids": [
+          "syn-gas-node-N52"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N52",
+        "consumer_id": "syn-gas-consumer-business-N52",
+        "node_ids": [
+          "syn-gas-node-N52"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N53",
+        "consumer_id": "syn-gas-consumer-household-N53",
+        "node_ids": [
+          "syn-gas-node-N53"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N53",
+        "consumer_id": "syn-gas-consumer-business-N53",
+        "node_ids": [
+          "syn-gas-node-N53"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N54",
+        "consumer_id": "syn-gas-consumer-household-N54",
+        "node_ids": [
+          "syn-gas-node-N54"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N54",
+        "consumer_id": "syn-gas-consumer-business-N54",
+        "node_ids": [
+          "syn-gas-node-N54"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-household-N57",
+        "consumer_id": "syn-gas-consumer-household-N57",
+        "node_ids": [
+          "syn-gas-node-N57"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-business-N57",
+        "consumer_id": "syn-gas-consumer-business-N57",
+        "node_ids": [
+          "syn-gas-node-N57"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-FAC-01",
+        "consumer_id": "syn-gas-consumer-FAC-01",
+        "node_ids": [
+          "syn-gas-node-N24"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-FAC-02",
+        "consumer_id": "syn-gas-consumer-FAC-02",
+        "node_ids": [
+          "syn-gas-node-N32"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-FAC-03",
+        "consumer_id": "syn-gas-consumer-FAC-03",
+        "node_ids": [
+          "syn-gas-node-N16"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      },
+      {
+        "service_id": "syn-gas-service-FAC-04",
+        "consumer_id": "syn-gas-consumer-FAC-04",
+        "node_ids": [
+          "syn-gas-node-N45"
+        ],
+        "supply_rule": "any",
+        "status": "graph_reachable",
+        "physical_supply_status": "unknown",
+        "previously_graph_reachable": true,
+        "currently_graph_reachable": true
+      }
+    ],
+    "newly_affected_service_ids": [
+      "syn-gas-service-business-N00",
+      "syn-gas-service-business-N01",
+      "syn-gas-service-business-N02",
+      "syn-gas-service-business-N10",
+      "syn-gas-service-business-N12",
+      "syn-gas-service-household-N00",
+      "syn-gas-service-household-N01",
+      "syn-gas-service-household-N02",
+      "syn-gas-service-household-N10",
+      "syn-gas-service-household-N12"
+    ],
+    "potentially_interrupted_consumers": {
+      "household": 1330,
+      "business": 103,
+      "facility": 0
+    },
+    "model_scope": "graph_connectivity_only",
+    "physical_supply_verified": false
+  },
+  "metrics": {
+    "timeline_events": {
+      "status": "available",
+      "value": 3,
+      "unit": "event"
+    },
+    "plan_completion_hours": {
+      "status": "insufficient_data",
+      "value": null,
+      "unit": "h",
+      "in_analysis_window": null,
+      "reason": "Explicit task end only; never last event time. An available completion time may be outside the analysis window."
+    },
+    "graph_service_restoration_hours": {
+      "status": "insufficient_data",
+      "value": null,
+      "unit": "h",
+      "reason": "No restoration event contract in this first fixed-fault candidate."
+    },
+    "actual_gas_restoration_hours": {
+      "status": "unsupported",
+      "value": null,
+      "unit": "h",
+      "reason": "No physical supply, inspection or safety-release model."
+    },
+    "pressure": {
+      "status": "unsupported",
+      "value": null,
+      "unit": null
+    },
+    "flow": {
+      "status": "unsupported",
+      "value": null,
+      "unit": null
+    },
+    "failure_probability": {
+      "status": "unsupported",
+      "value": null,
+      "unit": null
+    }
+  },
+  "safety": {
+    "field_operation_instruction": false,
+    "safe_restoration_decision": false,
+    "physical_supply_verified": false,
+    "simulation_only": true
+  }
+}

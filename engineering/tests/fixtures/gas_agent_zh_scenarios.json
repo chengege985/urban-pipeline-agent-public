@@ -1,0 +1,639 @@
+{
+  "version": "gas-agent-zh-0.1",
+  "data_mode": "synthetic",
+  "scenarios": [
+    {
+      "id": "pipe_short",
+      "input": {
+        "question": "查看K-001管段的信息"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-001"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "pipe_full",
+      "input": {
+        "question": "查询syn-gas-pipe-K-002的详情"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-002"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "pipe_other",
+      "input": {
+        "question": "K-017管段是什么资料"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-017"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "valve_short",
+      "input": {
+        "question": "查看N11阀门的详情"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-valve-N11"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "valve_full",
+      "input": {
+        "question": "查询syn-gas-valve-N13的信息"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-valve-N13"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "asset_events",
+      "input": {
+        "question": "K-001管段关联哪些事件"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-001"
+        },
+        "ui_action": "event_list",
+        "evidence_required": true,
+        "intent": "event_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + asset_ids filter",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "context_events",
+      "input": {
+        "question": "该管段关联哪些事件",
+        "asset_id": "syn-gas-pipe-K-001"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-001"
+        },
+        "ui_action": "event_list",
+        "evidence_required": true,
+        "intent": "event_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + asset_ids filter",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "current_events",
+      "input": {
+        "question": "查看当前有哪些燃气事件"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.query",
+        "parameters": {},
+        "ui_action": "event_list",
+        "evidence_required": true,
+        "intent": "event_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + asset_ids filter",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "alarms",
+      "input": {
+        "question": "查询当前告警事件"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.query",
+        "parameters": {},
+        "ui_action": "event_list",
+        "evidence_required": true,
+        "intent": "event_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + asset_ids filter",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "isolation_explain",
+      "input": {
+        "question": "解释这个隔离事件"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.explain",
+        "parameters": {
+          "event_id": "syn-gas-event-isolation"
+        },
+        "ui_action": "event_evidence",
+        "evidence_required": true,
+        "intent": "event_explain"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + deterministic evidence",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "context_explain",
+      "input": {
+        "question": "解释该事件的依据",
+        "event_id": "syn-gas-event-isolation"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "event.explain",
+        "parameters": {
+          "event_id": "syn-gas-event-isolation"
+        },
+        "ui_action": "event_evidence",
+        "evidence_required": true,
+        "intent": "event_explain"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.events + deterministic evidence",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "event_locate",
+      "input": {
+        "question": "定位隔离事件关联的管段"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "map.locate",
+        "parameters": {
+          "event_id": "syn-gas-event-isolation"
+        },
+        "ui_action": "topology_9_assets",
+        "evidence_required": true,
+        "intent": "map_locate"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "authorized asset/event relations + GasFixtureService.districts",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "asset_locate",
+      "input": {
+        "question": "定位刚才的管段",
+        "asset_id": "syn-gas-pipe-K-001"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "map.locate",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-001"
+        },
+        "ui_action": "topology_asset",
+        "evidence_required": true,
+        "intent": "map_locate"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "authorized asset/event relations + GasFixtureService.districts",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "district_gis",
+      "input": {
+        "question": "查询区县信息和GIS可用状态"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "map.locate",
+        "parameters": {},
+        "ui_action": "gis_unavailable",
+        "evidence_required": true,
+        "intent": "map_locate"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "authorized asset/event relations + GasFixtureService.districts",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "yubei_gis",
+      "input": {
+        "question": "渝北区的燃气GIS坐标可用吗"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "map.locate",
+        "parameters": {},
+        "ui_action": "gis_unavailable",
+        "evidence_required": true,
+        "intent": "map_locate"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "authorized asset/event relations + GasFixtureService.districts",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "capabilities",
+      "input": {
+        "question": "目前支持哪些CUV分析？"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "capabilities.query",
+        "parameters": {},
+        "ui_action": "capabilities",
+        "evidence_required": true,
+        "intent": "capabilities_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "capability_catalog() current registered readiness",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "risk_reason",
+      "input": {
+        "question": "风险评价为何不可用"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "capabilities.query",
+        "parameters": {},
+        "ui_action": "capabilities",
+        "evidence_required": true,
+        "intent": "capabilities_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "capability_catalog() current registered readiness",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "context_asset",
+      "input": {
+        "question": "查看上一轮的管段详情",
+        "asset_id": "syn-gas-pipe-K-001"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {
+          "asset_id": "syn-gas-pipe-K-001"
+        },
+        "ui_action": "asset_detail",
+        "evidence_required": true,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "clarify_asset",
+      "input": {
+        "question": "查看管段详情"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "clarification",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "clarify_event",
+      "input": {
+        "question": "解释这个事件"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "clarification",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "unknown_asset",
+      "input": {
+        "question": "查看K-999管段的信息"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parameters": {},
+        "ui_action": "not_found",
+        "evidence_required": false,
+        "intent": "asset_query"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "pressure_refuse",
+      "input": {
+        "question": "计算K-001管段的真实压力"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "refusal",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "flow_refuse",
+      "input": {
+        "question": "给出K-001管段的流量预测"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "refusal",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "risk_refuse",
+      "input": {
+        "question": "预测K-001管段的泄漏概率"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "refusal",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "control_refuse",
+      "input": {
+        "question": "关闭N11阀门并执行现场操作"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "refusal",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "reopen_refuse",
+      "input": {
+        "question": "马上执行复气"
+      },
+      "expected": {
+        "http_status": 200,
+        "tool": null,
+        "parameters": {},
+        "ui_action": "refusal",
+        "evidence_required": false,
+        "intent": "clarify"
+      },
+      "execution": "both",
+      "source": "approved GAS-M0 synthetic fixture",
+      "query_boundary": "authorized dataset; current fixture records only",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "no_acl",
+      "input": {
+        "question": "查看当前燃气事件"
+      },
+      "authorization": "limited",
+      "expected": {
+        "http_status": 403,
+        "ui_action": "access_denied",
+        "intent": "rejected_before_tool"
+      },
+      "execution": "both",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "no_auth",
+      "input": {
+        "question": "查看当前燃气事件"
+      },
+      "authorization": "none",
+      "expected": {
+        "http_status": 401,
+        "ui_action": "authentication_required",
+        "intent": "rejected_before_tool"
+      },
+      "execution": "both",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "invalid_id",
+      "input": {
+        "question": "查看资产",
+        "asset_id": "not-existing"
+      },
+      "expected": {
+        "http_status": 404,
+        "ui_action": "not_found",
+        "intent": "rejected_before_tool"
+      },
+      "execution": "both",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "invalid_tool",
+      "input": {
+        "question": "执行操作",
+        "tool_hint": "valve.close"
+      },
+      "expected": {
+        "http_status": 422,
+        "ui_action": "validation_error",
+        "intent": "rejected_before_tool"
+      },
+      "execution": "both",
+      "server_query": "no business tool",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "model_timeout",
+      "input": {
+        "question": "查看K-001管段的信息"
+      },
+      "fault": "tcp_timeout",
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parser": "local_rule_not_llm",
+        "ui_action": "explicit_fallback",
+        "intent": "asset_query"
+      },
+      "execution": "fault",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "model_bad_json",
+      "input": {
+        "question": "查看K-001管段的信息"
+      },
+      "fault": "invalid_model_response",
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parser": "local_rule_not_llm",
+        "ui_action": "explicit_fallback",
+        "intent": "asset_query"
+      },
+      "execution": "fault",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    },
+    {
+      "id": "model_offline",
+      "input": {
+        "question": "查看K-001管段的信息"
+      },
+      "fault": "connection_refused",
+      "expected": {
+        "http_status": 200,
+        "tool": "asset.query",
+        "parser": "local_rule_not_llm",
+        "ui_action": "explicit_fallback",
+        "intent": "asset_query"
+      },
+      "execution": "fault",
+      "server_query": "GasFixtureService.assets + registered asset lookup",
+      "evidence_policy": "only actual service/fixture references; empty for refusal, denial or unrecognized identity"
+    }
+  ]
+}

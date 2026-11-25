@@ -1,0 +1,711 @@
+{
+  "source": "engineering/04_实施方案/02_接口与数据/openapi/waterpipnet-platform.openapi.json",
+  "sha256": "a41bce933f8701d179c3e79f40e0ce80dbf6938ccdbc346ab591ce106a22e4f0",
+  "version": "0.1.1",
+  "schema_count": 65,
+  "security_schemes": {
+    "WaterToken": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "X-Water-Token",
+      "description": "服务端认证令牌；客户端标识不是认证凭据，数据集及操作权限单独校验。"
+    }
+  },
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/agent/health",
+      "operation_id": "health_api_v1_agent_health_get",
+      "request_schema": null,
+      "responses": {
+        "200": {}
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/agent/chat",
+      "operation_id": "chat_api_v1_agent_chat_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/AgentChatRequest"
+      },
+      "responses": {
+        "202": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/agent/threads/{thread_id}",
+      "operation_id": "thread_api_v1_agent_threads__thread_id__get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/agent/threads/{thread_id}/resume",
+      "operation_id": "resume_api_v1_agent_threads__thread_id__resume_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/AgentResumeRequest"
+      },
+      "responses": {
+        "202": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/agent/runs/{run_id}",
+      "operation_id": "run_api_v1_agent_runs__run_id__get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/agent/runs/{run_id}/evidence",
+      "operation_id": "evidence_api_v1_agent_runs__run_id__evidence_get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/datasets/{dataset_id}/view",
+      "operation_id": "dataset_view_api_v1_datasets__dataset_id__view_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/DatasetView"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "X-Water-Token"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/timeline/check",
+      "operation_id": "check_api_v1_timeline_check_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/TimelineRequest"
+      },
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/TimelineCheckResponse"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/timeline/evaluate",
+      "operation_id": "evaluate_api_v1_timeline_evaluate_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/TimelineRequest"
+      },
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/TimelineEvaluationResponse"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/health",
+      "operation_id": "health_health_get",
+      "request_schema": null,
+      "responses": {
+        "200": {}
+      },
+      "security": [],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/capabilities",
+      "operation_id": "capabilities_api_v1_capabilities_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/CapabilitiesResponse"
+        }
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/data-batches",
+      "operation_id": "import_batch_api_v1_data_batches_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/SnapshotPayload"
+      },
+      "responses": {
+        "201": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/data-batches/sample",
+      "operation_id": "import_sample_api_v1_data_batches_sample_post",
+      "request_schema": null,
+      "responses": {
+        "201": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/snapshots",
+      "operation_id": "snapshots_api_v1_snapshots_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/SnapshotListEnvelope"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/snapshots/{snapshot_id}",
+      "operation_id": "snapshot_api_v1_snapshots__snapshot_id__get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/assessments",
+      "operation_id": "assessments_api_v1_assessments_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/AssessmentEnvelope"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {},
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/assessment-runs",
+      "operation_id": "assessment_run_api_v1_assessment_runs_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/RecomputeRequest"
+      },
+      "responses": {
+        "202": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/simulation-runs",
+      "operation_id": "simulation_run_api_v1_simulation_runs_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/ScenarioRequest"
+      },
+      "responses": {
+        "202": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/decision-runs",
+      "operation_id": "decision_run_api_v1_decision_runs_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/DecisionRequest"
+      },
+      "responses": {
+        "202": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/assistant/tasks",
+      "operation_id": "assistant_task_api_v1_assistant_tasks_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/AssistantRequest"
+      },
+      "responses": {
+        "202": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/runs",
+      "operation_id": "runs_api_v1_runs_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/RunListEnvelope"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/runs/{run_id}",
+      "operation_id": "task_api_v1_runs__run_id__get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/runs/{run_id}/replay",
+      "operation_id": "replay_api_v1_runs__run_id__replay_post",
+      "request_schema": null,
+      "responses": {
+        "202": {
+          "$ref": "#/components/schemas/RunView"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/runs/{run_id}/export",
+      "operation_id": "export_api_v1_runs__run_id__export_get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/runs/{run_id}/report",
+      "operation_id": "report_api_v1_runs__run_id__report_get",
+      "request_schema": null,
+      "responses": {
+        "200": {
+          "$ref": "#/components/schemas/ReportDocument"
+        },
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/feedback",
+      "operation_id": "feedback_api_v1_feedback_post",
+      "request_schema": {
+        "$ref": "#/components/schemas/FeedbackRequest"
+      },
+      "responses": {
+        "201": {},
+        "422": {
+          "$ref": "#/components/schemas/HTTPValidationError"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": [
+        "Idempotency-Key",
+        "X-Water-Client"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/feedback",
+      "operation_id": "feedbacks_api_v1_feedback_get",
+      "request_schema": null,
+      "responses": {
+        "200": {},
+        "401": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "403": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "404": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "409": {
+          "$ref": "#/components/schemas/ErrorResponse"
+        },
+        "422": {
+          "$ref": "#/components/schemas/ValidationErrorResponse"
+        }
+      },
+      "security": [
+        {
+          "WaterToken": []
+        }
+      ],
+      "headers": []
+    }
+  ]
+}

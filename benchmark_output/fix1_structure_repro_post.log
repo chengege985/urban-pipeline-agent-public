@@ -1,0 +1,6 @@
+FIX1 reproducibility probe on the uncommitted FIX1 code, same temporary synthetic fixture and mutation:
+DETAIL_STATUS 503
+DETAIL_BODY {"detail":"燃气合成候选暂不可用"}
+LIST_STATUS 503
+LIST_BODY {"detail":"燃气合成候选暂不可用"}
+The response contains no absolute fixture path, traceback, or fixture content.

@@ -1,0 +1,10 @@
+FIX1 real TCP HTTP probes on 127.0.0.1 with uvicorn --loop asyncio --http h11:
+HEALTH=200
+NO_TOKEN=401
+VALID_DETAIL=200
+VALID_COUNTS=54 73
+BAD_DETAIL=503
+BAD_LIST=503
+BAD_DETAIL_BODY={"detail":"燃气合成候选暂不可用"}
+BAD_LIST_BODY={"detail":"燃气合成候选暂不可用"}
+RESIDUAL_SERVER=0

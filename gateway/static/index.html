@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WaterPipNet 本地大模型网关</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c31;--panel2:#16243d;--line:#233856;--text:#e6edf7;--muted:#8ea4c2;--ok:#2ecc8f;--warn:#f5b942;--bad:#ff6b6b;--accent:#4da3ff}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#0b1220,#0d1728 40%,#0b1220);color:var(--text);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 24px;border-bottom:1px solid var(--line);background:rgba(11,18,32,.9);position:sticky;top:0;z-index:5;backdrop-filter:blur(8px)}
+h1{font-size:18px;margin:0;letter-spacing:.3px}
+.sub{color:var(--muted);font-size:12px;margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:12px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.dot.ok{background:var(--ok);box-shadow:0 0 8px var(--ok)}.dot.warn{background:var(--warn)}.dot.bad{background:var(--bad)}
+main{padding:20px 24px 40px;max-width:1500px;margin:0 auto}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.kpi .label{color:var(--muted);font-size:12px}
+.kpi .value{font-size:24px;font-weight:650;margin-top:6px;font-variant-numeric:tabular-nums}
+.kpi .hint{color:var(--muted);font-size:11px;margin-top:2px}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:22px 0 10px}
+.section-title h2{font-size:14px;margin:0;color:#cfe0f7;letter-spacing:.4px;text-transform:uppercase}
+.two{grid-template-columns:1.1fr .9fr}
+.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.gpu{display:flex;flex-direction:column;gap:8px}
+.gpu .row{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.bar{height:8px;background:#0a1526;border-radius:99px;overflow:hidden;border:1px solid #1c2c45}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,#2ecc8f,#4da3ff)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #1b2c46;white-space:nowrap}
+th{color:var(--muted);font-weight:500;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+tr:hover td{background:rgba(77,163,255,.05)}
+.scroll{max-height:360px;overflow:auto}
+.pill{padding:2px 8px;border-radius:999px;font-size:11px;border:1px solid var(--line);color:var(--muted)}
+.pill.ok{color:var(--ok);border-color:rgba(46,204,143,.4);background:rgba(46,204,143,.08)}
+.pill.bad{color:var(--bad);border-color:rgba(255,107,107,.4);background:rgba(255,107,107,.08)}
+.pill.warn{color:var(--warn);border-color:rgba(245,185,66,.4);background:rgba(245,185,66,.08)}
+input,button,select{font:inherit;color:var(--text);background:#0a1526;border:1px solid var(--line);border-radius:9px;padding:8px 10px}
+button{cursor:pointer;background:linear-gradient(180deg,#1c3a63,#162c4c);border-color:#2b4d7a}
+button:hover{border-color:var(--accent)}
+button.ghost{background:transparent}
+.form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.form input{width:120px}.form input[name=name]{width:160px}
+canvas{width:100%;height:80px;display:block}
+.footer{color:var(--muted);font-size:11.5px;margin-top:18px;display:flex;flex-wrap:wrap;gap:16px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px}
+.login{position:fixed;inset:0;background:rgba(5,9,16,.94);display:flex;align-items:center;justify-content:center;z-index:20}
+.login .box{width:min(420px,92vw);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.login h2{margin:0 0 6px;font-size:16px}.login p{color:var(--muted);font-size:12px;margin:0 0 14px}
+.login input{width:100%;margin-bottom:10px}.login button{width:100%}
+.hidden{display:none!important}
+.err{color:var(--bad);font-size:12px;margin-top:8px;min-height:16px}
+.keybox{margin-top:10px;padding:10px;border:1px dashed #2b4d7a;border-radius:10px;background:#0a1526}
+.copy{font-size:11px;padding:4px 8px;margin-left:8px}
+@media(max-width:900px){.two{grid-template-columns:1fr}header{flex-direction:column;align-items:flex-start}}
+</style>
+<script src="/static/admin.js" defer></script>
+</head>
+<body>
+<div class="login" id="login">
+  <div class="box">
+    <h2>本地网关管理面板</h2>
+    <p>仅限本机 / SSH 端口转发访问。管理 Token 通过 X-Admin-Token 头提交；完整 API Key 不写入页面存储。</p>
+    <input id="tokenInput" type="password" placeholder="X-Admin-Token" autocomplete="off">
+    <button id="loginBtn" type="button">进入</button>
+    <div class="err" id="loginErr"></div>
+  </div>
+</div>
+
+<header>
+  <div>
+    <h1>WaterPipNet · 本地大模型网关</h1>
+    <div class="sub">Qwen3.8-27B · 2×ZW810E · 仅回环 127.0.0.1 · 真实请求数据</div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+    <span class="badge"><span class="dot" id="modelDot"></span><span id="modelState">检查中</span></span>
+    <span class="badge" id="updated">--</span>
+    <button class="ghost" id="logoutBtn" type="button">退出</button>
+  </div>
+</header>
+
+<main>
+  <div class="grid kpis" id="kpis">
+    <div class="card kpi"><div class="label">请求总数</div><div class="value" id="kTotal">--</div><div class="hint" id="kTotalHint">--</div></div>
+    <div class="card kpi"><div class="label">每分钟请求</div><div class="value" id="kRpm">--</div><div class="hint">最近 60 秒</div></div>
+    <div class="card kpi"><div class="label">输入 Token（上游实际）</div><div class="value" id="kPrompt">--</div><div class="hint">upstream_prompt_tokens 累计</div></div>
+    <div class="card kpi"><div class="label">输出 Token（上游实际）</div><div class="value" id="kCompletion">--</div><div class="hint">upstream_completion_tokens 累计</div></div>
+    <div class="card kpi"><div class="label">总 Token（上游实际）</div><div class="value" id="kTokens">--</div><div class="hint">upstream_total_tokens 累计</div></div>
+    <div class="card kpi"><div class="label">计费 Token</div><div class="value" id="kBilled">--</div><div class="hint">billed_tokens 累计；估计值单独标记</div></div>
+    <div class="card kpi"><div class="label">成功率</div><div class="value" id="kSuccess">--</div><div class="hint" id="kSuccessHint">--</div></div>
+    <div class="card kpi"><div class="label">平均延迟</div><div class="value" id="kLatency">--</div><div class="hint" id="kLatencyHint">P95 --</div></div>
+    <div class="card kpi"><div class="label">TTFT P95</div><div class="value" id="kTtft">--</div><div class="hint" id="kTtftHint">P50 --</div></div>
+  </div>
+
+  <div class="section-title"><h2>模型与 PPU</h2><span class="badge" id="ppuSource">ppu-smi</span></div>
+  <div class="grid three" id="statusCards">
+    <div class="card"><div class="label">模型状态</div><div class="value" id="stState" style="font-size:20px">--</div><div class="hint" id="stDetail">--</div></div>
+    <div class="card gpu" id="gpu0"><div class="row"><b>PPU 0</b><span>--</span></div><div class="bar"><i style="width:0%"></i></div><div class="row"><span>显存</span><span>--</span></div><div class="row"><span>利用率 / 温度</span><span>--</span></div></div>
+    <div class="card gpu" id="gpu1"><div class="row"><b>PPU 1</b><span>--</span></div><div class="bar"><i style="width:0%"></i></div><div class="row"><span>显存</span><span>--</span></div><div class="row"><span>利用率 / 温度</span><span>--</span></div></div>
+  </div>
+
+  <div class="section-title"><h2>吞吐趋势（30 分钟）</h2></div>
+  <div class="grid two">
+    <div class="card"><div class="label">RPM / 分钟</div><canvas id="sparkRpm" width="600" height="80"></canvas></div>
+    <div class="card"><div class="label">Token / 分钟</div><canvas id="sparkTokens" width="600" height="80"></canvas></div>
+  </div>
+
+  <div class="section-title"><h2>API Key 用量</h2><span class="badge" id="keyCount">--</span></div>
+  <div class="card">
+    <div class="form">
+      <input name="name" id="newName" placeholder="消费者名称" value="gas-agent-local">
+      <select id="newScope"><option value="production">正式</option><option value="test">测试</option></select>
+      <input name="quota" id="newQuota" type="number" placeholder="额度 tokens（0=不限）" value="0">
+      <input name="rpm" id="newRpm" type="number" placeholder="RPM" value="60">
+      <input name="concurrency" id="newConc" type="number" placeholder="并发" value="4">
+      <button id="createKeyBtn" type="button">创建 Key</button>
+      <span class="hint" style="color:var(--muted);font-size:11px">完整 Key 仅创建时显示一次；数据库只存 SHA-256 与前缀</span>
+    </div>
+    <div id="newKeyBox" class="keybox hidden"></div>
+    <div class="scroll">
+      <table><thead><tr><th>名称</th><th>范围</th><th>模型</th><th>已用 / 额度</th><th>RPM</th><th>并发</th><th>状态</th><th>最近使用</th><th></th></tr></thead>
+      <tbody id="keyRows"></tbody></table>
+    </div>
+  </div>
+
+  <div class="section-title"><h2>最近请求</h2><span class="badge" id="reqCount">--</span></div>
+  <div class="card scroll">
+    <table><thead><tr><th>时间</th><th>Request ID</th><th>消费者</th><th>范围</th><th>模型</th><th>上游总</th><th>预估</th><th>计费</th><th>来源</th><th>TTFT</th><th>延迟</th><th>状态</th><th>流式</th><th>工具</th></tr></thead>
+    <tbody id="reqRows"></tbody></table>
+  </div>
+
+  <div class="section-title"><h2>错误日志</h2><span class="badge" id="errCount">--</span></div>
+  <div class="card scroll">
+    <table><thead><tr><th>时间</th><th>Request ID</th><th>消费者</th><th>状态</th><th>错误</th><th>预估</th><th>计费</th><th>延迟</th></tr></thead>
+    <tbody id="errRows"></tbody></table>
+  </div>
+
+  <div class="footer">
+    <span>DB：<span class="mono" id="dbPath">--</span></span>
+    <span>DB 权限：<span class="mono" id="dbMode">--</span></span>
+    <span>加密备份：<span class="mono" id="backupDir">--</span></span>
+    <span>备份算法：<span id="backupEncryption">--</span></span>
+    <span>口令来源：<span id="backupPassSource">--</span></span>
+    <span>最近备份：<span id="lastBackup">--</span></span>
+    <span>备份数：<span id="backupCount">--</span></span>
+    <span>明文旧备份：<span id="legacyCount">--</span></span>
+    <span>丢失窗口：<span id="lossWindow">--</span></span>
+    <span>恢复来源：<span class="mono" id="restoredFrom">--</span></span>
+  </div>
+</main>
+</body>
+</html>

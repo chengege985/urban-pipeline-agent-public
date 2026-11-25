@@ -1,0 +1,100 @@
+.gas-drill {
+  display: grid;
+  gap: 9px;
+  margin: 4px 0 12px;
+  padding: 11px;
+  border: 1px solid var(--gas-border-strong);
+  border-radius: var(--gas-radius);
+  background: var(--gas-surface-2);
+  color: var(--gas-ink-1);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.gas-drill header, .gas-drill-context, .gas-drill-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.gas-drill header { justify-content: space-between; }
+.gas-drill header h4, .gas-drill p, .gas-drill dl, .gas-drill dd { margin: 0; }
+.gas-drill header span, .gas-drill-context span { color: var(--gas-brand-strong); font-weight: 650; }
+.gas-drill p, .gas-drill dt { color: var(--gas-ink-2); }
+.gas-drill button { font-size: 12px; min-height: 28px; }
+.gas-drill-results, .gas-drill-question, .gas-drill-answer { display: grid; gap: 6px; }
+.gas-drill-results dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.gas-drill-results dd { font-size: 15px; font-weight: 650; }
+.gas-drill-question { grid-template-columns: minmax(0, 1fr) auto; }
+.gas-drill-question label { grid-column: 1 / -1; }
+.gas-drill-question input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 7px;
+  border: 1px solid var(--gas-border-strong);
+  border-radius: 4px;
+  color: var(--gas-ink-1);
+  background: var(--gas-surface-0);
+  font: inherit;
+}
+.gas-drill-answer p { white-space: pre-line; }
+.gas-drill code { overflow-wrap: anywhere; }
+.gas-drill ul { padding-inline-start: 1em; }
+.gas-drill-map-caption {
+  padding: 4px 12px;
+  color: var(--gas-brand-strong);
+  background: var(--gas-surface-1);
+  font-size: 12px;
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-topology-shell [data-drill-state="excluded"] .gas-topology-edge.is-disabled {
+  stroke: var(--gas-brand-strong);
+  stroke-width: 5;
+  stroke-dasharray: 7 5;
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-topology-shell [data-drill-state="affected"] .gas-topology-edge {
+  stroke: var(--gas-brand-strong);
+  stroke-width: 3;
+}
+.gas-map-canvas [data-drill-state="unreachable"] > circle,
+.gas-map-canvas [data-drill-state="unreachable"] > rect {
+  stroke: var(--gas-brand-strong);
+  stroke-width: 2.5;
+}
+.gas-drill > details { min-width: 0; border-top: 1px solid var(--gas-border); padding-block: 5px; }
+.gas-drill summary { cursor: pointer; color: var(--gas-brand-strong); }
+.gas-drill > details > div, .gas-drill > details > p { margin-top: 6px; }
+.gas-drill select {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 6px;
+  background: var(--gas-surface-0);
+  color: var(--gas-ink-1);
+  border: 1px solid var(--gas-border-strong);
+  border-radius: 4px;
+  font: inherit;
+}
+.gas-drill-tool-select { grid-column: 1 / -1; }
+.gas-drill-compare-inputs, .gas-drill-compare-result { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 5px; margin-top: 6px; }
+.gas-drill-compare-inputs button, .gas-drill-compare-result > p { grid-column: 1 / -1; }
+.gas-drill-compare-result section { padding: 5px; border: 1px solid var(--gas-border); border-radius: 4px; min-width: 0; }
+.gas-drill-compare-result button[aria-pressed="true"] { color: var(--gas-brand-strong); border-color: var(--gas-brand); }
+.gas-drill-graph ul { margin: 2px 0; }
+.gas-drill-trend-series { margin: 7px 0; }
+.gas-drill-trend-series svg { display: block; width: 100%; max-height: 95px; fill: none; }
+.gas-drill-trend-axis { stroke: var(--gas-border-strong); }
+.gas-drill-trend-line { stroke: var(--gas-brand-strong); stroke-width: 1.3; }
+.gas-drill-trend-series circle { fill: var(--gas-brand-strong); }
+.gas-drill-trend-series [data-quality="suspect"] { fill: var(--gas-warn); }
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-topology-shell [data-drill-state="alternate"] .gas-topology-edge {
+  stroke: var(--gas-warn); stroke-width: 3; stroke-dasharray: 2 4;
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-topology-shell [data-drill-component="1"] :is(.gas-topology-edge, circle, rect) {
+  stroke: var(--gas-warn);
+}
+.gas-cockpit-unified.gas-workbench.gas-sprint-cockpit .gas-topology-shell [data-drill-component="2"] :is(.gas-topology-edge, circle, rect) {
+  stroke: var(--gas-brand-strong);
+}

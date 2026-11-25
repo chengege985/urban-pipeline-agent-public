@@ -1,0 +1,127 @@
+{
+  "version": "gas-formula-differences/0.1.0",
+  "business_approved": false,
+  "selected_official_H": null,
+  "conflicts": [
+    {
+      "id": "GF-01",
+      "topic": "健康度H定义冲突",
+      "old_or_base_source": "M03 P0046–P0048: R=sqrt(P*C), H=100-R。",
+      "revised_or_other_source": "M04 P0082–P0084同时保留H=100-R和H=100-P；批注1另建议H=100-S_condition，批注2支持先用100-P。",
+      "counterexample": "P=71.4,C=85时H_R约22.0962，H_P=28.6；当前P含感知/环境/运维，100-P也不自动等于纯本体健康。",
+      "candidate_resolution": "并列显示候选，H_selected=null；不贴正式健康标签。",
+      "business_confirmation_needed": "评分责任方确认H的业务对象、公式版本及等级映射。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-02",
+      "topic": "后果C版本冲突",
+      "old_or_base_source": "M03 P0092/T017: 0.40A+0.25N+0.15V+0.10T+0.10E_g。",
+      "revised_or_other_source": "M04 P0128–P0129/T023改为max(N,V,T)，A不得与已计暴露重复进入；M单列。",
+      "counterexample": "A=80,N=90,V=70,T=50,E_g=30时旧C=73，新C=90。",
+      "candidate_resolution": "显式选择候选C版本；禁止在修订C内混入旧A/权重。",
+      "business_confirmation_needed": "确认固有后果与剩余后果用途，补各分量归一化与场景边界。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-03",
+      "topic": "缓解能力M方向未闭环",
+      "old_or_base_source": "M03 P0091: E_g反向赋分，能力越弱分越高；M04符号表同含义。",
+      "revised_or_other_source": "M04 P0129: M_g=E_g，但批注1又建议M按能力正向加权。",
+      "counterexample": "例如E_g=90按原表表示隔离弱，不能展示成90分强能力。",
+      "candidate_resolution": "保留source_inverse语义与direction_unconfirmed，不自动取100-E_g或用于奖励。",
+      "business_confirmation_needed": "确认M方向、计算范围和是否重构正向能力。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-04",
+      "topic": "旧算例没有随新版公式重算",
+      "old_or_base_source": "M03 P0115给P=71.4,C=85,R=77.9,H=22.1。",
+      "revised_or_other_source": "M04 P0152/T030保留同一数值，而正文C/H已改。",
+      "counterexample": "算例没有N/V/T原始分量和15项完整输入，无法证明新C或新H正确。",
+      "candidate_resolution": "仅用P/C做平方根算术对照；不得当新版全链黄金业务向量。",
+      "business_confirmation_needed": "提供新版逐指标/后果分量/质量/阈值版本的可复算案例。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-05",
+      "topic": "未知材质与缺失必填冲突",
+      "old_or_base_source": "M03 T009/T010及M04 T015/T016将未知材质或资料不全列高分。",
+      "revised_or_other_source": "M06燃气!F2要求两日期均缺失不通过，F3要求未知/混填不默认低风险；总体要求必填有效才出完整P。",
+      "counterexample": "把未知材料自动90仍给出完整P会把无证据变成已验证高风险。",
+      "candidate_resolution": "原始未知材质不自动归一化；必填没有有效标准化证据时P为null。",
+      "business_confirmation_needed": "确认未知是否可采用有依据的专家估计及质量/适用范围，明确缺失和高风险的差别。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-06",
+      "topic": "阴保无数据与失效混合",
+      "old_or_base_source": "M04 T015R004最高档写失效/无有效数据。",
+      "revised_or_other_source": "M04 T009/T013要求缺失、异常未确认不进入分子分母。",
+      "counterexample": "无检测不证明阴保失效；PE等不适用对象也不能当正常低风险或缺陷。",
+      "candidate_resolution": "缺失排除并展示缺项；原始阴保归一化unsupported。",
+      "business_confirmation_needed": "确认适用管材、不适用项权重基线、电位参考及失效判据。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-07",
+      "topic": "定量阈值与复合映射不完整",
+      "old_or_base_source": "表6给五档文字和部分分界。",
+      "revised_or_other_source": "M06提供派生规则，但未补齐材料字典、压力MPa档、G05组合、G09率与次数转换、G15分钟档。",
+      "counterexample": "仅有输入字段也不能自动算15项S_i。",
+      "candidate_resolution": "仅实现G01比值候选归一化；G02–G15只允许显式有来源的标准化synthetic分值进入算术复核。",
+      "business_confirmation_needed": "逐项确认阈值、单位、统计窗、聚合、红线优先级及版本。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-08",
+      "topic": "端点闭合规则未完全写清",
+      "old_or_base_source": "P/C分档写0–20、20–40等；G06写20–30及>30。",
+      "revised_or_other_source": "R表明确左闭右开，H表对应100-R；各指标文本有重叠/不一致。",
+      "counterexample": "20、30、40、60、80、100等边界不能依不同代码分到两档。",
+      "candidate_resolution": "P/C/R候选统一[0,20)...[80,100]并显式标记；G06等不自动补规则。",
+      "business_confirmation_needed": "确认所有指标与矩阵边界，尤其30%和完成率100%。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-09",
+      "topic": "红线精确等级未定义",
+      "old_or_base_source": "M03 T020、M04 T026仅规定直接提升高风险区域。",
+      "revised_or_other_source": "表15高风险区域同时包含4级和5级；正文没有精确事件到4/5映射。",
+      "counterexample": "把所有红线自动5级或只4级都超出了明文规则。",
+      "candidate_resolution": "红线独立展示high区域与人工复核；不足以确定时grade_final=null，possible=[4,5]，不输出作业指令。",
+      "business_confirmation_needed": "确认事件判定、确认主体、持续时间、精确五级及解除条件。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-10",
+      "topic": "设计压力基准与重复计分",
+      "old_or_base_source": "M06燃气!E7用实测与设计压力偏差；表6 G04含压力频繁波动。",
+      "revised_or_other_source": "G06又纳入压力流量异常，修订批注3要求相关性/重复性分析。",
+      "counterexample": "稳定低于设计压力不一定是运行异常；同一波动可被G04/G06重复计分。",
+      "candidate_resolution": "不推算真实G04/G06分值；保留需确认标记。",
+      "business_confirmation_needed": "由运营/评分方确认运行基线、设计压力用途及去重方式。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-11",
+      "topic": "数据充分度不是预测置信度",
+      "old_or_base_source": "E=sum(a*w*q)，q为1/.8/.6/.4建议；P_low/high为理论区间。",
+      "revised_or_other_source": "M04明确充分度不是统计准确率。",
+      "counterexample": "有设备点位或E=1不证明评分业务准确、预测概率可靠。",
+      "candidate_resolution": "输出有效权重覆盖和理论包络标签，禁止输出模型置信概率。",
+      "business_confirmation_needed": "业务确认质量等级时效与修复验证要求。",
+      "status": "pending_business_confirmation"
+    },
+    {
+      "id": "GF-12",
+      "topic": "单管段与城市汇总粒度不同",
+      "old_or_base_source": "指标要求单管段、单指标、单统计窗。",
+      "revised_or_other_source": "438字段含城市巡检汇总、设备台账；巡检资源...2781574已注销。",
+      "counterexample": "不能把全市完成率、台账设备状态或目录字段当每条管段的实际观测。",
+      "candidate_resolution": "资源仅做候选线索；所有实际记录状态not_verified_received。",
+      "business_confirmation_needed": "先核原交付，再提供能绑定管段、时点、单位的原表和映射。",
+      "status": "pending_business_confirmation"
+    }
+  ]
+}

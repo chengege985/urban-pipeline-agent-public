@@ -1,0 +1,372 @@
+{
+  "version": "gas-field-matrix-candidate-0.1.0",
+  "data_mode": "synthetic",
+  "approval_status": "candidate_pending_gas_m0_review",
+  "catalog_supplies_business_values": false,
+  "category_definitions": {
+    "A": "首个合成案例实际输入由HTML与我方fixture产生；438行中的A只是相应字段概念对照，不要求外部交付",
+    "B": "后续真实核验时查旧交付并接收现成原表/图层/工单",
+    "C": "专业模型单独启动并确认合同后才需，不迁移供水物理假设",
+    "D": "本阶段不索取、不导入"
+  },
+  "inputs": [
+    {
+      "entity": "nodes",
+      "target_field": "Node.id",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.nodes[].node_id"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "无量纲字符串",
+      "synthetic_source": "原型nodes[].id",
+      "purpose": "构成可引用节点",
+      "requiredness": "必须",
+      "catalog_gap": "无显式Node ID目录字段；不能把空间点自动并为节点",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "nodes",
+      "target_field": "Node.schematic_position",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.nodes[].layout.x",
+        "network.nodes[].layout.y",
+        "network.nodes[].layout.unit",
+        "network.nodes[].layout.coordinate_system"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "原型示意坐标，不是GIS米/经纬度",
+      "synthetic_source": "原型nodes[].x/y",
+      "purpose": "示意图展示",
+      "requiredness": "显示时必须",
+      "catalog_gap": "目录GIS坐标仅概念对照，禁止反推拓扑",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "pipes",
+      "target_field": "Pipe.id/Edge.id",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.pipes[].pipe_id",
+        "network.pipes[].edge_id",
+        "network.edges[].edge_id",
+        "network.edges[].pipe_id"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "无量纲字符串",
+      "synthetic_source": "原型edges[].id",
+      "purpose": "指定故障并引用图边",
+      "requiredness": "必须",
+      "catalog_gap": "目录对象ID/线名需真实ID映射，不能混作Node或Valve ID",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "pipes",
+      "target_field": "Edge.from_node_id/to_node_id",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.edges[].from_node_id",
+        "network.edges[].to_node_id"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "无量纲字符串",
+      "synthetic_source": "原型edges[].a/b",
+      "purpose": "定义明确连边",
+      "requiredness": "必须",
+      "catalog_gap": "438字段没有明确起终节点ID；X1/Y1/X2/Y2不构成该关系",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "pipes",
+      "target_field": "Edge.direction_semantics",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.edges[].direction"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "枚举",
+      "synthetic_source": "原型connected/disconnected使用双向邻接",
+      "purpose": "明示原型无向连通，不推断实际气流上下游",
+      "requiredness": "必须",
+      "catalog_gap": "实际方向、调压和止回约束缺失",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "valves",
+      "target_field": "Valve.id/node_id/action_scope",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.valves[].valve_id",
+        "network.valves[].node_id",
+        "network.valves[].cut_semantics",
+        "network.valves[].incident_edge_ids"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "字符串及显式ID列表",
+      "synthetic_source": "原型type=valve节点与unitValves",
+      "purpose": "明确阀门在节点阻断语义",
+      "requiredness": "隔离例必须",
+      "catalog_gap": "438字段无阀门唯一ID及作用管段/节点映射",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "sources",
+      "target_field": "Source.id/node_id/enabled",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.sources[].source_id",
+        "network.sources[].node_id",
+        "network.sources[].enabled"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "字符串/布尔",
+      "synthetic_source": "原型type=source的节点",
+      "purpose": "多源通路起点",
+      "requiredness": "必须",
+      "catalog_gap": "站场名不自动等于可用气源；缺站场—节点及状态映射",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "services",
+      "target_field": "Service.id/node_ids/supply_rule",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.services[].service_id",
+        "network.services[].consumer_id",
+        "network.services[].node_ids",
+        "network.services[].supply_rule"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "字符串/ID列表/any或all",
+      "synthetic_source": "原型节点用户与设施归属；新增显式synthetic合同",
+      "purpose": "识别潜在停气对象",
+      "requiredness": "必须",
+      "catalog_gap": "438字段没有服务对象、接入节点及any/all语义",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "services",
+      "target_field": "Consumer.counts",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.consumers[].consumer_id",
+        "network.consumers[].node_id",
+        "network.consumers[].count",
+        "network.consumers[].count_unit"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "户/对象，按原型字段标记",
+      "synthetic_source": "原型hh/com/fac",
+      "purpose": "展示潜在影响规模，不估计伤亡",
+      "requiredness": "需展示数量时必须",
+      "catalog_gap": "没有真实接入户数，不能由人口密度/距离推断",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "scenarios",
+      "target_field": "Scenario.id/fault_edge_id",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "case.scenario.scenario_id",
+        "case.scenario.fault_edge_ids"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "字符串",
+      "synthetic_source": "原型选中边；我方固定一个合成情景",
+      "purpose": "明确本例故障对象",
+      "requiredness": "必须",
+      "catalog_gap": "抢险管线名称不是权威pipe_id",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "isolation",
+      "target_field": "IsolationPlan.id/valve_ids",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "case.isolation_plan.plan_id",
+        "case.isolation_plan.scenario_id",
+        "case.isolation_plan.closed_valve_ids",
+        "case.isolation_plan.disabled_edge_ids",
+        "case.isolation_plan.semantics"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "字符串/ID列表",
+      "synthetic_source": "原型隔离单元纯函数，保存候选结果",
+      "purpose": "回放给定模拟隔离，不下发操作",
+      "requiredness": "必须",
+      "catalog_gap": "真实阀操作方案与批准依据缺失",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "events",
+      "target_field": "Event.id/type/target_id/time",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "case.events[].event_id",
+        "case.events[].kind",
+        "case.events[].origin",
+        "case.events[].time_hours",
+        "case.events[].fault_edge_ids",
+        "case.events[].closed_valve_ids",
+        "case.events[].disabled_edge_ids"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "显式时间单位与事件类型",
+      "synthetic_source": "我方新建synthetic事件，不冒充原型历史",
+      "purpose": "事件排序与部分结果",
+      "requiredness": "出现事件时必须",
+      "catalog_gap": "现有接警/结束字段不能替代故障、关阀、检漏、放行或复气",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "identity",
+      "target_field": "network_id/case_id/content_hash",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.network_id",
+        "case.network_id",
+        "case.case_id",
+        "result.evidence.network_content_sha256",
+        "result.evidence.case_content_sha256"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "版本化合成ID与SHA-256",
+      "synthetic_source": "我方构建产物",
+      "purpose": "绑定本地网络与案例，保存输入内容哈希",
+      "requiredness": "必须",
+      "catalog_gap": "本地合成身份不是平台dataset/snapshot/run身份",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "platform_identity",
+      "target_field": "dataset_id/snapshot_id/run_id",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [],
+      "contract_scope": "planned_platform",
+      "unit": "服务端签发的版本化ID",
+      "synthetic_source": "待M1平台可信身份和持久化上下文签发",
+      "purpose": "后续平台绑定、授权和只读报告",
+      "requiredness": "M1接入时必须，M0不生成",
+      "catalog_gap": "不由HTML、客户端字段或本地候选代签，不向业务人员索要",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "classification",
+      "target_field": "data_mode/provenance",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "network.data_mode",
+        "network.industry",
+        "network.source_provenance.sha256",
+        "network.source_provenance.construction_block_sha256",
+        "case.data_mode"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "synthetic/candidate及源文件SHA",
+      "synthetic_source": "我方构建产物",
+      "purpose": "防止演示被误认真实",
+      "requiredness": "必须",
+      "catalog_gap": "必须保留服务端可信分类；输入标签不构成真实授权",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    },
+    {
+      "entity": "status",
+      "target_field": "result.status/limitations",
+      "target_field_kind": "business_concept_not_literal_json_key",
+      "m0_json_paths": [
+        "result.status",
+        "result.semantic",
+        "result.validation_status",
+        "result.metrics.actual_gas_restoration_hours.status",
+        "result.metrics.pressure.status",
+        "result.safety.simulation_only"
+      ],
+      "contract_scope": "current_fixture",
+      "unit": "枚举与文字",
+      "synthetic_source": "我方适配器",
+      "purpose": "区分unknown/partial/unsupported",
+      "requiredness": "必须",
+      "catalog_gap": "无压力/扩散模型就不生成对应物理值",
+      "real_record_status": "未确认取得",
+      "responsible_party": "合成由重通院开发团队构建；真实对象关系由燃气运营/权属单位确认",
+      "time_attribute": "对象需版本/生效时点；事件需显式时点和单位"
+    }
+  ],
+  "m0_path_contract": {
+    "network": "data/gas54_network.json",
+    "case": "data/gas54_case.json",
+    "result": "data/gas54_result.json",
+    "array_marker": "[]表示当前集合中每个记录，路径只描述现有候选格式，不授予数据来源可信性",
+    "identity_boundary": "network_id/case_id为合成命名空间；dataset_id/snapshot_id/run_id在M0不存在，待M1服务端签发",
+    "provenance_boundary": "SHA字段格式或非空source_ref不构成来源认证；本例来源靠固定原HTML和提取重建核对，真实入口另需可信平台分类授权"
+  },
+  "professional_model_gates": [
+    {
+      "model": "气体管网压力流量",
+      "inputs": [
+        "气体组分/温度/状态方程及标况",
+        "内径/粗糙度/长度/高程",
+        "气源与用户边界",
+        "调压/止回/阀门机理",
+        "同步压力流量实测与校准案例"
+      ],
+      "owner": "专业模型负责人及燃气运营调度方",
+      "status": "not_available_in_catalog_as_complete_inputs"
+    },
+    {
+      "model": "泄漏扩散及地下积聚",
+      "inputs": [
+        "泄漏口及释放工况",
+        "气体组成",
+        "土壤/通道/地下空间几何",
+        "通风/风场边界",
+        "浓度观测及验证案例"
+      ],
+      "owner": "专业模型负责人、运营监测及地下空间资料持有方",
+      "status": "not_available_in_catalog_as_complete_inputs"
+    },
+    {
+      "model": "事故后果与安全复气",
+      "inputs": [
+        "确认的事故情景与后果模型",
+        "人口及设施暴露依据",
+        "检漏/置换/放行判据及记录",
+        "适用范围和不确定性说明"
+      ],
+      "owner": "燃气安全业务负责人及专业模型团队",
+      "status": "requires_separate_business_confirmation"
+    }
+  ],
+  "request_rule": "片区、时间段和数量按对方已有资料接收；已交资料不重索；截图或备注已有的原表先内部查交付；允许原系统Excel、GIS、工单和说明，不要求对方编写JSON或计算模型结果。"
+}

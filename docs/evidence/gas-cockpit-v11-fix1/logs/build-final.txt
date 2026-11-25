@@ -1,0 +1,37 @@
+> waterpulse-ai@0.3.0-rc.2 build
+> tsc -b && vite build
+vite v6.4.5 building for production...
+transforming...
+✓ 106 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.64 kB │ gzip:   0.45 kB
+dist/assets/noto-sans-sc-90-wght-normal-BnOlPreP.woff2       9.22 kB
+dist/assets/noto-sans-sc-99-wght-normal-BI6XPoxp.woff2       9.70 kB
+dist/assets/noto-sans-sc-5-wght-normal-CfWugllB.woff2       20.04 kB
+dist/assets/noto-sans-sc-latin-wght-normal-DDW8mKAR.woff2   24.88 kB
+dist/assets/noto-sans-sc-118-wght-normal-xhBB7f6V.woff2     45.99 kB
+dist/assets/noto-sans-sc-82-wght-normal-CUggNZi4.woff2      46.01 kB
+dist/assets/noto-sans-sc-27-wght-normal-COFdrquJ.woff2      47.32 kB
+dist/assets/noto-sans-sc-117-wght-normal-siZzFqgK.woff2     52.23 kB
+dist/assets/noto-sans-sc-116-wght-normal-B4HVAfHo.woff2     52.80 kB
+dist/assets/noto-sans-sc-115-wght-normal-BWy07H14.woff2     56.26 kB
+dist/assets/noto-sans-sc-112-wght-normal-BcFuP3w6.woff2     57.46 kB
+dist/assets/noto-sans-sc-114-wght-normal-CO_5Xo-i.woff2     57.74 kB
+dist/assets/noto-sans-sc-101-wght-normal-CPkZHnw0.woff2     58.03 kB
+dist/assets/noto-sans-sc-113-wght-normal-Dk932kmj.woff2     58.43 kB
+dist/assets/noto-sans-sc-109-wght-normal-Dsp-De_0.woff2     60.21 kB
+dist/assets/noto-sans-sc-102-wght-normal-gzIulUH6.woff2     60.52 kB
+dist/assets/noto-sans-sc-107-wght-normal-D7fvVprN.woff2     60.83 kB
+dist/assets/noto-sans-sc-110-wght-normal-DE_6NUrb.woff2     61.19 kB
+dist/assets/noto-sans-sc-104-wght-normal-B3QMglgE.woff2     61.40 kB
+dist/assets/noto-sans-sc-105-wght-normal-xXh_OMfk.woff2     61.61 kB
+dist/assets/noto-sans-sc-111-wght-normal-C4S-TlTn.woff2     62.40 kB
+dist/assets/noto-sans-sc-106-wght-normal-B9n3jMjP.woff2     62.44 kB
+dist/assets/noto-sans-sc-103-wght-normal-CJfSBxFo.woff2     63.73 kB
+dist/assets/noto-sans-sc-108-wght-normal-J0_LhxVo.woff2     64.34 kB
+dist/assets/noto-sans-sc-100-wght-normal-DluiXYzi.woff2     64.38 kB
+dist/assets/noto-sans-sc-119-wght-normal-Ck_g2FGz.woff2     76.32 kB
+dist/assets/index-Dr-IBji7.css                             100.08 kB │ gzip:  25.90 kB
+dist/assets/index-DRvG0NZm.js                              466.64 kB │ gzip: 140.63 kB
+✓ built in 12.91s

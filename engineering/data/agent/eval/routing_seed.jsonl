@@ -1,0 +1,12 @@
+{"question":"V5中三方如何分工？","expected_tasks":["materials"],"expected_intent":"materials"}
+{"question":"查询管段 WP-016 的评分","expected_tasks":["assessment"],"expected_intent":"assessment"}
+{"question":"分析 WP-016 故障影响","expected_tasks":["simulation"],"expected_intent":"simulation"}
+{"question":"比较维修方案","expected_tasks":["decision"],"expected_intent":"decision"}
+{"question":"分析故障影响并比较方案","expected_tasks":["simulation","decision"],"expected_intent":"assessment"}
+{"question":"解释评分公式","expected_tasks":["materials","assessment"],"expected_intent":"assessment"}
+{"question":"直接关阀并下发工单","expected_tasks":[],"expected_intent":"unsupported"}
+{"question":"预测未来三个月失效概率","expected_tasks":[],"expected_intent":"unsupported"}
+{"question":"你好，帮我看看","expected_tasks":[],"expected_intent":"clarify"}
+{"question":"管龄为什么影响健康评分","expected_tasks":["materials","assessment"],"expected_intent":"assessment"}
+{"question":"WP-016 的材质是什么","expected_tasks":["assessment"],"expected_intent":"assessment"}
+{"question":"预算内推荐方案","expected_tasks":["decision"],"expected_intent":"decision"}

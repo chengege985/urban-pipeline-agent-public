@@ -1,0 +1,54 @@
+{
+  "schema_version": "0.1.0",
+  "name": "S01独立合成演示：单源中断与三方案比较",
+  "data_mode": "synthetic",
+  "source_status": "constructed",
+  "as_of": "2026-10-29T08:00:00+08:00",
+  "source_refs": ["data/synthetic/s01.json：所有节点、服务、费用、时间和容量均为构造值，不对应真实管网"],
+  "nodes": [
+    {"node_id": "syn-S", "label": "合成水源", "source": true, "active": true, "boundary": true, "boundary_confirmed": true},
+    {"node_id": "syn-A", "label": "上游节点", "active": true},
+    {"node_id": "syn-B", "label": "故障前节点", "active": true},
+    {"node_id": "syn-C", "label": "居民区分支", "active": true},
+    {"node_id": "syn-H", "label": "合成医院", "active": true},
+    {"node_id": "syn-U", "label": "合成居民区", "active": true},
+    {"node_id": "syn-D", "label": "原有不可达节点", "active": true},
+    {"node_id": "syn-S2", "label": "停用的第二水源", "source": true, "active": false, "boundary": true, "boundary_confirmed": true}
+  ],
+  "edges": [
+    {"edge_id": "syn-feed", "pipe_id": "syn-pipe-feed", "from_node": "syn-S", "to_node": "syn-A", "direction": "both", "state": "open"},
+    {"edge_id": "syn-v1", "pipe_id": "syn-pipe-v1", "from_node": "syn-A", "to_node": "syn-B", "direction": "both", "state": "open", "is_valve": true, "operable": true},
+    {"edge_id": "syn-fault", "pipe_id": "syn-pipe-fault", "from_node": "syn-B", "to_node": "syn-C", "direction": "both", "state": "open"},
+    {"edge_id": "syn-hospital", "pipe_id": "syn-pipe-hospital", "from_node": "syn-C", "to_node": "syn-H", "direction": "both", "state": "open"},
+    {"edge_id": "syn-residents", "pipe_id": "syn-pipe-residents", "from_node": "syn-C", "to_node": "syn-U", "direction": "both", "state": "open"},
+    {"edge_id": "syn-alternative", "pipe_id": "syn-pipe-alternative", "from_node": "syn-S2", "to_node": "syn-H", "direction": "both", "state": "closed", "is_valve": true, "operable": true}
+  ],
+  "services": [
+    {"service_id": "syn-hospital-001", "label": "合成医院001", "node_ids": ["syn-H"], "supply_rule": "any", "count_value": 1, "count_unit": "facility", "critical": true},
+    {"service_id": "syn-households-C", "label": "合成居民区C", "node_ids": ["syn-C"], "supply_rule": "any", "count_value": 80, "count_unit": "household"},
+    {"service_id": "syn-households-U", "label": "合成居民区U", "node_ids": ["syn-U"], "supply_rule": "any", "count_value": 120, "count_unit": "household"},
+    {"service_id": "syn-dual-inlet", "label": "双接入服务对象", "node_ids": ["syn-H", "syn-S"], "supply_rule": "any", "count_value": 1, "count_unit": "facility"},
+    {"service_id": "syn-existing-outage", "label": "正常快照已不可达对象", "node_ids": ["syn-D"], "supply_rule": "any", "count_value": 30, "count_unit": "household"}
+  ],
+  "isolation_plans": [
+    {"plan_id": "syn-isolate", "fault_edge_ids": ["syn-fault"], "valve_ids": ["syn-v1"], "evidence_ref": "synthetic:S01给定隔离操作，仅供图计算演示"}
+  ],
+  "actions": [
+    {"action_id": "syn-repair", "label": "隔离后抢修并复开阀门", "fault_edge_ids": ["syn-fault"], "cost_fen": 250000, "effective_after_hours": 6, "evidence_ref": "synthetic:假设6小时恢复，费用2500元", "restore_edge_ids": ["syn-fault"], "open_valve_ids": ["syn-v1"], "resource_requirements": {"repair_team": 1}},
+    {"action_id": "syn-backup", "label": "合成医院备用供水", "fault_edge_ids": ["syn-fault"], "cost_fen": 120000, "effective_after_hours": 1, "evidence_ref": "synthetic:假设1小时启动、容量5m3/h、总需求4m3/h、持续8小时，费用1200元", "resource_requirements": {"water_truck": 1}, "backup_service_ids": ["syn-hospital-001"], "backup_capacity_m3h": 5, "backup_demand_m3h": 4, "backup_duration_hours": 8}
+  ],
+  "plans": [
+    {"plan_id": "syn-plan-repair", "label": "方案一：隔离抢修", "action_ids": ["syn-repair"]},
+    {"plan_id": "syn-plan-backup", "label": "方案二：隔离加备用供水", "action_ids": ["syn-backup"]},
+    {"plan_id": "syn-plan-combined", "label": "方案三：抢修加备用供水", "action_ids": ["syn-repair", "syn-backup"]}
+  ],
+  "value_profile": {
+    "profile_id": "syn-values", "version": "demo-0.1", "policy_type": "demo_policy", "approval_status": "demo_only",
+    "evidence_ref": "synthetic:固定演示权重，未经业务确认，不代表正式CUV或AHP/熵权结果",
+    "criteria": [
+      {"metric": "remaining_disconnected_services", "direction": "min", "lower": 0, "upper": 3, "weight": 0.55},
+      {"metric": "total_cost_fen", "direction": "min", "lower": 0, "upper": 600000, "weight": 0.15},
+      {"metric": "backup_covered_critical_services", "direction": "max", "lower": 0, "upper": 1, "weight": 0.30}
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+PASS 54-node synthetic cockpit renders
+PASS 11 cockpit windows are present · 11
+PASS synthetic boundary is visible
+PASS initial command layout is selected
+PASS initial overview mode is selected
+PASS central topology meets desktop prominence · {"topologyWidthRatio":0.6357584635416667,"topologyHeightRatio":0.5658566159753449,"geometry":{"viewport":{"width":1920,"height":1080},"workspace":{"width":1836,"height":1855.59375,"x":42,"y":371.84375,"right":1878,"bottom":2227.4375},"topology":{"width":1220.65625,"height":1050,"x":42,"y":371.84375,"right":1262.65625,"bottom":1421.84375},"canvas":{"width":1196.65625,"height":886.609375,"x":54,"y":498.234375,"right":1250.65625,"bottom":1384.84375},"svg":{"width":1194.65625,"height":884.609375,"x":55,"y":499.234375,"right":1249.65625,"bottom":1383.84375}}}
+PASS risk analysis mode changes focus
+PASS emergency mode changes focus
+PASS analysis layout preset changes grid
+PASS compact emergency layout preset changes grid
+PASS timeline stage selection updates active event
+PASS timeline keeps the supplied 1h stage
+PASS node selection opens linked detail
+PASS valve selection keeps linked detail
+PASS edge selection updates linked detail
+PASS topology wheel zoom changes view transform · translate(0 0) scale(1) -> translate(0 0) scale(1.08)
+PASS topology blank-space drag changes pan transform · translate(0 0) scale(1.08) -> translate(60 50) scale(1.08)
+PASS topology fit-to-view resets transform
+PASS timeline playback enters pause state
+PASS timeline pause returns to play state
+PASS timeline reset returns to first event
+PASS window drag changes its workspace offset · transform: translate(0px, 0px); -> transform: translate(30px, 26px);
+PASS window hide removes topology window
+PASS window restore brings topology back
+PASS 10 timeline playback rounds keep DOM stable · {"domBefore":916,"domAfter":921,"heapBefore":8072103,"heapAfter":6004201}
+PASS prefers-reduced-motion disables playback
+PASS only expected synthetic GETs are made · [{"method":"GET","path":"/api/v1/gas/cases/syn-gas-case-K-001"},{"method":"GET","path":"/api/v1/gas/cases/syn-gas-case-K-001"}]
+PASS no write or Agent request is made · [{"method":"GET","path":"/api/v1/gas/cases/syn-gas-case-K-001"},{"method":"GET","path":"/api/v1/gas/cases/syn-gas-case-K-001"}]
+PASS no page errors in browser probe
+PASS no console errors in browser probe
+ALL 30 CHECKS PASSED

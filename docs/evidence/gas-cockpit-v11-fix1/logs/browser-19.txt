@@ -1,0 +1,20 @@
+PASS 54-node synthetic cockpit renders
+PASS 11 cockpit windows are present · 11
+PASS synthetic boundary is visible
+PASS initial command layout is selected
+PASS initial overview mode is selected
+PASS risk analysis mode changes focus
+PASS emergency mode changes focus
+PASS analysis layout preset changes grid
+PASS compact emergency layout preset changes grid
+PASS timeline stage selection updates active event
+PASS timeline keeps the supplied 1h stage
+PASS node selection opens linked detail
+PASS edge selection updates linked detail
+PASS window drag changes its workspace offset · transform: translate(0px, 0px); -> transform: translate(30px, 26px);
+PASS window hide removes topology window
+PASS window restore brings topology back
+PASS prefers-reduced-motion disables playback
+PASS no page errors in browser probe
+PASS no console errors in browser probe
+ALL 19 CHECKS PASSED

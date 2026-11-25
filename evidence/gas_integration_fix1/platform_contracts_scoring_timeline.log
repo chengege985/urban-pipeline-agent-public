@@ -1,0 +1,88 @@
+.........FF............................................................. [ 45%]
+........................................................................ [ 90%]
+...............                                                          [100%]
+=================================== FAILURES ===================================
+_____________ test_partial_assessment_coverage_lists_missing_pipes _____________
+
+client = <starlette.testclient.TestClient object at 0x7f3d1f3911f0>
+
+    def test_partial_assessment_coverage_lists_missing_pipes(client):
+>       snapshot_id = save(client, with_one_score(s01_payload()), "one-score")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+engineering/tests/test_m1fix_contracts.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+engineering/tests/test_m1fix_contracts.py:43: in with_one_score
+    assessment = provided_sample().assessments[0].model_dump(mode="json")
+                 ^^^^^^^^^^^^^^^^^
+engineering/src/adapters/scoring.py:63: in provided_sample
+    meta = json.loads(META.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+______________ test_incompatible_score_version_is_not_relabelled _______________
+
+client = <starlette.testclient.TestClient object at 0x7f3d1f2a25a0>
+
+    def test_incompatible_score_version_is_not_relabelled(client):
+>       snapshot_id = save(client, with_one_score(s01_payload(), version="demo-score-0.1.0"), "bad-score")
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+engineering/tests/test_m1fix_contracts.py:148: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+engineering/tests/test_m1fix_contracts.py:43: in with_one_score
+    assessment = provided_sample().assessments[0].model_dump(mode="json")
+                 ^^^^^^^^^^^^^^^^^
+engineering/src/adapters/scoring.py:63: in provided_sample
+    meta = json.loads(META.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+../../../../.venv-platform/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workdata/WaterPipNet/.venv-platform/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED engineering/tests/test_m1fix_contracts.py::test_partial_assessment_coverage_lists_missing_pipes
+FAILED engineering/tests/test_m1fix_contracts.py::test_incompatible_score_version_is_not_relabelled
+2 failed, 157 passed, 1 warning in 23.74s

@@ -1,0 +1,116 @@
+{
+  "schema_version": "gas-pilot/1",
+  "dataset_id": "syn-gas-pilot-history-01",
+  "version": "demo-v1",
+  "data_mode": "synthetic",
+  "files": {
+    "nodes": {
+      "filename": "nodes.csv",
+      "source_id": "syn-gas-pilot-nodes-source",
+      "version": "fixture-v1",
+      "sha256": "35415a9cdfa884e1055809acbb180f32e8862ed431fb09cd9896fbb26c9a1fc6",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "node_id": "node_id"
+      }
+    },
+    "pipes": {
+      "filename": "pipes.csv",
+      "source_id": "syn-gas-pilot-pipes-source",
+      "version": "fixture-v1",
+      "sha256": "d1c5a105d5b6195a03c6ae9269e744062ea2142be975b10018f97fdff621a372",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "pipe_id": "pipe_id",
+        "from_node_id": "from_node_id",
+        "to_node_id": "to_node_id",
+        "material": "material",
+        "diameter_mm": "diameter_mm",
+        "pressure_class": "pressure_class"
+      }
+    },
+    "sensors": {
+      "filename": "sensors.csv",
+      "source_id": "syn-gas-pilot-sensors-source",
+      "version": "fixture-v1",
+      "sha256": "1b5968f575ba2beac77523e667f404daed77a19bfc1455b8566da20d23c1df64",
+      "columns": {
+        "source_record_id": "原始记录",
+        "sensor_id": "测点编号",
+        "pipe_id": "关联管段",
+        "metric": "监测类型",
+        "unit": "计量单位",
+        "device_status": "设备状态"
+      }
+    },
+    "observations": {
+      "filename": "observations.csv",
+      "source_id": "syn-gas-pilot-observations-source",
+      "version": "fixture-v1",
+      "sha256": "06cad54a4715b20a69c59b43c07cb7d4dd27e78655853c4490c59f851a039115",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "observation_id": "observation_id",
+        "sensor_id": "sensor_id",
+        "observed_at": "observed_at",
+        "value": "value",
+        "unit": "unit",
+        "quality": "quality"
+      }
+    },
+    "events": {
+      "filename": "events.csv",
+      "source_id": "syn-gas-pilot-events-source",
+      "version": "fixture-v1",
+      "sha256": "4e215e21040c3fbef2f0f0a87011a4db0e66e085d3d3fa0cd4f6e8150612a228",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "event_id": "event_id",
+        "recorded_at": "recorded_at",
+        "observation_ids": "observation_ids",
+        "pipe_ids": "pipe_ids",
+        "status": "status",
+        "evidence_ref": "evidence_ref"
+      }
+    },
+    "thresholds": {
+      "filename": "thresholds.csv",
+      "source_id": "syn-gas-pilot-thresholds-source",
+      "version": "fixture-v1",
+      "sha256": "444a20a5c5a541ea63cf78ce1ecd3f0f30f238d3ee72733c92145923125e62ee",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "threshold_id": "threshold_id",
+        "sensor_id": "sensor_id",
+        "version": "version",
+        "unit": "unit",
+        "lower": "lower",
+        "upper": "upper",
+        "cadence_seconds": "cadence_seconds",
+        "sustained_samples": "sustained_samples",
+        "missing_samples": "missing_samples",
+        "operator_id": "operator_id",
+        "approval_ref": "approval_ref",
+        "approved_at": "approved_at",
+        "effective_from": "effective_from",
+        "effective_until": "effective_until"
+      }
+    },
+    "gis": {
+      "filename": "gis.geojson",
+      "source_id": "syn-gas-pilot-gis-source",
+      "version": "fixture-v1",
+      "sha256": "567dac249c299dd941f5c5f6dae16a0e5304789d74786c1d5f6f3ba809048f17",
+      "columns": {
+        "source_record_id": "source_record_id",
+        "geometry_id": "geometry_id",
+        "pipe_id": "pipe_id",
+        "crs": "crs",
+        "geometry": "geometry",
+        "scope_ref": "scope_ref",
+        "valid_from": "valid_from",
+        "valid_until": "valid_until"
+      }
+    }
+  }
+}

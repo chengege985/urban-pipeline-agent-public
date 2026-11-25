@@ -1,0 +1,4 @@
+source_record_id,sensor_id,asset_id,observed_at,metric,value,unit,quality
+syn-intake-observation-01,syn-intake-pressure-01,syn-gas-intake-pipe-01,2026-01-02T03:04:05+08:00,pressure,105,kPa,valid
+syn-intake-observation-02,syn-intake-flow-01,syn-gas-intake-pipe-01,2026-01-01T19:04:05Z,flow,16,Nm3/h,valid
+syn-intake-observation-03,syn-intake-pressure-02,syn-gas-intake-valve-01,2026-01-01T19:05:05+00:00,pressure,104000,Pa,suspect

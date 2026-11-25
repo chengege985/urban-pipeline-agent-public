@@ -1,0 +1,5 @@
+> waterpulse-ai@0.3.0-rc.2 contracts:check
+> node scripts/generate-platform-types.mjs --check
+generated /workdata/WaterPipNet/01_工程项目/experiments/gas_cockpit_v11_fix1_20261110/repo-standalone/web/src/generated/platformOpenapi.ts
+sha256=dc52322e26cf583f7c777d125121ece99e42f7e2256ffeed6a57322429154b38
+schemas=85

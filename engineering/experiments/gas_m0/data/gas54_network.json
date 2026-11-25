@@ -1,0 +1,5502 @@
+{
+  "schema_version": "gas-network-candidate-0.1.0",
+  "network_id": "syn-gas-network-html54-0.1.0",
+  "data_mode": "synthetic",
+  "industry": "gas",
+  "validation_status": "not_business_validated",
+  "model_scope": "graph_connectivity_only",
+  "coordinate_system": "schematic",
+  "source_provenance": {
+    "file": "燃气动态风险推演_前端示例原型_v1.html",
+    "sha256": "21671fbdd368a4fb6e8757f18af91e5aa69a0221098b022c00009a4bf4a88832",
+    "construction_block_sha256": "e354dba828fc226d64ee7b848b162cd3712a783952f447aec075b81b013baaf5",
+    "first_line": 193,
+    "last_line": 344,
+    "seed": 20261104,
+    "node_version": "v24.14.1",
+    "v8_version": "13.6.233.17-node.44",
+    "reproducibility_limit": "The original sort comparator consumes random numbers and is not a total order. Re-extract only with the pinned runtime; the committed JSON is the portable canonical fixture.",
+    "connection_evidence": "edges[].a/b and facs[].n / nodes[].hh/com from reviewed source; never inferred from SVG or distances."
+  },
+  "nodes": [
+    {
+      "node_id": "syn-gas-node-N00",
+      "prototype_id": "N00",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 66.47780444659293,
+        "y": 50.61106854118407,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N01",
+      "prototype_id": "N01",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 174.85592031106353,
+        "y": 70.50721428357065,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N02",
+      "prototype_id": "N02",
+      "node_type": "regulator",
+      "name": null,
+      "layout": {
+        "x": 278.60072212293744,
+        "y": 54.55886316113174,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N03",
+      "prototype_id": "N03",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 378.6748458184302,
+        "y": 64.74342476949096,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N04",
+      "prototype_id": "N04",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 491.4250726159662,
+        "y": 55.71524181030691,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N05",
+      "prototype_id": "N05",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 601.057878896594,
+        "y": 68.11974294111133,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N06",
+      "prototype_id": "N06",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 710.3855988997966,
+        "y": 59.92965007387102,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N07",
+      "prototype_id": "N07",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 817.2039945200086,
+        "y": 72.82933722436428,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N08",
+      "prototype_id": "N08",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 938.8087991587818,
+        "y": 65.26684307865798,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N10",
+      "prototype_id": "N10",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 59.63418907672167,
+        "y": 171.71290408819914,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N11",
+      "prototype_id": "N11",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 178.01093380898237,
+        "y": 165.20058246329427,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N12",
+      "prototype_id": "N12",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 288.8022875506431,
+        "y": 174.21922949887812,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N13",
+      "prototype_id": "N13",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 393.69209493137896,
+        "y": 173.76482070051134,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N14",
+      "prototype_id": "N14",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 487.54901199415326,
+        "y": 162.91699057258666,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N15",
+      "prototype_id": "N15",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 612.6767175327986,
+        "y": 155.72836305946112,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N16",
+      "prototype_id": "N16",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 723.4804917909205,
+        "y": 173.62631608732045,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N17",
+      "prototype_id": "N17",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 819.5068775955588,
+        "y": 158.19705122709274,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N18",
+      "prototype_id": "N18",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 933.4615397565067,
+        "y": 170.1644745413214,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N20",
+      "prototype_id": "N20",
+      "node_type": "source",
+      "name": "A门站",
+      "layout": {
+        "x": 67.29087476991117,
+        "y": 264.42675376310945,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N21",
+      "prototype_id": "N21",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 159.54410401917994,
+        "y": 262.55048816278577,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N22",
+      "prototype_id": "N22",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 287.1630684416741,
+        "y": 258.2292890101671,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N23",
+      "prototype_id": "N23",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 395.0192067734897,
+        "y": 257.3395792413503,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N24",
+      "prototype_id": "N24",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 500.9047790039331,
+        "y": 278.49990345165133,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N25",
+      "prototype_id": "N25",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 595.038533559069,
+        "y": 277.0557990502566,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N26",
+      "prototype_id": "N26",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 725.251231610775,
+        "y": 270.46478853188455,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N27",
+      "prototype_id": "N27",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 825.4917418844998,
+        "y": 276.49644280038774,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N28",
+      "prototype_id": "N28",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 935.7963648848236,
+        "y": 265.7801982425153,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N30",
+      "prototype_id": "N30",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 55.489329336211085,
+        "y": 377.7011844664812,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N31",
+      "prototype_id": "N31",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 175.77000348083675,
+        "y": 371.6358772981912,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N32",
+      "prototype_id": "N32",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 275.5344465766102,
+        "y": 359.5202657133341,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N33",
+      "prototype_id": "N33",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 377.34036166220903,
+        "y": 381.68964591808617,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N34",
+      "prototype_id": "N34",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 487.003430088982,
+        "y": 379.31109299324453,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N35",
+      "prototype_id": "N35",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 598.0414424482733,
+        "y": 378.6474524345249,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N36",
+      "prototype_id": "N36",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 707.891801411286,
+        "y": 374.4275658428669,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N37",
+      "prototype_id": "N37",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 832.245572431013,
+        "y": 363.9330376666039,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N38",
+      "prototype_id": "N38",
+      "node_type": "source",
+      "name": "B调压站",
+      "layout": {
+        "x": 932.7640303913504,
+        "y": 372.683141740039,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N40",
+      "prototype_id": "N40",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 53.96771274320781,
+        "y": 476.2538670692593,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N41",
+      "prototype_id": "N41",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 169.27719520032406,
+        "y": 466.38445471040905,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N42",
+      "prototype_id": "N42",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 289.49818353913724,
+        "y": 475.18706386350095,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N43",
+      "prototype_id": "N43",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 397.4442395810038,
+        "y": 465.07312797009945,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N44",
+      "prototype_id": "N44",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 505.44453202933073,
+        "y": 476.0324274748564,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N45",
+      "prototype_id": "N45",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 618.8976438920945,
+        "y": 470.651924578473,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N46",
+      "prototype_id": "N46",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 711.2499504163861,
+        "y": 467.0243988018483,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N47",
+      "prototype_id": "N47",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 822.7571467347443,
+        "y": 472.3892385363579,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N48",
+      "prototype_id": "N48",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 943.0554917249829,
+        "y": 475.9844399113208,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N50",
+      "prototype_id": "N50",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 62.51576331816614,
+        "y": 576.7127642035484,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N51",
+      "prototype_id": "N51",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 172.98010710440576,
+        "y": 584.5141926519573,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N52",
+      "prototype_id": "N52",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 271.831693476066,
+        "y": 579.1310363914818,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N53",
+      "prototype_id": "N53",
+      "node_type": "regulator",
+      "name": null,
+      "layout": {
+        "x": 390.2746552936733,
+        "y": 587.5721662137657,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N54",
+      "prototype_id": "N54",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 486.6421301532537,
+        "y": 568.5331710334867,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N55",
+      "prototype_id": "N55",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 617.1556868124753,
+        "y": 579.3296935148537,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N56",
+      "prototype_id": "N56",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 707.0008271038532,
+        "y": 568.2706441041082,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N57",
+      "prototype_id": "N57",
+      "node_type": "junction",
+      "name": null,
+      "layout": {
+        "x": 823.3047361616045,
+        "y": 569.502218734473,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    },
+    {
+      "node_id": "syn-gas-node-N58",
+      "prototype_id": "N58",
+      "node_type": "valve",
+      "name": null,
+      "layout": {
+        "x": 943.4479997437447,
+        "y": 581.4147139675915,
+        "unit": "px",
+        "coordinate_system": "schematic"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "syn-gas-edge-K-001",
+      "pipe_id": "syn-gas-pipe-K-001",
+      "prototype_id": "K-001",
+      "from_node_id": "syn-gas-node-N00",
+      "to_node_id": "syn-gas-node-N01",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-002",
+      "pipe_id": "syn-gas-pipe-K-002",
+      "prototype_id": "K-002",
+      "from_node_id": "syn-gas-node-N00",
+      "to_node_id": "syn-gas-node-N10",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-003",
+      "pipe_id": "syn-gas-pipe-K-003",
+      "prototype_id": "K-003",
+      "from_node_id": "syn-gas-node-N01",
+      "to_node_id": "syn-gas-node-N02",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-004",
+      "pipe_id": "syn-gas-pipe-K-004",
+      "prototype_id": "K-004",
+      "from_node_id": "syn-gas-node-N01",
+      "to_node_id": "syn-gas-node-N11",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-005",
+      "pipe_id": "syn-gas-pipe-K-005",
+      "prototype_id": "K-005",
+      "from_node_id": "syn-gas-node-N02",
+      "to_node_id": "syn-gas-node-N12",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-006",
+      "pipe_id": "syn-gas-pipe-K-006",
+      "prototype_id": "K-006",
+      "from_node_id": "syn-gas-node-N03",
+      "to_node_id": "syn-gas-node-N04",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-007",
+      "pipe_id": "syn-gas-pipe-K-007",
+      "prototype_id": "K-007",
+      "from_node_id": "syn-gas-node-N03",
+      "to_node_id": "syn-gas-node-N13",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-008",
+      "pipe_id": "syn-gas-pipe-K-008",
+      "prototype_id": "K-008",
+      "from_node_id": "syn-gas-node-N04",
+      "to_node_id": "syn-gas-node-N05",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-009",
+      "pipe_id": "syn-gas-pipe-K-009",
+      "prototype_id": "K-009",
+      "from_node_id": "syn-gas-node-N04",
+      "to_node_id": "syn-gas-node-N14",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-010",
+      "pipe_id": "syn-gas-pipe-K-010",
+      "prototype_id": "K-010",
+      "from_node_id": "syn-gas-node-N05",
+      "to_node_id": "syn-gas-node-N06",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-011",
+      "pipe_id": "syn-gas-pipe-K-011",
+      "prototype_id": "K-011",
+      "from_node_id": "syn-gas-node-N06",
+      "to_node_id": "syn-gas-node-N16",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-012",
+      "pipe_id": "syn-gas-pipe-K-012",
+      "prototype_id": "K-012",
+      "from_node_id": "syn-gas-node-N07",
+      "to_node_id": "syn-gas-node-N08",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-013",
+      "pipe_id": "syn-gas-pipe-K-013",
+      "prototype_id": "K-013",
+      "from_node_id": "syn-gas-node-N07",
+      "to_node_id": "syn-gas-node-N17",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-014",
+      "pipe_id": "syn-gas-pipe-K-014",
+      "prototype_id": "K-014",
+      "from_node_id": "syn-gas-node-N08",
+      "to_node_id": "syn-gas-node-N18",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-015",
+      "pipe_id": "syn-gas-pipe-K-015",
+      "prototype_id": "K-015",
+      "from_node_id": "syn-gas-node-N11",
+      "to_node_id": "syn-gas-node-N12",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-016",
+      "pipe_id": "syn-gas-pipe-K-016",
+      "prototype_id": "K-016",
+      "from_node_id": "syn-gas-node-N11",
+      "to_node_id": "syn-gas-node-N21",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-017",
+      "pipe_id": "syn-gas-pipe-K-017",
+      "prototype_id": "K-017",
+      "from_node_id": "syn-gas-node-N12",
+      "to_node_id": "syn-gas-node-N13",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-018",
+      "pipe_id": "syn-gas-pipe-K-018",
+      "prototype_id": "K-018",
+      "from_node_id": "syn-gas-node-N13",
+      "to_node_id": "syn-gas-node-N14",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-019",
+      "pipe_id": "syn-gas-pipe-K-019",
+      "prototype_id": "K-019",
+      "from_node_id": "syn-gas-node-N13",
+      "to_node_id": "syn-gas-node-N23",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-020",
+      "pipe_id": "syn-gas-pipe-K-020",
+      "prototype_id": "K-020",
+      "from_node_id": "syn-gas-node-N14",
+      "to_node_id": "syn-gas-node-N15",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-021",
+      "pipe_id": "syn-gas-pipe-K-021",
+      "prototype_id": "K-021",
+      "from_node_id": "syn-gas-node-N15",
+      "to_node_id": "syn-gas-node-N16",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-022",
+      "pipe_id": "syn-gas-pipe-K-022",
+      "prototype_id": "K-022",
+      "from_node_id": "syn-gas-node-N15",
+      "to_node_id": "syn-gas-node-N25",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-023",
+      "pipe_id": "syn-gas-pipe-K-023",
+      "prototype_id": "K-023",
+      "from_node_id": "syn-gas-node-N16",
+      "to_node_id": "syn-gas-node-N17",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-024",
+      "pipe_id": "syn-gas-pipe-K-024",
+      "prototype_id": "K-024",
+      "from_node_id": "syn-gas-node-N16",
+      "to_node_id": "syn-gas-node-N26",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-025",
+      "pipe_id": "syn-gas-pipe-K-025",
+      "prototype_id": "K-025",
+      "from_node_id": "syn-gas-node-N17",
+      "to_node_id": "syn-gas-node-N27",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-026",
+      "pipe_id": "syn-gas-pipe-K-026",
+      "prototype_id": "K-026",
+      "from_node_id": "syn-gas-node-N20",
+      "to_node_id": "syn-gas-node-N21",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-027",
+      "pipe_id": "syn-gas-pipe-K-027",
+      "prototype_id": "K-027",
+      "from_node_id": "syn-gas-node-N20",
+      "to_node_id": "syn-gas-node-N30",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-028",
+      "pipe_id": "syn-gas-pipe-K-028",
+      "prototype_id": "K-028",
+      "from_node_id": "syn-gas-node-N21",
+      "to_node_id": "syn-gas-node-N22",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-029",
+      "pipe_id": "syn-gas-pipe-K-029",
+      "prototype_id": "K-029",
+      "from_node_id": "syn-gas-node-N21",
+      "to_node_id": "syn-gas-node-N31",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-030",
+      "pipe_id": "syn-gas-pipe-K-030",
+      "prototype_id": "K-030",
+      "from_node_id": "syn-gas-node-N22",
+      "to_node_id": "syn-gas-node-N23",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-031",
+      "pipe_id": "syn-gas-pipe-K-031",
+      "prototype_id": "K-031",
+      "from_node_id": "syn-gas-node-N22",
+      "to_node_id": "syn-gas-node-N32",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-032",
+      "pipe_id": "syn-gas-pipe-K-032",
+      "prototype_id": "K-032",
+      "from_node_id": "syn-gas-node-N23",
+      "to_node_id": "syn-gas-node-N33",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-033",
+      "pipe_id": "syn-gas-pipe-K-033",
+      "prototype_id": "K-033",
+      "from_node_id": "syn-gas-node-N24",
+      "to_node_id": "syn-gas-node-N25",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-034",
+      "pipe_id": "syn-gas-pipe-K-034",
+      "prototype_id": "K-034",
+      "from_node_id": "syn-gas-node-N24",
+      "to_node_id": "syn-gas-node-N34",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-035",
+      "pipe_id": "syn-gas-pipe-K-035",
+      "prototype_id": "K-035",
+      "from_node_id": "syn-gas-node-N25",
+      "to_node_id": "syn-gas-node-N26",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-036",
+      "pipe_id": "syn-gas-pipe-K-036",
+      "prototype_id": "K-036",
+      "from_node_id": "syn-gas-node-N25",
+      "to_node_id": "syn-gas-node-N35",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-037",
+      "pipe_id": "syn-gas-pipe-K-037",
+      "prototype_id": "K-037",
+      "from_node_id": "syn-gas-node-N26",
+      "to_node_id": "syn-gas-node-N27",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-038",
+      "pipe_id": "syn-gas-pipe-K-038",
+      "prototype_id": "K-038",
+      "from_node_id": "syn-gas-node-N27",
+      "to_node_id": "syn-gas-node-N28",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-039",
+      "pipe_id": "syn-gas-pipe-K-039",
+      "prototype_id": "K-039",
+      "from_node_id": "syn-gas-node-N27",
+      "to_node_id": "syn-gas-node-N37",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-040",
+      "pipe_id": "syn-gas-pipe-K-040",
+      "prototype_id": "K-040",
+      "from_node_id": "syn-gas-node-N28",
+      "to_node_id": "syn-gas-node-N38",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-041",
+      "pipe_id": "syn-gas-pipe-K-041",
+      "prototype_id": "K-041",
+      "from_node_id": "syn-gas-node-N30",
+      "to_node_id": "syn-gas-node-N31",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-042",
+      "pipe_id": "syn-gas-pipe-K-042",
+      "prototype_id": "K-042",
+      "from_node_id": "syn-gas-node-N31",
+      "to_node_id": "syn-gas-node-N32",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-043",
+      "pipe_id": "syn-gas-pipe-K-043",
+      "prototype_id": "K-043",
+      "from_node_id": "syn-gas-node-N31",
+      "to_node_id": "syn-gas-node-N41",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-044",
+      "pipe_id": "syn-gas-pipe-K-044",
+      "prototype_id": "K-044",
+      "from_node_id": "syn-gas-node-N32",
+      "to_node_id": "syn-gas-node-N33",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-045",
+      "pipe_id": "syn-gas-pipe-K-045",
+      "prototype_id": "K-045",
+      "from_node_id": "syn-gas-node-N33",
+      "to_node_id": "syn-gas-node-N34",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-046",
+      "pipe_id": "syn-gas-pipe-K-046",
+      "prototype_id": "K-046",
+      "from_node_id": "syn-gas-node-N33",
+      "to_node_id": "syn-gas-node-N43",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-047",
+      "pipe_id": "syn-gas-pipe-K-047",
+      "prototype_id": "K-047",
+      "from_node_id": "syn-gas-node-N35",
+      "to_node_id": "syn-gas-node-N45",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-048",
+      "pipe_id": "syn-gas-pipe-K-048",
+      "prototype_id": "K-048",
+      "from_node_id": "syn-gas-node-N36",
+      "to_node_id": "syn-gas-node-N46",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-049",
+      "pipe_id": "syn-gas-pipe-K-049",
+      "prototype_id": "K-049",
+      "from_node_id": "syn-gas-node-N37",
+      "to_node_id": "syn-gas-node-N38",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-050",
+      "pipe_id": "syn-gas-pipe-K-050",
+      "prototype_id": "K-050",
+      "from_node_id": "syn-gas-node-N37",
+      "to_node_id": "syn-gas-node-N47",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-051",
+      "pipe_id": "syn-gas-pipe-K-051",
+      "prototype_id": "K-051",
+      "from_node_id": "syn-gas-node-N38",
+      "to_node_id": "syn-gas-node-N48",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-052",
+      "pipe_id": "syn-gas-pipe-K-052",
+      "prototype_id": "K-052",
+      "from_node_id": "syn-gas-node-N40",
+      "to_node_id": "syn-gas-node-N41",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-053",
+      "pipe_id": "syn-gas-pipe-K-053",
+      "prototype_id": "K-053",
+      "from_node_id": "syn-gas-node-N41",
+      "to_node_id": "syn-gas-node-N42",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-054",
+      "pipe_id": "syn-gas-pipe-K-054",
+      "prototype_id": "K-054",
+      "from_node_id": "syn-gas-node-N41",
+      "to_node_id": "syn-gas-node-N51",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-055",
+      "pipe_id": "syn-gas-pipe-K-055",
+      "prototype_id": "K-055",
+      "from_node_id": "syn-gas-node-N42",
+      "to_node_id": "syn-gas-node-N43",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-056",
+      "pipe_id": "syn-gas-pipe-K-056",
+      "prototype_id": "K-056",
+      "from_node_id": "syn-gas-node-N42",
+      "to_node_id": "syn-gas-node-N52",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-057",
+      "pipe_id": "syn-gas-pipe-K-057",
+      "prototype_id": "K-057",
+      "from_node_id": "syn-gas-node-N43",
+      "to_node_id": "syn-gas-node-N44",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-058",
+      "pipe_id": "syn-gas-pipe-K-058",
+      "prototype_id": "K-058",
+      "from_node_id": "syn-gas-node-N43",
+      "to_node_id": "syn-gas-node-N53",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-059",
+      "pipe_id": "syn-gas-pipe-K-059",
+      "prototype_id": "K-059",
+      "from_node_id": "syn-gas-node-N44",
+      "to_node_id": "syn-gas-node-N45",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-060",
+      "pipe_id": "syn-gas-pipe-K-060",
+      "prototype_id": "K-060",
+      "from_node_id": "syn-gas-node-N44",
+      "to_node_id": "syn-gas-node-N54",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-061",
+      "pipe_id": "syn-gas-pipe-K-061",
+      "prototype_id": "K-061",
+      "from_node_id": "syn-gas-node-N45",
+      "to_node_id": "syn-gas-node-N46",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-062",
+      "pipe_id": "syn-gas-pipe-K-062",
+      "prototype_id": "K-062",
+      "from_node_id": "syn-gas-node-N45",
+      "to_node_id": "syn-gas-node-N55",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-063",
+      "pipe_id": "syn-gas-pipe-K-063",
+      "prototype_id": "K-063",
+      "from_node_id": "syn-gas-node-N46",
+      "to_node_id": "syn-gas-node-N47",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-064",
+      "pipe_id": "syn-gas-pipe-K-064",
+      "prototype_id": "K-064",
+      "from_node_id": "syn-gas-node-N46",
+      "to_node_id": "syn-gas-node-N56",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-065",
+      "pipe_id": "syn-gas-pipe-K-065",
+      "prototype_id": "K-065",
+      "from_node_id": "syn-gas-node-N47",
+      "to_node_id": "syn-gas-node-N57",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-066",
+      "pipe_id": "syn-gas-pipe-K-066",
+      "prototype_id": "K-066",
+      "from_node_id": "syn-gas-node-N48",
+      "to_node_id": "syn-gas-node-N58",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-067",
+      "pipe_id": "syn-gas-pipe-K-067",
+      "prototype_id": "K-067",
+      "from_node_id": "syn-gas-node-N50",
+      "to_node_id": "syn-gas-node-N51",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-068",
+      "pipe_id": "syn-gas-pipe-K-068",
+      "prototype_id": "K-068",
+      "from_node_id": "syn-gas-node-N51",
+      "to_node_id": "syn-gas-node-N52",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-069",
+      "pipe_id": "syn-gas-pipe-K-069",
+      "prototype_id": "K-069",
+      "from_node_id": "syn-gas-node-N52",
+      "to_node_id": "syn-gas-node-N53",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-070",
+      "pipe_id": "syn-gas-pipe-K-070",
+      "prototype_id": "K-070",
+      "from_node_id": "syn-gas-node-N53",
+      "to_node_id": "syn-gas-node-N54",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-071",
+      "pipe_id": "syn-gas-pipe-K-071",
+      "prototype_id": "K-071",
+      "from_node_id": "syn-gas-node-N54",
+      "to_node_id": "syn-gas-node-N55",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-072",
+      "pipe_id": "syn-gas-pipe-K-072",
+      "prototype_id": "K-072",
+      "from_node_id": "syn-gas-node-N55",
+      "to_node_id": "syn-gas-node-N56",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    },
+    {
+      "edge_id": "syn-gas-edge-K-073",
+      "pipe_id": "syn-gas-pipe-K-073",
+      "prototype_id": "K-073",
+      "from_node_id": "syn-gas-node-N57",
+      "to_node_id": "syn-gas-node-N58",
+      "direction": "undirected_connectivity_only",
+      "initial_state": "enabled"
+    }
+  ],
+  "pipes": [
+    {
+      "pipe_id": "syn-gas-pipe-K-001",
+      "edge_id": "syn-gas-edge-K-001",
+      "prototype_id": "K-001",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-002",
+      "edge_id": "syn-gas-edge-K-002",
+      "prototype_id": "K-002",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-003",
+      "edge_id": "syn-gas-edge-K-003",
+      "prototype_id": "K-003",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-004",
+      "edge_id": "syn-gas-edge-K-004",
+      "prototype_id": "K-004",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-005",
+      "edge_id": "syn-gas-edge-K-005",
+      "prototype_id": "K-005",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-006",
+      "edge_id": "syn-gas-edge-K-006",
+      "prototype_id": "K-006",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-007",
+      "edge_id": "syn-gas-edge-K-007",
+      "prototype_id": "K-007",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-008",
+      "edge_id": "syn-gas-edge-K-008",
+      "prototype_id": "K-008",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-009",
+      "edge_id": "syn-gas-edge-K-009",
+      "prototype_id": "K-009",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-010",
+      "edge_id": "syn-gas-edge-K-010",
+      "prototype_id": "K-010",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-011",
+      "edge_id": "syn-gas-edge-K-011",
+      "prototype_id": "K-011",
+      "material": "铸铁",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-012",
+      "edge_id": "syn-gas-edge-K-012",
+      "prototype_id": "K-012",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-013",
+      "edge_id": "syn-gas-edge-K-013",
+      "prototype_id": "K-013",
+      "material": "铸铁",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-014",
+      "edge_id": "syn-gas-edge-K-014",
+      "prototype_id": "K-014",
+      "material": "铸铁",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-015",
+      "edge_id": "syn-gas-edge-K-015",
+      "prototype_id": "K-015",
+      "material": "铸铁",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-016",
+      "edge_id": "syn-gas-edge-K-016",
+      "prototype_id": "K-016",
+      "material": "铸铁",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-017",
+      "edge_id": "syn-gas-edge-K-017",
+      "prototype_id": "K-017",
+      "material": "钢",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-018",
+      "edge_id": "syn-gas-edge-K-018",
+      "prototype_id": "K-018",
+      "material": "铸铁",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-019",
+      "edge_id": "syn-gas-edge-K-019",
+      "prototype_id": "K-019",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-020",
+      "edge_id": "syn-gas-edge-K-020",
+      "prototype_id": "K-020",
+      "material": "铸铁",
+      "diameter_mm": 400,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-021",
+      "edge_id": "syn-gas-edge-K-021",
+      "prototype_id": "K-021",
+      "material": "PE",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-022",
+      "edge_id": "syn-gas-edge-K-022",
+      "prototype_id": "K-022",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-023",
+      "edge_id": "syn-gas-edge-K-023",
+      "prototype_id": "K-023",
+      "material": "PE",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-024",
+      "edge_id": "syn-gas-edge-K-024",
+      "prototype_id": "K-024",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-025",
+      "edge_id": "syn-gas-edge-K-025",
+      "prototype_id": "K-025",
+      "material": "PE",
+      "diameter_mm": 400,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-026",
+      "edge_id": "syn-gas-edge-K-026",
+      "prototype_id": "K-026",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-027",
+      "edge_id": "syn-gas-edge-K-027",
+      "prototype_id": "K-027",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-028",
+      "edge_id": "syn-gas-edge-K-028",
+      "prototype_id": "K-028",
+      "material": "PE",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-029",
+      "edge_id": "syn-gas-edge-K-029",
+      "prototype_id": "K-029",
+      "material": "铸铁",
+      "diameter_mm": 400,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-030",
+      "edge_id": "syn-gas-edge-K-030",
+      "prototype_id": "K-030",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-031",
+      "edge_id": "syn-gas-edge-K-031",
+      "prototype_id": "K-031",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-032",
+      "edge_id": "syn-gas-edge-K-032",
+      "prototype_id": "K-032",
+      "material": "PE",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-033",
+      "edge_id": "syn-gas-edge-K-033",
+      "prototype_id": "K-033",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-034",
+      "edge_id": "syn-gas-edge-K-034",
+      "prototype_id": "K-034",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-035",
+      "edge_id": "syn-gas-edge-K-035",
+      "prototype_id": "K-035",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-036",
+      "edge_id": "syn-gas-edge-K-036",
+      "prototype_id": "K-036",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-037",
+      "edge_id": "syn-gas-edge-K-037",
+      "prototype_id": "K-037",
+      "material": "铸铁",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-038",
+      "edge_id": "syn-gas-edge-K-038",
+      "prototype_id": "K-038",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-039",
+      "edge_id": "syn-gas-edge-K-039",
+      "prototype_id": "K-039",
+      "material": "PE",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-040",
+      "edge_id": "syn-gas-edge-K-040",
+      "prototype_id": "K-040",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-041",
+      "edge_id": "syn-gas-edge-K-041",
+      "prototype_id": "K-041",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-042",
+      "edge_id": "syn-gas-edge-K-042",
+      "prototype_id": "K-042",
+      "material": "PE",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-043",
+      "edge_id": "syn-gas-edge-K-043",
+      "prototype_id": "K-043",
+      "material": "PE",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-044",
+      "edge_id": "syn-gas-edge-K-044",
+      "prototype_id": "K-044",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-045",
+      "edge_id": "syn-gas-edge-K-045",
+      "prototype_id": "K-045",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-046",
+      "edge_id": "syn-gas-edge-K-046",
+      "prototype_id": "K-046",
+      "material": "铸铁",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-047",
+      "edge_id": "syn-gas-edge-K-047",
+      "prototype_id": "K-047",
+      "material": "铸铁",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-048",
+      "edge_id": "syn-gas-edge-K-048",
+      "prototype_id": "K-048",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-049",
+      "edge_id": "syn-gas-edge-K-049",
+      "prototype_id": "K-049",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-050",
+      "edge_id": "syn-gas-edge-K-050",
+      "prototype_id": "K-050",
+      "material": "铸铁",
+      "diameter_mm": 400,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-051",
+      "edge_id": "syn-gas-edge-K-051",
+      "prototype_id": "K-051",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-052",
+      "edge_id": "syn-gas-edge-K-052",
+      "prototype_id": "K-052",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-053",
+      "edge_id": "syn-gas-edge-K-053",
+      "prototype_id": "K-053",
+      "material": "铸铁",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-054",
+      "edge_id": "syn-gas-edge-K-054",
+      "prototype_id": "K-054",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-055",
+      "edge_id": "syn-gas-edge-K-055",
+      "prototype_id": "K-055",
+      "material": "钢",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-056",
+      "edge_id": "syn-gas-edge-K-056",
+      "prototype_id": "K-056",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-057",
+      "edge_id": "syn-gas-edge-K-057",
+      "prototype_id": "K-057",
+      "material": "PE",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-058",
+      "edge_id": "syn-gas-edge-K-058",
+      "prototype_id": "K-058",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-059",
+      "edge_id": "syn-gas-edge-K-059",
+      "prototype_id": "K-059",
+      "material": "钢",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-060",
+      "edge_id": "syn-gas-edge-K-060",
+      "prototype_id": "K-060",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-061",
+      "edge_id": "syn-gas-edge-K-061",
+      "prototype_id": "K-061",
+      "material": "PE",
+      "diameter_mm": 500,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-062",
+      "edge_id": "syn-gas-edge-K-062",
+      "prototype_id": "K-062",
+      "material": "PE",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-063",
+      "edge_id": "syn-gas-edge-K-063",
+      "prototype_id": "K-063",
+      "material": "PE",
+      "diameter_mm": 300,
+      "pressure_class": "中压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-064",
+      "edge_id": "syn-gas-edge-K-064",
+      "prototype_id": "K-064",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-065",
+      "edge_id": "syn-gas-edge-K-065",
+      "prototype_id": "K-065",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-066",
+      "edge_id": "syn-gas-edge-K-066",
+      "prototype_id": "K-066",
+      "material": "钢",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-067",
+      "edge_id": "syn-gas-edge-K-067",
+      "prototype_id": "K-067",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-068",
+      "edge_id": "syn-gas-edge-K-068",
+      "prototype_id": "K-068",
+      "material": "钢",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-069",
+      "edge_id": "syn-gas-edge-K-069",
+      "prototype_id": "K-069",
+      "material": "PE",
+      "diameter_mm": 200,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-070",
+      "edge_id": "syn-gas-edge-K-070",
+      "prototype_id": "K-070",
+      "material": "铸铁",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-071",
+      "edge_id": "syn-gas-edge-K-071",
+      "prototype_id": "K-071",
+      "material": "钢",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-072",
+      "edge_id": "syn-gas-edge-K-072",
+      "prototype_id": "K-072",
+      "material": "PE",
+      "diameter_mm": 100,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    },
+    {
+      "pipe_id": "syn-gas-pipe-K-073",
+      "edge_id": "syn-gas-edge-K-073",
+      "prototype_id": "K-073",
+      "material": "PE",
+      "diameter_mm": 150,
+      "pressure_class": "低压",
+      "asset_status": "synthetic_not_business_validated"
+    }
+  ],
+  "valves": [
+    {
+      "valve_id": "syn-gas-valve-N03",
+      "node_id": "syn-gas-node-N03",
+      "prototype_id": "N03",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-006",
+        "syn-gas-edge-K-007"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N04",
+      "node_id": "syn-gas-node-N04",
+      "prototype_id": "N04",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-006",
+        "syn-gas-edge-K-008",
+        "syn-gas-edge-K-009"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N05",
+      "node_id": "syn-gas-node-N05",
+      "prototype_id": "N05",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-008",
+        "syn-gas-edge-K-010"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N06",
+      "node_id": "syn-gas-node-N06",
+      "prototype_id": "N06",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-010",
+        "syn-gas-edge-K-011"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N08",
+      "node_id": "syn-gas-node-N08",
+      "prototype_id": "N08",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-012",
+        "syn-gas-edge-K-014"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N11",
+      "node_id": "syn-gas-node-N11",
+      "prototype_id": "N11",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-004",
+        "syn-gas-edge-K-015",
+        "syn-gas-edge-K-016"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N13",
+      "node_id": "syn-gas-node-N13",
+      "prototype_id": "N13",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-007",
+        "syn-gas-edge-K-017",
+        "syn-gas-edge-K-018",
+        "syn-gas-edge-K-019"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N14",
+      "node_id": "syn-gas-node-N14",
+      "prototype_id": "N14",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-009",
+        "syn-gas-edge-K-018",
+        "syn-gas-edge-K-020"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N15",
+      "node_id": "syn-gas-node-N15",
+      "prototype_id": "N15",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-020",
+        "syn-gas-edge-K-021",
+        "syn-gas-edge-K-022"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N17",
+      "node_id": "syn-gas-node-N17",
+      "prototype_id": "N17",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-013",
+        "syn-gas-edge-K-023",
+        "syn-gas-edge-K-025"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N21",
+      "node_id": "syn-gas-node-N21",
+      "prototype_id": "N21",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-016",
+        "syn-gas-edge-K-026",
+        "syn-gas-edge-K-028",
+        "syn-gas-edge-K-029"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N23",
+      "node_id": "syn-gas-node-N23",
+      "prototype_id": "N23",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-019",
+        "syn-gas-edge-K-030",
+        "syn-gas-edge-K-032"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N24",
+      "node_id": "syn-gas-node-N24",
+      "prototype_id": "N24",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-033",
+        "syn-gas-edge-K-034"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N25",
+      "node_id": "syn-gas-node-N25",
+      "prototype_id": "N25",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-022",
+        "syn-gas-edge-K-033",
+        "syn-gas-edge-K-035",
+        "syn-gas-edge-K-036"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N27",
+      "node_id": "syn-gas-node-N27",
+      "prototype_id": "N27",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-025",
+        "syn-gas-edge-K-037",
+        "syn-gas-edge-K-038",
+        "syn-gas-edge-K-039"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N28",
+      "node_id": "syn-gas-node-N28",
+      "prototype_id": "N28",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-038",
+        "syn-gas-edge-K-040"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N30",
+      "node_id": "syn-gas-node-N30",
+      "prototype_id": "N30",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-027",
+        "syn-gas-edge-K-041"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N31",
+      "node_id": "syn-gas-node-N31",
+      "prototype_id": "N31",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-029",
+        "syn-gas-edge-K-041",
+        "syn-gas-edge-K-042",
+        "syn-gas-edge-K-043"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N34",
+      "node_id": "syn-gas-node-N34",
+      "prototype_id": "N34",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-034",
+        "syn-gas-edge-K-045"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N36",
+      "node_id": "syn-gas-node-N36",
+      "prototype_id": "N36",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-048"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N37",
+      "node_id": "syn-gas-node-N37",
+      "prototype_id": "N37",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-039",
+        "syn-gas-edge-K-049",
+        "syn-gas-edge-K-050"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N40",
+      "node_id": "syn-gas-node-N40",
+      "prototype_id": "N40",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-052"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N41",
+      "node_id": "syn-gas-node-N41",
+      "prototype_id": "N41",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-043",
+        "syn-gas-edge-K-052",
+        "syn-gas-edge-K-053",
+        "syn-gas-edge-K-054"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N43",
+      "node_id": "syn-gas-node-N43",
+      "prototype_id": "N43",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-046",
+        "syn-gas-edge-K-055",
+        "syn-gas-edge-K-057",
+        "syn-gas-edge-K-058"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N44",
+      "node_id": "syn-gas-node-N44",
+      "prototype_id": "N44",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-057",
+        "syn-gas-edge-K-059",
+        "syn-gas-edge-K-060"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N45",
+      "node_id": "syn-gas-node-N45",
+      "prototype_id": "N45",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-047",
+        "syn-gas-edge-K-059",
+        "syn-gas-edge-K-061",
+        "syn-gas-edge-K-062"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N47",
+      "node_id": "syn-gas-node-N47",
+      "prototype_id": "N47",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-050",
+        "syn-gas-edge-K-063",
+        "syn-gas-edge-K-065"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N50",
+      "node_id": "syn-gas-node-N50",
+      "prototype_id": "N50",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-067"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N55",
+      "node_id": "syn-gas-node-N55",
+      "prototype_id": "N55",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-062",
+        "syn-gas-edge-K-071",
+        "syn-gas-edge-K-072"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N56",
+      "node_id": "syn-gas-node-N56",
+      "prototype_id": "N56",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-064",
+        "syn-gas-edge-K-072"
+      ]
+    },
+    {
+      "valve_id": "syn-gas-valve-N58",
+      "node_id": "syn-gas-node-N58",
+      "prototype_id": "N58",
+      "cut_semantics": "node_cut",
+      "initial_state": "open",
+      "incident_edge_ids": [
+        "syn-gas-edge-K-066",
+        "syn-gas-edge-K-073"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "syn-gas-source-N20",
+      "node_id": "syn-gas-node-N20",
+      "prototype_id": "N20",
+      "name": "A门站",
+      "enabled": true,
+      "pressure": null,
+      "capacity": null,
+      "physical_model_status": "unsupported"
+    },
+    {
+      "source_id": "syn-gas-source-N38",
+      "node_id": "syn-gas-node-N38",
+      "prototype_id": "N38",
+      "name": "B调压站",
+      "enabled": true,
+      "pressure": null,
+      "capacity": null,
+      "physical_model_status": "unsupported"
+    }
+  ],
+  "consumers": [
+    {
+      "consumer_id": "syn-gas-consumer-household-N00",
+      "prototype_node_id": "N00",
+      "node_id": "syn-gas-node-N00",
+      "consumer_kind": "household",
+      "count": 182,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N00",
+      "prototype_node_id": "N00",
+      "node_id": "syn-gas-node-N00",
+      "consumer_kind": "business",
+      "count": 34,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N01",
+      "prototype_node_id": "N01",
+      "node_id": "syn-gas-node-N01",
+      "consumer_kind": "household",
+      "count": 228,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N01",
+      "prototype_node_id": "N01",
+      "node_id": "syn-gas-node-N01",
+      "consumer_kind": "business",
+      "count": 28,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N02",
+      "prototype_node_id": "N02",
+      "node_id": "syn-gas-node-N02",
+      "consumer_kind": "household",
+      "count": 215,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N02",
+      "prototype_node_id": "N02",
+      "node_id": "syn-gas-node-N02",
+      "consumer_kind": "business",
+      "count": 21,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N07",
+      "prototype_node_id": "N07",
+      "node_id": "syn-gas-node-N07",
+      "consumer_kind": "household",
+      "count": 106,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N07",
+      "prototype_node_id": "N07",
+      "node_id": "syn-gas-node-N07",
+      "consumer_kind": "business",
+      "count": 33,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N10",
+      "prototype_node_id": "N10",
+      "node_id": "syn-gas-node-N10",
+      "consumer_kind": "household",
+      "count": 317,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N10",
+      "prototype_node_id": "N10",
+      "node_id": "syn-gas-node-N10",
+      "consumer_kind": "business",
+      "count": 7,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N12",
+      "prototype_node_id": "N12",
+      "node_id": "syn-gas-node-N12",
+      "consumer_kind": "household",
+      "count": 388,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N12",
+      "prototype_node_id": "N12",
+      "node_id": "syn-gas-node-N12",
+      "consumer_kind": "business",
+      "count": 13,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N16",
+      "prototype_node_id": "N16",
+      "node_id": "syn-gas-node-N16",
+      "consumer_kind": "household",
+      "count": 368,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N16",
+      "prototype_node_id": "N16",
+      "node_id": "syn-gas-node-N16",
+      "consumer_kind": "business",
+      "count": 10,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N18",
+      "prototype_node_id": "N18",
+      "node_id": "syn-gas-node-N18",
+      "consumer_kind": "household",
+      "count": 216,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N18",
+      "prototype_node_id": "N18",
+      "node_id": "syn-gas-node-N18",
+      "consumer_kind": "business",
+      "count": 20,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N22",
+      "prototype_node_id": "N22",
+      "node_id": "syn-gas-node-N22",
+      "consumer_kind": "household",
+      "count": 213,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N22",
+      "prototype_node_id": "N22",
+      "node_id": "syn-gas-node-N22",
+      "consumer_kind": "business",
+      "count": 10,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N26",
+      "prototype_node_id": "N26",
+      "node_id": "syn-gas-node-N26",
+      "consumer_kind": "household",
+      "count": 135,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N26",
+      "prototype_node_id": "N26",
+      "node_id": "syn-gas-node-N26",
+      "consumer_kind": "business",
+      "count": 9,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N32",
+      "prototype_node_id": "N32",
+      "node_id": "syn-gas-node-N32",
+      "consumer_kind": "household",
+      "count": 256,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N32",
+      "prototype_node_id": "N32",
+      "node_id": "syn-gas-node-N32",
+      "consumer_kind": "business",
+      "count": 34,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N33",
+      "prototype_node_id": "N33",
+      "node_id": "syn-gas-node-N33",
+      "consumer_kind": "household",
+      "count": 314,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N33",
+      "prototype_node_id": "N33",
+      "node_id": "syn-gas-node-N33",
+      "consumer_kind": "business",
+      "count": 21,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N35",
+      "prototype_node_id": "N35",
+      "node_id": "syn-gas-node-N35",
+      "consumer_kind": "household",
+      "count": 275,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N35",
+      "prototype_node_id": "N35",
+      "node_id": "syn-gas-node-N35",
+      "consumer_kind": "business",
+      "count": 18,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N42",
+      "prototype_node_id": "N42",
+      "node_id": "syn-gas-node-N42",
+      "consumer_kind": "household",
+      "count": 330,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N42",
+      "prototype_node_id": "N42",
+      "node_id": "syn-gas-node-N42",
+      "consumer_kind": "business",
+      "count": 28,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N46",
+      "prototype_node_id": "N46",
+      "node_id": "syn-gas-node-N46",
+      "consumer_kind": "household",
+      "count": 128,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N46",
+      "prototype_node_id": "N46",
+      "node_id": "syn-gas-node-N46",
+      "consumer_kind": "business",
+      "count": 7,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N48",
+      "prototype_node_id": "N48",
+      "node_id": "syn-gas-node-N48",
+      "consumer_kind": "household",
+      "count": 370,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N48",
+      "prototype_node_id": "N48",
+      "node_id": "syn-gas-node-N48",
+      "consumer_kind": "business",
+      "count": 7,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N51",
+      "prototype_node_id": "N51",
+      "node_id": "syn-gas-node-N51",
+      "consumer_kind": "household",
+      "count": 296,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N51",
+      "prototype_node_id": "N51",
+      "node_id": "syn-gas-node-N51",
+      "consumer_kind": "business",
+      "count": 12,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N52",
+      "prototype_node_id": "N52",
+      "node_id": "syn-gas-node-N52",
+      "consumer_kind": "household",
+      "count": 94,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N52",
+      "prototype_node_id": "N52",
+      "node_id": "syn-gas-node-N52",
+      "consumer_kind": "business",
+      "count": 36,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N53",
+      "prototype_node_id": "N53",
+      "node_id": "syn-gas-node-N53",
+      "consumer_kind": "household",
+      "count": 314,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N53",
+      "prototype_node_id": "N53",
+      "node_id": "syn-gas-node-N53",
+      "consumer_kind": "business",
+      "count": 16,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N54",
+      "prototype_node_id": "N54",
+      "node_id": "syn-gas-node-N54",
+      "consumer_kind": "household",
+      "count": 159,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N54",
+      "prototype_node_id": "N54",
+      "node_id": "syn-gas-node-N54",
+      "consumer_kind": "business",
+      "count": 8,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-household-N57",
+      "prototype_node_id": "N57",
+      "node_id": "syn-gas-node-N57",
+      "consumer_kind": "household",
+      "count": 181,
+      "count_unit": "household",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-business-N57",
+      "prototype_node_id": "N57",
+      "node_id": "syn-gas-node-N57",
+      "consumer_kind": "business",
+      "count": 34,
+      "count_unit": "business",
+      "origin": "prototype_node_aggregate",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-FAC-01",
+      "prototype_node_id": "N24",
+      "node_id": "syn-gas-node-N24",
+      "consumer_kind": "facility",
+      "count": 1,
+      "count_unit": "facility",
+      "facility_type": "医院",
+      "origin": "prototype_facility_node_reference",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-FAC-02",
+      "prototype_node_id": "N32",
+      "node_id": "syn-gas-node-N32",
+      "consumer_kind": "facility",
+      "count": 1,
+      "count_unit": "facility",
+      "facility_type": "学校",
+      "origin": "prototype_facility_node_reference",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-FAC-03",
+      "prototype_node_id": "N16",
+      "node_id": "syn-gas-node-N16",
+      "consumer_kind": "facility",
+      "count": 1,
+      "count_unit": "facility",
+      "facility_type": "学校",
+      "origin": "prototype_facility_node_reference",
+      "individual_customer_records": false
+    },
+    {
+      "consumer_id": "syn-gas-consumer-FAC-04",
+      "prototype_node_id": "N45",
+      "node_id": "syn-gas-node-N45",
+      "consumer_kind": "facility",
+      "count": 1,
+      "count_unit": "facility",
+      "facility_type": "养老",
+      "origin": "prototype_facility_node_reference",
+      "individual_customer_records": false
+    }
+  ],
+  "services": [
+    {
+      "service_id": "syn-gas-service-household-N00",
+      "consumer_id": "syn-gas-consumer-household-N00",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N00"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N00",
+      "consumer_id": "syn-gas-consumer-business-N00",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N00"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N01",
+      "consumer_id": "syn-gas-consumer-household-N01",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N01"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N01",
+      "consumer_id": "syn-gas-consumer-business-N01",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N01"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N02",
+      "consumer_id": "syn-gas-consumer-household-N02",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N02"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N02",
+      "consumer_id": "syn-gas-consumer-business-N02",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N02"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N07",
+      "consumer_id": "syn-gas-consumer-household-N07",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N07"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N07",
+      "consumer_id": "syn-gas-consumer-business-N07",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N07"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N10",
+      "consumer_id": "syn-gas-consumer-household-N10",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N10"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N10",
+      "consumer_id": "syn-gas-consumer-business-N10",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N10"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N12",
+      "consumer_id": "syn-gas-consumer-household-N12",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N12"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N12",
+      "consumer_id": "syn-gas-consumer-business-N12",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N12"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N16",
+      "consumer_id": "syn-gas-consumer-household-N16",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N16"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N16",
+      "consumer_id": "syn-gas-consumer-business-N16",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N16"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N18",
+      "consumer_id": "syn-gas-consumer-household-N18",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N18"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N18",
+      "consumer_id": "syn-gas-consumer-business-N18",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N18"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N22",
+      "consumer_id": "syn-gas-consumer-household-N22",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N22"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N22",
+      "consumer_id": "syn-gas-consumer-business-N22",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N22"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N26",
+      "consumer_id": "syn-gas-consumer-household-N26",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N26"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N26",
+      "consumer_id": "syn-gas-consumer-business-N26",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N26"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N32",
+      "consumer_id": "syn-gas-consumer-household-N32",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N32"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N32",
+      "consumer_id": "syn-gas-consumer-business-N32",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N32"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N33",
+      "consumer_id": "syn-gas-consumer-household-N33",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N33"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N33",
+      "consumer_id": "syn-gas-consumer-business-N33",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N33"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N35",
+      "consumer_id": "syn-gas-consumer-household-N35",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N35"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N35",
+      "consumer_id": "syn-gas-consumer-business-N35",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N35"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N42",
+      "consumer_id": "syn-gas-consumer-household-N42",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N42"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N42",
+      "consumer_id": "syn-gas-consumer-business-N42",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N42"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N46",
+      "consumer_id": "syn-gas-consumer-household-N46",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N46"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N46",
+      "consumer_id": "syn-gas-consumer-business-N46",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N46"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N48",
+      "consumer_id": "syn-gas-consumer-household-N48",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N48"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N48",
+      "consumer_id": "syn-gas-consumer-business-N48",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N48"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N51",
+      "consumer_id": "syn-gas-consumer-household-N51",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N51"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N51",
+      "consumer_id": "syn-gas-consumer-business-N51",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N51"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N52",
+      "consumer_id": "syn-gas-consumer-household-N52",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N52"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N52",
+      "consumer_id": "syn-gas-consumer-business-N52",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N52"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N53",
+      "consumer_id": "syn-gas-consumer-household-N53",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N53"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N53",
+      "consumer_id": "syn-gas-consumer-business-N53",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N53"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N54",
+      "consumer_id": "syn-gas-consumer-household-N54",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N54"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N54",
+      "consumer_id": "syn-gas-consumer-business-N54",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N54"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-household-N57",
+      "consumer_id": "syn-gas-consumer-household-N57",
+      "service_kind": "household",
+      "node_ids": [
+        "syn-gas-node-N57"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-business-N57",
+      "consumer_id": "syn-gas-consumer-business-N57",
+      "service_kind": "business",
+      "node_ids": [
+        "syn-gas-node-N57"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_node_assignment",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-FAC-01",
+      "consumer_id": "syn-gas-consumer-FAC-01",
+      "service_kind": "facility",
+      "node_ids": [
+        "syn-gas-node-N24"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_facility_node_reference",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-FAC-02",
+      "consumer_id": "syn-gas-consumer-FAC-02",
+      "service_kind": "facility",
+      "node_ids": [
+        "syn-gas-node-N32"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_facility_node_reference",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-FAC-03",
+      "consumer_id": "syn-gas-consumer-FAC-03",
+      "service_kind": "facility",
+      "node_ids": [
+        "syn-gas-node-N16"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_facility_node_reference",
+      "requires_physical_validation": true
+    },
+    {
+      "service_id": "syn-gas-service-FAC-04",
+      "consumer_id": "syn-gas-consumer-FAC-04",
+      "service_kind": "facility",
+      "node_ids": [
+        "syn-gas-node-N45"
+      ],
+      "supply_rule": "any",
+      "connection_origin": "explicit_prototype_facility_node_reference",
+      "requires_physical_validation": true
+    }
+  ],
+  "isolation_units": [
+    {
+      "unit_id": "syn-gas-unit-5",
+      "prototype_unit_id": 5,
+      "edge_ids": [
+        "syn-gas-edge-K-006"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N03",
+        "syn-gas-valve-N04"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-6",
+      "prototype_unit_id": 6,
+      "edge_ids": [
+        "syn-gas-edge-K-007"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N03",
+        "syn-gas-valve-N13"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-7",
+      "prototype_unit_id": 7,
+      "edge_ids": [
+        "syn-gas-edge-K-008"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N04",
+        "syn-gas-valve-N05"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-8",
+      "prototype_unit_id": 8,
+      "edge_ids": [
+        "syn-gas-edge-K-009"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N04",
+        "syn-gas-valve-N14"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-9",
+      "prototype_unit_id": 9,
+      "edge_ids": [
+        "syn-gas-edge-K-010"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N05",
+        "syn-gas-valve-N06"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-12",
+      "prototype_unit_id": 12,
+      "edge_ids": [
+        "syn-gas-edge-K-012",
+        "syn-gas-edge-K-013"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N08",
+        "syn-gas-valve-N17"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-13",
+      "prototype_unit_id": 13,
+      "edge_ids": [
+        "syn-gas-edge-K-014"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N08"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-15",
+      "prototype_unit_id": 15,
+      "edge_ids": [
+        "syn-gas-edge-K-016"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N11",
+        "syn-gas-valve-N21"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-16",
+      "prototype_unit_id": 16,
+      "edge_ids": [
+        "syn-gas-edge-K-001",
+        "syn-gas-edge-K-002",
+        "syn-gas-edge-K-003",
+        "syn-gas-edge-K-004",
+        "syn-gas-edge-K-005",
+        "syn-gas-edge-K-015",
+        "syn-gas-edge-K-017"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N11",
+        "syn-gas-valve-N13"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-17",
+      "prototype_unit_id": 17,
+      "edge_ids": [
+        "syn-gas-edge-K-018"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N13",
+        "syn-gas-valve-N14"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-18",
+      "prototype_unit_id": 18,
+      "edge_ids": [
+        "syn-gas-edge-K-019"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N13",
+        "syn-gas-valve-N23"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-19",
+      "prototype_unit_id": 19,
+      "edge_ids": [
+        "syn-gas-edge-K-020"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N14",
+        "syn-gas-valve-N15"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-21",
+      "prototype_unit_id": 21,
+      "edge_ids": [
+        "syn-gas-edge-K-022"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N15",
+        "syn-gas-valve-N25"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-24",
+      "prototype_unit_id": 24,
+      "edge_ids": [
+        "syn-gas-edge-K-025"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N17",
+        "syn-gas-valve-N27"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-26",
+      "prototype_unit_id": 26,
+      "edge_ids": [
+        "syn-gas-edge-K-026",
+        "syn-gas-edge-K-027"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N21",
+        "syn-gas-valve-N30"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-28",
+      "prototype_unit_id": 28,
+      "edge_ids": [
+        "syn-gas-edge-K-029"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N21",
+        "syn-gas-valve-N31"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-32",
+      "prototype_unit_id": 32,
+      "edge_ids": [
+        "syn-gas-edge-K-033"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N24",
+        "syn-gas-valve-N25"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-33",
+      "prototype_unit_id": 33,
+      "edge_ids": [
+        "syn-gas-edge-K-034"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N24",
+        "syn-gas-valve-N34"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-36",
+      "prototype_unit_id": 36,
+      "edge_ids": [
+        "syn-gas-edge-K-011",
+        "syn-gas-edge-K-021",
+        "syn-gas-edge-K-023",
+        "syn-gas-edge-K-024",
+        "syn-gas-edge-K-035",
+        "syn-gas-edge-K-037"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N06",
+        "syn-gas-valve-N15",
+        "syn-gas-valve-N17",
+        "syn-gas-valve-N25",
+        "syn-gas-valve-N27"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-37",
+      "prototype_unit_id": 37,
+      "edge_ids": [
+        "syn-gas-edge-K-038"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N27",
+        "syn-gas-valve-N28"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-38",
+      "prototype_unit_id": 38,
+      "edge_ids": [
+        "syn-gas-edge-K-039"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N27",
+        "syn-gas-valve-N37"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-40",
+      "prototype_unit_id": 40,
+      "edge_ids": [
+        "syn-gas-edge-K-041"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N30",
+        "syn-gas-valve-N31"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-42",
+      "prototype_unit_id": 42,
+      "edge_ids": [
+        "syn-gas-edge-K-043"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N31",
+        "syn-gas-valve-N41"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-45",
+      "prototype_unit_id": 45,
+      "edge_ids": [
+        "syn-gas-edge-K-028",
+        "syn-gas-edge-K-030",
+        "syn-gas-edge-K-031",
+        "syn-gas-edge-K-032",
+        "syn-gas-edge-K-042",
+        "syn-gas-edge-K-044",
+        "syn-gas-edge-K-045",
+        "syn-gas-edge-K-046"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N21",
+        "syn-gas-valve-N23",
+        "syn-gas-valve-N31",
+        "syn-gas-valve-N34",
+        "syn-gas-valve-N43"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-46",
+      "prototype_unit_id": 46,
+      "edge_ids": [
+        "syn-gas-edge-K-036",
+        "syn-gas-edge-K-047"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N25",
+        "syn-gas-valve-N45"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-49",
+      "prototype_unit_id": 49,
+      "edge_ids": [
+        "syn-gas-edge-K-050"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N37",
+        "syn-gas-valve-N47"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-51",
+      "prototype_unit_id": 51,
+      "edge_ids": [
+        "syn-gas-edge-K-052"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N40",
+        "syn-gas-valve-N41"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-56",
+      "prototype_unit_id": 56,
+      "edge_ids": [
+        "syn-gas-edge-K-057"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N43",
+        "syn-gas-valve-N44"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-58",
+      "prototype_unit_id": 58,
+      "edge_ids": [
+        "syn-gas-edge-K-059"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N44",
+        "syn-gas-valve-N45"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-61",
+      "prototype_unit_id": 61,
+      "edge_ids": [
+        "syn-gas-edge-K-062"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N45",
+        "syn-gas-valve-N55"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-63",
+      "prototype_unit_id": 63,
+      "edge_ids": [
+        "syn-gas-edge-K-048",
+        "syn-gas-edge-K-061",
+        "syn-gas-edge-K-063",
+        "syn-gas-edge-K-064"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N36",
+        "syn-gas-valve-N45",
+        "syn-gas-valve-N47",
+        "syn-gas-valve-N56"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-65",
+      "prototype_unit_id": 65,
+      "edge_ids": [
+        "syn-gas-edge-K-040",
+        "syn-gas-edge-K-049",
+        "syn-gas-edge-K-051",
+        "syn-gas-edge-K-066"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N28",
+        "syn-gas-valve-N37",
+        "syn-gas-valve-N58"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-70",
+      "prototype_unit_id": 70,
+      "edge_ids": [
+        "syn-gas-edge-K-053",
+        "syn-gas-edge-K-054",
+        "syn-gas-edge-K-055",
+        "syn-gas-edge-K-056",
+        "syn-gas-edge-K-058",
+        "syn-gas-edge-K-060",
+        "syn-gas-edge-K-067",
+        "syn-gas-edge-K-068",
+        "syn-gas-edge-K-069",
+        "syn-gas-edge-K-070",
+        "syn-gas-edge-K-071"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N41",
+        "syn-gas-valve-N43",
+        "syn-gas-valve-N44",
+        "syn-gas-valve-N50",
+        "syn-gas-valve-N55"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-71",
+      "prototype_unit_id": 71,
+      "edge_ids": [
+        "syn-gas-edge-K-072"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N55",
+        "syn-gas-valve-N56"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    },
+    {
+      "unit_id": "syn-gas-unit-72",
+      "prototype_unit_id": 72,
+      "edge_ids": [
+        "syn-gas-edge-K-065",
+        "syn-gas-edge-K-073"
+      ],
+      "valve_ids": [
+        "syn-gas-valve-N47",
+        "syn-gas-valve-N58"
+      ],
+      "origin": "prototype_union_of_incident_edges_at_non_valve_nodes"
+    }
+  ],
+  "prototype_contexts": [
+    {
+      "context_id": "normal",
+      "name": "常态"
+    },
+    {
+      "context_id": "winter",
+      "name": "冬季保供"
+    },
+    {
+      "context_id": "event",
+      "name": "重大活动保障"
+    },
+    {
+      "context_id": "geo",
+      "name": "地灾汛期预警"
+    }
+  ],
+  "baseline": {
+    "disabled_edge_ids": [],
+    "closed_valve_ids": [],
+    "disabled_source_ids": []
+  },
+  "extraction_notes": [
+    "Edge endpoint order is storage order, not upstream/downstream or simulated gas flow direction.",
+    "Valves are node cuts. A valve is not a pipe or edge; incident_edge_ids is an explicit incidence list, not one-to-one control ownership.",
+    "Facilities at N24 and N45 are retained, although the prototype disconnected() excludes all valve/source nodes from user accounting. The candidate exposes them rather than silently discarding them.",
+    "Pressure, flow, leakage, dispersion, ignition, explosion, field valve instruction and safe gas restoration are unsupported."
+  ],
+  "demo_parameters": {
+    "use": "source_preservation_only_not_executed_by_candidate_topology",
+    "origin": "hardcoded_or_seeded_prototype_values_not_measurements_or_predictions",
+    "coordinates_to_length": {
+      "pixels_per_demo_meter": 0.5,
+      "actual_gis": false
+    },
+    "isolation": {
+      "default_valve_failure_fraction": 0.15,
+      "enabled_flag_fraction": 0.1,
+      "assumed_outage_hours_main": 8,
+      "assumed_outage_hours_other": 5,
+      "assumed_repair_cost_main": 80000,
+      "assumed_repair_cost_other": 30000,
+      "household_time_coefficient": 0.05,
+      "business_time_coefficient": 2,
+      "business_public_weight": 1.5,
+      "economic_time_multiplier": 3,
+      "field_operation_authorized": false
+    },
+    "consequences": {
+      "pir_coefficient": 0.0997,
+      "minimum_radius_main_m": 20,
+      "minimum_radius_other_m": 10,
+      "accumulation_decay_length_m": 6,
+      "assumed_depth_difference_m": 1.2,
+      "ignition_fraction": 0.08,
+      "space_volume_radius_pairs": [
+        [
+          50,
+          15
+        ],
+        [
+          500,
+          30
+        ],
+        [
+          null,
+          50
+        ]
+      ],
+      "model_validation": "not_business_validated"
+    },
+    "evolution": {
+      "transition_base_rates": [
+        0.01,
+        0.012,
+        0.015,
+        0.018
+      ],
+      "intervention_lower_state_fraction": 0.8,
+      "intervention_stay_fraction": 0.2,
+      "number_of_steps": 12,
+      "representative_state_scores": [
+        10,
+        30,
+        50,
+        70,
+        90
+      ],
+      "assumed_failure_intensity_base": 0.05,
+      "score_doubling_interval": 10,
+      "construction_exponent_coefficient": 0.8,
+      "seasonal_exponent_coefficient": 0.3,
+      "source_only": true,
+      "probability_calibration": "absent",
+      "source_expression": "p12 = 1-exp(-lambda*e.Lkm); label and preset intensity do not establish a calibrated prediction horizon"
+    },
+    "scoring_and_values": {
+      "source_thresholds_less_than": [
+        20,
+        40,
+        60,
+        80
+      ],
+      "risk_matrix": [
+        [
+          1,
+          1,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          2,
+          2,
+          3,
+          4
+        ],
+        [
+          2,
+          2,
+          3,
+          4,
+          4
+        ],
+        [
+          2,
+          3,
+          4,
+          4,
+          5
+        ],
+        [
+          3,
+          4,
+          4,
+          5,
+          5
+        ]
+      ],
+      "initial_subjective_weights": [
+        0.38,
+        0.24,
+        0.16,
+        0.1,
+        0.12
+      ],
+      "context_factors": {
+        "normal": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "winter": [
+          1,
+          1.3,
+          1,
+          1,
+          1.1
+        ],
+        "event": [
+          1,
+          1,
+          1.3,
+          1,
+          1
+        ],
+        "geo": [
+          1.2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "objective_names": [
+        "安全",
+        "民生",
+        "公共运行",
+        "经济",
+        "应急"
+      ],
+      "subjective_fraction": 0.6,
+      "entropy_fraction": 0.4,
+      "aggregation_power": 4,
+      "risk_normalization_percentile": 0.95,
+      "professional_g01_g15_scoring": false
+    },
+    "spatial_and_hotspots": {
+      "canvas_cell_size_px": 125,
+      "cell_columns": 8,
+      "cell_rows": 5,
+      "neighbor_distance_px": 375,
+      "fdr_alpha": 0.05,
+      "z_thresholds": [
+        1.96,
+        2.58
+      ],
+      "cell_length_weight": 0.7,
+      "cell_p95_weight": 0.3,
+      "population_density_base": 8000,
+      "population_density_amplitude": 14000,
+      "population_center_px": [
+        520,
+        320
+      ],
+      "population_spread_px": 260,
+      "soil_region_x_boundaries_px": [
+        350,
+        700
+      ],
+      "soil_multipliers": [
+        1.4,
+        1,
+        0.7
+      ],
+      "accumulation_horizontal_cutoff_m": 30,
+      "crossing_distance_m": 1,
+      "crossing_multiplier": 1.2,
+      "actual_population_or_gis_records": false,
+      "professional_significance_validation": false
+    },
+    "source_only_formulas": {
+      "generated_P": "clamp(round(16 + 55*min(age/design,1.2) + uniform(-8,14) + 12*construction_exposure),8,94)",
+      "generated_C": "clamp(round(34 + 34*density_fraction + (main?16:0) + uniform(-6,8)),15,96)",
+      "original_R": "sqrt(P*Cg)",
+      "original_system_R": "sqrt(P*min(100,Cg*CAF))",
+      "original_final_grade": "max(levelOf(R), MATRIX[levelOf(P)-1][levelOf(Cg)-1])",
+      "original_system_redline": "max(original_final_grade,levelOf(system_R),base_condition?4:0)",
+      "original_evidence_interval": "[E*P, E*P+(1-E)*100]",
+      "original_VOI": "If interval endpoint grades differ, sqrt(upper*Csys)-sqrt(lower*Csys); otherwise 0.",
+      "use": "Preserved labels and arithmetic assumptions only; none evaluated by the gas graph candidate."
+    },
+    "skill_declarations": [
+      {
+        "id": "u1",
+        "n": "关阀隔离推演",
+        "dims": [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "cost": 0.08,
+        "trig": [
+          "event",
+          "period"
+        ],
+        "in": [
+          {
+            "k": "TOPO",
+            "w": 0.4,
+            "q": 0.8,
+            "must": 1
+          },
+          {
+            "k": "VALVE",
+            "w": 0.2,
+            "q": 1,
+            "must": 1
+          },
+          {
+            "k": "M07",
+            "w": 0.3,
+            "q": 0.8,
+            "must": 1
+          },
+          {
+            "k": "O01",
+            "w": 0.1,
+            "q": 1
+          }
+        ]
+      },
+      {
+        "id": "u2",
+        "n": "积聚耦合推演",
+        "dims": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cost": 0.1,
+        "trig": [
+          "event",
+          "period"
+        ],
+        "in": [
+          {
+            "k": "M09",
+            "w": 0.5,
+            "q": 0.8,
+            "must": 1
+          },
+          {
+            "k": "SOIL",
+            "w": 0.3,
+            "q": 0.6
+          },
+          {
+            "k": "DEPTH",
+            "w": 0.2,
+            "q": 0.8
+          }
+        ]
+      },
+      {
+        "id": "u3",
+        "n": "后果影响推演",
+        "dims": [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        "cost": 0.05,
+        "trig": [
+          "event",
+          "period"
+        ],
+        "in": [
+          {
+            "k": "M03",
+            "w": 0.5,
+            "q": 0.8,
+            "must": 1
+          },
+          {
+            "k": "M08",
+            "w": 0.5,
+            "q": 0.8,
+            "must": 1
+          }
+        ]
+      },
+      {
+        "id": "u4",
+        "n": "演化预测",
+        "dims": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "cost": 0.15,
+        "trig": [
+          "period"
+        ],
+        "in": [
+          {
+            "k": "BASE",
+            "w": 0.4,
+            "q": 1,
+            "must": 1
+          },
+          {
+            "k": "DRV",
+            "w": 0.3,
+            "q": 0.6
+          },
+          {
+            "k": "O03",
+            "w": 0.3,
+            "q": 1
+          }
+        ]
+      },
+      {
+        "id": "u5",
+        "n": "热点识别",
+        "dims": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "cost": 0.1,
+        "trig": [
+          "period"
+        ],
+        "in": [
+          {
+            "k": "BASE",
+            "w": 0.7,
+            "q": 1,
+            "must": 1
+          },
+          {
+            "k": "O03",
+            "w": 0.3,
+            "q": 1
+          }
+        ]
+      },
+      {
+        "id": "u6",
+        "n": "水力精算",
+        "dims": [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        "cost": 0.4,
+        "trig": [
+          "event",
+          "period"
+        ],
+        "in": [
+          {
+            "k": "HYD",
+            "w": 1,
+            "q": 1,
+            "must": 1
+          }
+        ]
+      },
+      {
+        "id": "u7",
+        "n": "数据价值评估",
+        "dims": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "cost": 0.05,
+        "trig": [
+          "period"
+        ],
+        "in": [
+          {
+            "k": "BASE",
+            "w": 0.6,
+            "q": 1,
+            "must": 1
+          },
+          {
+            "k": "GAP",
+            "w": 0.4,
+            "q": 1,
+            "must": 1
+          }
+        ]
+      }
+    ],
+    "prototype_data_available_flags": {
+      "values": {
+        "M07": true,
+        "M09": true,
+        "M08": true,
+        "M03": true,
+        "O01": false,
+        "O03": false,
+        "HYD": false
+      },
+      "meaning": "UI toggles only, not evidence that any real dataset or professional model was received."
+    },
+    "per_pipe": [
+      {
+        "pipe_id": "syn-gas-pipe-K-001",
+        "prototype_id": "K-001",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 220.37851631894526,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 20,
+        "generated_P_score": 41,
+        "generated_C_score": 34,
+        "generated_E_fraction": 0.66,
+        "generated_aging_factor": 0.98,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-002",
+        "prototype_id": "K-002",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 242.59010403713523,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 21,
+        "generated_P_score": 49,
+        "generated_C_score": 46,
+        "generated_E_fraction": 0.47,
+        "generated_aging_factor": 0.994,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-003",
+        "prototype_id": "K-003",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 209.92697593696332,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 35,
+        "generated_P_score": 81,
+        "generated_C_score": 46,
+        "generated_E_fraction": 0.58,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-004",
+        "prototype_id": "K-004",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 189.49182660360572,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 5,
+        "generated_P_score": 27,
+        "generated_C_score": 40,
+        "generated_E_fraction": 0.72,
+        "generated_aging_factor": 0.7699999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-005",
+        "prototype_id": "K-005",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 240.18888574835788,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 25,
+        "generated_P_score": 48,
+        "generated_C_score": 53,
+        "generated_E_fraction": 0.73,
+        "generated_aging_factor": 1.0499999999999998,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-006",
+        "prototype_id": "K-006",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 226.22220695979703,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 28,
+        "generated_P_score": 49,
+        "generated_C_score": 56,
+        "generated_E_fraction": 0.69,
+        "generated_aging_factor": 1.092,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-007",
+        "prototype_id": "K-007",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 220.1016359927265,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 30,
+        "generated_P_score": 84,
+        "generated_C_score": 59,
+        "generated_E_fraction": 0.46,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 3
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-008",
+        "prototype_id": "K-008",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 220.66466741433527,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 7,
+        "generated_P_score": 25,
+        "generated_C_score": 59,
+        "generated_E_fraction": 0.5,
+        "generated_aging_factor": 0.8633333333333333,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-009",
+        "prototype_id": "K-009",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 214.543597281624,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 8,
+        "generated_P_score": 18,
+        "generated_C_score": 60,
+        "generated_E_fraction": 0.73,
+        "generated_aging_factor": 0.8119999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-010",
+        "prototype_id": "K-010",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 219.26812793721462,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 7,
+        "generated_P_score": 27,
+        "generated_C_score": 50,
+        "generated_E_fraction": 0.83,
+        "generated_aging_factor": 0.8633333333333333,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-011",
+        "prototype_id": "K-011",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 228.89655377400396,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 12,
+        "generated_P_score": 34,
+        "generated_C_score": 50,
+        "generated_E_fraction": 0.64,
+        "generated_aging_factor": 0.9099999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-012",
+        "prototype_id": "K-012",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 243.67946018438272,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 32,
+        "generated_P_score": 53,
+        "generated_C_score": 37,
+        "generated_E_fraction": 0.94,
+        "generated_aging_factor": 1.148,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-013",
+        "prototype_id": "K-013",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 170.79753937936337,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 26,
+        "generated_P_score": 61,
+        "generated_C_score": 50,
+        "generated_E_fraction": 0.52,
+        "generated_aging_factor": 1.1549999999999998,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": 4
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-014",
+        "prototype_id": "K-014",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 210.0676678557838,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 6,
+        "generated_P_score": 32,
+        "generated_C_score": 38,
+        "generated_E_fraction": 0.57,
+        "generated_aging_factor": 0.8049999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-015",
+        "prototype_id": "K-015",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 222.3156320033501,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 35,
+        "generated_P_score": 74,
+        "generated_C_score": 61,
+        "generated_E_fraction": 0.75,
+        "generated_aging_factor": 1.3125,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": 9
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-016",
+        "prototype_id": "K-016",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 198.171924774277,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 23,
+        "generated_P_score": 61,
+        "generated_C_score": 66,
+        "generated_E_fraction": 0.81,
+        "generated_aging_factor": 1.1025,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 6
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-017",
+        "prototype_id": "K-017",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 209.78158336444986,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 17,
+        "generated_P_score": 57,
+        "generated_C_score": 68,
+        "generated_E_fraction": 0.61,
+        "generated_aging_factor": 1.0966666666666667,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-018",
+        "prototype_id": "K-018",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 188.96344936535007,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 23,
+        "generated_P_score": 52,
+        "generated_C_score": 79,
+        "generated_E_fraction": 0.74,
+        "generated_aging_factor": 1.1025,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-019",
+        "prototype_id": "K-019",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 167.17058941094876,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 17,
+        "generated_P_score": 50,
+        "generated_C_score": 61,
+        "generated_E_fraction": 0.64,
+        "generated_aging_factor": 1.0966666666666667,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-020",
+        "prototype_id": "K-020",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 250.66805986314583,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 26,
+        "generated_P_score": 47,
+        "generated_C_score": 86,
+        "generated_E_fraction": 0.46,
+        "generated_aging_factor": 1.1549999999999998,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-021",
+        "prototype_id": "K-021",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 224.47996001810304,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 12,
+        "generated_P_score": 40,
+        "generated_C_score": 82,
+        "generated_E_fraction": 0.39,
+        "generated_aging_factor": 0.8679999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-022",
+        "prototype_id": "K-022",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 245.20564641126606,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 25,
+        "generated_P_score": 73,
+        "generated_C_score": 59,
+        "generated_E_fraction": 0.69,
+        "generated_aging_factor": 1.2833333333333332,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 8
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-023",
+        "prototype_id": "K-023",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 194.51610714620313,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 29,
+        "generated_P_score": 57,
+        "generated_C_score": 63,
+        "generated_E_fraction": 0.74,
+        "generated_aging_factor": 1.1059999999999999,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-024",
+        "prototype_id": "K-024",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 193.70932104476768,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 32,
+        "generated_P_score": 45,
+        "generated_C_score": 57,
+        "generated_E_fraction": 0.84,
+        "generated_aging_factor": 1.148,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-025",
+        "prototype_id": "K-025",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 236.9013689041819,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 26,
+        "generated_P_score": 47,
+        "generated_C_score": 73,
+        "generated_E_fraction": 0.88,
+        "generated_aging_factor": 1.064,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-026",
+        "prototype_id": "K-026",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 184.54461443803876,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 15,
+        "generated_P_score": 25,
+        "generated_C_score": 39,
+        "generated_E_fraction": 0.51,
+        "generated_aging_factor": 0.9099999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-027",
+        "prototype_id": "K-027",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 227.7750919288293,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 8,
+        "generated_P_score": 40,
+        "generated_C_score": 39,
+        "generated_E_fraction": 0.49,
+        "generated_aging_factor": 0.8866666666666666,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-028",
+        "prototype_id": "K-028",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 255.38420344560407,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 6,
+        "generated_P_score": 15,
+        "generated_C_score": 59,
+        "generated_E_fraction": 0.6,
+        "generated_aging_factor": 0.7839999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-029",
+        "prototype_id": "K-029",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 220.57109453564058,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 18,
+        "generated_P_score": 39,
+        "generated_C_score": 71,
+        "generated_E_fraction": 0.68,
+        "generated_aging_factor": 1.015,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-030",
+        "prototype_id": "K-030",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 215.71961579165182,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 22,
+        "generated_P_score": 49,
+        "generated_C_score": 65,
+        "generated_E_fraction": 0.87,
+        "generated_aging_factor": 1.008,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-031",
+        "prototype_id": "K-031",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 203.91259704061594,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 33,
+        "generated_P_score": 51,
+        "generated_C_score": 58,
+        "generated_E_fraction": 0.76,
+        "generated_aging_factor": 1.162,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-032",
+        "prototype_id": "K-032",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 251.20096056326943,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 26,
+        "generated_P_score": 44,
+        "generated_C_score": 66,
+        "generated_E_fraction": 0.94,
+        "generated_aging_factor": 1.064,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-033",
+        "prototype_id": "K-033",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 188.28966178915624,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 12,
+        "generated_P_score": 49,
+        "generated_C_score": 62,
+        "generated_E_fraction": 0.54,
+        "generated_aging_factor": 0.8679999999999999,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-034",
+        "prototype_id": "K-034",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 203.5302772409672,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 31,
+        "generated_P_score": 67,
+        "generated_C_score": 71,
+        "generated_E_fraction": 0.92,
+        "generated_aging_factor": 1.134,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": 5
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-035",
+        "prototype_id": "K-035",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 260.7588016045329,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 38,
+        "generated_P_score": 84,
+        "generated_C_score": 62,
+        "generated_E_fraction": 0.63,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-036",
+        "prototype_id": "K-036",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 203.27204922611637,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 28,
+        "generated_P_score": 53,
+        "generated_C_score": 70,
+        "generated_E_fraction": 0.93,
+        "generated_aging_factor": 1.092,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-037",
+        "prototype_id": "K-037",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 200.8436282599125,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 21,
+        "generated_P_score": 47,
+        "generated_C_score": 62,
+        "generated_E_fraction": 0.5,
+        "generated_aging_factor": 1.0675,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-038",
+        "prototype_id": "K-038",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 221.64789872830005,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 10,
+        "generated_P_score": 41,
+        "generated_C_score": 47,
+        "generated_E_fraction": 0.54,
+        "generated_aging_factor": 0.9333333333333332,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-039",
+        "prototype_id": "K-039",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 175.39409737901485,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 10,
+        "generated_P_score": 20,
+        "generated_C_score": 74,
+        "generated_E_fraction": 0.71,
+        "generated_aging_factor": 0.84,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-040",
+        "prototype_id": "K-040",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 213.89188279048875,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 36,
+        "generated_P_score": 93,
+        "generated_C_score": 50,
+        "generated_E_fraction": 0.51,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-041",
+        "prototype_id": "K-041",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 240.86700499430248,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 19,
+        "generated_P_score": 50,
+        "generated_C_score": 42,
+        "generated_E_fraction": 0.91,
+        "generated_aging_factor": 1.1433333333333333,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-042",
+        "prototype_id": "K-042",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 200.99484720046877,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 34,
+        "generated_P_score": 65,
+        "generated_C_score": 50,
+        "generated_E_fraction": 0.9,
+        "generated_aging_factor": 1.176,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 8
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-043",
+        "prototype_id": "K-043",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 189.94156449820593,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 31,
+        "generated_P_score": 50,
+        "generated_C_score": 68,
+        "generated_E_fraction": 0.7,
+        "generated_aging_factor": 1.134,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-044",
+        "prototype_id": "K-044",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 208.3835479598043,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 30,
+        "generated_P_score": 52,
+        "generated_C_score": 56,
+        "generated_E_fraction": 0.65,
+        "generated_aging_factor": 1.1199999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-045",
+        "prototype_id": "K-045",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 219.37772075387562,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 37,
+        "generated_P_score": 94,
+        "generated_C_score": 70,
+        "generated_E_fraction": 0.93,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 6
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-046",
+        "prototype_id": "K-046",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 171.54557396204922,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 28,
+        "generated_P_score": 59,
+        "generated_C_score": 60,
+        "generated_E_fraction": 0.43,
+        "generated_aging_factor": 1.19,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-047",
+        "prototype_id": "K-047",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 188.67754538526057,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 37,
+        "generated_P_score": 78,
+        "generated_C_score": 70,
+        "generated_E_fraction": 0.62,
+        "generated_aging_factor": 1.3475,
+        "generated_construction_exposure": 1,
+        "assumed_intervention_period": 6
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-048",
+        "prototype_id": "K-048",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 185.3154137007924,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 10,
+        "generated_P_score": 34,
+        "generated_C_score": 54,
+        "generated_E_fraction": 0.41,
+        "generated_aging_factor": 0.9333333333333332,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-049",
+        "prototype_id": "K-049",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 201.79717254728877,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 7,
+        "generated_P_score": 34,
+        "generated_C_score": 53,
+        "generated_E_fraction": 0.55,
+        "generated_aging_factor": 0.7979999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-050",
+        "prototype_id": "K-050",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 217.74092614200052,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 27,
+        "generated_P_score": 66,
+        "generated_C_score": 64,
+        "generated_E_fraction": 0.45,
+        "generated_aging_factor": 1.1724999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-051",
+        "prototype_id": "K-051",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 207.62535856926266,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 25,
+        "generated_P_score": 47,
+        "generated_C_score": 43,
+        "generated_E_fraction": 0.39,
+        "generated_aging_factor": 1.0499999999999998,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-052",
+        "prototype_id": "K-052",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 231.46215280116118,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 14,
+        "generated_P_score": 55,
+        "generated_C_score": 42,
+        "generated_E_fraction": 0.79,
+        "generated_aging_factor": 1.0266666666666666,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-053",
+        "prototype_id": "K-053",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 241.0856442433946,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 19,
+        "generated_P_score": 49,
+        "generated_C_score": 60,
+        "generated_E_fraction": 0.73,
+        "generated_aging_factor": 1.0325,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-054",
+        "prototype_id": "K-054",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 236.37551939833574,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 13,
+        "generated_P_score": 34,
+        "generated_C_score": 39,
+        "generated_E_fraction": 0.54,
+        "generated_aging_factor": 0.8819999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-055",
+        "prototype_id": "K-055",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 216.83766014463103,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 22,
+        "generated_P_score": 60,
+        "generated_C_score": 68,
+        "generated_E_fraction": 0.9,
+        "generated_aging_factor": 1.2133333333333334,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-056",
+        "prototype_id": "K-056",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 210.8691944883958,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 16,
+        "generated_P_score": 49,
+        "generated_C_score": 46,
+        "generated_E_fraction": 0.5,
+        "generated_aging_factor": 1.0733333333333333,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-057",
+        "prototype_id": "K-057",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 217.10982856203552,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 13,
+        "generated_P_score": 27,
+        "generated_C_score": 85,
+        "generated_E_fraction": 0.64,
+        "generated_aging_factor": 0.8819999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-058",
+        "prototype_id": "K-058",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 245.4173368731423,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 32,
+        "generated_P_score": 72,
+        "generated_C_score": 56,
+        "generated_E_fraction": 0.38,
+        "generated_aging_factor": 1.4,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-059",
+        "prototype_id": "K-059",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 227.16125024099316,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 29,
+        "generated_P_score": 70,
+        "generated_C_score": 78,
+        "generated_E_fraction": 0.67,
+        "generated_aging_factor": 1.3766666666666665,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-060",
+        "prototype_id": "K-060",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 188.7847226362239,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 37,
+        "generated_P_score": 49,
+        "generated_C_score": 66,
+        "generated_E_fraction": 0.66,
+        "generated_aging_factor": 1.218,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-061",
+        "prototype_id": "K-061",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 184.8470444839927,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 21,
+        "generated_P_score": 45,
+        "generated_C_score": 78,
+        "generated_E_fraction": 0.91,
+        "generated_aging_factor": 0.994,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-062",
+        "prototype_id": "K-062",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 217.3834572864881,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 25,
+        "generated_P_score": 45,
+        "generated_C_score": 53,
+        "generated_E_fraction": 0.52,
+        "generated_aging_factor": 1.0499999999999998,
+        "generated_construction_exposure": 0.5,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-063",
+        "prototype_id": "K-063",
+        "assumed_pressure_mpa": 0.4,
+        "schematic_length_m": 223.27235687525533,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 36,
+        "generated_P_score": 55,
+        "generated_C_score": 71,
+        "generated_E_fraction": 0.57,
+        "generated_aging_factor": 1.204,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-064",
+        "prototype_id": "K-064",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 202.67074023381372,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 26,
+        "generated_P_score": 66,
+        "generated_C_score": 48,
+        "generated_E_fraction": 0.61,
+        "generated_aging_factor": 1.3066666666666666,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-065",
+        "prototype_id": "K-065",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 194.22904805553577,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 10,
+        "generated_P_score": 40,
+        "generated_C_score": 53,
+        "generated_E_fraction": 0.88,
+        "generated_aging_factor": 0.9333333333333332,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-066",
+        "prototype_id": "K-066",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 210.86200938172948,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 11,
+        "generated_P_score": 30,
+        "generated_C_score": 35,
+        "generated_E_fraction": 0.67,
+        "generated_aging_factor": 0.9566666666666666,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-067",
+        "prototype_id": "K-067",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 221.4789699629306,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 26,
+        "generated_P_score": 72,
+        "generated_C_score": 39,
+        "generated_E_fraction": 0.92,
+        "generated_aging_factor": 1.3066666666666666,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 7
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-068",
+        "prototype_id": "K-068",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 197.99610601745178,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 27,
+        "generated_P_score": 69,
+        "generated_C_score": 40,
+        "generated_E_fraction": 0.78,
+        "generated_aging_factor": 1.33,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": 8
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-069",
+        "prototype_id": "K-069",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 237.48673964500694,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 31,
+        "generated_P_score": 53,
+        "generated_C_score": 53,
+        "generated_E_fraction": 0.41,
+        "generated_aging_factor": 1.134,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-070",
+        "prototype_id": "K-070",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 196.46041380681805,
+        "assumed_design_life_years": 40,
+        "generated_age_years": 4,
+        "generated_P_score": 19,
+        "generated_C_score": 58,
+        "generated_E_fraction": 0.94,
+        "generated_aging_factor": 0.7699999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-071",
+        "prototype_id": "K-071",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 261.9187154025502,
+        "assumed_design_life_years": 30,
+        "generated_age_years": 15,
+        "generated_P_score": 53,
+        "generated_C_score": 52,
+        "generated_E_fraction": 0.85,
+        "generated_aging_factor": 1.0499999999999998,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-072",
+        "prototype_id": "K-072",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 181.04642286271982,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 26,
+        "generated_P_score": 38,
+        "generated_C_score": 52,
+        "generated_E_fraction": 0.93,
+        "generated_aging_factor": 1.064,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      },
+      {
+        "pipe_id": "syn-gas-pipe-K-073",
+        "prototype_id": "K-073",
+        "assumed_pressure_mpa": 0.005,
+        "schematic_length_m": 241.4647910304663,
+        "assumed_design_life_years": 50,
+        "generated_age_years": 7,
+        "generated_P_score": 17,
+        "generated_C_score": 37,
+        "generated_E_fraction": 0.52,
+        "generated_aging_factor": 0.7979999999999999,
+        "generated_construction_exposure": 0,
+        "assumed_intervention_period": null
+      }
+    ],
+    "facilities": [
+      {
+        "consumer_id": "syn-gas-consumer-FAC-01",
+        "assumed_importance_weight": 30,
+        "display_x": 514.9047790039331,
+        "display_y": 262.49990345165133
+      },
+      {
+        "consumer_id": "syn-gas-consumer-FAC-02",
+        "assumed_importance_weight": 20,
+        "display_x": 259.5344465766102,
+        "display_y": 373.5202657133341
+      },
+      {
+        "consumer_id": "syn-gas-consumer-FAC-03",
+        "assumed_importance_weight": 20,
+        "display_x": 739.4804917909205,
+        "display_y": 187.62631608732045
+      },
+      {
+        "consumer_id": "syn-gas-consumer-FAC-04",
+        "assumed_importance_weight": 20,
+        "display_x": 604.8976438920945,
+        "display_y": 454.651924578473
+      }
+    ],
+    "underground_spaces": [
+      {
+        "id": "DS-01",
+        "type": "排水管道",
+        "psi": 1,
+        "vol": 420,
+        "pts": [
+          [
+            159.54410401917994,
+            266.55048816278577
+          ],
+          [
+            287.1630684416741,
+            262.2292890101671
+          ],
+          [
+            395.0192067734897,
+            261.3395792413503
+          ],
+          [
+            500.9047790039331,
+            282.49990345165133
+          ],
+          [
+            595.038533559069,
+            281.0557990502566
+          ],
+          [
+            725.251231610775,
+            274.46478853188455
+          ]
+        ]
+      },
+      {
+        "id": "DS-02",
+        "type": "电力管沟",
+        "psi": 0.8,
+        "vol": 180,
+        "pts": [
+          [
+            488.4250726159662,
+            55.71524181030691
+          ],
+          [
+            484.54901199415326,
+            162.91699057258666
+          ],
+          [
+            497.9047790039331,
+            278.49990345165133
+          ],
+          [
+            484.003430088982,
+            379.31109299324453
+          ],
+          [
+            502.44453202933073,
+            476.0324274748564
+          ]
+        ]
+      },
+      {
+        "id": "DS-03",
+        "type": "箱涵",
+        "psi": 1,
+        "vol": 900,
+        "pts": [
+          [
+            53.96771274320781,
+            485.2538670692593
+          ],
+          [
+            169.27719520032406,
+            475.38445471040905
+          ],
+          [
+            289.49818353913724,
+            484.18706386350095
+          ],
+          [
+            397.4442395810038,
+            474.07312797009945
+          ]
+        ]
+      },
+      {
+        "id": "DS-04",
+        "type": "排水管道",
+        "psi": 1,
+        "vol": 260,
+        "pts": [
+          [
+            729.4804917909205,
+            173.62631608732045
+          ],
+          [
+            731.251231610775,
+            270.46478853188455
+          ],
+          [
+            713.891801411286,
+            374.4275658428669
+          ],
+          [
+            717.2499504163861,
+            467.0243988018483
+          ],
+          [
+            713.0008271038532,
+            568.2706441041082
+          ]
+        ]
+      },
+      {
+        "id": "DS-05",
+        "type": "地下空间",
+        "psi": 0.9,
+        "vol": 3500,
+        "pts": [
+          [
+            600,
+            330
+          ],
+          [
+            650,
+            330
+          ],
+          [
+            650,
+            370
+          ],
+          [
+            600,
+            370
+          ],
+          [
+            600,
+            330
+          ]
+        ]
+      }
+    ],
+    "construction_sites": [
+      {
+        "x": 300,
+        "y": 170
+      },
+      {
+        "x": 640,
+        "y": 430
+      },
+      {
+        "x": 520,
+        "y": 260
+      },
+      {
+        "x": 830,
+        "y": 120
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+source_record_id,observation_id,sensor_id,observed_at,value,unit,quality
+p-0,syn-gas-pilot-obs-p0,syn-gas-pilot-pressure-a,2026-11-18T01:00:00Z,5.1,kPa,valid
+p-1,syn-gas-pilot-obs-p1,syn-gas-pilot-pressure-a,2026-11-18T09:01:00+08:00,6.6,kPa,valid
+p-2,syn-gas-pilot-obs-p2,syn-gas-pilot-pressure-a,2026-11-18T01:02:00Z,7.1,kPa,valid
+p-3,syn-gas-pilot-obs-p3,syn-gas-pilot-pressure-a,2026-11-18T01:03:00Z,7.2,kPa,valid
+p-4,syn-gas-pilot-obs-p4,syn-gas-pilot-pressure-a,2026-11-18T01:04:00Z,5.3,kPa,valid
+p-5,syn-gas-pilot-obs-p5,syn-gas-pilot-pressure-a,2026-11-18T01:05:00Z,,kPa,missing
+p-6,syn-gas-pilot-obs-p6,syn-gas-pilot-pressure-a,2026-11-18T01:06:00Z,9,kPa,suspect
+p-7,syn-gas-pilot-obs-p7,syn-gas-pilot-pressure-a,2026-11-18T01:07:00Z,5.1,kPa,valid
+p-8,syn-gas-pilot-obs-p8,syn-gas-pilot-pressure-a,2026-11-18T01:08:00Z,7,kPa,valid
+p-9,syn-gas-pilot-obs-p9,syn-gas-pilot-pressure-a,2026-11-18T01:09:00Z,7.6,kPa,valid
+f-0,syn-gas-pilot-obs-f0,syn-gas-pilot-flow-b,2026-11-18T01:00:00Z,15,Nm3/h,valid
+f-1,syn-gas-pilot-obs-f1,syn-gas-pilot-flow-b,2026-11-18T01:01:00Z,9,Nm3/h,valid
+f-2,syn-gas-pilot-obs-f2,syn-gas-pilot-flow-b,2026-11-18T01:02:00Z,8,Nm3/h,valid
+f-3,syn-gas-pilot-obs-f3,syn-gas-pilot-flow-b,2026-11-18T01:03:00Z,14,Nm3/h,valid

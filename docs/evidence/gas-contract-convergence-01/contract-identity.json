@@ -1,0 +1,41 @@
+{
+  "source": "feature/gas-contract-convergence-01@be04c41",
+  "openapi": {
+    "version": "0.1.1",
+    "paths": 28,
+    "schemas": 85,
+    "static_sha256": "9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591",
+    "runtime_sha256": "9a97933e5a36335efa0ae6569f63897a1e3f1230c8f841973d3e35f14f23a591",
+    "static_equals_runtime": true
+  },
+  "generated_types": {
+    "path": "web/src/generated/platformOpenapi.ts",
+    "sha256": "6f1e29bd63e4aec5941bdedd9b6aafe2514121aa548c6ef72fbf1ff5b5def759"
+  },
+  "fixture": {
+    "path": "web/src/tests/fixtures/gasCaseResponse.json",
+    "sha256": "9f85a1bab26ba2aae794431542ca1e73ea10d5734de2c03bd5af99bb6601462f",
+    "nodes": 54,
+    "edges": 73,
+    "services": 46,
+    "counts": {
+      "nodes": 54,
+      "edges": 73,
+      "pipes": 73,
+      "valves": 31,
+      "sources": 2,
+      "consumers": 46,
+      "services": 46
+    },
+    "source": "FastAPI TestClient serialized response; not real network/auth approval"
+  },
+  "asgi_smoke": {
+    "status": 200,
+    "bytes": 133573,
+    "same_as_fixture": true,
+    "nodes": 54,
+    "edges": 73,
+    "services": 46,
+    "note": "in-process ASGI smoke; authentication and real HTTP remain blocked until security fix approval"
+  }
+}

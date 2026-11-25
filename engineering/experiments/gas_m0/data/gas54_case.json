@@ -1,0 +1,117 @@
+{
+  "schema_version": "gas-case-candidate-0.1.0",
+  "case_id": "syn-gas-case-K-001",
+  "network_id": "syn-gas-network-html54-0.1.0",
+  "data_mode": "synthetic",
+  "model_status": "candidate",
+  "analysis_window_hours": 8,
+  "scenario": {
+    "scenario_id": "syn-gas-scenario-K-001",
+    "name": "合成K-001故障及原型隔离单元通路影响",
+    "fault_edge_ids": [
+      "syn-gas-edge-K-001"
+    ],
+    "origin": "new_synthetic_case_on_extracted_network",
+    "fault_assumption": "Given unavailable edge, not a predicted leak or an incident record."
+  },
+  "isolation_plan": {
+    "plan_id": "syn-gas-isolation-unit-16",
+    "scenario_id": "syn-gas-scenario-K-001",
+    "closed_valve_ids": [
+      "syn-gas-valve-N11",
+      "syn-gas-valve-N13"
+    ],
+    "disabled_edge_ids": [
+      "syn-gas-edge-K-001",
+      "syn-gas-edge-K-002",
+      "syn-gas-edge-K-003",
+      "syn-gas-edge-K-004",
+      "syn-gas-edge-K-005",
+      "syn-gas-edge-K-015",
+      "syn-gas-edge-K-017"
+    ],
+    "semantics": "node_cut_plus_explicit_unit_edges",
+    "derivation": "Prototype unitValves and units for K-001; explicitly given educational candidate, no real operation authorization."
+  },
+  "events": [
+    {
+      "event_id": "syn-gas-event-fault",
+      "time_hours": 0,
+      "kind": "given_fault",
+      "origin": "new_synthetic_case",
+      "fault_edge_ids": [
+        "syn-gas-edge-K-001"
+      ],
+      "closed_valve_ids": [],
+      "disabled_edge_ids": []
+    },
+    {
+      "event_id": "syn-gas-event-isolation",
+      "time_hours": 0.5,
+      "kind": "given_isolation",
+      "origin": "new_synthetic_case",
+      "fault_edge_ids": [
+        "syn-gas-edge-K-001"
+      ],
+      "closed_valve_ids": [
+        "syn-gas-valve-N11",
+        "syn-gas-valve-N13"
+      ],
+      "disabled_edge_ids": [
+        "syn-gas-edge-K-001",
+        "syn-gas-edge-K-002",
+        "syn-gas-edge-K-003",
+        "syn-gas-edge-K-004",
+        "syn-gas-edge-K-005",
+        "syn-gas-edge-K-015",
+        "syn-gas-edge-K-017"
+      ]
+    },
+    {
+      "event_id": "syn-gas-event-observation",
+      "time_hours": 1,
+      "kind": "synthetic_observation",
+      "origin": "new_synthetic_case",
+      "fault_edge_ids": [
+        "syn-gas-edge-K-001"
+      ],
+      "closed_valve_ids": [
+        "syn-gas-valve-N11",
+        "syn-gas-valve-N13"
+      ],
+      "disabled_edge_ids": [
+        "syn-gas-edge-K-001",
+        "syn-gas-edge-K-002",
+        "syn-gas-edge-K-003",
+        "syn-gas-edge-K-004",
+        "syn-gas-edge-K-005",
+        "syn-gas-edge-K-015",
+        "syn-gas-edge-K-017"
+      ]
+    }
+  ],
+  "task_end_hours": null,
+  "missing": [
+    "Actual isolation task end",
+    "Repair, inspection, purge, release and physical gas restoration records"
+  ],
+  "expected_from_source": {
+    "basis": "Independent expectation: original disconnected/units/unitValves topology, excluding prototype valve/source nodes; no expected fractional failure calculation.",
+    "disconnected_consumer_node_ids": [
+      "syn-gas-node-N00",
+      "syn-gas-node-N01",
+      "syn-gas-node-N02",
+      "syn-gas-node-N10",
+      "syn-gas-node-N12"
+    ],
+    "households": 1330,
+    "businesses": 103,
+    "facility_node_ids": []
+  },
+  "safety": {
+    "field_action_instruction": false,
+    "safe_restoration_decision": false,
+    "physical_supply_verified": false,
+    "simulation_only": true
+  }
+}

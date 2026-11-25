@@ -1,0 +1,63 @@
+{
+  "rc01": {
+    "status": "PASS",
+    "checked_files": 467,
+    "dependency_edges": 841,
+    "initialization_edges": 103,
+    "violations": []
+  },
+  "fix1": {
+    "status": "FAIL",
+    "checked_files": 477,
+    "dependency_edges": 869,
+    "initialization_edges": 104,
+    "violations": [
+      {
+        "code": "forbidden_import",
+        "source": "engineering/src/agents/graph.py",
+        "target": "engineering/src/platform/store.py",
+        "specifier": "src.platform.store",
+        "line": 24,
+        "kind": "from",
+        "reason": "Frozen legacy Agent cross-domain edge requires exact reviewed exception"
+      },
+      {
+        "code": "forbidden_import",
+        "source": "engineering/src/agents/graph.py",
+        "target": "engineering/src/platform/__init__.py",
+        "specifier": "src.platform",
+        "line": 24,
+        "kind": "package_init",
+        "via_target": "engineering/src/platform/store.py",
+        "import_kind": "from",
+        "reason": "Frozen legacy Agent cross-domain edge requires exact reviewed exception"
+      },
+      {
+        "code": "forbidden_import",
+        "source": "engineering/src/agents/tools/domain.py",
+        "target": "engineering/src/platform/store.py",
+        "specifier": "src.platform.store",
+        "line": 18,
+        "kind": "from",
+        "reason": "Frozen legacy Agent cross-domain edge requires exact reviewed exception"
+      },
+      {
+        "code": "forbidden_import",
+        "source": "engineering/src/agents/tools/domain.py",
+        "target": "engineering/src/platform/__init__.py",
+        "specifier": "src.platform",
+        "line": 18,
+        "kind": "package_init",
+        "via_target": "engineering/src/platform/store.py",
+        "import_kind": "from",
+        "reason": "Frozen legacy Agent cross-domain edge requires exact reviewed exception"
+      }
+    ]
+  },
+  "store_sha_attribution": {
+    "old_sha256": "d9c08a23307570a674a6ee2e1ca3ae8ba6548563a4c7580d646ba44d810fded2",
+    "new_sha256": "e9cac3b936bcfb1b3425eb9d1244f952d21f4ea858d03cd12a6b72d59bc98215",
+    "relevant_after_old_substitution": [],
+    "owner_required": true
+  }
+}

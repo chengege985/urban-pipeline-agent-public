@@ -1,0 +1,3 @@
+source_record_id,pipe_id,from_node_id,to_node_id,material,diameter_mm,pressure_class
+pipeline-a,syn-gas-pilot-pipe-a,syn-gas-pilot-node-a,syn-gas-pilot-node-b,steel,110,synthetic-class-a
+pipeline-b,syn-gas-pilot-pipe-b,syn-gas-pilot-node-b,syn-gas-pilot-node-c,pe,90,synthetic-class-b

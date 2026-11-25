@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "dataset_id": "syn-gas-intake-01",
+  "version": "0.1.0",
+  "data_mode": "synthetic",
+  "sources": {
+    "assets": {
+      "source_id": "syn-gas-intake-assets",
+      "version": "0.1.0",
+      "sha256": "f6e9cad399ae1ac89f13eb71f6fb098abba66ba03dc3fd09de1c9d061698a48d"
+    },
+    "coordinates": {
+      "source_id": "syn-gas-intake-coordinates",
+      "version": "0.1.0",
+      "sha256": "5ea99d5da3d44a4cf0a005297da5bb19f337d39bac5617d06da9b9f64232fecc"
+    },
+    "monitoring": {
+      "source_id": "syn-gas-intake-monitoring",
+      "version": "0.1.0",
+      "sha256": "c299ed165f7bd95e7e75351d6c32a27daf807b463df22a55b43fe233c5a543f9"
+    }
+  }
+}

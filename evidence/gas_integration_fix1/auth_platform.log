@@ -1,0 +1,47 @@
+.....F.........................                                          [100%]
+=================================== FAILURES ===================================
+_________ test_fixture_replay_is_denied_by_default_and_can_be_enabled __________
+
+open_app = (<fastapi.applications.FastAPI object at 0x7f7ca9e4b7a0>, <starlette.testclient.TestClient object at 0x7f7ca9cab920>)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f7ca9df4290>
+
+    def test_fixture_replay_is_denied_by_default_and_can_be_enabled(open_app, monkeypatch):
+        app, client = open_app
+>       sample_id = app.state.store.save_snapshot(provided_sample(), "sample")["snapshot_id"]
+                                                  ^^^^^^^^^^^^^^^^^
+
+engineering/tests/test_m1fix_authz.py:165: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+engineering/src/adapters/scoring.py:63: in provided_sample
+    meta = json.loads(META.read_text(encoding="utf-8"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.12/pathlib.py:1029: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workdata/WaterPipNet/01_工程项目/experiments/gas_adapter_dashboard_20261105/integration-gas-synthetic-candidate/engineering/experiments/pipe_health/pipe_health_20261028_150251_2c9bbd/metadata.json'
+
+/usr/lib/python3.12/pathlib.py:1015: FileNotFoundError
+=============================== warnings summary ===============================
+../../../../.venv-platform/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workdata/WaterPipNet/.venv-platform/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED engineering/tests/test_m1fix_authz.py::test_fixture_replay_is_denied_by_default_and_can_be_enabled
+1 failed, 30 passed, 1 warning in 27.93s
