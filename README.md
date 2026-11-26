@@ -10,6 +10,8 @@
 
 ## 从这里开始
 
+- [公开版交接、数据准备与演示验收](docs/PUBLIC_HANDOFF.md)
+
 - [同事协作：邀请、clone、修改、Pull Request](docs/COLLABORATION.md)
 - [服务器开发、变更暂存与GitHub更新](docs/SERVER_WORKFLOW.md)
 - [本地安装与启动](docs/WINDOWS_LOCAL_SETUP.md)

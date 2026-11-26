@@ -1,3 +1,5 @@
+import { SicilyAgentPanel, useSicilyAgent } from "./SicilyAgentPanel";
+import { NgnSampleWindow, useNgnSample } from "./NgnSampleWorkspace";
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent, type ReactNode } from "react";
 import { useGasCockpit } from "./GasCockpitProvider";
 import { GasTopologyView } from "./GasTopologyView";
@@ -25,10 +27,19 @@ import { GasTopicConversation } from "./GasTopicConversation";
 import { GasReadError } from "./GasDetails";
 import type { GasM2Binding } from "../../shared/contracts/platform";
 import "./gas-sprint01.css";
+import { PublicDatasetSummary, PublicDatasetWindow } from "./PublicDatasetViews";
+import { CharlottesvilleWindow, SchutterwaldWindow, useCharlottesville, useSchutterwald } from "./ExtendedDatasetWindows";
+import { SicilyWindow, useSicilyWorkspace } from "./SicilyWorkspace";
+import { PUBLIC_DATASET_OPTIONS } from "./publicDatasets";
+import { GasLibWindow, useGasLibWorkspace, type GasLibMapView } from "./GasLibWorkspace";
 
-export function GasWindow({ id, children, actions, title = GAS_WINDOWS[id] }: {
-  id: GasWindowId; children: ReactNode; actions?: ReactNode; title?: string;
-}) {
+const datasetShortLabel = {
+  sicily_transmission: "西西里", ngn_distribution_example: "NGN 配气样例",
+  charlottesville: "Charlottesville", schutterwald: "Schutterwald", aer_alberta: "AER", sgn_eastbourne: "SGN", ngn_the_north: "NGN", gaslib_582: "GasLib-582",
+  merrimack_2018: "Merrimack", gas_m0_synthetic: "GAS-M0 合成",
+};
+
+export function GasWindow({ id, children, actions, title = GAS_WINDOWS[id] }: { id: GasWindowId; children: ReactNode; actions?: ReactNode; title?: string }) {
   const c = useGasCockpit();
   const drag = useRef<{ x: number; y: number; dx: number; dy: number } | null>(null);
   const frame = c.frames[id];
@@ -79,6 +90,7 @@ function GasProjectDataWindow({ initialView, binding }: { initialView: ProjectDa
 
 function ExtraContent({ id, dataView, binding }: { id: GasWindowId; dataView: ProjectDataView; binding: GasM2Binding | null }) {
   const c = useGasCockpit();
+  if (c.activeDatasetId !== "gas_m0_synthetic") return <PublicDatasetWindow id={id} />;
   if (id === "impact") return <>
     {PRODUCT_EDITION !== "competition" && <GasCuvReplayPanel resource={c.cuvReplay}
       onOpenAsset={(assetId) => {
@@ -119,35 +131,67 @@ function ExtraContent({ id, dataView, binding }: { id: GasWindowId; dataView: Pr
 export function GasCockpit({ onNavigate }: { onNavigate(path: string): void }) {
   const c = useGasCockpit();
   const value = c.caseView.data;
+  const gasLib = useGasLibWorkspace();
+  const charlottesville = useCharlottesville();
+  const schutterwald = useSchutterwald();
+  const sicily = useSicilyWorkspace();
+  const sicilyAgent = useSicilyAgent(sicily);
+  const sicilySelected = c.activeDatasetId === "sicily_transmission";
+  const ngnSample = useNgnSample();
+  const syntheticSelected = c.activeDatasetId === "gas_m0_synthetic";
+  const [publicMapMode, setPublicMapMode] = useState<"map" | "records">("map");
+  const [gasLibMapView, setGasLibMapView] = useState<GasLibMapView>("network");
   const project = PRODUCT_EDITION === "project";
-  const m2 = useGasM2Workbench(project);
+  const m2 = useGasM2Workbench(project && syntheticSelected);
   const topic = useGasTopic(m2.binding);
   const currentTopic = topic.resource.data;
   const showTopic = project && topic.focused && c.assistantDialog === "current";
   const renderAssistant = (content: ReactNode) => <GasDialog title="燃气智能体与受控能力边界"
     testId="gas-agent-dialog" onClose={c.closeAssistantDialog}>{content}</GasDialog>;
   const drill = useGasScenario(m2.binding);
-  const recordsWorkspace = project && c.mode !== "emergency";
+  const recordsWorkspace = syntheticSelected && project && c.mode !== "emergency";
   const [dataView, chooseDataView] = useState<ProjectDataView>("demo");
   const openData = (view: ProjectDataView) => { chooseDataView(view); c.openWindow("data"); };
   const { theme, toggleTheme } = useGasTheme();
   const settings = useRef<HTMLDetailsElement>(null);
   const agentDisplay = gasAgentPresentation(c.agent);
-  useEffect(() => { void c.agent.probe(); }, [c.agent.probe, c.caseIdentity]);
+  const impactTitle = c.activeWindow === "impact"
+    ? ({ charlottesville: "历史事件分析", sicily_transmission: "运行工况与稳态对比", ngn_distribution_example: "NGN 样例 · 工况压力" } as Partial<Record<typeof c.activeDatasetId, string>>)[c.activeDatasetId]
+    : undefined;
+  useEffect(() => { if (syntheticSelected) void c.agent.probe(); }, [c.agent.probe, c.caseIdentity, syntheticSelected]);
+  useEffect(() => { setPublicMapMode("map"); setGasLibMapView("network"); }, [c.activeDatasetId]);
   useEffect(() => {
     const close = (event: MouseEvent) => { if (settings.current && !settings.current.contains(event.target as Node)) settings.current.open = false; };
     const escape = (event: KeyboardEvent) => { if (event.key === "Escape" && settings.current?.open) { settings.current.open = false; settings.current.querySelector("summary")?.focus(); } };
     document.addEventListener("click", close); document.addEventListener("keydown", escape);
     return () => { document.removeEventListener("click", close); document.removeEventListener("keydown", escape); };
   }, []);
-  const mapActions = <div className="gas-map-mode" role="group" aria-label="中央视图">
+  const mapActions = syntheticSelected ? <div className="gas-map-mode" role="group" aria-label="中央视图">
     <button type="button" aria-pressed={c.route.gasMap !== "gis"} onClick={() => c.go({ gasMap: "topology" })}>合成拓扑</button>
     <button type="button" aria-pressed={c.route.gasMap === "gis"} onClick={() => c.go({ gasMap: "gis" })}>重庆GIS</button>
+  </div> : c.activeDatasetId === "gaslib_582" ? <div className="gas-map-mode" role="group" aria-label="基准视图">
+    {(["network", "published"] as const).map((view) => <button type="button" key={view}
+      aria-pressed={gasLibMapView === view} onClick={() => setGasLibMapView(view)}>
+      {{ network: "全网拓扑", published: "发布坐标" }[view]}
+    </button>)}
+  </div> : c.activeDatasetId === "merrimack_2018" ? undefined : <div className="gas-map-mode" role="group" aria-label="公开数据视图">
+    <button type="button" aria-pressed={publicMapMode === "map"} onClick={() => setPublicMapMode("map")}>地图视图</button>
+    <button type="button" aria-pressed={publicMapMode === "records"} onClick={() => setPublicMapMode("records")}>记录视图</button>
   </div>;
-  const monitoringAction = PRODUCT_EDITION !== "competition" ? <button type="button" data-testid="gas-monitoring-open" onClick={() => openData("demo")}>
+  const monitoringAction = syntheticSelected && PRODUCT_EDITION !== "competition" ? <button type="button" data-testid="gas-monitoring-open" onClick={() => openData("demo")}>
     合成监测预警
   </button> : undefined;
-  const bodies: Record<(typeof PRIMARY_GAS_WINDOWS)[number], ReactNode> = {
+  const publicWindow = (id: GasWindowId) => c.publicOverview.error && !c.publicOverview.data
+    ? <PublicDatasetWindow id={id} mapMode={publicMapMode} />
+    : c.activeDatasetId === "charlottesville"
+    ? <CharlottesvilleWindow id={id} w={charlottesville} mapMode={publicMapMode} />
+    : c.activeDatasetId === "schutterwald" ? <SchutterwaldWindow id={id} w={schutterwald} mapMode={publicMapMode} />
+    : ngnSample.data ? <NgnSampleWindow id={id} workspace={ngnSample} mapMode={publicMapMode} />
+    : sicily.data ? <SicilyWindow id={id} workspace={sicily} mapMode={publicMapMode} onShowMap={() => setPublicMapMode("map")} />
+    : gasLib.data
+    ? <GasLibWindow id={id} workspace={gasLib} mapView={gasLibMapView} onShowTopology={setGasLibMapView} />
+    : <PublicDatasetWindow id={id} mapMode={publicMapMode} />;
+  const bodies: Record<(typeof PRIMARY_GAS_WINDOWS)[number], ReactNode> = syntheticSelected ? {
     topology: <GasTopologyView drill={recordsWorkspace && !drill.workspace.error ? drill.scenario : undefined}
       comparison={recordsWorkspace && !drill.workspace.error ? drill.comparison : undefined} highlighted={drill.highlighted} />,
     scenario: recordsWorkspace ? <GasM2RecordsPane workspace={m2} /> : <GasEventPanel />,
@@ -184,6 +228,13 @@ export function GasCockpit({ onNavigate }: { onNavigate(path: string): void }) {
       </div>
     </div>,
     impact: null, services: null, layers: null, data: null, evidence: null, boundary: null,
+  } : {
+    topology: publicWindow("topology"),
+    scenario: publicWindow("scenario"),
+    selected: publicWindow("selected"),
+    timeline: publicWindow("timeline"),
+    tasks: publicWindow("tasks"),
+    impact: null, services: null, layers: null, data: null, evidence: null, boundary: null,
   };
   return <main className={`gas-cockpit-page gas-cockpit-unified gas-workbench gas-mode-${c.mode}${project ? " gas-sprint-cockpit" : ""}`} data-testid="gas-page" data-theme={theme} data-mode={c.mode} data-layout={c.layout} data-case-id={value?.case_id ?? "unknown"} data-case-identity={c.caseIdentity}>
     <header className="gas-app-bar">
@@ -193,11 +244,12 @@ export function GasCockpit({ onNavigate }: { onNavigate(path: string): void }) {
         <button type="button" aria-current="page" onClick={() => onNavigate("/gas")}>燃气中控</button>
       </nav>}
       <nav className="gas-mode-switch" aria-label="中控模式">{(["overview", "risk", "emergency"] as const).map((mode) =>
-        <button type="button" aria-pressed={c.mode === mode} key={mode} onClick={() => c.setMode(mode)}>{({ overview: "综合态势", risk: "风险分析", emergency: "应急推演" })[mode]}</button>)}</nav>
-      <button type="button" className="gas-provenance-badge" onClick={() => openData(project ? "m2" : "demo")} title="查看数据来源、完整性和业务边界">
+        <button type="button" aria-pressed={c.mode === mode} key={mode} onClick={() => { c.setMode(mode); if (mode === "risk" &&
+          (c.activeDatasetId === "charlottesville" || c.activeDatasetId === "schutterwald" || c.activeDatasetId === "sicily_transmission" || c.activeDatasetId === "ngn_distribution_example")) c.openWindow("impact"); }}>{({ overview: "综合态势", risk: "风险分析", emergency: "应急推演" })[mode]}</button>)}</nav>
+      {syntheticSelected && <button type="button" className="gas-provenance-badge" onClick={() => openData(project ? "m2" : "demo")} title="查看数据来源、完整性和业务边界">
         {project ? (m2.binding ? `GAS-M0 合成 · v${m2.binding.version}` : "GAS-M0 · 登记待就绪")
           : "GAS-M0 合成数据 · 未经业务验证"}
-      </button>
+      </button>}
       <div className="gas-app-actions">
         {import.meta.env.VITE_WPN_GAS_DEMO === "1" && <span className="gas-status-pill" role="status" data-testid="gas-demo-model-status" data-status={c.agent.health?.model_status ?? "unknown"}>
           Qwen {c.agent.health?.model_status === "ready" ? "ready" : c.agent.health?.model_status === "starting" ? "starting · 规则工具可用" : c.agent.health?.tools_status === "ready" ? "unavailable · 规则工具可用" : "状态待确认"}
@@ -212,30 +264,42 @@ export function GasCockpit({ onNavigate }: { onNavigate(path: string): void }) {
               const status = c.hidden.has(winId) ? "已隐藏 · 恢复" : PRIMARY_GAS_WINDOWS.includes(winId) ? "主区已开" : c.activeWindow === winId ? "弹窗已开" : "打开面板";
               return <button type="button" key={id} data-window-control={id} onClick={() => { c.openWindow(winId); if (settings.current) settings.current.open = false; }}><span>{title}</span><small>{status}</small></button>;
             })}</div>
-            <div className="gas-settings-actions"><button type="button" onClick={() => { c.restoreWindows(); if (settings.current) settings.current.open = false; }}>恢复全部窗口</button><button type="button" onClick={() => { c.refresh(); if (project) m2.catalog.retry(); }}>刷新受控数据</button>
-              <button type="button" onClick={() => { c.go({ gasSection: "analysis", gasEventId: undefined, gasAssetId: undefined }); if (settings.current) settings.current.open = false; }}>风险就绪状态</button></div>
+            <div className="gas-settings-actions"><button type="button" onClick={() => { c.restoreWindows(); if (settings.current) settings.current.open = false; }}>恢复全部窗口</button><button type="button" onClick={() => { c.refresh(); if (project && syntheticSelected) m2.catalog.retry(); }}>刷新受控数据</button>
+              <button type="button" onClick={() => { if (!syntheticSelected) c.openWindow("boundary"); else c.go({ gasSection: "analysis", gasEventId: undefined, gasAssetId: undefined }); if (settings.current) settings.current.open = false; }}>风险就绪状态</button></div>
           </div>
         </details>
-        <button type="button" className="gas-assistant-entry" onClick={c.openAssistantDialog} title={agentDisplay.detail} data-agent-tone={agentDisplay.tone}>
-          智能助手 <span data-testid="gas-agent-live-status">{agentDisplay.label}</span>
+        <button type="button" className="gas-assistant-entry" disabled={!syntheticSelected && !sicilySelected} onClick={c.openAssistantDialog}
+          title={syntheticSelected ? agentDisplay.detail : sicilySelected ? "西西里 CUV 研究助手" : "当前来源的助手工具暂不可用"} data-agent-tone={agentDisplay.tone}>
+          智能助手 <span data-testid="gas-agent-live-status">{syntheticSelected ? agentDisplay.label : sicilySelected ? "西西里 CUV" : "当前来源暂不可用"}</span>
         </button>
+        <select className="gas-provenance-switcher" aria-label="更换数据集" data-testid="gas-dataset-switcher"
+          value={c.activeDatasetId} title={PUBLIC_DATASET_OPTIONS.find(({ id }) => id === c.activeDatasetId)?.label}
+          onChange={(event) => c.selectDataset(event.target.value as (typeof PUBLIC_DATASET_OPTIONS)[number]["id"])}>
+          {PUBLIC_DATASET_OPTIONS.map((option) => <option key={option.id} value={option.id}>{datasetShortLabel[option.id]}</option>)}
+        </select>
       </div>
     </header>
-    {project ? <GasM2Indicators workspace={m2} />
-      : <GasRecordSummary catalogue={value} total={c.summary.data?.total ?? null} eventsTotal={c.events.data?.total ?? null} />}
+    {syntheticSelected
+      ? (project ? <GasM2Indicators workspace={m2} /> : <GasRecordSummary catalogue={value} total={c.summary.data?.total ?? null} eventsTotal={c.events.data?.total ?? null} />)
+      : <PublicDatasetSummary data={c.publicOverview.data} datasetId={c.activeDatasetId} loading={c.publicOverview.status === "loading" || c.publicOverview.status === "idle"}
+        error={c.publicOverview.error?.message} />}
     {c.route.gasRouteError ? <div className="gas-inline-route-error" role="alert">{c.route.gasRouteError}</div> : null}
     <section className={`gas-cockpit-workspace gas-unified-workspace gas-layout-${c.layout}`} data-testid="gas-workspace">
-      {PRIMARY_GAS_WINDOWS.map((id) => !c.hidden.has(id) ? <GasWindow
-        title={recordsWorkspace && id === "scenario" ? "资产与事件" : project && id === "topology" ? "空间视图" : undefined}
-        key={`${id}:${c.windowRevision}`} id={id} actions={id === "topology" ? mapActions : id === "scenario" ? monitoringAction : undefined}>{bodies[id]}</GasWindow> : <section className={`gas-hidden-slot gas-window-${id}`} key={id}><button type="button" onClick={() => c.openWindow(id)}>恢复{GAS_WINDOWS[id]}</button></section>)}
+      {PRIMARY_GAS_WINDOWS.map((id) => !c.hidden.has(id) ? <GasWindow key={`${id}:${c.windowRevision}`} id={id}
+        title={syntheticSelected ? (recordsWorkspace && id === "scenario" ? "资产与事件" : project && id === "topology" ? "空间视图" : undefined) : id === "topology" ? ({ charlottesville: "Charlottesville GIS", schutterwald: "Schutterwald", aer_alberta: "监管管线地图", sgn_eastbourne: "城市配气管线地图", ngn_the_north: "The North 配气管线", ngn_distribution_example: "NGN 配气样例管线", gaslib_582: GAS_WINDOWS.topology,
+          merrimack_2018: "事故复盘", gas_m0_synthetic: GAS_WINDOWS.topology, sicily_transmission: "西西里输气拓扑" })[c.activeDatasetId]
+          : id === "timeline" && (c.activeDatasetId === "sicily_transmission" || c.activeDatasetId === "ngn_distribution_example") ? "应急推演回放" : undefined}
+        actions={id === "topology" ? mapActions : id === "scenario" ? monitoringAction : undefined}>{bodies[id]}</GasWindow> : <section className={`gas-hidden-slot gas-window-${id}`} key={id}><button type="button" onClick={() => c.openWindow(id)}>恢复{GAS_WINDOWS[id]}</button></section>)}
     </section>
-    <footer className="gas-cockpit-footer"><span>合成网络 · 图连通不等于真实供气 · 不提供现场控制指令</span><span data-testid="gas-case-status">{value?.data_mode ?? "unknown"} / {value?.status ?? (c.caseView.error ? "unavailable" : "loading")} / {value?.validation_status ?? "unknown"}</span></footer>
-    {c.activeWindow && !c.hidden.has(c.activeWindow) ? <GasDialog title={GAS_WINDOWS[c.activeWindow]} onClose={c.closeExtra}><GasWindow id={c.activeWindow}><ExtraContent id={c.activeWindow} dataView={dataView} binding={m2.binding} /></GasWindow></GasDialog> : null}
+    <footer className="gas-cockpit-footer"><span>{syntheticSelected ? "合成网络 · 图连通不等于真实供气 · 不提供现场控制指令" : "公开来源 / 研究基准 · 仅按来源证据展示 · 不自动推导供气结论"}</span>
+      <span data-testid="gas-case-status">{syntheticSelected ? `${value?.data_mode ?? "unknown"} / ${value?.status ?? (c.caseView.error ? "unavailable" : "loading")} / ${value?.validation_status ?? "unknown"}`
+        : `${c.publicOverview.data?.data_mode ?? c.activeDatasetId} / ${c.publicOverview.data?.status ?? (c.publicOverview.error ? "unavailable" : "loading")}`}</span></footer>
+    {c.activeWindow && !c.hidden.has(c.activeWindow) ? <GasDialog title={impactTitle ?? GAS_WINDOWS[c.activeWindow]} onClose={c.closeExtra}><GasWindow id={c.activeWindow} title={impactTitle}>{syntheticSelected ? <ExtraContent id={c.activeWindow} dataView={dataView} binding={m2.binding} /> : publicWindow(c.activeWindow)}</GasWindow></GasDialog> : null}
     {c.directoryOpen ? <GasDialog title="资产目录与真实详情" onClose={c.closeDirectory}><GasDirectoryPanel /></GasDialog> : null}
-    {project && topic.focused && currentTopic && <GasTopicConversation key={currentTopic.evidence_sha256}
+    {syntheticSelected && project && topic.focused && currentTopic && <GasTopicConversation key={currentTopic.evidence_sha256}
       topic={currentTopic} title={topic.title} refresh={m2.catalog.retry} render={showTopic ? renderAssistant : undefined}
       scenario={drill.scenario} comparison={drill.comparison} />}
-    {c.assistantDialog && !(showTopic && currentTopic) && renderAssistant(showTopic ? <>
+    {syntheticSelected && c.assistantDialog && !(showTopic && currentTopic) && renderAssistant(showTopic ? <>
       <button type="button" onClick={c.openAssistantTools}>通用工具</button>
       {topic.resource.error ? <GasReadError error={topic.resource.error} retry={topic.resource.retry} label="重试专题" />
         : m2.catalog.error ? <GasReadError error={m2.catalog.error} retry={m2.catalog.retry} label="刷新数据登记" />
@@ -244,5 +308,12 @@ export function GasCockpit({ onNavigate }: { onNavigate(path: string): void }) {
       {project && topic.focused && <button type="button" onClick={c.openAssistantDialog}>询问当前专题</button>}
       <GasAssistantPanel />
     </>)}
+    {c.assistantDialog && sicilySelected ? <GasDialog
+      title="西西里 CUV 助手" testId="gas-agent-dialog" onClose={c.closeAssistantDialog}>
+      {<SicilyAgentPanel agent={{ ...sicilyAgent,
+        openObject: target => { setPublicMapMode("map"); sicilyAgent.openObject(target); },
+        openRun: run => { setPublicMapMode("map"); return sicilyAgent.openRun(run); },
+      }} />}
+    </GasDialog> : null}
   </main>;
 }

@@ -31,7 +31,10 @@ export function zoomGasViewport(current: Viewport, factor: number, anchor = { x:
   const ratio = zoom / current.zoom;
   return { zoom, x: anchor.x - (anchor.x - current.x) * ratio, y: anchor.y - (anchor.y - current.y) * ratio };
 }
-export function fitGasMapping(value: GasCaseResponse, mapping: TopologyMapping): Viewport {
+export function fitGasMapping(value: {
+  edges: ReadonlyArray<Pick<GasCaseResponse["edges"][number], "edge_id" | "from_node_id" | "to_node_id">>;
+  nodes: ReadonlyArray<{ node_id: string; layout: { x: number; y: number } }>;
+}, mapping: TopologyMapping): Viewport {
   const ids = new Set(mapping.nodeIds);
   for (const edge of value.edges) if (mapping.edgeIds.includes(edge.edge_id)) { ids.add(edge.from_node_id); ids.add(edge.to_node_id); }
   const points = value.nodes.filter((node) => ids.has(node.node_id)).map((node) => node.layout).filter((point) => Number.isFinite(point.x) && Number.isFinite(point.y));

@@ -10,6 +10,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 from src.platform.authz import LOOPBACK_BIND_HOSTS, LOCAL_RUNTIME_MODES, local_synthetic_anonymous_enabled, resolve_principal, validate_security_configuration
 from src.gas_application.router import gas_engineering_router, gas_router
+from src.gas_application.public_datasets import public_data_router
 from src.gas_application.service import GasFixtureService, GasFixtureUnavailable
 
 def _csv(name: str, default: str = "") -> list[str]:
@@ -70,6 +71,7 @@ def create_gas_app(
     app.state.bootstrap_mode="gas_synthetic_only"
     app.include_router(gas_router())
     app.include_router(gas_engineering_router(service, model_starting=model_starting))
+    app.include_router(public_data_router())
     if include_bff and os.getenv("GAS_BFF_MODE", "").strip().lower() == "development":
         from .bff import bff_router
         app.include_router(bff_router(service))
