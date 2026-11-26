@@ -19,6 +19,7 @@ import { cuvAgentFollowUp, cuvAgentRequest } from "./cuvAgentContext";
 import { benchmarkQuestion } from "./cuvBenchmarkContract";
 import { relatedAssetIds } from "./presentation";
 import { sameMonitoringReference } from "./monitoringContract";
+import { PUBLIC_DATASET_OPTIONS, PublicGasDatasetApi, type PublicDatasetId, type PublicDatasetOverview, type NgnFilters, type NgnHistoryKind } from "./publicDatasets";
 
 type Resource<T> = GasReadState<T> & { retry(): void };
 export type GasLayer = "edges" | "nodes" | "impact" | "labels";
@@ -32,6 +33,20 @@ const ENGINEERING_QUESTION = /工程(?:校核|模型|计算)|输入就绪|缺少
 type CuvQuestionOptions = { draft?: GasCuvDraftRequest; comparison?: GasCuvQueryBinding; engineering?: boolean };
 
 interface CockpitContext {
+  activeDatasetId: PublicDatasetId; selectDataset(id: PublicDatasetId): void;
+  selectedPublicScope: string; selectPublicScope(scope: string): void;
+  selectedPublicOffset: number; selectPublicOffset(offset: number): void;
+  selectedPublicSearch: string; selectPublicSearch(search: string): void;
+  publicApi: PublicGasDatasetApi;
+  publicBbox: string; selectPublicBbox(bbox: string): void;
+  ngnFilters: NgnFilters; setNgnFilters(filters: NgnFilters): void;
+  ngnHistory: { kind: NgnHistoryKind; start: string; end: string };
+  setNgnHistory(history: { kind: NgnHistoryKind; start: string; end: string }): void;
+  publicReplayIndex: number; setPublicReplayIndex(index: number): void;
+  publicOverview: Resource<PublicDatasetOverview>; selectedPublicAssetId: string | null;
+  selectPublicAsset(id: string | null, keepEvent?: boolean): void;
+  selectedPublicEvent: Record<string, unknown> | null;
+  selectPublicEvent(row: Record<string, unknown>): void;
   route: GasEngineeringRoute; mode: GasMode; layout: GasLayout;
   caseView: Resource<GasCaseResponse>; summary: Resource<GasCollection<GasAsset>>; events: Resource<GasCollection<GasEvent>>;
   districts: Resource<GasCollection<GasDistrict>>; capabilityResponse: Resource<GasCapabilityResponse>;
@@ -97,6 +112,59 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
   route?: GasEngineeringRoute; baseUrl?: string; onNavigate(path: string, replace?: boolean): void; children: ReactNode;
 }) {
   const api = useMemo(() => new GasEngineeringApi(new BrowserGasTransport(baseUrl)), [baseUrl]);
+  const publicApi = useMemo(() => new PublicGasDatasetApi(new BrowserGasTransport(baseUrl)), [baseUrl]);
+  const [activeDatasetId, setActiveDatasetId] = useState<PublicDatasetId>(() => {
+    if (typeof window === "undefined") return "gas_m0_synthetic";
+    const saved = window.localStorage.getItem("gas-active-public-dataset");
+    return PUBLIC_DATASET_OPTIONS.some(({ id }) => id === saved) ? saved as PublicDatasetId : "gas_m0_synthetic";
+  });
+  const [selectedPublicAssetId, setSelectedPublicAssetId] = useState<string | null>(null);
+  const [selectedPublicEvent, setSelectedPublicEvent] = useState<Record<string, unknown> | null>(null);
+  const [selectedPublicScope, setSelectedPublicScope] = useState("Calgary");
+  const [selectedPublicOffset, setSelectedPublicOffset] = useState(0);
+  const [selectedPublicSearch, setSelectedPublicSearch] = useState("");
+  const [publicBbox, setPublicBbox] = useState("");
+  const [ngnFilters, updateNgnFilters] = useState<NgnFilters>({ material: "", pressure: "", diameter_mm: "" });
+  const [ngnHistory, updateNgnHistory] = useState<{ kind: NgnHistoryKind; start: string; end: string }>({ kind: "emergency", start: "", end: "" });
+  const [publicReplayIndex, setPublicReplayIndex] = useState(0);
+  const selectPublicBbox = useCallback((bbox: string) => {
+    setPublicBbox(bbox);
+    setSelectedPublicOffset(0);
+    setSelectedPublicAssetId(null);
+  }, []);
+  const readPublicOverview = useCallback((signal: AbortSignal) => publicApi.overview(activeDatasetId, {
+    fieldCentre: selectedPublicScope, offset: selectedPublicOffset, search: selectedPublicSearch, bbox: publicBbox, ngnFilters,
+  }, signal), [publicApi, activeDatasetId, selectedPublicScope, selectedPublicOffset, selectedPublicSearch, publicBbox, ngnFilters]);
+  const publicOverviewKey = activeDatasetId === "gas_m0_synthetic" ? null
+    : JSON.stringify([activeDatasetId, selectedPublicScope, selectedPublicOffset, selectedPublicSearch.trim(), publicBbox, ngnFilters]);
+  const publicOverview = useGasRead(publicOverviewKey, readPublicOverview);
+  const selectDataset = useCallback((id: PublicDatasetId) => {
+    setActiveDatasetId(id);
+    setPublicBbox("");
+    updateNgnFilters({ material: "", pressure: "", diameter_mm: "" });
+    updateNgnHistory({ kind: "emergency", start: "", end: "" });
+    setPublicReplayIndex(0);
+    setSelectedPublicEvent(null);
+    setSelectedPublicAssetId(null);
+    if (id === "aer_alberta") setSelectedPublicScope("Calgary");
+    setSelectedPublicOffset(0);
+    setSelectedPublicSearch("");
+    if (typeof window !== "undefined") window.localStorage.setItem("gas-active-public-dataset", id);
+  }, []);
+  const selectPublicScope = useCallback((scope: string) => {
+    setSelectedPublicScope(scope);
+    setSelectedPublicOffset(0);
+    setSelectedPublicAssetId(null);
+  }, []);
+  const selectPublicOffset = useCallback((offset: number) => {
+    setSelectedPublicOffset(Math.max(0, Math.floor(offset)));
+    setSelectedPublicAssetId(null);
+  }, []);
+  const selectPublicSearch = useCallback((search: string) => {
+    setSelectedPublicSearch(search);
+    setSelectedPublicOffset(0);
+    setSelectedPublicAssetId(null);
+  }, []);
   const pilotApi = useMemo(() => new GasPilotApi(new BrowserGasTransport(baseUrl)), [baseUrl]);
   const [activeWindow, setActiveWindow] = useState<GasWindowId | null>(null);
   const readMonitoring = useCallback((signal: AbortSignal) => api.monitoring(signal), [api]);
@@ -110,18 +178,21 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
   const readEvent = useCallback((signal: AbortSignal) => api.event(route.gasEventId!, signal), [api, route.gasEventId]);
   const readAsset = useCallback((signal: AbortSignal) => api.asset(route.gasAssetId!, signal), [api, route.gasAssetId]);
   // The case is loaded in exactly one place. Every window and detail maps against this object.
-  const caseView = useGasRead("gas-case", readCase);
-  const summary = useGasRead("gas-asset-total", readSummary);
-  const events = useGasRead("gas-events", readEvents);
-  const districts = useGasRead("gas-districts", readDistricts);
-  const capabilityResponse = useGasRead("gas-capabilities", readCapabilities);
-  const caseIdentity = caseView.data ? [caseView.data.case_id, caseView.data.network_id, caseView.data.algorithm_version,
-    caseView.data.evidence.network_content_sha256, caseView.data.evidence.case_content_sha256].join("|") : "case-not-ready";
+  const syntheticSelected = activeDatasetId === "gas_m0_synthetic";
+  const caseView = useGasRead(syntheticSelected ? "gas-case" : null, readCase);
+  const summary = useGasRead(syntheticSelected ? "gas-asset-total" : null, readSummary);
+  const events = useGasRead(syntheticSelected ? "gas-events" : null, readEvents);
+  const districts = useGasRead(syntheticSelected ? "gas-districts" : null, readDistricts);
+  const capabilityResponse = useGasRead(syntheticSelected ? "gas-capabilities" : null, readCapabilities);
+  const caseIdentity = syntheticSelected
+    ? caseView.data ? [caseView.data.case_id, caseView.data.network_id, caseView.data.algorithm_version,
+      caseView.data.evidence.network_content_sha256, caseView.data.evidence.case_content_sha256].join("|") : "case-not-ready"
+    : `public:${activeDatasetId}:${publicOverview.data?.data_version ?? "pending"}`;
   const caseEvidence = caseView.data?.evidence;
   const caseBinding = caseEvidence?.network_content_sha256 && caseEvidence.case_content_sha256
     ? { network_content_sha256: caseEvidence.network_content_sha256, case_content_sha256: caseEvidence.case_content_sha256 }
     : undefined;
-  const ref = PRODUCT_EDITION === "competition" || route.gasRouteError ? undefined : route.gasObservation;
+  const ref = PRODUCT_EDITION === "competition" || !syntheticSelected || route.gasRouteError ? undefined : route.gasObservation;
   const readObservation = useCallback((signal: AbortSignal) => api.monitoringObservation(ref!, signal),
     [api, ref?.observation_id, ref?.manifest_sha256]);
   const observation = useGasRead(ref && caseView.data ? caseIdentity + ":" + ref.manifest_sha256 + ":" + ref.observation_id : null, readObservation);
@@ -131,15 +202,15 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
     ? observation.data : null;
   const readCuvReplay = useCallback((signal: AbortSignal) => api.cuvReplay(signal, caseView.data), [api, caseView.data]);
   const cuvReplay = useGasRead(
-    PRODUCT_EDITION !== "competition" && activeWindow === "impact" ? "gas-cuv-replay:" + caseIdentity : null,
+    syntheticSelected && PRODUCT_EDITION !== "competition" && activeWindow === "impact" ? "gas-cuv-replay:" + caseIdentity : null,
     readCuvReplay,
   );
-  const event = useGasRead(route.gasEventId && !route.gasRouteError ? `${caseIdentity}:event:${route.gasEventId}` : null, readEvent);
+  const event = useGasRead(syntheticSelected && route.gasEventId && !route.gasRouteError ? `${caseIdentity}:event:${route.gasEventId}` : null, readEvent);
   const eventAssetIds = useMemo(() => event.data ? relatedAssetIds(event.data) : [], [event.data]);
   const related = !route.gasEventId || Boolean(route.gasAssetId && eventAssetIds.includes(route.gasAssetId));
-  const asset = useGasRead(route.gasAssetId && related && !route.gasRouteError ? `${caseIdentity}:asset:${route.gasEventId ?? "independent"}:${route.gasAssetId}` : null, readAsset);
+  const asset = useGasRead(syntheticSelected && route.gasAssetId && related && !route.gasRouteError ? `${caseIdentity}:asset:${route.gasEventId ?? "independent"}:${route.gasAssetId}` : null, readAsset);
   const directoryOpen = route.gasSection === "assets" && (!route.gasAssetId || route.gasCatalogueOpen === true);
-  const assets = useGasRead(directoryOpen && !route.gasRouteError ? `${caseIdentity}:page:${route.assetType ?? "all"}:${route.assetPage}` : null, readPage);
+  const assets = useGasRead(syntheticSelected && directoryOpen && !route.gasRouteError ? `${caseIdentity}:page:${route.assetType ?? "all"}:${route.assetPage}` : null, readPage);
   const index = useMemo(() => caseView.data ? indexGasRecords(caseView.data) : null, [caseView.data]);
   const eventMapping = useMemo(() => mapGasAssets(caseView.data, eventAssetIds), [caseView.data, eventAssetIds]);
   const mapping = useMemo(
@@ -167,6 +238,19 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
   const latestRoute = useRef(activeRoute);
   useEffect(() => { latestRoute.current = activeRoute; }, [activeRoute]);
   const selectedDistrictId = route.gasDistrictId ?? null;
+
+  useEffect(() => {
+    if (syntheticSelected) return;
+    agent.clearHistory();
+    dispatchTimeline({ type: "reset" });
+    if (route.gasEventId || route.gasAssetId || route.gasObservation || route.gasCatalogueOpen) {
+      onNavigate(gasEngineeringPath({ ...route, gasEventId: undefined, gasAssetId: undefined,
+        gasObservation: undefined, gasCatalogueOpen: false, gasDistrictId: undefined,
+        gasSection: "events", assetPage: 1, assetType: undefined }), true);
+    }
+  // A dataset switch clears synthetic object selections and assistant context once.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeDatasetId]);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -359,6 +443,22 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
   };
 
   const value: CockpitContext = {
+    activeDatasetId, selectDataset, selectedPublicScope, selectPublicScope, selectedPublicOffset, selectPublicOffset,
+    selectedPublicSearch, selectPublicSearch, publicApi, publicOverview, selectedPublicAssetId,
+    publicBbox, selectPublicBbox, publicReplayIndex, setPublicReplayIndex,
+    ngnFilters,
+    setNgnFilters: (filters) => {
+      updateNgnFilters(filters);
+      setSelectedPublicOffset(0);
+      setSelectedPublicAssetId(null);
+    },
+    ngnHistory,
+    setNgnHistory: (history) => {
+      updateNgnHistory(history);
+      setSelectedPublicEvent(null);
+    },
+    selectPublicAsset: (id, keepEvent) => { setSelectedPublicAssetId(id); if (!keepEvent) setSelectedPublicEvent(null); },
+    selectedPublicEvent, selectPublicEvent: (row) => { setSelectedPublicEvent(row); setSelectedPublicAssetId(null); },
     route, mode: route.gasMode ?? "overview", layout: route.gasLayout ?? "command", caseView, summary, events, districts, capabilityResponse, monitoring, cuvReplay, pilotApi, assets, event, asset,
     observation, selectedObservation, openObservation, openObservationAsset, askObservationAgent,
     index, caseIdentity, caseBinding, related, mapping, eventMapping, focusRevision, timeline, timelineEvents, reducedMotion,
@@ -389,7 +489,7 @@ export function GasCockpitProvider({ route = INITIAL_COCKPIT_ROUTE, baseUrl = ""
       go({ gasMode: mode, ...(mode !== "risk" && route.gasSection === "analysis" ? { gasSection: "events" } : {}) });
     },
     setLayout: (layout) => { setFrames(initialFrames()); go({ gasLayout: layout }); },
-    refresh: () => { caseView.retry(); events.retry(); summary.retry(); districts.retry(); capabilityResponse.retry(); monitoring.retry(); observation.retry(); cuvReplay.retry(); event.retry(); asset.retry(); assets.retry(); },
+    refresh: () => { publicOverview.retry(); caseView.retry(); events.retry(); summary.retry(); districts.retry(); capabilityResponse.retry(); monitoring.retry(); observation.retry(); cuvReplay.retry(); event.retry(); asset.retry(); assets.retry(); },
     capabilities: projectGasCapabilities(capabilityResponse.data, { status: capabilityResponse.status, error: capabilityResponse.error }), eventKind, eventState,
     setEventKind: (kind) => go({ gasEventKind: kind === "all" ? undefined : kind as GasEvent["event_kind"] }),
     setEventState: (state) => go({ gasEventState: state === "all" ? undefined : state as NonNullable<GasEvent["state"]> }),

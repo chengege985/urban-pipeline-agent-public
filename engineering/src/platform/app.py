@@ -36,6 +36,7 @@ from .authz import (authorize_run, authorize_snapshot, authorize_assessment, res
                     run_allowed, snapshot_allowed, validate_security_configuration)
 from .dataset_api import dataset_router
 from src.gas_application.router import gas_engineering_router, gas_router
+from src.gas_application.public_datasets import public_data_router
 from src.gas_application.service import GasFixtureUnavailable
 from .timeline_api import timeline_router
 from .runtime import Runtime
@@ -134,6 +135,7 @@ def create_app(root: Path | None = None, *, start_worker=True, bootstrap=True,
     app.include_router(dataset_router(store))
     app.include_router(gas_router())
     app.include_router(gas_engineering_router(gas_service))
+    app.include_router(public_data_router())
     app.include_router(timeline_router(store))
     trusted_hosts = _csv_env("WATER_TRUSTED_HOSTS", "127.0.0.1,localhost,testserver")
     if not trusted_hosts or any(value == "*" for value in trusted_hosts):

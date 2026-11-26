@@ -1,0 +1,4 @@
+# Offline snapshot builder only. The FastAPI runtime uses stdlib SQLite.
+openpyxl==3.1.5
+pyproj==3.7.2
+shapely==2.1.2

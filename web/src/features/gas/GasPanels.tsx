@@ -79,17 +79,35 @@ export function GasEventPanel() {
   </div>;
 }
 
+export type GasStage = { id: string; time: string; label: string; detail: string };
+export function GasTimelineTrack({ stages, index, playing, reducedMotion, badge, note, reset, toggle, select }: {
+  stages: GasStage[]; index: number; playing: boolean; reducedMotion: boolean; badge: string; note: string;
+  reset(): void; toggle(): void; select(index: number): void;
+}) {
+  return <div className="gas-timeline-panel" data-testid="gas-timeline" data-index={index} data-playing={String(playing)}>
+    <div className="gas-timeline-controls">
+      <button type="button" onClick={reset}>重置</button>
+      <button type="button" className="gas-timeline-play" onClick={toggle} disabled={reducedMotion || stages.length < 2}>{playing ? "暂停" : "播放"}</button>
+      <span>{reducedMotion ? "减少动态" : stages.length ? "阶段 " + (index + 1) + " / " + stages.length : "无可回放阶段"}</span>
+      <span className="gas-cuv-pill">{badge}</span><small>{note}</small>
+    </div>
+    <div className="gas-timeline-track">{stages.map((item, position) => <button type="button" key={item.id}
+      className={"gas-timeline-event" + (position === index ? " is-active" : "")}
+      aria-pressed={position === index} onClick={() => select(position)}>
+      <span className="gas-timeline-time">{item.time}</span><strong>{item.label}</strong><small>{item.detail}</small>
+    </button>)}</div>
+  </div>;
+}
+
 export function GasTimelinePanel() {
   const c = useGasCockpit();
-  return <div className="gas-timeline-panel" data-testid="gas-timeline" data-index={c.timeline.index} data-playing={String(c.timeline.playing)}>
-    <div className="gas-timeline-controls"><button type="button" onClick={c.resetTimeline}>重置</button>
-      <button type="button" className="gas-timeline-play" onClick={c.timeline.playing ? c.pause : c.play} disabled={c.reducedMotion || c.timelineEvents.length < 2}>{c.timeline.playing ? "暂停" : "播放"}</button>
-      <span>{c.reducedMotion ? "减少动态" : c.timelineEvents.length ? `阶段 ${c.timeline.index + 1} / ${c.timelineEvents.length}` : "无可回放事件"}</span>
-      <span className="gas-cuv-pill" title="CUV边界：仅图连通；概率、PIR和热点模型未就绪">CUV：仅图连通</span>
-      <small title="给定场景相对小时，非专业预测；播放不写浏览器历史。">合成给定事件 · 非预测</small></div>
-    <div className="gas-timeline-track">{c.timelineEvents.map((item, index) => <button type="button" key={item.event_id} className={`gas-timeline-event${index === c.timeline.index ? " is-active" : ""}`}
-      aria-pressed={index === c.timeline.index} onClick={() => c.selectTimeline(index)}><span className="gas-timeline-time">{item.time_hours} h</span><strong>{eventKinds[item.kind]}</strong><small>{item.current_unreachable_node_ids.length} 个图不可达节点 · {item.newly_affected_service_ids.length} 新增受影响</small></button>)}</div>
-  </div>;
+  const stages = c.timelineEvents.map((item) => ({
+    id: item.event_id, time: item.time_hours + " h", label: eventKinds[item.kind],
+    detail: item.current_unreachable_node_ids.length + " 个图不可达节点 · " + item.newly_affected_service_ids.length + " 新增受影响",
+  }));
+  return <GasTimelineTrack stages={stages} index={c.timeline.index} playing={c.timeline.playing}
+    reducedMotion={c.reducedMotion} badge="CUV：仅图连通" note="合成给定事件 · 非预测"
+    reset={c.resetTimeline} toggle={c.timeline.playing ? c.pause : c.play} select={c.selectTimeline} />;
 }
 
 export function GasImpactPanel() {
